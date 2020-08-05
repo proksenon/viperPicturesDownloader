@@ -16,17 +16,18 @@ protocol MainPresenterProtocol: class {
 	func configureView()
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void)
 	func numberOfRows() ->Int
+	func didSelect(indexPath: IndexPath)
 }
 
 protocol MainInteractorProtocol: class{
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void)
 	func numberOfRows() -> Int
 	func freeStorage(befora date: Date?)
-	func freeALL() 
+	func freeALL()
 }
 
 protocol MainRouterProtocol: class {
-
+	func push(image: Image)
 }
 
 protocol MainConfiguratorProtocol: class {

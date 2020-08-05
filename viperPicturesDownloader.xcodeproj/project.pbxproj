@@ -35,6 +35,13 @@
 		D50F50BA24D95D360042BAD2 /* CustomTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50B924D95D360042BAD2 /* CustomTableViewDelegate.swift */; };
 		D50F50BD24D996B50042BAD2 /* EncryptionManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50BC24D996B50042BAD2 /* EncryptionManagerProtocol.swift */; };
 		D50F50BF24D9A8710042BAD2 /* UserDefaultsWorkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50BE24D9A8710042BAD2 /* UserDefaultsWorkProtocol.swift */; };
+		D50F50C324DAB5560042BAD2 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50C224DAB5560042BAD2 /* ImageViewController.swift */; };
+		D50F50C524DAB57A0042BAD2 /* ImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50C424DAB57A0042BAD2 /* ImagePresenter.swift */; };
+		D50F50C724DAB5930042BAD2 /* ImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50C624DAB5920042BAD2 /* ImageInteractor.swift */; };
+		D50F50C924DAB5A20042BAD2 /* ImageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50C824DAB5A20042BAD2 /* ImageRouter.swift */; };
+		D50F50CB24DAB5B30042BAD2 /* ImageConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50CA24DAB5B30042BAD2 /* ImageConfigurator.swift */; };
+		D50F50CD24DAB5C10042BAD2 /* ImageProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50CC24DAB5C10042BAD2 /* ImageProtocols.swift */; };
+		D50F50D024DABA030042BAD2 /* FullImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50CF24DABA030042BAD2 /* FullImageView.swift */; };
 		D56A290524D42DEB00178564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A290424D42DEB00178564 /* AppDelegate.swift */; };
 		D56A290724D42DEB00178564 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A290624D42DEB00178564 /* SceneDelegate.swift */; };
 		D56A290924D42DEB00178564 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A290824D42DEB00178564 /* MainViewController.swift */; };
@@ -78,6 +85,13 @@
 		D50F50B924D95D360042BAD2 /* CustomTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewDelegate.swift; sourceTree = "<group>"; };
 		D50F50BC24D996B50042BAD2 /* EncryptionManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionManagerProtocol.swift; sourceTree = "<group>"; };
 		D50F50BE24D9A8710042BAD2 /* UserDefaultsWorkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWorkProtocol.swift; sourceTree = "<group>"; };
+		D50F50C224DAB5560042BAD2 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		D50F50C424DAB57A0042BAD2 /* ImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePresenter.swift; sourceTree = "<group>"; };
+		D50F50C624DAB5920042BAD2 /* ImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractor.swift; sourceTree = "<group>"; };
+		D50F50C824DAB5A20042BAD2 /* ImageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRouter.swift; sourceTree = "<group>"; };
+		D50F50CA24DAB5B30042BAD2 /* ImageConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConfigurator.swift; sourceTree = "<group>"; };
+		D50F50CC24DAB5C10042BAD2 /* ImageProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProtocols.swift; sourceTree = "<group>"; };
+		D50F50CF24DABA030042BAD2 /* FullImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageView.swift; sourceTree = "<group>"; };
 		D51DEBB2B094A1CA9AE74478 /* Pods-viperPicturesDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viperPicturesDownloader.release.xcconfig"; path = "Target Support Files/Pods-viperPicturesDownloader/Pods-viperPicturesDownloader.release.xcconfig"; sourceTree = "<group>"; };
 		D56A290124D42DEB00178564 /* viperPicturesDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = viperPicturesDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56A290424D42DEB00178564 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +140,7 @@
 		D50F508E24D8521C0042BAD2 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				D50F50C024DAB4CA0042BAD2 /* New Group */,
 				D50F508C24D851FE0042BAD2 /* NetworkService.swift */,
 			);
 			path = Network;
@@ -192,6 +207,35 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D50F50C024DAB4CA0042BAD2 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		D50F50C124DAB4DD0042BAD2 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				D50F50CE24DAB9EA0042BAD2 /* View */,
+				D50F50C224DAB5560042BAD2 /* ImageViewController.swift */,
+				D50F50C424DAB57A0042BAD2 /* ImagePresenter.swift */,
+				D50F50C624DAB5920042BAD2 /* ImageInteractor.swift */,
+				D50F50C824DAB5A20042BAD2 /* ImageRouter.swift */,
+				D50F50CA24DAB5B30042BAD2 /* ImageConfigurator.swift */,
+				D50F50CC24DAB5C10042BAD2 /* ImageProtocols.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		D50F50CE24DAB9EA0042BAD2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D50F50CF24DABA030042BAD2 /* FullImageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D56A28F824D42DEB00178564 = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +264,7 @@
 				D50F509D24D8526B0042BAD2 /* Protocols */,
 				D50F508E24D8521C0042BAD2 /* Network */,
 				D56A291824D431CA00178564 /* Main */,
+				D50F50C124DAB4DD0042BAD2 /* Image */,
 				D56A290A24D42DEB00178564 /* Main.storyboard */,
 				D56A290D24D42DED00178564 /* Assets.xcassets */,
 				D56A290F24D42DED00178564 /* LaunchScreen.storyboard */,
@@ -366,8 +411,10 @@
 				D50F509624D8523B0042BAD2 /* ImageNameManagerProtocol.swift in Sources */,
 				D56A290924D42DEB00178564 /* MainViewController.swift in Sources */,
 				D50F509C24D8523B0042BAD2 /* NetworkServiceProtocol.swift in Sources */,
+				D50F50CB24DAB5B30042BAD2 /* ImageConfigurator.swift in Sources */,
 				D50F506524D8356D0042BAD2 /* CustomTableViewDataSource.swift in Sources */,
 				D50F50AB24D852A30042BAD2 /* ImageResizer.swift in Sources */,
+				D50F50C324DAB5560042BAD2 /* ImageViewController.swift in Sources */,
 				D50F50B724D853C20042BAD2 /* EncryptionManager.swift in Sources */,
 				D56A290524D42DEB00178564 /* AppDelegate.swift in Sources */,
 				D50F509824D8523B0042BAD2 /* ImageProviderProtocol.swift in Sources */,
@@ -380,6 +427,7 @@
 				D50F509724D8523B0042BAD2 /* FileProviderProtocol.swift in Sources */,
 				D50F506124D827BB0042BAD2 /* CustomTableViewCell.swift in Sources */,
 				D50F50A524D852A30042BAD2 /* UserDefaultsWork.swift in Sources */,
+				D50F50CD24DAB5C10042BAD2 /* ImageProtocols.swift in Sources */,
 				D56A292024D4321F00178564 /* MainConfigurator.swift in Sources */,
 				D50F50B624D853C20042BAD2 /* KeyForEncrypte.swift in Sources */,
 				D56A291A24D431E500178564 /* MainPresenter.swift in Sources */,
@@ -387,9 +435,13 @@
 				D50F50A924D852A30042BAD2 /* ZoomAndSnapFlowLayout.swift in Sources */,
 				D50F509924D8523B0042BAD2 /* ImageResizerProtocol.swift in Sources */,
 				D50F50BF24D9A8710042BAD2 /* UserDefaultsWorkProtocol.swift in Sources */,
+				D50F50C724DAB5930042BAD2 /* ImageInteractor.swift in Sources */,
+				D50F50D024DABA030042BAD2 /* FullImageView.swift in Sources */,
 				D50F509A24D8523B0042BAD2 /* StorageProviderProtocol.swift in Sources */,
+				D50F50C924DAB5A20042BAD2 /* ImageRouter.swift in Sources */,
 				D50F50A724D852A30042BAD2 /* FileProvider.swift in Sources */,
 				D50F50B824D853C20042BAD2 /* EncryptionWork.swift in Sources */,
+				D50F50C524DAB57A0042BAD2 /* ImagePresenter.swift in Sources */,
 				D50F50AA24D852A30042BAD2 /* ImageProvider.swift in Sources */,
 				D50F50BA24D95D360042BAD2 /* CustomTableViewDelegate.swift in Sources */,
 				D56A291E24D4320D00178564 /* MainRouter.swift in Sources */,

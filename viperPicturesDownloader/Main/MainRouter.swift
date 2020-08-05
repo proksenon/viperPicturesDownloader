@@ -10,9 +10,16 @@ import Foundation
 
 class MainRouter : MainRouterProtocol {
 
-	weak var viewController: MainViewProtocol!
+	weak var viewController: MainViewController!
 
 	init(viewController: MainViewController) {
 		self.viewController = viewController
 	}
+
+	func push(image: Image) {
+		let nextVC = ImageViewController()
+		nextVC.image = image.image
+		viewController.navigationController?.pushViewController(nextVC, animated: true)
+	}
+
 }

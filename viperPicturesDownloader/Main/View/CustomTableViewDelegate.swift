@@ -11,10 +11,16 @@ import UIKit
 class CustomTableViewDelegate: NSObject, UITableViewDelegate {
 
 	var tableView: CustomTableView!
+	var presenter: MainPresenterProtocol!
 
-	init(tableView: CustomTableView){
+	init(tableView: CustomTableView, presenter: MainPresenterProtocol){
 		super.init()
 		self.tableView = tableView
 		self.tableView.delegate = self
+		self.presenter = presenter
+	}
+
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		presenter.didSelect(indexPath: indexPath)
 	}
 }

@@ -37,5 +37,5 @@ struct Image {
 }
 
 struct ImageSize {
-	let size: CGSize
+	let size: CGSize?
 }

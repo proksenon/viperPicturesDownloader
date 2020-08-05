@@ -26,7 +26,7 @@ class MainViewController: UIViewController, MainViewProtocol {
 		tableView = CustomTableView()
 		tableView.setTableView(viewController: self)
 		customTableViewDataSource = CustomTableViewDataSource(tableView: tableView, presenter: presenter)
-		customTableViewDelegate = CustomTableViewDelegate(tableView: tableView)
+		customTableViewDelegate = CustomTableViewDelegate(tableView: tableView, presenter: presenter)
 	}
 
 }
