@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CollectionConfigurator: CollectionConfiguratorProtocol {
+final class CollectionConfigurator: CollectionConfiguratorProtocol {
 
 	func configure(with viewController: CollectionViewController) {
 		let presenter = CollectionPresenter(view: viewController)

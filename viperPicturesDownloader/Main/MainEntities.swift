@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainEntities {
+final class MainEntities {
 	let urls: [String] = [
 		   "https://i.pinimg.com/originals/b3/c2/ff/b3c2ff8bcfad7ad8b6af0ceb99ffc7ef.jpg",
 		   "https://media.idownloadblog.com/wp-content/uploads/2020/06/iOS-14-iPhone-Wallpaper-iDownloadBlog-ispazio-dark-1.jpg",

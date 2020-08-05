@@ -8,7 +8,7 @@
 
 import Foundation
 
-class EncryptionManager: EncryptionManagerProtocol {
+final class EncryptionManager: EncryptionManagerProtocol {
 	let keyForEncrypte = KeyForEncrypte()
 	let encryptionWork = EncryptionWork()
 

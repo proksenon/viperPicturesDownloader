@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MainConfigurator : MainConfiguratorProtocol {
+final class MainConfigurator : MainConfiguratorProtocol {
 
 	func configure(with viewController: MainViewController) {
 		let presenter = MainPresenter(view: viewController)

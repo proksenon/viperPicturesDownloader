@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+final class CustomCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
 	var collectionView: CustomCollectionView!
 	var presenter: CollectionPresenterProtocol!

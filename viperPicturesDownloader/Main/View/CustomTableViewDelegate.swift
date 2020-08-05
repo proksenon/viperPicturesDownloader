@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTableViewDelegate: NSObject, UITableViewDelegate {
+final class CustomTableViewDelegate: NSObject, UITableViewDelegate {
 
 	var tableView: CustomTableView!
 	var presenter: MainPresenterProtocol!

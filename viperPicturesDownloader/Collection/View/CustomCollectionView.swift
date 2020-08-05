@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomCollectionView: UICollectionView {
+final class CustomCollectionView: UICollectionView {
 
 	let flowLayout = ZoomAndSnapFlowLayout()
 

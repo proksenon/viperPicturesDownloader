@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomCollectionViewDataSource: NSObject, UICollectionViewDataSource {
+final class CustomCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 
 	var collectionView: CustomCollectionView!
 	var presenter: CollectionPresenterProtocol!

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, MainViewProtocol {
+final class MainViewController: UIViewController, MainViewProtocol {
 
 	var presenter: MainPresenterProtocol!
 	let configurator: MainConfiguratorProtocol = MainConfigurator()

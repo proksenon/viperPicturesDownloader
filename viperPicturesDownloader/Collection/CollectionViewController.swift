@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollectionViewController: UIViewController, CollectionViewProtocol {
+final class CollectionViewController: UIViewController, CollectionViewProtocol {
 	
 	var presenter: CollectionPresenterProtocol!
 	let configurator: CollectionConfiguratorProtocol = CollectionConfigurator()

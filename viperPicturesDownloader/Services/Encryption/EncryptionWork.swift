@@ -6,7 +6,7 @@
 //  Copyright © 2020 18579132. All rights reserved.
 import RNCryptor
 import Foundation
-class EncryptionWork {
+final class EncryptionWork {
 
    func encryptMessage(message: Data, encryptionKey: String) throws -> Data {
 		   let cipherData = RNCryptor.encrypt(data: message, withPassword: encryptionKey)

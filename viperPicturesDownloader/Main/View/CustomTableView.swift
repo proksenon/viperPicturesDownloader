@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class CustomTableView: UITableView {
+final class CustomTableView: UITableView {
 
 	func setTableView(viewController: MainViewController) {
 		register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")

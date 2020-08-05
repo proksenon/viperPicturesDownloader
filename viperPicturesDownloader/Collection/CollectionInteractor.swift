@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollectionInteractor: CollectionInteractorProtocol {
+final class CollectionInteractor: CollectionInteractorProtocol {
 	
 	weak var presenter: CollectionPresenterProtocol!
 	let entities = MainEntities()

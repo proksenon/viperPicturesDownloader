@@ -8,7 +8,7 @@
 
 import Foundation
 import KeychainSwift
-class KeyForEncrypte {
+final class KeyForEncrypte {
 	let encryption = EncryptionWork()
 	let keychain = KeychainSwift()
 

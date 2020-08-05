@@ -9,7 +9,7 @@
 
 import Foundation
 
-class MainPresenter: MainPresenterProtocol{
+final class MainPresenter: MainPresenterProtocol{
 
 	weak var view: MainViewProtocol!
 	var interactor: MainInteractorProtocol!

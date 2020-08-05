@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTableViewDataSource:NSObject, UITableViewDataSource {
+final class CustomTableViewDataSource:NSObject, UITableViewDataSource {
 
 	var tableView: CustomTableView!
 	var presenter: MainPresenterProtocol!

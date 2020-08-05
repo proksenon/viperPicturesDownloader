@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomCollectionViewCell: UICollectionViewCell {
+final class CustomCollectionViewCell: UICollectionViewCell {
 	var imageView = UIImageView()
 	override init(frame: CGRect) {
 		super.init(frame: frame)

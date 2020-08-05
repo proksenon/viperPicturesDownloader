@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserDefaultsWork: UserDefaultsWorkProtocol {
+final class UserDefaultsWork: UserDefaultsWorkProtocol {
 	let defaults = UserDefaults.standard
 
 	func removeObjects(urls: [String]) {

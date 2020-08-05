@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CollectionPresenter: CollectionPresenterProtocol {
+final class CollectionPresenter: CollectionPresenterProtocol {
 
 	weak var view: CollectionViewProtocol!
 	var interactor: CollectionInteractorProtocol!
