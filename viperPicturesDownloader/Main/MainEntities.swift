@@ -29,7 +29,6 @@ class MainEntities {
 		   "https://i.ibb.co/859Y0g0/White-Light.jpg",
 		   "https://i.pinimg.com/originals/00/50/6c/00506cf573becf40a03414cae253551c.jpg"
 	   ]
-		let defaultImage = UIImage(named: "defultImage")
 }
 
 struct Image {

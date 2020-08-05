@@ -42,6 +42,16 @@
 		D50F50CB24DAB5B30042BAD2 /* ImageConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50CA24DAB5B30042BAD2 /* ImageConfigurator.swift */; };
 		D50F50CD24DAB5C10042BAD2 /* ImageProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50CC24DAB5C10042BAD2 /* ImageProtocols.swift */; };
 		D50F50D024DABA030042BAD2 /* FullImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50CF24DABA030042BAD2 /* FullImageView.swift */; };
+		D50F50D324DAE4980042BAD2 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50D224DAE4980042BAD2 /* CollectionViewController.swift */; };
+		D50F50D524DAE4B60042BAD2 /* CollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50D424DAE4B60042BAD2 /* CollectionPresenter.swift */; };
+		D50F50D724DAE4E30042BAD2 /* CollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50D624DAE4E30042BAD2 /* CollectionInteractor.swift */; };
+		D50F50D924DAE4FB0042BAD2 /* CollectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50D824DAE4FB0042BAD2 /* CollectionRouter.swift */; };
+		D50F50DB24DAE5150042BAD2 /* CollectionConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50DA24DAE5150042BAD2 /* CollectionConfigurator.swift */; };
+		D50F50DD24DAE54A0042BAD2 /* CollectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50DC24DAE54A0042BAD2 /* CollectionProtocols.swift */; };
+		D50F50E024DAE9870042BAD2 /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50DF24DAE9870042BAD2 /* CustomCollectionView.swift */; };
+		D50F50E224DAE9C40042BAD2 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50E124DAE9C40042BAD2 /* CustomCollectionViewCell.swift */; };
+		D50F50E424DAEA130042BAD2 /* CustomCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50E324DAEA130042BAD2 /* CustomCollectionViewDataSource.swift */; };
+		D50F50E624DAEA240042BAD2 /* CustomCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50E524DAEA240042BAD2 /* CustomCollectionDelegate.swift */; };
 		D56A290524D42DEB00178564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A290424D42DEB00178564 /* AppDelegate.swift */; };
 		D56A290724D42DEB00178564 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A290624D42DEB00178564 /* SceneDelegate.swift */; };
 		D56A290924D42DEB00178564 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A290824D42DEB00178564 /* MainViewController.swift */; };
@@ -92,6 +102,16 @@
 		D50F50CA24DAB5B30042BAD2 /* ImageConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConfigurator.swift; sourceTree = "<group>"; };
 		D50F50CC24DAB5C10042BAD2 /* ImageProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProtocols.swift; sourceTree = "<group>"; };
 		D50F50CF24DABA030042BAD2 /* FullImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageView.swift; sourceTree = "<group>"; };
+		D50F50D224DAE4980042BAD2 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		D50F50D424DAE4B60042BAD2 /* CollectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPresenter.swift; sourceTree = "<group>"; };
+		D50F50D624DAE4E30042BAD2 /* CollectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionInteractor.swift; sourceTree = "<group>"; };
+		D50F50D824DAE4FB0042BAD2 /* CollectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRouter.swift; sourceTree = "<group>"; };
+		D50F50DA24DAE5150042BAD2 /* CollectionConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionConfigurator.swift; sourceTree = "<group>"; };
+		D50F50DC24DAE54A0042BAD2 /* CollectionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionProtocols.swift; sourceTree = "<group>"; };
+		D50F50DF24DAE9870042BAD2 /* CustomCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionView.swift; sourceTree = "<group>"; };
+		D50F50E124DAE9C40042BAD2 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		D50F50E324DAEA130042BAD2 /* CustomCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		D50F50E524DAEA240042BAD2 /* CustomCollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionDelegate.swift; sourceTree = "<group>"; };
 		D51DEBB2B094A1CA9AE74478 /* Pods-viperPicturesDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viperPicturesDownloader.release.xcconfig"; path = "Target Support Files/Pods-viperPicturesDownloader/Pods-viperPicturesDownloader.release.xcconfig"; sourceTree = "<group>"; };
 		D56A290124D42DEB00178564 /* viperPicturesDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = viperPicturesDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56A290424D42DEB00178564 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,7 +160,6 @@
 		D50F508E24D8521C0042BAD2 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				D50F50C024DAB4CA0042BAD2 /* New Group */,
 				D50F508C24D851FE0042BAD2 /* NetworkService.swift */,
 			);
 			path = Network;
@@ -207,11 +226,11 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D50F50C024DAB4CA0042BAD2 /* New Group */ = {
+		D50F50C024DAB4CA0042BAD2 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = "New Group";
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		D50F50C124DAB4DD0042BAD2 /* Image */ = {
@@ -232,6 +251,31 @@
 			isa = PBXGroup;
 			children = (
 				D50F50CF24DABA030042BAD2 /* FullImageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D50F50D124DAE4670042BAD2 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				D50F50DE24DAE9240042BAD2 /* View */,
+				D50F50D224DAE4980042BAD2 /* CollectionViewController.swift */,
+				D50F50D424DAE4B60042BAD2 /* CollectionPresenter.swift */,
+				D50F50D624DAE4E30042BAD2 /* CollectionInteractor.swift */,
+				D50F50D824DAE4FB0042BAD2 /* CollectionRouter.swift */,
+				D50F50DA24DAE5150042BAD2 /* CollectionConfigurator.swift */,
+				D50F50DC24DAE54A0042BAD2 /* CollectionProtocols.swift */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		D50F50DE24DAE9240042BAD2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D50F50DF24DAE9870042BAD2 /* CustomCollectionView.swift */,
+				D50F50E124DAE9C40042BAD2 /* CustomCollectionViewCell.swift */,
+				D50F50E324DAEA130042BAD2 /* CustomCollectionViewDataSource.swift */,
+				D50F50E524DAEA240042BAD2 /* CustomCollectionDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -262,8 +306,10 @@
 				D50F50AD24D852D60042BAD2 /* Extensions */,
 				D50F50AC24D852AC0042BAD2 /* Services */,
 				D50F509D24D8526B0042BAD2 /* Protocols */,
+				D50F50C024DAB4CA0042BAD2 /* Entities */,
 				D50F508E24D8521C0042BAD2 /* Network */,
 				D56A291824D431CA00178564 /* Main */,
+				D50F50D124DAE4670042BAD2 /* Collection */,
 				D50F50C124DAB4DD0042BAD2 /* Image */,
 				D56A290A24D42DEB00178564 /* Main.storyboard */,
 				D56A290D24D42DED00178564 /* Assets.xcassets */,
@@ -404,27 +450,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				D50F50BD24D996B50042BAD2 /* EncryptionManagerProtocol.swift in Sources */,
+				D50F50E224DAE9C40042BAD2 /* CustomCollectionViewCell.swift in Sources */,
 				D50F50A824D852A30042BAD2 /* ImageNameManager.swift in Sources */,
 				D56A292224D4337500178564 /* MainProtocols.swift in Sources */,
 				D50F506724D847350042BAD2 /* MainEntities.swift in Sources */,
 				D50F50AF24D8530A0042BAD2 /* UIImageResizeExtension.swift in Sources */,
+				D50F50DD24DAE54A0042BAD2 /* CollectionProtocols.swift in Sources */,
+				D50F50E624DAEA240042BAD2 /* CustomCollectionDelegate.swift in Sources */,
 				D50F509624D8523B0042BAD2 /* ImageNameManagerProtocol.swift in Sources */,
+				D50F50E424DAEA130042BAD2 /* CustomCollectionViewDataSource.swift in Sources */,
 				D56A290924D42DEB00178564 /* MainViewController.swift in Sources */,
 				D50F509C24D8523B0042BAD2 /* NetworkServiceProtocol.swift in Sources */,
 				D50F50CB24DAB5B30042BAD2 /* ImageConfigurator.swift in Sources */,
 				D50F506524D8356D0042BAD2 /* CustomTableViewDataSource.swift in Sources */,
 				D50F50AB24D852A30042BAD2 /* ImageResizer.swift in Sources */,
+				D50F50E024DAE9870042BAD2 /* CustomCollectionView.swift in Sources */,
 				D50F50C324DAB5560042BAD2 /* ImageViewController.swift in Sources */,
 				D50F50B724D853C20042BAD2 /* EncryptionManager.swift in Sources */,
 				D56A290524D42DEB00178564 /* AppDelegate.swift in Sources */,
 				D50F509824D8523B0042BAD2 /* ImageProviderProtocol.swift in Sources */,
+				D50F50DB24DAE5150042BAD2 /* CollectionConfigurator.swift in Sources */,
 				D56A290724D42DEB00178564 /* SceneDelegate.swift in Sources */,
 				D56A291C24D431FF00178564 /* MainInteractor.swift in Sources */,
 				D50F50B124D853880042BAD2 /* CGSizeStringExtension.swift in Sources */,
 				D50F505F24D827840042BAD2 /* CustomTableView.swift in Sources */,
+				D50F50D724DAE4E30042BAD2 /* CollectionInteractor.swift in Sources */,
 				D50F509B24D8523B0042BAD2 /* CustomTableViewProtocol.swift in Sources */,
 				D50F50A624D852A30042BAD2 /* StorageProvider.swift in Sources */,
+				D50F50D924DAE4FB0042BAD2 /* CollectionRouter.swift in Sources */,
 				D50F509724D8523B0042BAD2 /* FileProviderProtocol.swift in Sources */,
+				D50F50D324DAE4980042BAD2 /* CollectionViewController.swift in Sources */,
 				D50F506124D827BB0042BAD2 /* CustomTableViewCell.swift in Sources */,
 				D50F50A524D852A30042BAD2 /* UserDefaultsWork.swift in Sources */,
 				D50F50CD24DAB5C10042BAD2 /* ImageProtocols.swift in Sources */,
@@ -438,6 +493,7 @@
 				D50F50C724DAB5930042BAD2 /* ImageInteractor.swift in Sources */,
 				D50F50D024DABA030042BAD2 /* FullImageView.swift in Sources */,
 				D50F509A24D8523B0042BAD2 /* StorageProviderProtocol.swift in Sources */,
+				D50F50D524DAE4B60042BAD2 /* CollectionPresenter.swift in Sources */,
 				D50F50C924DAB5A20042BAD2 /* ImageRouter.swift in Sources */,
 				D50F50A724D852A30042BAD2 /* FileProvider.swift in Sources */,
 				D50F50B824D853C20042BAD2 /* EncryptionWork.swift in Sources */,

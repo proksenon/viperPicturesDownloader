@@ -38,7 +38,7 @@ class MainPresenter: MainPresenterProtocol{
 	}
 
 	func numberOfRows() ->Int {
-			return interactor.numberOfRows()
+		return interactor.numberOfRows()
 	}
 
 	private func freeStorage() {

@@ -11,7 +11,7 @@ import UIKit
 class MainInteractor : MainInteractorProtocol {
 
 	weak var presenter: MainPresenterProtocol!
-	var entities = MainEntities()
+	let entities = MainEntities()
 	var imageNameManager: ImageNameManagerProtocol!
 	var fileProvider: FileProviderProtocol!
 	var encryptionManager: EncryptionManagerProtocol!
