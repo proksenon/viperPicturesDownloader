@@ -15,7 +15,6 @@ class CollectionViewController: UIViewController, CollectionViewProtocol {
 	var collectionView: CustomCollectionView!
 	var customCollectionDataSource: CustomCollectionViewDataSource!
 	var customCollectionDelegate: CustomCollectionViewDelegate!
-	
 
 	override func viewDidLoad() {
 		super.viewDidLoad()

@@ -19,8 +19,13 @@ class MainPresenter: MainPresenterProtocol{
 		self.view = view
 	}
 
+	func pushCollection() {
+		router.pushCollection()
+	}
+
 	func configureView() {
 		view.setTableView()
+		view.setButton()
 		freeStorage()
 //		freeALL()
 	}

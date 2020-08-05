@@ -15,6 +15,7 @@ class MainViewController: UIViewController, MainViewProtocol {
 	var tableView: CustomTableView!
 	var customTableViewDataSource: CustomTableViewDataSource!
 	var customTableViewDelegate: CustomTableViewDelegate!
+	var button: UIBarButtonItem!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -28,5 +29,12 @@ class MainViewController: UIViewController, MainViewProtocol {
 		customTableViewDataSource = CustomTableViewDataSource(tableView: tableView, presenter: presenter)
 		customTableViewDelegate = CustomTableViewDelegate(tableView: tableView, presenter: presenter)
 	}
+	func setButton() {
+		button = UIBarButtonItem(title: "Collection", style: UIBarButtonItem.Style.done, target: self, action: #selector(makeCollection(_:)) )
+		navigationItem.rightBarButtonItem = button
+	}
 
+	@objc func makeCollection(_ sender: UIBarButtonItem){
+		presenter.pushCollection()
+	}
 }

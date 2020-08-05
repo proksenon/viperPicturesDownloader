@@ -9,15 +9,21 @@
 import Foundation
 
 protocol CollectionViewProtocol: class {
-
+	func setCollection()
 }
 
 protocol CollectionPresenterProtocol: class {
 	func configureView()
+	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void)
+	func numberOfRows() ->Int
+	func didSelect(indexPath: IndexPath)
 }
 
 protocol CollectionInteractorProtocol: class{
-	func numberOfRows()->Int
+	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void)
+	func numberOfRows() -> Int
+	func freeStorage(befora date: Date?)
+	func freeALL()
 }
 
 protocol CollectionRouterProtocol: class {

@@ -19,6 +19,34 @@ class CollectionPresenter: CollectionPresenterProtocol {
 	}
 
 	func configureView() {
-		
+		view.setCollection()
+		freeStorage()
+//		freeALL()
+	}
+
+	func didSelect(indexPath: IndexPath) {
+		getImage(indexPath: indexPath, size: ImageSize(size: nil)) { (image) in
+			self.router.push(image: image)
+		}
+	}
+
+	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
+		interactor.getImage(indexPath: indexPath, size: size) { (image) in
+			completion(image)
+		}
+	}
+
+	func numberOfRows() ->Int {
+		return interactor.numberOfRows()
+	}
+
+	private func freeStorage() {
+		let date = Calendar.current.date(byAdding: .day, value: -2, to: Date())
+		DispatchQueue.global(qos: .background).async {
+			self.interactor.freeStorage(befora: date)
+		}
+	}
+	private func freeALL(){
+		interactor.freeALL()
 	}
 }

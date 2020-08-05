@@ -6,7 +6,7 @@
 //  Copyright © 2020 18579132. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class MainRouter : MainRouterProtocol {
 
@@ -22,4 +22,11 @@ class MainRouter : MainRouterProtocol {
 		viewController.navigationController?.pushViewController(nextVC, animated: true)
 	}
 
+	func pushCollection() {
+		let navigationController = UINavigationController(
+            rootViewController: CollectionViewController()
+        )
+		let nextVC = CollectionViewController()
+		viewController.navigationController?.pushViewController(nextVC, animated: true)
+	}
 }

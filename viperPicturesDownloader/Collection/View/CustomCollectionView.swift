@@ -30,9 +30,10 @@ class CustomCollectionView: UICollectionView {
 	}
 	func setCollectionViewConstraints(collectionViewController: CollectionViewController){
 		translatesAutoresizingMaskIntoConstraints = false
+		collectionViewController.view.addSubview(self)
 		NSLayoutConstraint.activate([
-			topAnchor.constraint(equalTo: collectionViewController.view.topAnchor, constant: 50),
-			bottomAnchor.constraint(equalTo:collectionViewController.view.bottomAnchor, constant: -50),
+			topAnchor.constraint(equalTo: collectionViewController.view.topAnchor, constant: 0),
+			bottomAnchor.constraint(equalTo:collectionViewController.view.bottomAnchor, constant: 0),
 			leftAnchor.constraint(equalTo: collectionViewController.view.leftAnchor, constant: 0),
 			rightAnchor.constraint(equalTo: collectionViewController.view.rightAnchor, constant: 0)
 		])

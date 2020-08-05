@@ -22,11 +22,17 @@ class CustomCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 
 
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		<#code#>
+		return presenter.numberOfRows()
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		<#code#>
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCollectionViewCell
+		let size = CGSize(width: cell.contentView.frame.size.width, height: cell.contentView.frame.size.width)
+		presenter.getImage(indexPath: indexPath, size: ImageSize(size: size)) { (image) in
+			cell.imageView.image = image.image
+			cell.imageView.contentMode = .scaleAspectFit
+		}
+		return cell
 	}
 
 

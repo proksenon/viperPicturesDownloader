@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomCollectionViewDelegate: NSObject, UICollectionViewDelegate {
+class CustomCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
 	var collectionView: CustomCollectionView!
 	var presenter: CollectionPresenterProtocol!
@@ -20,4 +20,11 @@ class CustomCollectionViewDelegate: NSObject, UICollectionViewDelegate {
 		self.presenter = presenter
 	}
 
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		presenter.didSelect(indexPath: indexPath)
+	}
+
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		return CGSize(width: 300, height: 600)
+	}
 }
