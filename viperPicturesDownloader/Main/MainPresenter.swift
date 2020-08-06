@@ -55,4 +55,16 @@ final class MainPresenter: MainPresenterProtocol{
 	private func freeALL(){
 		interactor.freeALL()
 	}
+	
+	func setUpActivity(viewModel: ViewForActivity) {
+		interactor.setUpActivityIndicator(viewModel: viewModel)
+	}
+
+	func startActivity() {
+		interactor.startActivity()
+	}
+
+	func stopActivity() {
+		interactor.stopActivity()
+	}
 }

@@ -52,6 +52,8 @@
 		D50F50E224DAE9C40042BAD2 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50E124DAE9C40042BAD2 /* CustomCollectionViewCell.swift */; };
 		D50F50E424DAEA130042BAD2 /* CustomCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50E324DAEA130042BAD2 /* CustomCollectionViewDataSource.swift */; };
 		D50F50E624DAEA240042BAD2 /* CustomCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50E524DAEA240042BAD2 /* CustomCollectionDelegate.swift */; };
+		D50F50EB24DBECC10042BAD2 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50EA24DBECC10042BAD2 /* ActivityIndicator.swift */; };
+		D50F50ED24DBECED0042BAD2 /* ActivityIndicatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50EC24DBECED0042BAD2 /* ActivityIndicatorProtocol.swift */; };
 		D56A290524D42DEB00178564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A290424D42DEB00178564 /* AppDelegate.swift */; };
 		D56A290724D42DEB00178564 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A290624D42DEB00178564 /* SceneDelegate.swift */; };
 		D56A290924D42DEB00178564 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A290824D42DEB00178564 /* MainViewController.swift */; };
@@ -112,6 +114,8 @@
 		D50F50E124DAE9C40042BAD2 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		D50F50E324DAEA130042BAD2 /* CustomCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		D50F50E524DAEA240042BAD2 /* CustomCollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionDelegate.swift; sourceTree = "<group>"; };
+		D50F50EA24DBECC10042BAD2 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		D50F50EC24DBECED0042BAD2 /* ActivityIndicatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorProtocol.swift; sourceTree = "<group>"; };
 		D51DEBB2B094A1CA9AE74478 /* Pods-viperPicturesDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viperPicturesDownloader.release.xcconfig"; path = "Target Support Files/Pods-viperPicturesDownloader/Pods-viperPicturesDownloader.release.xcconfig"; sourceTree = "<group>"; };
 		D56A290124D42DEB00178564 /* viperPicturesDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = viperPicturesDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56A290424D42DEB00178564 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 				D50F509424D8523B0042BAD2 /* CustomTableViewProtocol.swift */,
 				D50F509024D8523A0042BAD2 /* FileProviderProtocol.swift */,
 				D50F508F24D8523A0042BAD2 /* ImageNameManagerProtocol.swift */,
+				D50F50EC24DBECED0042BAD2 /* ActivityIndicatorProtocol.swift */,
 				D50F50BC24D996B50042BAD2 /* EncryptionManagerProtocol.swift */,
 				D50F509124D8523A0042BAD2 /* ImageProviderProtocol.swift */,
 				D50F509224D8523A0042BAD2 /* ImageResizerProtocol.swift */,
@@ -190,6 +195,7 @@
 				D50F50A324D852A30042BAD2 /* ImageProvider.swift */,
 				D50F50A424D852A30042BAD2 /* ImageResizer.swift */,
 				D50F509F24D852A20042BAD2 /* StorageProvider.swift */,
+				D50F50EA24DBECC10042BAD2 /* ActivityIndicator.swift */,
 				D50F509E24D852A20042BAD2 /* UserDefaultsWork.swift */,
 				D50F50A224D852A30042BAD2 /* ZoomAndSnapFlowLayout.swift */,
 			);
@@ -272,10 +278,10 @@
 		D50F50DE24DAE9240042BAD2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D50F50DF24DAE9870042BAD2 /* CustomCollectionView.swift */,
-				D50F50E124DAE9C40042BAD2 /* CustomCollectionViewCell.swift */,
 				D50F50E324DAEA130042BAD2 /* CustomCollectionViewDataSource.swift */,
 				D50F50E524DAEA240042BAD2 /* CustomCollectionDelegate.swift */,
+				D50F50DF24DAE9870042BAD2 /* CustomCollectionView.swift */,
+				D50F50E124DAE9C40042BAD2 /* CustomCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -451,6 +457,7 @@
 			files = (
 				D50F50BD24D996B50042BAD2 /* EncryptionManagerProtocol.swift in Sources */,
 				D50F50E224DAE9C40042BAD2 /* CustomCollectionViewCell.swift in Sources */,
+				D50F50ED24DBECED0042BAD2 /* ActivityIndicatorProtocol.swift in Sources */,
 				D50F50A824D852A30042BAD2 /* ImageNameManager.swift in Sources */,
 				D56A292224D4337500178564 /* MainProtocols.swift in Sources */,
 				D50F506724D847350042BAD2 /* MainEntities.swift in Sources */,
@@ -480,6 +487,7 @@
 				D50F50D924DAE4FB0042BAD2 /* CollectionRouter.swift in Sources */,
 				D50F509724D8523B0042BAD2 /* FileProviderProtocol.swift in Sources */,
 				D50F50D324DAE4980042BAD2 /* CollectionViewController.swift in Sources */,
+				D50F50EB24DBECC10042BAD2 /* ActivityIndicator.swift in Sources */,
 				D50F506124D827BB0042BAD2 /* CustomTableViewCell.swift in Sources */,
 				D50F50A524D852A30042BAD2 /* UserDefaultsWork.swift in Sources */,
 				D50F50CD24DAB5C10042BAD2 /* ImageProtocols.swift in Sources */,

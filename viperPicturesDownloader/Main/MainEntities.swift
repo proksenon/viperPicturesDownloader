@@ -38,3 +38,7 @@ struct Image {
 struct ImageSize {
 	let size: CGSize?
 }
+
+struct ViewForActivity {
+	let view: UIView
+}

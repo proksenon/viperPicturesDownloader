@@ -18,6 +18,7 @@ final class MainInteractor : MainInteractorProtocol {
 	var networkService: NetworkServiceProtocol!
 	var imageResizer: ImageResizerProtocol!
 	var userDefaultsWork: UserDefaultsWorkProtocol!
+	var activityIndicator: ActivityIndicatorProtocol!
 
 	init(presenter: MainPresenterProtocol, imageNameManager: ImageNameManagerProtocol = ImageNameManager(), fileProvider: FileProviderProtocol = FileProvider(), encryptionManager: EncryptionManagerProtocol = EncryptionManager(), networkService: NetworkServiceProtocol = NetworkService(), imageResizer: ImageResizerProtocol = ImageResizer(), userDefaultsWork: UserDefaultsWorkProtocol = UserDefaultsWork()) {
 
@@ -28,6 +29,17 @@ final class MainInteractor : MainInteractorProtocol {
 		self.networkService = networkService
 		self.imageResizer = imageResizer
 		self.userDefaultsWork = userDefaultsWork
+	}
+
+	func setUpActivityIndicator(viewModel: ViewForActivity) {
+		activityIndicator = ActivityIndicator(view: viewModel.view)
+	}
+
+	func startActivity() {
+		activityIndicator.startActivity()
+	}
+	func stopActivity() {
+		activityIndicator.stopActivity()
 	}
 
 	func numberOfRows() -> Int {

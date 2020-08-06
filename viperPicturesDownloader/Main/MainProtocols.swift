@@ -19,6 +19,9 @@ protocol MainPresenterProtocol: class {
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void)
 	func numberOfRows() ->Int
 	func didSelect(indexPath: IndexPath)
+	func setUpActivity(viewModel: ViewForActivity)
+	func startActivity()
+	func stopActivity()
 }
 
 protocol MainInteractorProtocol: class{
@@ -26,6 +29,9 @@ protocol MainInteractorProtocol: class{
 	func numberOfRows() -> Int
 	func freeStorage(befora date: Date?)
 	func freeALL()
+	func setUpActivityIndicator(viewModel: ViewForActivity)
+	func startActivity()
+	func stopActivity()
 }
 
 protocol MainRouterProtocol: class {

@@ -17,15 +17,6 @@ final class ImageProvider: ImageProviderProtocol {
 		self.imageNameManager = imageNameManager
 		self.imageResizer = imageResizer
 	}
-
-//	func getNameCheckDirect(url: String, size: CGSize? = nil)-> String? {
-//		let nameFile = imageNameManager.getNameFileImage(url: url, size: size)
-//		if fileProvider.checkDirectory(nameFile: nameFile) {
-//			return nameFile
-//		} else {
-//			return nil
-//		}
-//	}
 	
 	func loadImage(url: String, size: CGSize?, completion: @escaping (UIImage?) -> Void) {
 		let nameFileOrigin = imageNameManager.getNameFileImage(url: url, size: nil)

@@ -28,9 +28,12 @@ final class CustomCollectionViewDataSource: NSObject, UICollectionViewDataSource
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCollectionViewCell
 		let size = CGSize(width: cell.contentView.frame.size.width, height: cell.contentView.frame.size.width)
+		presenter.setUpActivity(viewModel: ViewForActivity(view: cell.contentView))
+		presenter.startActivity()
 		presenter.getImage(indexPath: indexPath, size: ImageSize(size: size)) { (image) in
 			cell.imageView.image = image.image
 			cell.imageView.contentMode = .scaleAspectFit
+			self.presenter.stopActivity()
 		}
 		return cell
 	}
