@@ -23,4 +23,9 @@ final class CustomTableViewDelegate: NSObject, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		presenter.didSelect(indexPath: indexPath)
 	}
+
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return UIScreen.main.bounds.size.height/3
+	}
+	
 }

@@ -21,8 +21,6 @@ final class CustomCollectionView: UICollectionView {
 		contentInsetAdjustmentBehavior = .always
 		showsHorizontalScrollIndicator = false
 		register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-//		layout.minimumLineSpacing = 50
-//		contentInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
 	}
 
 	required init?(coder: NSCoder) {
@@ -30,7 +28,6 @@ final class CustomCollectionView: UICollectionView {
 	}
 	func setCollectionViewConstraints(collectionViewController: CollectionViewController){
 		translatesAutoresizingMaskIntoConstraints = false
-		collectionViewController.view.addSubview(self)
 		NSLayoutConstraint.activate([
 			topAnchor.constraint(equalTo: collectionViewController.view.topAnchor, constant: 0),
 			bottomAnchor.constraint(equalTo:collectionViewController.view.bottomAnchor, constant: 0),

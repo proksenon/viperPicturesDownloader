@@ -24,6 +24,7 @@ final class CollectionViewController: UIViewController, CollectionViewProtocol {
 
 	func setCollection() {
 		collectionView = CustomCollectionView()
+		view.addSubview(collectionView)
 		collectionView.setCollectionViewConstraints(collectionViewController: self)
 		customCollectionDataSource = CustomCollectionViewDataSource(collectionView: collectionView, presenter: presenter)
 		customCollectionDelegate = CustomCollectionViewDelegate(collectionView: collectionView, presenter: presenter)

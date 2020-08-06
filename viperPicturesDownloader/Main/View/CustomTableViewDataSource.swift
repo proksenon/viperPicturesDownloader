@@ -25,7 +25,6 @@ final class CustomTableViewDataSource:NSObject, UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableViewCell
-		NSLayoutConstraint.activate([cell.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.height/3)])
 		cell.contentView.frame.size = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/3)
 		presenter.setUpActivity(viewModel: ViewForActivity(view: cell.contentView))
 		presenter.startActivity()

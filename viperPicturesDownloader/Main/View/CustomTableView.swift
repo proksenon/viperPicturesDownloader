@@ -12,7 +12,6 @@ final class CustomTableView: UITableView {
 	func setTableView(viewController: MainViewController) {
 		register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
 		tableFooterView = UIView()
-		viewController.view.addSubview(self)
 		reloadData()
 		translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([
