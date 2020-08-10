@@ -50,83 +50,22 @@
             endingLineNumber = "11"
             landmarkName = "CollectionViewController"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "CA7F9F82-5D74-473A-804B-8EE9C78A8827 - f2a2ec4dde643b49"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "viperPicturesDownloader.CollectionViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; viperPicturesDownloader.CollectionViewController"
-                  moduleName = "viperPicturesDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a18579132/Desktop/viperDownloader/viperPicturesDownloader/Collection/CollectionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  uuid = "CA7F9F82-5D74-473A-804B-8EE9C78A8827 - ce30fc8f01941bb2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "viperPicturesDownloader.CollectionViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; viperPicturesDownloader.CollectionViewController"
-                  moduleName = "viperPicturesDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a18579132/Desktop/viperDownloader/viperPicturesDownloader/Collection/CollectionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "182">
-               </Location>
-               <Location
-                  uuid = "CA7F9F82-5D74-473A-804B-8EE9C78A8827 - 8ae29409855193f4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "viperPicturesDownloader.CollectionViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;viperPicturesDownloader.CollectionViewController&gt;"
-                  moduleName = "viperPicturesDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a18579132/Desktop/viperDownloader/viperPicturesDownloader/Collection/CollectionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  uuid = "CA7F9F82-5D74-473A-804B-8EE9C78A8827 - ce9dc4f14c7048f9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "viperPicturesDownloader.CollectionViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;viperPicturesDownloader.CollectionViewController&gt;"
-                  moduleName = "viperPicturesDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a18579132/Desktop/viperDownloader/viperPicturesDownloader/Collection/CollectionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "119">
-               </Location>
-               <Location
-                  uuid = "CA7F9F82-5D74-473A-804B-8EE9C78A8827 - 88f890d03b1ab89"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "viperPicturesDownloader.CollectionViewController.__deallocating_deinit"
-                  moduleName = "viperPicturesDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a18579132/Desktop/viperDownloader/viperPicturesDownloader/Collection/CollectionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D1C0704-5EB8-4BB9-A894-0ED4675B8F97"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloader/Main/MainRouter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "pushCollection()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
