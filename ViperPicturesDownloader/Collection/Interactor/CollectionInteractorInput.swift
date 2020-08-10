@@ -1,5 +1,5 @@
 //
-//  CollectionInteractorProtocol.swift
+//  CollectionInteractorInput.swift
 //  ViperPicturesDownloader
 //
 //  Created by 18579132 on 10.08.2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CollectionInteractorProtocol: class{
+protocol CollectionInteractorInput: class {
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void)
 	func numberOfRows() -> Int
 	func freeStorage(befora date: Date?)

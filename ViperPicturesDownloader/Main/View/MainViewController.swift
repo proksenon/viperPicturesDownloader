@@ -24,25 +24,6 @@ final class MainViewController: UIViewController {
 		viewOutput.configureView()
 	}
 
-//	func setTableView() {
-//		tableView = CustomTableView()
-//		view.addSubview(tableView)
-//		tableView.setTableView(viewController: self)
-//		customTableViewDataSource = CustomTableViewDataSource(tableView: tableView, presenter: viewOutput)
-//		customTableViewDelegate = CustomTableViewDelegate(tableView: tableView, presenter: viewOutput)
-//	}
-//	func setButton() {
-//		button = UIBarButtonItem(title: "Collection",
-//								 style: UIBarButtonItem.Style.done,
-//								 target: self,
-//								 action: #selector(makeCollection(_:))
-//								)
-//		navigationItem.rightBarButtonItem = button
-//	}
-//
-//	@objc func makeCollection(_ sender: UIBarButtonItem){
-//		viewOutput.pushCollection()
-//	}
 }
 
 extension MainViewController: MainViewInputProtocol {

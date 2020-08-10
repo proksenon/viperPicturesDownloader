@@ -11,9 +11,9 @@ import UIKit
 final class CustomCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 
 	var collectionView: CustomCollectionView!
-	var presenter: CollectionPresenterProtocol!
+	var presenter: CollectionViewDataSourceOutput!
 
-	init(collectionView: CustomCollectionView, presenter: CollectionPresenterProtocol){
+	init(collectionView: CustomCollectionView, presenter: CollectionViewDataSourceOutput){
 		super.init()
 		self.collectionView = collectionView
 		self.collectionView.dataSource = self

@@ -8,37 +8,17 @@
 
 import Foundation
 
-final class CollectionPresenter: CollectionPresenterProtocol {
+final class CollectionPresenter {
 
-	weak var view: CollectionViewProtocol!
-	var interactor: CollectionInteractorProtocol!
-	var router: CollectionRouterProtocol!
+	weak var view: CollectionViewInput!
+	var interactor: CollectionInteractorInput!
+	var router: CollectionRouterInput!
 
-	init(view: CollectionViewProtocol) {
+	init(view: CollectionViewInput) {
 		self.view = view
 	}
 
-	func configureView() {
-		view.setCollection()
-		freeStorage()
-//		freeALL()
-	}
 
-	func didSelect(indexPath: IndexPath) {
-		getImage(indexPath: indexPath, size: ImageSize(size: nil)) { (image) in
-			self.router.push(image: image)
-		}
-	}
-
-	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
-		interactor.getImage(indexPath: indexPath, size: size) { (image) in
-			completion(image)
-		}
-	}
-
-	func numberOfRows() ->Int {
-		return interactor.numberOfRows()
-	}
 
 	private func freeStorage() {
 		let date = Calendar.current.date(byAdding: .day, value: -2, to: Date())
@@ -49,6 +29,27 @@ final class CollectionPresenter: CollectionPresenterProtocol {
 	private func freeALL(){
 		interactor.freeALL()
 	}
+
+
+}
+
+extension CollectionPresenter: CollectionViewOutput {
+	func configureView() {
+		view.setCollection()
+		freeStorage()
+//		freeALL()
+	}
+}
+
+extension CollectionPresenter: CollectionViewDelegateOutput {
+	func didSelect(indexPath: IndexPath) {
+		getImage(indexPath: indexPath, size: ImageSize(size: nil)) { (image) in
+			self.router.push(image: image)
+		}
+	}
+}
+
+extension CollectionPresenter: CollectionViewDataSourceOutput {
 
 	func setUpActivity(viewModel: ViewForActivity) {
 		interactor.setUpActivityIndicator(viewModel: viewModel)
@@ -61,4 +62,18 @@ final class CollectionPresenter: CollectionPresenterProtocol {
 	func stopActivity() {
 		interactor.stopActivity()
 	}
+
+	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
+		interactor.getImage(indexPath: indexPath, size: size) { (image) in
+			completion(image)
+		}
+	}
+
+	func numberOfRows() ->Int {
+		return interactor.numberOfRows()
+	}
+}
+
+extension CollectionPresenter: CollectionInteractorOutput {
+	
 }

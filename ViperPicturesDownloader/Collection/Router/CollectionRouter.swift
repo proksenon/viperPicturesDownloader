@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class CollectionRouter: CollectionRouterProtocol {
+final class CollectionRouter: CollectionRouterInput {
 
 	weak var viewController: CollectionViewController!
 

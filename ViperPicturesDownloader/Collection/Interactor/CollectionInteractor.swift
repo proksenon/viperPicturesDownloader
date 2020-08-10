@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class CollectionInteractor: CollectionInteractorProtocol {
+final class CollectionInteractor: CollectionInteractorInput {
 	
-	weak var presenter: CollectionPresenterProtocol!
+	weak var presenter: CollectionInteractorOutput!
 	let entities = MainEntities()
 	var imageNameManager: ImageNameManagerProtocol!
 	var fileProvider: FileProviderProtocol!
@@ -20,7 +20,7 @@ final class CollectionInteractor: CollectionInteractorProtocol {
 	var userDefaultsWork: UserDefaultsWorkProtocol!
 	var activityIndicator: ActivityIndicatorProtocol!
 
-	init(presenter: CollectionPresenterProtocol,
+	init(presenter: CollectionInteractorOutput,
 		 imageNameManager: ImageNameManagerProtocol = ImageNameManager(),
 		 fileProvider: FileProviderProtocol = FileProvider(),
 		 encryptionManager: EncryptionManagerProtocol = EncryptionManager(),

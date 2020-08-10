@@ -1,5 +1,5 @@
 //
-//  CollectionViewProtocol.swift
+//  CollectionViewInput.swift
 //  ViperPicturesDownloader
 //
 //  Created by 18579132 on 10.08.2020.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol CollectionViewProtocol: class {
+protocol CollectionViewInput: class {
 	func setCollection()
 }

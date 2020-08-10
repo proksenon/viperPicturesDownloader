@@ -8,9 +8,10 @@
 
 import UIKit
 
-final class CollectionViewController: UIViewController, CollectionViewProtocol {
-	
-	var presenter: CollectionPresenterProtocol!
+final class CollectionViewController: UIViewController {
+
+	typealias Presenter = CollectionViewOutput & CollectionViewDataSourceOutput & CollectionViewDelegateOutput
+	var viewOutput: Presenter!
 	let configurator: CollectionConfiguratorProtocol = CollectionConfigurator()
 	var collectionView: CustomCollectionView!
 	var customCollectionDataSource: CustomCollectionViewDataSource!
@@ -19,15 +20,17 @@ final class CollectionViewController: UIViewController, CollectionViewProtocol {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configurator.configure(with: self)
-		presenter.configureView()
+		viewOutput.configureView()
 	}
 
+}
+
+extension CollectionViewController: CollectionViewInput {
 	func setCollection() {
 		collectionView = CustomCollectionView()
 		view.addSubview(collectionView)
 		collectionView.setCollectionViewConstraints(collectionViewController: self)
-		customCollectionDataSource = CustomCollectionViewDataSource(collectionView: collectionView, presenter: presenter)
-		customCollectionDelegate = CustomCollectionViewDelegate(collectionView: collectionView, presenter: presenter)
+		customCollectionDataSource = CustomCollectionViewDataSource(collectionView: collectionView, presenter: viewOutput)
+		customCollectionDelegate = CustomCollectionViewDelegate(collectionView: collectionView, presenter: viewOutput)
 	}
-
 }

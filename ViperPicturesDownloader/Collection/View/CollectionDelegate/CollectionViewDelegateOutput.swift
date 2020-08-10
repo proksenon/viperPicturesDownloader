@@ -1,5 +1,5 @@
 //
-//  CollectionRouterProtocol.swift
+//  CollectionDelegateOutput.swift
 //  ViperPicturesDownloader
 //
 //  Created by 18579132 on 10.08.2020.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol CollectionRouterProtocol: class {
-	func push(image: Image)
+protocol CollectionViewDelegateOutput: class {
+	func didSelect(indexPath: IndexPath)
 }

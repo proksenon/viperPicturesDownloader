@@ -11,9 +11,9 @@ import UIKit
 final class CustomCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
 	var collectionView: CustomCollectionView!
-	var presenter: CollectionPresenterProtocol!
+	var presenter: CollectionViewDelegateOutput!
 
-	init(collectionView: CustomCollectionView, presenter: CollectionPresenterProtocol){
+	init(collectionView: CustomCollectionView, presenter: CollectionViewDelegateOutput){
 		super.init()
 		self.collectionView = collectionView
 		self.collectionView.delegate = self
