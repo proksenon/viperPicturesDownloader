@@ -11,9 +11,9 @@ import UIKit
 final class CustomTableViewDelegate: NSObject, UITableViewDelegate {
 
 	var tableView: CustomTableView!
-	var presenter: MainPresenterProtocol!
+	var presenter: TableViewDelegateOutput!
 
-	init(tableView: CustomTableView, presenter: MainPresenterProtocol){
+	init(tableView: CustomTableView, presenter: TableViewDelegateOutput){
 		super.init()
 		self.tableView = tableView
 		self.tableView.delegate = self

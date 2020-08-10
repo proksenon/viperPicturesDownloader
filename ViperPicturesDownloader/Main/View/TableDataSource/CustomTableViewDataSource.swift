@@ -11,9 +11,10 @@ import UIKit
 final class CustomTableViewDataSource:NSObject, UITableViewDataSource {
 
 	var tableView: CustomTableView!
-	var presenter: MainPresenterProtocol!
+	var presenter: TableViewDataSourceOutPutProtocol!
+//	var presenter: MainPresenterProtocol!
 	
-	init(tableView: CustomTableView, presenter: MainPresenterProtocol){
+	init(tableView: CustomTableView, presenter: TableViewDataSourceOutPutProtocol){
 		super.init()
 		self.tableView = tableView
 		self.tableView.dataSource = self

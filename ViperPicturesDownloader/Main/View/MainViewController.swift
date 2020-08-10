@@ -8,9 +8,10 @@
 
 import UIKit
 
-final class MainViewController: UIViewController, MainViewProtocol {
+final class MainViewController: UIViewController {
 
-	var presenter: MainPresenterProtocol!
+	typealias Presenter = MainViewOutputProtocol & TableViewDataSourceOutPutProtocol & TableViewDelegateOutput
+	var viewOutput: Presenter!
 	let configurator: MainConfiguratorProtocol = MainConfigurator()
 	var tableView: CustomTableView!
 	var customTableViewDataSource: CustomTableViewDataSource!
@@ -20,15 +21,37 @@ final class MainViewController: UIViewController, MainViewProtocol {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configurator.configure(with: self)
-		presenter.configureView()
+		viewOutput.configureView()
 	}
 
+//	func setTableView() {
+//		tableView = CustomTableView()
+//		view.addSubview(tableView)
+//		tableView.setTableView(viewController: self)
+//		customTableViewDataSource = CustomTableViewDataSource(tableView: tableView, presenter: viewOutput)
+//		customTableViewDelegate = CustomTableViewDelegate(tableView: tableView, presenter: viewOutput)
+//	}
+//	func setButton() {
+//		button = UIBarButtonItem(title: "Collection",
+//								 style: UIBarButtonItem.Style.done,
+//								 target: self,
+//								 action: #selector(makeCollection(_:))
+//								)
+//		navigationItem.rightBarButtonItem = button
+//	}
+//
+//	@objc func makeCollection(_ sender: UIBarButtonItem){
+//		viewOutput.pushCollection()
+//	}
+}
+
+extension MainViewController: MainViewInputProtocol {
 	func setTableView() {
 		tableView = CustomTableView()
 		view.addSubview(tableView)
 		tableView.setTableView(viewController: self)
-		customTableViewDataSource = CustomTableViewDataSource(tableView: tableView, presenter: presenter)
-		customTableViewDelegate = CustomTableViewDelegate(tableView: tableView, presenter: presenter)
+		customTableViewDataSource = CustomTableViewDataSource(tableView: tableView, presenter: viewOutput)
+		customTableViewDelegate = CustomTableViewDelegate(tableView: tableView, presenter: viewOutput)
 	}
 	func setButton() {
 		button = UIBarButtonItem(title: "Collection",
@@ -40,6 +63,6 @@ final class MainViewController: UIViewController, MainViewProtocol {
 	}
 
 	@objc func makeCollection(_ sender: UIBarButtonItem){
-		presenter.pushCollection()
+		viewOutput.pushCollection()
 	}
 }

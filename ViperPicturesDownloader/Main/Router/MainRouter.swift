@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MainRouter : MainRouterProtocol {
+final class MainRouter : MainRouterInput {
 
 	weak var viewController: MainViewController!
 

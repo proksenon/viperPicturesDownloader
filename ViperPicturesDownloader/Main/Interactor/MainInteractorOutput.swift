@@ -1,5 +1,5 @@
 //
-//  MainViewProtocol.swift
+//  MainInteractorOutput.swift
 //  ViperPicturesDownloader
 //
 //  Created by 18579132 on 10.08.2020.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-protocol MainViewProtocol: class {
-	func setTableView()
-	func setButton()
+protocol MainInteractorOutput: class {
+	
 }

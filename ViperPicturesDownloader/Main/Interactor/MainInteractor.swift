@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class MainInteractor : MainInteractorProtocol {
+final class MainInteractor : MainInteractorInput {
 
-	weak var presenter: MainPresenterProtocol!
+	weak var presenter: MainInteractorOutput!
 	let entities = MainEntities()
 	var imageNameManager: ImageNameManagerProtocol!
 	var fileProvider: FileProviderProtocol!
@@ -20,7 +20,7 @@ final class MainInteractor : MainInteractorProtocol {
 	var userDefaultsWork: UserDefaultsWorkProtocol!
 	var activityIndicator: ActivityIndicatorProtocol!
 
-	init(presenter: MainPresenterProtocol,
+	init(presenter: MainInteractorOutput,
 		 imageNameManager: ImageNameManagerProtocol = ImageNameManager(),
 		 fileProvider: FileProviderProtocol = FileProvider(),
 		 encryptionManager: EncryptionManagerProtocol = EncryptionManager(),

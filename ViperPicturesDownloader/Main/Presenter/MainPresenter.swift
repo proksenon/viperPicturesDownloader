@@ -9,41 +9,14 @@
 
 import Foundation
 
-final class MainPresenter: MainPresenterProtocol{
+final class MainPresenter {
 
-	weak var view: MainViewProtocol!
-	var interactor: MainInteractorProtocol!
-	var router: MainRouterProtocol!
+	weak var view: MainViewInputProtocol!
+	var interactor: MainInteractorInput!
+	var router: MainRouterInput!
 
-	init(view: MainViewProtocol) {
+	init(view: MainViewInputProtocol) {
 		self.view = view
-	}
-
-	func pushCollection() {
-		router.pushCollection()
-	}
-
-	func configureView() {
-		view.setTableView()
-		view.setButton()
-		freeStorage()
-//		freeALL()
-	}
-
-	func didSelect(indexPath: IndexPath) {
-		getImage(indexPath: indexPath, size: ImageSize(size: nil)) { (image) in
-			self.router.push(image: image)
-		}
-	}
-
-	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
-		interactor.getImage(indexPath: indexPath, size: size) { (image) in
-			completion(image)
-		}
-	}
-
-	func numberOfRows() ->Int {
-		return interactor.numberOfRows()
 	}
 
 	private func freeStorage() {
@@ -55,7 +28,35 @@ final class MainPresenter: MainPresenterProtocol{
 	private func freeALL(){
 		interactor.freeALL()
 	}
-	
+
+}
+
+extension MainPresenter: MainViewOutputProtocol {
+
+	func pushCollection() {
+		router.pushCollection()
+	}
+
+	func configureView() {
+		view.setTableView()
+		view.setButton()
+		freeStorage()
+//		freeALL()
+	}
+}
+
+extension MainPresenter: TableViewDelegateOutput {
+
+	func didSelect(indexPath: IndexPath) {
+		getImage(indexPath: indexPath, size: ImageSize(size: nil)) { (image) in
+			self.router.push(image: image)
+		}
+	}
+
+}
+
+extension MainPresenter: TableViewDataSourceOutPutProtocol {
+
 	func setUpActivity(viewModel: ViewForActivity) {
 		interactor.setUpActivityIndicator(viewModel: viewModel)
 	}
@@ -67,4 +68,18 @@ final class MainPresenter: MainPresenterProtocol{
 	func stopActivity() {
 		interactor.stopActivity()
 	}
+
+	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
+		interactor.getImage(indexPath: indexPath, size: size) { (image) in
+			completion(image)
+		}
+	}
+
+	func numberOfRows() ->Int {
+		return interactor.numberOfRows()
+	}
+}
+
+extension MainPresenter: MainInteractorOutput {
+	
 }

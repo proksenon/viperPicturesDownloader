@@ -1,5 +1,5 @@
 //
-//  MainRouterProtocol.swift
+//  TableViewDelegateOutput.swift
 //  ViperPicturesDownloader
 //
 //  Created by 18579132 on 10.08.2020.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-protocol MainRouterProtocol: class {
-	func pushCollection()
-	func push(image: Image)
+protocol TableViewDelegateOutput: class {
+	func didSelect(indexPath: IndexPath)
 }
