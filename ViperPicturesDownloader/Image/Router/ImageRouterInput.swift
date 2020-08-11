@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol ImageRouterProtocol: class {
+protocol ImageRouterInput: class {
 	func pop()
 }

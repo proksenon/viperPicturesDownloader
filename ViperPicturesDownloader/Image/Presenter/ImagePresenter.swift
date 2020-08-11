@@ -8,15 +8,19 @@
 
 import Foundation
 
-class ImagePresenter: ImagePresenterProtocol {
+class ImagePresenter {
 
-	weak var view: ImageViewProtocol!
-	var interactor: ImageInteractorProtocol!
-	var router: ImageRouterProtocol!
+	weak var view: ImageViewInput!
+	var interactor: ImageInteractorInput!
+	var router: ImageRouterInput!
 
-	init(view: ImageViewProtocol) {
+	init(view: ImageViewInput) {
 		self.view = view
 	}
+
+}
+
+extension ImagePresenter: ImageViewOutput{
 
 	func configureView() {
 		view.loadImageView()
@@ -27,5 +31,6 @@ class ImagePresenter: ImagePresenterProtocol {
 	func popViewController() {
 		router.pop()
 	}
-
 }
+
+extension ImagePresenter: ImageInteractorOuput {}

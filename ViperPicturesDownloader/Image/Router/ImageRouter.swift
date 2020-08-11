@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ImageRouter: ImageRouterProtocol {
+class ImageRouter: ImageRouterInput {
 
 	weak var viewController: ImageViewController!
 

@@ -8,36 +8,38 @@
 
 import UIKit
 
-class ImageViewController: UIViewController, ImageViewProtocol {
+class ImageViewController: UIViewController {
 
-	var presenter: ImagePresenterProtocol!
+	var outputView: ImageViewOutput!
 	let configurator: ImageConfiguratorProtocol = ImageConfigurator()
 	var image: UIImage?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configurator.configure(with: self)
-		presenter.configureView()
+		outputView.configureView()
 	}
+
+}
+
+extension ImageViewController: ImageViewInput {
 
 	func backgroundColor() {
 		view.backgroundColor = .white
 	}
-	
+
 	func loadImageView() {
 		let view = FullImageView()
 		view.imageView.image = image
 		self.view = view
 	}
-	
+
 	func tapImage() {
 		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureDone))
         self.view.addGestureRecognizer(tapGesture)
 	}
 
 	@objc func tapGestureDone(){
-		presenter.popViewController()
-
+		outputView.popViewController()
 	}
-
 }

@@ -8,10 +8,10 @@
 
 import Foundation
 
-class ImageInteractor: ImageInteractorProtocol {
-	weak var presenter: ImagePresenterProtocol!
+class ImageInteractor: ImageInteractorInput {
+	weak var presenter: ImageInteractorOuput!
 
-	init(presenter: ImagePresenterProtocol) {
+	init(presenter: ImageInteractorOuput) {
 		self.presenter = presenter
 	}
 }
