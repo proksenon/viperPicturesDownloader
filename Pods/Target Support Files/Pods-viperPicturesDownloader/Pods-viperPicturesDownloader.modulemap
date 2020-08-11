@@ -1,5 +1,5 @@
-framework module Pods_viperPicturesDownloader {
-  umbrella header "Pods-viperPicturesDownloader-umbrella.h"
+framework module Pods_ViperPicturesDownloader {
+  umbrella header "Pods-ViperPicturesDownloader-umbrella.h"
 
   export *
   module * { export * }

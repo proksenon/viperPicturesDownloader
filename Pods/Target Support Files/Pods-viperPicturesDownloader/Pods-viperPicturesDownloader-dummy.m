@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_viperPicturesDownloader : NSObject
+@interface PodsDummy_Pods_ViperPicturesDownloader : NSObject
 @end
-@implementation PodsDummy_Pods_viperPicturesDownloader
+@implementation PodsDummy_Pods_ViperPicturesDownloader
 @end

@@ -3,34 +3,34 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		004B51CA5CC51496519F2DAD30726F73 /* Pods-ViperPicturesDownloader-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC523F5CCDC4A70AA93169CE33062C5 /* Pods-ViperPicturesDownloader-dummy.m */; };
 		1DA384FB7CDA6A89664EFC29290F51FC /* RNCryptor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E15CB358CA1E43940997B8F4FD5815A8 /* RNCryptor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1DDCB56D7D51507AFE6E231C8BB918 /* Pods-ViperPicturesDownloader-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 59C95AD6B74039B343B80AC8A43CF147 /* Pods-ViperPicturesDownloader-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		275ABEB51B3E6CFB1F99DC846CF08578 /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF63392BE80C467485BB61E64B823D7 /* RNCryptor.swift */; };
 		320E018022758AFD782991C7D8854DB1 /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124585FE4192A16BF6F2D66310CDCB80 /* TegKeychainConstants.swift */; };
 		36AC8E4868BD5C97410702782309235B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		485A776035D4B1EF97E8AE0E95A66502 /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E87BAD703EF04D064B5CA6D14B2EC /* KeychainSwiftAccessOptions.swift */; };
 		4B255EB0716A1BB473E696C20812C697 /* KeychainSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7193DE40C08CA5D2144F0CE3274BD8B8 /* KeychainSwift-dummy.m */; };
 		4DC6C132AEF3E02BDD5ABC89333233B3 /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976EF496602CA31E243D3F6A31A072C /* KeychainSwift.swift */; };
-		5FF5FD80FD8238389703E123BE193011 /* Pods-viperPicturesDownloader-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 340172D2AE55B20D4146F43BA87A8FA4 /* Pods-viperPicturesDownloader-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6820B3638809F3914194216BB5A3C2A2 /* RNCryptor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8850F8A654556B59D4B4CC504551B14A /* RNCryptor-dummy.m */; };
 		74DDBF47539EB98680E83BD95227DD8D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		8038F404FAE087E6B36B55686945C1BD /* Pods-viperPicturesDownloader-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E314F3A3EDE2922AC6F67F413C5D07 /* Pods-viperPicturesDownloader-dummy.m */; };
+		BBA3D6826E7BD8C75541C151F573D57E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		C3905037CE8620D38EF4DA0AB90C106C /* KeychainSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B09193280A64780B48883761F52EC0A /* KeychainSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA04C1834934EBD77A4F002AB54CB626 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9189EE0613C284EF60DFA0C779FC4C9D /* PBXContainerItemProxy */ = {
+		0FEA43A52933CFA4E768F8774353F841 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 07E54A78BCF82272E99319D7F7F5E8C1;
 			remoteInfo = KeychainSwift;
 		};
-		B206AC7143F3CBB9CAB671AE81843D4C /* PBXContainerItemProxy */ = {
+		97F5225632696A922F1883A42D3BDEC0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -40,54 +40,54 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A5B9E58FD739D89AA7330C44FD0D047 /* Pods-viperPicturesDownloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-viperPicturesDownloader.debug.xcconfig"; sourceTree = "<group>"; };
 		0B09193280A64780B48883761F52EC0A /* KeychainSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainSwift-umbrella.h"; sourceTree = "<group>"; };
 		124585FE4192A16BF6F2D66310CDCB80 /* TegKeychainConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TegKeychainConstants.swift; path = Sources/TegKeychainConstants.swift; sourceTree = "<group>"; };
-		247022668999185B233BC1781B53B4FA /* Pods-viperPicturesDownloader-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-viperPicturesDownloader-acknowledgements.plist"; sourceTree = "<group>"; };
+		140E2ED56F9EC64FC1E5AFA39D46469F /* Pods-ViperPicturesDownloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ViperPicturesDownloader.debug.xcconfig"; sourceTree = "<group>"; };
 		27FE8F55066CFEEB31EC31DAB154900C /* RNCryptor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RNCryptor.debug.xcconfig; sourceTree = "<group>"; };
-		286D1C6D9E96EF57C8933D31AD607B9E /* Pods-viperPicturesDownloader-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-viperPicturesDownloader-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2DC523F5CCDC4A70AA93169CE33062C5 /* Pods-ViperPicturesDownloader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ViperPicturesDownloader-dummy.m"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		340172D2AE55B20D4146F43BA87A8FA4 /* Pods-viperPicturesDownloader-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-viperPicturesDownloader-umbrella.h"; sourceTree = "<group>"; };
+		375985AC59D5D66C7B3330C2DBC74EE9 /* Pods-ViperPicturesDownloader.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ViperPicturesDownloader.modulemap"; sourceTree = "<group>"; };
+		3ADC96CEFE37A59A3AF8EB08B95FC181 /* Pods-ViperPicturesDownloader-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ViperPicturesDownloader-acknowledgements.markdown"; sourceTree = "<group>"; };
+		466D02FBB25525DF2533604118A9944D /* Pods-ViperPicturesDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ViperPicturesDownloader.release.xcconfig"; sourceTree = "<group>"; };
+		4AC319E8E240639F532CB853BB23389B /* Pods-ViperPicturesDownloader-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ViperPicturesDownloader-Info.plist"; sourceTree = "<group>"; };
+		59C95AD6B74039B343B80AC8A43CF147 /* Pods-ViperPicturesDownloader-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ViperPicturesDownloader-umbrella.h"; sourceTree = "<group>"; };
 		5E6E87BAD703EF04D064B5CA6D14B2EC /* KeychainSwiftAccessOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainSwiftAccessOptions.swift; path = Sources/KeychainSwiftAccessOptions.swift; sourceTree = "<group>"; };
-		6117E4129F6AACC340564AB8F893EE5D /* Pods-viperPicturesDownloader-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-viperPicturesDownloader-Info.plist"; sourceTree = "<group>"; };
-		68037D02BDAF8E356F62FEA56B66DF57 /* Pods-viperPicturesDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-viperPicturesDownloader.release.xcconfig"; sourceTree = "<group>"; };
 		7193DE40C08CA5D2144F0CE3274BD8B8 /* KeychainSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KeychainSwift-dummy.m"; sourceTree = "<group>"; };
 		777FA23F9B03656FBE8FD03D486821E6 /* KeychainSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KeychainSwift.modulemap; sourceTree = "<group>"; };
-		82E314F3A3EDE2922AC6F67F413C5D07 /* Pods-viperPicturesDownloader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-viperPicturesDownloader-dummy.m"; sourceTree = "<group>"; };
+		8348D910426E96C31E45A19BD832FC63 /* Pods-ViperPicturesDownloader-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ViperPicturesDownloader-acknowledgements.plist"; sourceTree = "<group>"; };
 		8850F8A654556B59D4B4CC504551B14A /* RNCryptor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RNCryptor-dummy.m"; sourceTree = "<group>"; };
+		8E6D2BDE8CE9CA94D127CEC8B36AEEC4 /* Pods-ViperPicturesDownloader-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ViperPicturesDownloader-frameworks.sh"; sourceTree = "<group>"; };
 		94F4A8FD01781F3596706603AF8223F3 /* RNCryptor-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RNCryptor-Info.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E0FD012ADC3C7179C684035672383E5 /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeychainSwift.framework; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE8249485C7C1BAE6CB5518EE580ECDA /* Pods-viperPicturesDownloader-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-viperPicturesDownloader-frameworks.sh"; sourceTree = "<group>"; };
+		9F678C79D641C0A61B3097CF0D6606FB /* Pods_ViperPicturesDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ViperPicturesDownloader.framework; path = "Pods-ViperPicturesDownloader.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B05CA429B8F1DE3DEBA4ECF32FF60CC1 /* RNCryptor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNCryptor-prefix.pch"; sourceTree = "<group>"; };
 		B7E91033AA2FB40C9AFC221046EC2DD3 /* KeychainSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainSwift-prefix.pch"; sourceTree = "<group>"; };
 		B976EF496602CA31E243D3F6A31A072C /* KeychainSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainSwift.swift; path = Sources/KeychainSwift.swift; sourceTree = "<group>"; };
 		C45019D6F665799A86F191D410418962 /* KeychainSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KeychainSwift.debug.xcconfig; sourceTree = "<group>"; };
 		C741EA5B2CDE34155CA4DCF257C4D37C /* RNCryptor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RNCryptor.release.xcconfig; sourceTree = "<group>"; };
-		D6DCEA49FB3C42EC68FD5775A7664A2C /* Pods-viperPicturesDownloader.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-viperPicturesDownloader.modulemap"; sourceTree = "<group>"; };
 		DAA72118F020908CEC5E8E7F752A9DE2 /* KeychainSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KeychainSwift.release.xcconfig; sourceTree = "<group>"; };
 		DB4F78B9B99276C662FC825FDE5C85CD /* RNCryptor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RNCryptor.modulemap; sourceTree = "<group>"; };
 		DF1E48AB9D1C7CFF4EE0D2012CBC85CF /* KeychainSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KeychainSwift-Info.plist"; sourceTree = "<group>"; };
 		DFF63392BE80C467485BB61E64B823D7 /* RNCryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RNCryptor.swift; path = Sources/RNCryptor/RNCryptor.swift; sourceTree = "<group>"; };
 		E15CB358CA1E43940997B8F4FD5815A8 /* RNCryptor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNCryptor-umbrella.h"; sourceTree = "<group>"; };
 		F6320389F628433B78C81FB217A0485D /* RNCryptor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RNCryptor.framework; path = RNCryptor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6C936BB2CAABBD714D132E0C0EDD3F3 /* Pods_viperPicturesDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_viperPicturesDownloader.framework; path = "Pods-viperPicturesDownloader.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		14BF621FE7F8C365F6F58CF6C8F0C754 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CA04C1834934EBD77A4F002AB54CB626 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4A2A9F195399A771D5E644536E9F6CF4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				74DDBF47539EB98680E83BD95227DD8D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7812CE95DF78499BB5EC2557F7EB8FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBA3D6826E7BD8C75541C151F573D57E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,22 +111,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		267BC8E38616A9E4BB0B2943C71C53EE /* Products */ = {
+		3ACCC38CE0D63F50C15030B32AE7B466 /* Pods-ViperPicturesDownloader */ = {
 			isa = PBXGroup;
 			children = (
-				9E0FD012ADC3C7179C684035672383E5 /* KeychainSwift.framework */,
-				F6C936BB2CAABBD714D132E0C0EDD3F3 /* Pods_viperPicturesDownloader.framework */,
-				F6320389F628433B78C81FB217A0485D /* RNCryptor.framework */,
+				375985AC59D5D66C7B3330C2DBC74EE9 /* Pods-ViperPicturesDownloader.modulemap */,
+				3ADC96CEFE37A59A3AF8EB08B95FC181 /* Pods-ViperPicturesDownloader-acknowledgements.markdown */,
+				8348D910426E96C31E45A19BD832FC63 /* Pods-ViperPicturesDownloader-acknowledgements.plist */,
+				2DC523F5CCDC4A70AA93169CE33062C5 /* Pods-ViperPicturesDownloader-dummy.m */,
+				8E6D2BDE8CE9CA94D127CEC8B36AEEC4 /* Pods-ViperPicturesDownloader-frameworks.sh */,
+				4AC319E8E240639F532CB853BB23389B /* Pods-ViperPicturesDownloader-Info.plist */,
+				59C95AD6B74039B343B80AC8A43CF147 /* Pods-ViperPicturesDownloader-umbrella.h */,
+				140E2ED56F9EC64FC1E5AFA39D46469F /* Pods-ViperPicturesDownloader.debug.xcconfig */,
+				466D02FBB25525DF2533604118A9944D /* Pods-ViperPicturesDownloader.release.xcconfig */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3F8F0934A36363F0B40FE116F12347E6 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E21C0179C9761EC5A5EBD52713CE135C /* Pods-viperPicturesDownloader */,
-			);
-			name = "Targets Support Files";
+			name = "Pods-ViperPicturesDownloader";
+			path = "Target Support Files/Pods-ViperPicturesDownloader";
 			sourceTree = "<group>";
 		};
 		55829C065C6EAC86F29161692BD30B61 /* Support Files */ = {
@@ -142,6 +141,24 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/KeychainSwift";
+			sourceTree = "<group>";
+		};
+		770B339448BFC48A52DA1849626D031B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9E0FD012ADC3C7179C684035672383E5 /* KeychainSwift.framework */,
+				9F678C79D641C0A61B3097CF0D6606FB /* Pods_ViperPicturesDownloader.framework */,
+				F6320389F628433B78C81FB217A0485D /* RNCryptor.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78BB649EAF27A3686055A7FB5FC74C49 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3ACCC38CE0D63F50C15030B32AE7B466 /* Pods-ViperPicturesDownloader */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		7A921D451FFCF2C6E8E80FC6E473C9F1 /* Support Files */ = {
@@ -195,8 +212,8 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				182AB421F12A0F9EA8BDA6FD5A3E0148 /* Pods */,
-				267BC8E38616A9E4BB0B2943C71C53EE /* Products */,
-				3F8F0934A36363F0B40FE116F12347E6 /* Targets Support Files */,
+				770B339448BFC48A52DA1849626D031B /* Products */,
+				78BB649EAF27A3686055A7FB5FC74C49 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -206,23 +223,6 @@
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E21C0179C9761EC5A5EBD52713CE135C /* Pods-viperPicturesDownloader */ = {
-			isa = PBXGroup;
-			children = (
-				D6DCEA49FB3C42EC68FD5775A7664A2C /* Pods-viperPicturesDownloader.modulemap */,
-				286D1C6D9E96EF57C8933D31AD607B9E /* Pods-viperPicturesDownloader-acknowledgements.markdown */,
-				247022668999185B233BC1781B53B4FA /* Pods-viperPicturesDownloader-acknowledgements.plist */,
-				82E314F3A3EDE2922AC6F67F413C5D07 /* Pods-viperPicturesDownloader-dummy.m */,
-				AE8249485C7C1BAE6CB5518EE580ECDA /* Pods-viperPicturesDownloader-frameworks.sh */,
-				6117E4129F6AACC340564AB8F893EE5D /* Pods-viperPicturesDownloader-Info.plist */,
-				340172D2AE55B20D4146F43BA87A8FA4 /* Pods-viperPicturesDownloader-umbrella.h */,
-				0A5B9E58FD739D89AA7330C44FD0D047 /* Pods-viperPicturesDownloader.debug.xcconfig */,
-				68037D02BDAF8E356F62FEA56B66DF57 /* Pods-viperPicturesDownloader.release.xcconfig */,
-			);
-			name = "Pods-viperPicturesDownloader";
-			path = "Target Support Files/Pods-viperPicturesDownloader";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,11 +236,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8844135E05B9E91F588D003357E6E791 /* Headers */ = {
+		45D9A3844F2FBF0A0D24B667F5926F76 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FF5FD80FD8238389703E123BE193011 /* Pods-viperPicturesDownloader-umbrella.h in Headers */,
+				1F1DDCB56D7D51507AFE6E231C8BB918 /* Pods-ViperPicturesDownloader-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,24 +291,24 @@
 			productReference = 9E0FD012ADC3C7179C684035672383E5 /* KeychainSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C8CE0A06652ACC0E3FE00EEB2F63A7F4 /* Pods-viperPicturesDownloader */ = {
+		208E3217829BC17D8F6E221CD8B01D57 /* Pods-ViperPicturesDownloader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EB297FC662349E3E50F52E1DC1384385 /* Build configuration list for PBXNativeTarget "Pods-viperPicturesDownloader" */;
+			buildConfigurationList = B1CEC04E4FA24AD19FB04DCF09AEE06B /* Build configuration list for PBXNativeTarget "Pods-ViperPicturesDownloader" */;
 			buildPhases = (
-				8844135E05B9E91F588D003357E6E791 /* Headers */,
-				A1356F006B554501AD748040885A4024 /* Sources */,
-				14BF621FE7F8C365F6F58CF6C8F0C754 /* Frameworks */,
-				C7528268BC0AF0552161446B0B972482 /* Resources */,
+				45D9A3844F2FBF0A0D24B667F5926F76 /* Headers */,
+				3EEE00CC5F56625B9C5E0D25D6355F7F /* Sources */,
+				B7812CE95DF78499BB5EC2557F7EB8FA /* Frameworks */,
+				498B90C175CACF6B22D142D9AD6BD908 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9012F3A520139DAEDF7B6817DCD9322A /* PBXTargetDependency */,
-				58CB5DE63AA2F8BEFF11BB84C5D1A766 /* PBXTargetDependency */,
+				A2B66C25C581412C0376EEA23878A899 /* PBXTargetDependency */,
+				7D336442722BF53B5DEF8971C1F7C54E /* PBXTargetDependency */,
 			);
-			name = "Pods-viperPicturesDownloader";
-			productName = "Pods-viperPicturesDownloader";
-			productReference = F6C936BB2CAABBD714D132E0C0EDD3F3 /* Pods_viperPicturesDownloader.framework */;
+			name = "Pods-ViperPicturesDownloader";
+			productName = "Pods-ViperPicturesDownloader";
+			productReference = 9F678C79D641C0A61B3097CF0D6606FB /* Pods_ViperPicturesDownloader.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -321,7 +321,7 @@
 				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -329,12 +329,12 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 267BC8E38616A9E4BB0B2943C71C53EE /* Products */;
+			productRefGroup = 770B339448BFC48A52DA1849626D031B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				07E54A78BCF82272E99319D7F7F5E8C1 /* KeychainSwift */,
-				C8CE0A06652ACC0E3FE00EEB2F63A7F4 /* Pods-viperPicturesDownloader */,
+				208E3217829BC17D8F6E221CD8B01D57 /* Pods-ViperPicturesDownloader */,
 				05CCA2AD142519DF6FED0979BACBC149 /* RNCryptor */,
 			);
 		};
@@ -348,14 +348,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		859C8E8E4FAA8DADC5BD9446520301C3 /* Resources */ = {
+		498B90C175CACF6B22D142D9AD6BD908 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C7528268BC0AF0552161446B0B972482 /* Resources */ = {
+		859C8E8E4FAA8DADC5BD9446520301C3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -365,11 +365,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A1356F006B554501AD748040885A4024 /* Sources */ = {
+		3EEE00CC5F56625B9C5E0D25D6355F7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8038F404FAE087E6B36B55686945C1BD /* Pods-viperPicturesDownloader-dummy.m in Sources */,
+				004B51CA5CC51496519F2DAD30726F73 /* Pods-ViperPicturesDownloader-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,21 +396,59 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		58CB5DE63AA2F8BEFF11BB84C5D1A766 /* PBXTargetDependency */ = {
+		7D336442722BF53B5DEF8971C1F7C54E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RNCryptor;
 			target = 05CCA2AD142519DF6FED0979BACBC149 /* RNCryptor */;
-			targetProxy = B206AC7143F3CBB9CAB671AE81843D4C /* PBXContainerItemProxy */;
+			targetProxy = 97F5225632696A922F1883A42D3BDEC0 /* PBXContainerItemProxy */;
 		};
-		9012F3A520139DAEDF7B6817DCD9322A /* PBXTargetDependency */ = {
+		A2B66C25C581412C0376EEA23878A899 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = KeychainSwift;
 			target = 07E54A78BCF82272E99319D7F7F5E8C1 /* KeychainSwift */;
-			targetProxy = 9189EE0613C284EF60DFA0C779FC4C9D /* PBXContainerItemProxy */;
+			targetProxy = 0FEA43A52933CFA4E768F8774353F841 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		1195490036849EF6E272372AB676D71D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 140E2ED56F9EC64FC1E5AFA39D46469F /* Pods-ViperPicturesDownloader.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ViperPicturesDownloader/Pods-ViperPicturesDownloader-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ViperPicturesDownloader/Pods-ViperPicturesDownloader.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		1F2F5BDAADEE4BA4A4D19C5A590ECE1C /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DAA72118F020908CEC5E8E7F752A9DE2 /* KeychainSwift.release.xcconfig */;
@@ -481,6 +519,45 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		4A04F9D93C426B92527E4013185AE012 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 466D02FBB25525DF2533604118A9944D /* Pods-ViperPicturesDownloader.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ViperPicturesDownloader/Pods-ViperPicturesDownloader-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ViperPicturesDownloader/Pods-ViperPicturesDownloader.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		7CA5C8FFC46FFCF7A1668944A693C7B3 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -582,45 +659,6 @@
 			};
 			name = Debug;
 		};
-		B4C44FA03367E2A424E1B4E3FE6B7686 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68037D02BDAF8E356F62FEA56B66DF57 /* Pods-viperPicturesDownloader.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-viperPicturesDownloader/Pods-viperPicturesDownloader-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-viperPicturesDownloader/Pods-viperPicturesDownloader.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		CE73D6CD1C3896EA28C80C06CEFD5FE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27FE8F55066CFEEB31EC31DAB154900C /* RNCryptor.debug.xcconfig */;
@@ -716,44 +754,6 @@
 			};
 			name = Release;
 		};
-		F8A53F07C9A67D82FDF4A49AD46FEFD4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A5B9E58FD739D89AA7330C44FD0D047 /* Pods-viperPicturesDownloader.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-viperPicturesDownloader/Pods-viperPicturesDownloader-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-viperPicturesDownloader/Pods-viperPicturesDownloader.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -775,20 +775,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		B1CEC04E4FA24AD19FB04DCF09AEE06B /* Build configuration list for PBXNativeTarget "Pods-ViperPicturesDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1195490036849EF6E272372AB676D71D /* Debug */,
+				4A04F9D93C426B92527E4013185AE012 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B6B334E2C50C2C0C66D96CADAEE2EA01 /* Build configuration list for PBXNativeTarget "KeychainSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				484033624D954C134B63F540BA990534 /* Debug */,
 				1F2F5BDAADEE4BA4A4D19C5A590ECE1C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EB297FC662349E3E50F52E1DC1384385 /* Build configuration list for PBXNativeTarget "Pods-viperPicturesDownloader" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F8A53F07C9A67D82FDF4A49AD46FEFD4 /* Debug */,
-				B4C44FA03367E2A424E1B4E3FE6B7686 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

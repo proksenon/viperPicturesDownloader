@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2FF23DC48FBD6BA451C02189 /* Pods_viperPicturesDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8067D29AB86DCAC5BD37D4C /* Pods_viperPicturesDownloader.framework */; };
+		4F188A2D6393B40C0F9F3F2B /* Pods_ViperPicturesDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB78EE8CB53CC1D2BF018CD /* Pods_ViperPicturesDownloader.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		D50F505F24D827840042BAD2 /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F505E24D827840042BAD2 /* CustomTableView.swift */; };
 		D50F506124D827BB0042BAD2 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F506024D827BB0042BAD2 /* CustomTableViewCell.swift */; };
 		D50F506524D8356D0042BAD2 /* CustomTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F506424D8356D0042BAD2 /* CustomTableViewDataSource.swift */; };
@@ -72,6 +72,7 @@
 		D50F518924E1808C0042BAD2 /* CollectionViewDelegateOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F518824E1808C0042BAD2 /* CollectionViewDelegateOutput.swift */; };
 		D50F518B24E181360042BAD2 /* CollectionInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F518A24E181360042BAD2 /* CollectionInteractorInput.swift */; };
 		D50F518D24E1814C0042BAD2 /* CollectionInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F518C24E1814C0042BAD2 /* CollectionInteractorOutput.swift */; };
+		D50F51B124E275DC0042BAD2 /* ViperPicturesDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F51B024E275DC0042BAD2 /* ViperPicturesDownloaderTests.swift */; };
 		D56A290524D42DEB00178564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A290424D42DEB00178564 /* AppDelegate.swift */; };
 		D56A290724D42DEB00178564 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A290624D42DEB00178564 /* SceneDelegate.swift */; };
 		D56A290924D42DEB00178564 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A290824D42DEB00178564 /* MainViewController.swift */; };
@@ -84,9 +85,20 @@
 		D56A292024D4321F00178564 /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A291F24D4321F00178564 /* MainConfigurator.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D50F51B324E275DC0042BAD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D56A28F924D42DEB00178564 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D56A290024D42DEB00178564;
+			remoteInfo = ViperPicturesDownloader;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		827260D38CD2306C396AE161 /* Pods-viperPicturesDownloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viperPicturesDownloader.debug.xcconfig"; path = "Target Support Files/Pods-viperPicturesDownloader/Pods-viperPicturesDownloader.debug.xcconfig"; sourceTree = "<group>"; };
-		C8067D29AB86DCAC5BD37D4C /* Pods_viperPicturesDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_viperPicturesDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32179CF329B2741EBAA48969 /* Pods-ViperPicturesDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViperPicturesDownloader.release.xcconfig"; path = "Target Support Files/Pods-ViperPicturesDownloader/Pods-ViperPicturesDownloader.release.xcconfig"; sourceTree = "<group>"; };
+		ABB78EE8CB53CC1D2BF018CD /* Pods_ViperPicturesDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViperPicturesDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C378E92C71E5A248718810BA /* Pods-ViperPicturesDownloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViperPicturesDownloader.debug.xcconfig"; path = "Target Support Files/Pods-ViperPicturesDownloader/Pods-ViperPicturesDownloader.debug.xcconfig"; sourceTree = "<group>"; };
 		D50F505E24D827840042BAD2 /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
 		D50F506024D827BB0042BAD2 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		D50F506424D8356D0042BAD2 /* CustomTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewDataSource.swift; sourceTree = "<group>"; };
@@ -151,7 +163,9 @@
 		D50F518824E1808C0042BAD2 /* CollectionViewDelegateOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDelegateOutput.swift; sourceTree = "<group>"; };
 		D50F518A24E181360042BAD2 /* CollectionInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionInteractorInput.swift; sourceTree = "<group>"; };
 		D50F518C24E1814C0042BAD2 /* CollectionInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionInteractorOutput.swift; sourceTree = "<group>"; };
-		D51DEBB2B094A1CA9AE74478 /* Pods-viperPicturesDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viperPicturesDownloader.release.xcconfig"; path = "Target Support Files/Pods-viperPicturesDownloader/Pods-viperPicturesDownloader.release.xcconfig"; sourceTree = "<group>"; };
+		D50F51AE24E275DC0042BAD2 /* ViperPicturesDownloaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViperPicturesDownloaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D50F51B024E275DC0042BAD2 /* ViperPicturesDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViperPicturesDownloaderTests.swift; sourceTree = "<group>"; };
+		D50F51B224E275DC0042BAD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D56A290124D42DEB00178564 /* ViperPicturesDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViperPicturesDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56A290424D42DEB00178564 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D56A290624D42DEB00178564 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,11 +181,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D50F51AB24E275DC0042BAD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D56A28FE24D42DEB00178564 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FF23DC48FBD6BA451C02189 /* Pods_viperPicturesDownloader.framework in Frameworks */,
+				4F188A2D6393B40C0F9F3F2B /* Pods_ViperPicturesDownloader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,7 +202,7 @@
 		61D3655B247CA3B0008BD296 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C8067D29AB86DCAC5BD37D4C /* Pods_viperPicturesDownloader.framework */,
+				ABB78EE8CB53CC1D2BF018CD /* Pods_ViperPicturesDownloader.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -189,8 +210,8 @@
 		6A80086DB1B34F46F3988580 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				827260D38CD2306C396AE161 /* Pods-viperPicturesDownloader.debug.xcconfig */,
-				D51DEBB2B094A1CA9AE74478 /* Pods-viperPicturesDownloader.release.xcconfig */,
+				C378E92C71E5A248718810BA /* Pods-ViperPicturesDownloader.debug.xcconfig */,
+				32179CF329B2741EBAA48969 /* Pods-ViperPicturesDownloader.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -534,10 +555,20 @@
 			path = Collection;
 			sourceTree = "<group>";
 		};
+		D50F51AF24E275DC0042BAD2 /* ViperPicturesDownloaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				D50F51B024E275DC0042BAD2 /* ViperPicturesDownloaderTests.swift */,
+				D50F51B224E275DC0042BAD2 /* Info.plist */,
+			);
+			path = ViperPicturesDownloaderTests;
+			sourceTree = "<group>";
+		};
 		D56A28F824D42DEB00178564 = {
 			isa = PBXGroup;
 			children = (
 				D56A290324D42DEB00178564 /* ViperPicturesDownloader */,
+				D50F51AF24E275DC0042BAD2 /* ViperPicturesDownloaderTests */,
 				D56A290224D42DEB00178564 /* Products */,
 				6A80086DB1B34F46F3988580 /* Pods */,
 				61D3655B247CA3B0008BD296 /* Frameworks */,
@@ -548,6 +579,7 @@
 			isa = PBXGroup;
 			children = (
 				D56A290124D42DEB00178564 /* ViperPicturesDownloader.app */,
+				D50F51AE24E275DC0042BAD2 /* ViperPicturesDownloaderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -586,6 +618,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D50F51AD24E275DC0042BAD2 /* ViperPicturesDownloaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D50F51B724E275DC0042BAD2 /* Build configuration list for PBXNativeTarget "ViperPicturesDownloaderTests" */;
+			buildPhases = (
+				D50F51AA24E275DC0042BAD2 /* Sources */,
+				D50F51AB24E275DC0042BAD2 /* Frameworks */,
+				D50F51AC24E275DC0042BAD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D50F51B424E275DC0042BAD2 /* PBXTargetDependency */,
+			);
+			name = ViperPicturesDownloaderTests;
+			productName = ViperPicturesDownloaderTests;
+			productReference = D50F51AE24E275DC0042BAD2 /* ViperPicturesDownloaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D56A290024D42DEB00178564 /* ViperPicturesDownloader */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D56A291524D42DED00178564 /* Build configuration list for PBXNativeTarget "ViperPicturesDownloader" */;
@@ -615,6 +665,10 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = 18579132;
 				TargetAttributes = {
+					D50F51AD24E275DC0042BAD2 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = D56A290024D42DEB00178564;
+					};
 					D56A290024D42DEB00178564 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -634,11 +688,19 @@
 			projectRoot = "";
 			targets = (
 				D56A290024D42DEB00178564 /* ViperPicturesDownloader */,
+				D50F51AD24E275DC0042BAD2 /* ViperPicturesDownloaderTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D50F51AC24E275DC0042BAD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D56A28FF24D42DEB00178564 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -658,15 +720,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-viperPicturesDownloader/Pods-viperPicturesDownloader-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ViperPicturesDownloader/Pods-ViperPicturesDownloader-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-viperPicturesDownloader/Pods-viperPicturesDownloader-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ViperPicturesDownloader/Pods-ViperPicturesDownloader-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-viperPicturesDownloader/Pods-viperPicturesDownloader-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ViperPicturesDownloader/Pods-ViperPicturesDownloader-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7C6D970EC3AF833C17F217DD /* [CP] Check Pods Manifest.lock */ = {
@@ -684,7 +746,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-viperPicturesDownloader-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ViperPicturesDownloader-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -694,6 +756,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D50F51AA24E275DC0042BAD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D50F51B124E275DC0042BAD2 /* ViperPicturesDownloaderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D56A28FD24D42DEB00178564 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -774,6 +844,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D50F51B424E275DC0042BAD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D56A290024D42DEB00178564 /* ViperPicturesDownloader */;
+			targetProxy = D50F51B324E275DC0042BAD2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		D56A290A24D42DEB00178564 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -794,6 +872,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D50F51B524E275DC0042BAD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5D5RK3QAMV;
+				INFOPLIST_FILE = ViperPicturesDownloaderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = NMZabludovskiy.ViperPicturesDownloaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ViperPicturesDownloader.app/ViperPicturesDownloader";
+			};
+			name = Debug;
+		};
+		D50F51B624E275DC0042BAD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5D5RK3QAMV;
+				INFOPLIST_FILE = ViperPicturesDownloaderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = NMZabludovskiy.ViperPicturesDownloaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ViperPicturesDownloader.app/ViperPicturesDownloader";
+			};
+			name = Release;
+		};
 		D56A291324D42DED00178564 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -910,17 +1028,17 @@
 		};
 		D56A291624D42DED00178564 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 827260D38CD2306C396AE161 /* Pods-viperPicturesDownloader.debug.xcconfig */;
+			baseConfigurationReference = C378E92C71E5A248718810BA /* Pods-ViperPicturesDownloader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5D5RK3QAMV;
-				INFOPLIST_FILE = viperPicturesDownloader/Info.plist;
+				INFOPLIST_FILE = ViperPicturesDownloader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = NMZabludovskiy.viperPicturesDownloader;
+				PRODUCT_BUNDLE_IDENTIFIER = NMZabludovskiy.ViperPicturesDownloader;
 				PRODUCT_NAME = ViperPicturesDownloader;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -929,17 +1047,17 @@
 		};
 		D56A291724D42DED00178564 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D51DEBB2B094A1CA9AE74478 /* Pods-viperPicturesDownloader.release.xcconfig */;
+			baseConfigurationReference = 32179CF329B2741EBAA48969 /* Pods-ViperPicturesDownloader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5D5RK3QAMV;
-				INFOPLIST_FILE = viperPicturesDownloader/Info.plist;
+				INFOPLIST_FILE = ViperPicturesDownloader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = NMZabludovskiy.viperPicturesDownloader;
+				PRODUCT_BUNDLE_IDENTIFIER = NMZabludovskiy.ViperPicturesDownloader;
 				PRODUCT_NAME = ViperPicturesDownloader;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -949,6 +1067,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D50F51B724E275DC0042BAD2 /* Build configuration list for PBXNativeTarget "ViperPicturesDownloaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D50F51B524E275DC0042BAD2 /* Debug */,
+				D50F51B624E275DC0042BAD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D56A28FC24D42DEB00178564 /* Build configuration list for PBXProject "ViperPicturesDownloader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

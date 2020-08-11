@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_viperPicturesDownloaderVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_viperPicturesDownloaderVersionString[];
+FOUNDATION_EXPORT double Pods_ViperPicturesDownloaderVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_ViperPicturesDownloaderVersionString[];
 

@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/a18579132/Documents/ViperRefactor/ViperPicturesDownloader.xcodeproj">
+      location = "group:ViperPicturesDownloader.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

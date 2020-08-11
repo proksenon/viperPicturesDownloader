@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C8CE0A06652ACC0E3FE00EEB2F63A7F4"
-               BuildableName = "Pods_viperPicturesDownloader.framework"
-               BlueprintName = "Pods-viperPicturesDownloader"
+               BlueprintIdentifier = "208E3217829BC17D8F6E221CD8B01D57"
+               BuildableName = "Pods_ViperPicturesDownloader.framework"
+               BlueprintName = "Pods-ViperPicturesDownloader"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
