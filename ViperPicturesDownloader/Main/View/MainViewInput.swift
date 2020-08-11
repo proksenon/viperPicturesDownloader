@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MainViewInputProtocol: class {
+protocol MainViewInput: class {
 	func setTableView()
 	func setButton()
 }

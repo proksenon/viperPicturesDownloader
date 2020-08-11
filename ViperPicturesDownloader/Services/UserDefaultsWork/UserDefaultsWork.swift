@@ -10,7 +10,7 @@ import Foundation
 
 final class UserDefaultsWork: UserDefaultsWorkProtocol {
 	let defaults = UserDefaults.standard
-
+	/// Удаляет в юзер дефолтс данные о картинках
 	func removeObjects(urls: [String]) {
 		for url in urls {
 			defaults.removeObject(forKey: url)

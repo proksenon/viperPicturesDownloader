@@ -57,9 +57,9 @@
 		D50F515624E156DF0042BAD2 /* CollectionConfiguratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F515524E156DF0042BAD2 /* CollectionConfiguratorProtocol.swift */; };
 		D50F516124E1577E0042BAD2 /* ImageRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F516024E1577E0042BAD2 /* ImageRouterInput.swift */; };
 		D50F516424E1579F0042BAD2 /* ImageConfiguratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F516324E1579F0042BAD2 /* ImageConfiguratorProtocol.swift */; };
-		D50F516D24E15DA40042BAD2 /* MainViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F516C24E15DA40042BAD2 /* MainViewInputProtocol.swift */; };
-		D50F516F24E1608C0042BAD2 /* MainViewOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F516E24E1608C0042BAD2 /* MainViewOutputProtocol.swift */; };
-		D50F517524E16B150042BAD2 /* TableViewDataSourceOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F517424E16B150042BAD2 /* TableViewDataSourceOutputProtocol.swift */; };
+		D50F516D24E15DA40042BAD2 /* MainViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F516C24E15DA40042BAD2 /* MainViewInput.swift */; };
+		D50F516F24E1608C0042BAD2 /* MainViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F516E24E1608C0042BAD2 /* MainViewOutput.swift */; };
+		D50F517524E16B150042BAD2 /* TableViewDataSourceOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F517424E16B150042BAD2 /* TableViewDataSourceOutput.swift */; };
 		D50F517724E16BA90042BAD2 /* TableViewDelegateOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F517624E16BA90042BAD2 /* TableViewDelegateOutput.swift */; };
 		D50F517B24E172DA0042BAD2 /* MainInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F517A24E172DA0042BAD2 /* MainInteractorOutput.swift */; };
 		D50F517D24E172E90042BAD2 /* MainInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F517C24E172E90042BAD2 /* MainInteractorInput.swift */; };
@@ -149,9 +149,9 @@
 		D50F515524E156DF0042BAD2 /* CollectionConfiguratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionConfiguratorProtocol.swift; sourceTree = "<group>"; };
 		D50F516024E1577E0042BAD2 /* ImageRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRouterInput.swift; sourceTree = "<group>"; };
 		D50F516324E1579F0042BAD2 /* ImageConfiguratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConfiguratorProtocol.swift; sourceTree = "<group>"; };
-		D50F516C24E15DA40042BAD2 /* MainViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewInputProtocol.swift; sourceTree = "<group>"; };
-		D50F516E24E1608C0042BAD2 /* MainViewOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewOutputProtocol.swift; sourceTree = "<group>"; };
-		D50F517424E16B150042BAD2 /* TableViewDataSourceOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceOutputProtocol.swift; sourceTree = "<group>"; };
+		D50F516C24E15DA40042BAD2 /* MainViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewInput.swift; sourceTree = "<group>"; };
+		D50F516E24E1608C0042BAD2 /* MainViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewOutput.swift; sourceTree = "<group>"; };
+		D50F517424E16B150042BAD2 /* TableViewDataSourceOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceOutput.swift; sourceTree = "<group>"; };
 		D50F517624E16BA90042BAD2 /* TableViewDelegateOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDelegateOutput.swift; sourceTree = "<group>"; };
 		D50F517A24E172DA0042BAD2 /* MainInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorOutput.swift; sourceTree = "<group>"; };
 		D50F517C24E172E90042BAD2 /* MainInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorInput.swift; sourceTree = "<group>"; };
@@ -270,8 +270,8 @@
 				D50F517824E16BF80042BAD2 /* TableDelegate */,
 				D50F517E24E1794F0042BAD2 /* Table */,
 				D56A290824D42DEB00178564 /* MainViewController.swift */,
-				D50F516C24E15DA40042BAD2 /* MainViewInputProtocol.swift */,
-				D50F516E24E1608C0042BAD2 /* MainViewOutputProtocol.swift */,
+				D50F516C24E15DA40042BAD2 /* MainViewInput.swift */,
+				D50F516E24E1608C0042BAD2 /* MainViewOutput.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -516,7 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				D50F506424D8356D0042BAD2 /* CustomTableViewDataSource.swift */,
-				D50F517424E16B150042BAD2 /* TableViewDataSourceOutputProtocol.swift */,
+				D50F517424E16B150042BAD2 /* TableViewDataSourceOutput.swift */,
 			);
 			path = TableDataSource;
 			sourceTree = "<group>";
@@ -778,7 +778,7 @@
 				D50F50A824D852A30042BAD2 /* ImageNameManager.swift in Sources */,
 				D50F51B924E27F8C0042BAD2 /* ImageViewInput.swift in Sources */,
 				D50F51BF24E280220042BAD2 /* ImageInteractorOutput.swift in Sources */,
-				D50F516D24E15DA40042BAD2 /* MainViewInputProtocol.swift in Sources */,
+				D50F516D24E15DA40042BAD2 /* MainViewInput.swift in Sources */,
 				D50F506724D847350042BAD2 /* MainEntities.swift in Sources */,
 				D50F50AF24D8530A0042BAD2 /* UIImageResizeExtension.swift in Sources */,
 				D50F518924E1808C0042BAD2 /* CollectionViewDelegateOutput.swift in Sources */,
@@ -786,7 +786,7 @@
 				D50F509624D8523B0042BAD2 /* ImageNameManagerProtocol.swift in Sources */,
 				D50F516124E1577E0042BAD2 /* ImageRouterInput.swift in Sources */,
 				D50F518D24E1814C0042BAD2 /* CollectionInteractorOutput.swift in Sources */,
-				D50F516F24E1608C0042BAD2 /* MainViewOutputProtocol.swift in Sources */,
+				D50F516F24E1608C0042BAD2 /* MainViewOutput.swift in Sources */,
 				D50F50E424DAEA130042BAD2 /* CustomCollectionViewDataSource.swift in Sources */,
 				D56A290924D42DEB00178564 /* MainViewController.swift in Sources */,
 				D50F509C24D8523B0042BAD2 /* NetworkServiceProtocol.swift in Sources */,
@@ -796,7 +796,7 @@
 				D50F50AB24D852A30042BAD2 /* ImageResizer.swift in Sources */,
 				D50F50E024DAE9870042BAD2 /* CustomCollectionView.swift in Sources */,
 				D50F50C324DAB5560042BAD2 /* ImageViewController.swift in Sources */,
-				D50F517524E16B150042BAD2 /* TableViewDataSourceOutputProtocol.swift in Sources */,
+				D50F517524E16B150042BAD2 /* TableViewDataSourceOutput.swift in Sources */,
 				D50F514424E154EC0042BAD2 /* MainRouterInput.swift in Sources */,
 				D50F50B724D853C20042BAD2 /* EncryptionManager.swift in Sources */,
 				D50F51BD24E280170042BAD2 /* ImageInteractorInput.swift in Sources */,

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// View экрана с колекцией
 final class CollectionViewController: UIViewController {
 
 	typealias Presenter = CollectionViewOutput & CollectionViewDataSourceOutput & CollectionViewDelegateOutput
@@ -24,7 +24,7 @@ final class CollectionViewController: UIViewController {
 	}
 
 }
-
+// MARK: - CollectionViewInput
 extension CollectionViewController: CollectionViewInput {
 	func setCollection() {
 		collectionView = CustomCollectionView()

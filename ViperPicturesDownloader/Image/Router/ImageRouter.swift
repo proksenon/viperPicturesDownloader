@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/// Роутер экрана с картинкой
 class ImageRouter: ImageRouterInput {
 
 	weak var viewController: ImageViewController!
@@ -15,7 +15,7 @@ class ImageRouter: ImageRouterInput {
 	init(viewController: ImageViewController) {
 		self.viewController = viewController
 	}
-
+	// Закрывает экран
 	func pop() {
 		viewController.navigationController?.popViewController(animated: true)
 	}

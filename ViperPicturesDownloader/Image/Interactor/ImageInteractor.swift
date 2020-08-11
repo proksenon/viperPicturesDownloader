@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/// Интерактор экрана с картиной
 class ImageInteractor: ImageInteractorInput {
 	weak var presenter: ImageInteractorOuput!
 

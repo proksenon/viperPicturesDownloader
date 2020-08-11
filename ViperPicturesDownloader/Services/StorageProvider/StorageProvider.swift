@@ -11,11 +11,11 @@ import Foundation
 final class StorageProvider: StorageProviderProtocol {
 	let fileProvider: FileProviderProtocol = FileProvider()
 	let userDefaultsWork = UserDefaultsWork()
-
+	/// Удаляет все файлы, созданные до даты
 	func freeStorage(befora date: Date? = Calendar.current.date(byAdding: .day, value: -2, to: Date())){
 		fileProvider.removeAllFiles(before: date)
 	}
-
+	/// Удаляет все файлы
 	func freeALL(urls: [String]) {
 		fileProvider.removeAllFiles(before: nil)
 		userDefaultsWork.removeObjects(urls: urls)

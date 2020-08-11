@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/// Роутер главного экрана
 final class MainRouter : MainRouterInput {
 
 	weak var viewController: MainViewController!
@@ -15,13 +15,13 @@ final class MainRouter : MainRouterInput {
 	init(viewController: MainViewController) {
 		self.viewController = viewController
 	}
-
+	/// Переходит  на экран с картинкой
 	func push(image: Image) {
 		let nextVC = ImageViewController()
 		nextVC.image = image.image
 		viewController.navigationController?.pushViewController(nextVC, animated: true)
 	}
-
+	/// Переходит на коллекш
 	func pushCollection() {
 		let navigationController = UINavigationController(
             rootViewController: CollectionViewController()

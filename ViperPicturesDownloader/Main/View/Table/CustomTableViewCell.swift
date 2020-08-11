@@ -17,6 +17,7 @@ final class CustomTableViewCell: UITableViewCell {
 		contentView.frame.size = CGSize(width: UIScreen.main.bounds.size.width,
 										height: UIScreen.main.bounds.size.height/3)
 		addSubview(customImageView)
+		/// констрейнты картинки во всю ячейку
 		customImageView.translatesAutoresizingMaskIntoConstraints = false
 		customImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
 		customImageView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
@@ -35,7 +36,7 @@ final class CustomTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
+	/// метод устанавливает картинку
 	func configureCell(image: UIImage?) {
 		customImageView.image = image
 		customImageView.contentMode = .scaleToFill

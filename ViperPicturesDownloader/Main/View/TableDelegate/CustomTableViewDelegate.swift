@@ -9,7 +9,7 @@
 import UIKit
 
 final class CustomTableViewDelegate: NSObject, UITableViewDelegate {
-
+	/// Кастомная таблица
 	var tableView: CustomTableView!
 	var presenter: TableViewDelegateOutput!
 
@@ -19,7 +19,6 @@ final class CustomTableViewDelegate: NSObject, UITableViewDelegate {
 		self.tableView.delegate = self
 		self.presenter = presenter
 	}
-
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		presenter.didSelect(indexPath: indexPath)
 	}

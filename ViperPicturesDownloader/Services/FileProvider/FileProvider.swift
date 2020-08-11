@@ -6,12 +6,12 @@ final class FileProvider: FileProviderProtocol {
 	let tempDirectory = NSTemporaryDirectory()
 	let networkService: NetworkServiceProtocol = NetworkService()
 	let imageResizer = ImageResizer()
-	
+	/// Проверяет в памяти данные об оригинальной картинки
 	func checkOriginImage(url: String)->Bool {
 		if let _ = defaults.object(forKey: url) as? [String:String] {return true}
 		return false
 	}
-	
+	/// Записывает данные в файл
 	func writeToFile(data: Data, path: String){
 		do {
 			try data.write(to: URL(fileURLWithPath: path))
@@ -20,7 +20,7 @@ final class FileProvider: FileProviderProtocol {
 			print("could't create file text.txt because of error: \(error)")
 		}
 	}
-
+	/// Проверяет директорию на существования файла
 	func checkDirectory(nameFile: String) ->Bool {
 		do {
 			let filesInDirectory = try fileManager.contentsOfDirectory(atPath: tempDirectory)
@@ -37,7 +37,7 @@ final class FileProvider: FileProviderProtocol {
 		   }
 		   return false
 	   }
-
+	/// Считывает данные с файла
 	func readFile(nameFile: String)->Data? {
 		let path = getPath(nameFile: nameFile)
 		print("try to read \(nameFile) with path = \(path)")
@@ -47,9 +47,11 @@ final class FileProvider: FileProviderProtocol {
 		}
 		return nil
 	}
+	/// Получает путь к файлу
 	func getPath(nameFile: String, directory: String = NSTemporaryDirectory())->String{
 		return (directory as NSString).appendingPathComponent(nameFile)
 	}
+	/// Удаляет ненужные файлы
 	private func removeFile(nameFile: String, before date: Date? = Date()) {
         do {
 			let path = getPath(nameFile: nameFile)
@@ -68,7 +70,7 @@ final class FileProvider: FileProviderProtocol {
             print("error occured while deleting file: \(error.localizedDescription)")
         }
 	}
-
+	/// Удаляет все файлы
 	func removeAllFiles(before date: Date? = Date()) {
 		do {
 			let filesInDirectory = try fileManager.contentsOfDirectory(atPath: tempDirectory)

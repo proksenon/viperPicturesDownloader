@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/// Конфигуратор
 class ImageConfigurator: ImageConfiguratorProtocol {
 
 	func configure(with viewController: ImageViewController) {

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/// Презентер экрана с колекцией
 final class CollectionPresenter {
 
 	weak var view: CollectionViewInput!
@@ -19,20 +19,21 @@ final class CollectionPresenter {
 	}
 
 
-
+	/// Очищает хранилище, удаляя файлы, которые лежат больше 2 дней
 	private func freeStorage() {
 		let date = Calendar.current.date(byAdding: .day, value: -2, to: Date())
 		DispatchQueue.global(qos: .background).async {
 			self.interactor.freeStorage(befora: date)
 		}
 	}
+	/// Полностью очищает хранилище
 	private func freeALL(){
 		interactor.freeALL()
 	}
 
 
 }
-
+// MARK: - CollectionViewOutput
 extension CollectionPresenter: CollectionViewOutput {
 	func configureView() {
 		view.setCollection()
@@ -40,7 +41,7 @@ extension CollectionPresenter: CollectionViewOutput {
 //		freeALL()
 	}
 }
-
+// MARK: - CollectionViewDelegateOutput
 extension CollectionPresenter: CollectionViewDelegateOutput {
 	func didSelect(indexPath: IndexPath) {
 		getImage(indexPath: indexPath, size: ImageSize(size: nil)) { (image) in
@@ -48,7 +49,7 @@ extension CollectionPresenter: CollectionViewDelegateOutput {
 		}
 	}
 }
-
+// MARK: - CollectionViewDataSourceOutput
 extension CollectionPresenter: CollectionViewDataSourceOutput {
 
 	func setUpActivity(viewModel: ViewForActivity) {
@@ -73,7 +74,7 @@ extension CollectionPresenter: CollectionViewDataSourceOutput {
 		return interactor.numberOfRows()
 	}
 }
-
+// MARK: - CollectionInteractorOutput
 extension CollectionPresenter: CollectionInteractorOutput {
 	
 }

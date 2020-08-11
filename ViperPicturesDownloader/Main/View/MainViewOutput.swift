@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MainViewOutputProtocol {
+protocol MainViewOutput {
 	func configureView()
 	func pushCollection()
 }

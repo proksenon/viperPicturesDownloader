@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol TableViewDataSourceOutPutProtocol: class {
+protocol TableViewDataSourceOutPut: class {
 	func setUpActivity(viewModel: ViewForActivity)
 	func startActivity()
 	func stopActivity()

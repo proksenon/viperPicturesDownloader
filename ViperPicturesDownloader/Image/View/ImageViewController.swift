@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/// Экран с картинкой
 class ImageViewController: UIViewController {
 
 	var outputView: ImageViewOutput!
@@ -21,7 +21,7 @@ class ImageViewController: UIViewController {
 	}
 
 }
-
+// MARK: - ImageViewInput
 extension ImageViewController: ImageViewInput {
 
 	func backgroundColor() {

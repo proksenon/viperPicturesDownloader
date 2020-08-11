@@ -11,7 +11,7 @@ import Foundation
 final class EncryptionManager: EncryptionManagerProtocol {
 	let keyForEncrypte = KeyForEncrypte()
 	let encryptionWork = EncryptionWork()
-
+	/// Расшифровывает данные
 	func decryptionData(data: Data?)-> Data?{
 		guard let data = data, let key = keyForEncrypte.getKey() else { return nil}
 			do {
@@ -22,7 +22,7 @@ final class EncryptionManager: EncryptionManagerProtocol {
 				return nil
 			}
 		}
-
+	/// Шифрует данные
 	func encryptionData(data: Data?)-> Data?{
 		guard let data = data, let key = keyForEncrypte.getKey() else { return nil}
 		do {

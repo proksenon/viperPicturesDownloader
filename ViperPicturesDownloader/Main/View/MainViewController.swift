@@ -7,16 +7,17 @@
 //
 
 import UIKit
-
+// View главного экрана 
 final class MainViewController: UIViewController {
 
-	typealias Presenter = MainViewOutputProtocol & TableViewDataSourceOutPutProtocol & TableViewDelegateOutput
+	typealias Presenter = MainViewOutput & TableViewDataSourceOutPut & TableViewDelegateOutput
 	var viewOutput: Presenter!
 	let configurator: MainConfiguratorProtocol = MainConfigurator()
 	var tableView: CustomTableView!
 	var customTableViewDataSource: CustomTableViewDataSource!
 	var customTableViewDelegate: CustomTableViewDelegate!
-	var button: UIBarButtonItem!
+	/// кнопка перехода на колекшн вью
+	var segueToCollection: UIBarButtonItem!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -25,8 +26,8 @@ final class MainViewController: UIViewController {
 	}
 
 }
-
-extension MainViewController: MainViewInputProtocol {
+// MARK: - MainViewInput
+extension MainViewController: MainViewInput {
 	func setTableView() {
 		tableView = CustomTableView()
 		view.addSubview(tableView)
@@ -35,12 +36,12 @@ extension MainViewController: MainViewInputProtocol {
 		customTableViewDelegate = CustomTableViewDelegate(tableView: tableView, presenter: viewOutput)
 	}
 	func setButton() {
-		button = UIBarButtonItem(title: "Collection",
+		segueToCollection = UIBarButtonItem(title: "Collection",
 								 style: UIBarButtonItem.Style.done,
 								 target: self,
 								 action: #selector(makeCollection(_:))
 								)
-		navigationItem.rightBarButtonItem = button
+		navigationItem.rightBarButtonItem = segueToCollection
 	}
 
 	@objc func makeCollection(_ sender: UIBarButtonItem){

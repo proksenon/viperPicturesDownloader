@@ -9,6 +9,7 @@
 import UIKit
 
 final class MainEntities {
+	/// Ссылки на картинки
 	let urls: [String] = [
 		   "https://i.pinimg.com/originals/b3/c2/ff/b3c2ff8bcfad7ad8b6af0ceb99ffc7ef.jpg",
 		   "https://media.idownloadblog.com/wp-content/uploads/2020/06/iOS-14-iPhone-Wallpaper-iDownloadBlog-ispazio-dark-1.jpg",
@@ -30,15 +31,15 @@ final class MainEntities {
 		   "https://i.pinimg.com/originals/00/50/6c/00506cf573becf40a03414cae253551c.jpg"
 	   ]
 }
-
+/// Хранит картинку
 struct Image {
 	let image: UIImage?
 }
-
+/// Хранит размер картинки
 struct ImageSize {
 	let size: CGSize?
 }
-
+/// Хранит view
 struct ViewForActivity {
 	let view: UIView
 }

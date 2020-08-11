@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/// Роутер экрана с колекцией
 final class CollectionRouter: CollectionRouterInput {
 
 	weak var viewController: CollectionViewController!
@@ -15,7 +15,7 @@ final class CollectionRouter: CollectionRouterInput {
 	init(viewController: CollectionViewController) {
 		self.viewController = viewController
 	}
-
+	/// Переходит  на экран с картинкой
 	func push(image: Image) {
 		let nextVC = ImageViewController()
 		nextVC.image = image.image

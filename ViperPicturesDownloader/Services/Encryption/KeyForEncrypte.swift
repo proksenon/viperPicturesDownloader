@@ -11,7 +11,7 @@ import KeychainSwift
 final class KeyForEncrypte {
 	let encryption = EncryptionWork()
 	let keychain = KeychainSwift()
-
+	/// Получает ключ из хранилища
 	func getKey()-> String? {
 		if let keyForEncrypte = keychain.get("KeyForEncrypte") {
 			print("keyLoad = \(keyForEncrypte)")

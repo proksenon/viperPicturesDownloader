@@ -8,7 +8,7 @@
 import UIKit
 
 final class CustomTableView: UITableView {
-
+	/// устанавливает таблицу
 	func setTableView(viewController: MainViewController) {
 		register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
 		tableFooterView = UIView()

@@ -18,12 +18,12 @@ final class ActivityIndicator: ActivityIndicatorProtocol {
 		activityIndicator.center = view.center
 		print(view.center)
     }
-
+	/// Включает ActivityIndicator
 	func startActivity() {
 		activityIndicator.startAnimating()
 		view.addSubview(activityIndicator)
 	}
-
+	/// Выключает ActivityIndicator
 	func stopActivity() {
 		activityIndicator.stopAnimating()
 	}

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/// Презентер экрана с картинкой
 class ImagePresenter {
 
 	weak var view: ImageViewInput!
@@ -19,7 +19,7 @@ class ImagePresenter {
 	}
 
 }
-
+// MARK: - ImageViewOutput
 extension ImagePresenter: ImageViewOutput{
 
 	func configureView() {
@@ -32,5 +32,5 @@ extension ImagePresenter: ImageViewOutput{
 		router.pop()
 	}
 }
-
+// MARK: - ImageInteractorOuput
 extension ImagePresenter: ImageInteractorOuput {}

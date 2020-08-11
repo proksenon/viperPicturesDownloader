@@ -1,5 +1,5 @@
 import UIKit
-
+/// Ресайзер картинки
 extension UIImage {
   func resizeImage(targetSize: CGSize) -> UIImage? {
 	let size = self.size

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/// Конфигуратор экрана с колекцией
 final class CollectionConfigurator: CollectionConfiguratorProtocol {
 
 	func configure(with viewController: CollectionViewController) {

@@ -8,30 +8,31 @@
 
 
 import Foundation
-
+/// Презентер главного экрана
 final class MainPresenter {
 
-	weak var view: MainViewInputProtocol!
+	weak var view: MainViewInput!
 	var interactor: MainInteractorInput!
 	var router: MainRouterInput!
 
-	init(view: MainViewInputProtocol) {
+	init(view: MainViewInput) {
 		self.view = view
 	}
-
+	/// Очищает хранилище, удаляя файлы, которые лежат больше 2 дней
 	private func freeStorage() {
 		let date = Calendar.current.date(byAdding: .day, value: -2, to: Date())
 		DispatchQueue.global(qos: .background).async {
 			self.interactor.freeStorage(befora: date)
 		}
 	}
+	/// Полностью очищает хранилище
 	private func freeALL(){
 		interactor.freeALL()
 	}
 
 }
-
-extension MainPresenter: MainViewOutputProtocol {
+// MARK: - MainViewOutput
+extension MainPresenter: MainViewOutput {
 
 	func pushCollection() {
 		router.pushCollection()
@@ -44,7 +45,7 @@ extension MainPresenter: MainViewOutputProtocol {
 //		freeALL()
 	}
 }
-
+// MARK: - TableViewDelegateOutput
 extension MainPresenter: TableViewDelegateOutput {
 
 	func didSelect(indexPath: IndexPath) {
@@ -54,8 +55,8 @@ extension MainPresenter: TableViewDelegateOutput {
 	}
 
 }
-
-extension MainPresenter: TableViewDataSourceOutPutProtocol {
+// MARK: - TableViewDataSourceOutPut
+extension MainPresenter: TableViewDataSourceOutPut {
 
 	func setUpActivity(viewModel: ViewForActivity) {
 		interactor.setUpActivityIndicator(viewModel: viewModel)
@@ -79,7 +80,7 @@ extension MainPresenter: TableViewDataSourceOutPutProtocol {
 		return interactor.numberOfRows()
 	}
 }
-
+// MARK: - MainInteractorOutput
 extension MainPresenter: MainInteractorOutput {
 	
 }
