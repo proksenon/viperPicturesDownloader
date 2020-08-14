@@ -1,5 +1,5 @@
 //
-//  StorageProviderMock.swift
+//  TableiewDelegateOutputSpy.swift
 //  ViperPicturesDownloaderTests
 //
 //  Created by 18579132 on 13.08.2020.
@@ -9,12 +9,11 @@
 import Foundation
 @testable import ViperPicturesDownloader
 
-class StorageProviderMock: StorageProviderProtocol {
-	func freeStorage(befora date: Date?) {
-	}
+class TableViewDelegateOutputSpy: TableViewDelegateOutput {
+	var select: Bool = false
 
-	func freeALL(urls: [String]) {
-		
+	func didSelect(indexPath: IndexPath) {
+		select = true
 	}
 
 

@@ -41,8 +41,8 @@ extension MainViewController: MainViewInput {
 		tableView = CustomTableView()
 		view.addSubview(tableView)
 		tableView.setTableView(viewController: self)
-		customTableViewDataSource = CustomTableViewDataSource(tableView: tableView, presenter: viewOutput)
-		customTableViewDelegate = CustomTableViewDelegate(tableView: tableView, presenter: viewOutput)
+		customTableViewDataSource = CustomTableViewDataSource(tableView: tableView, output: viewOutput)
+		customTableViewDelegate = CustomTableViewDelegate(tableView: tableView, output: viewOutput)
 	}
 	func setButton() {
 		segueToCollection = UIBarButtonItem(title: "Collection",

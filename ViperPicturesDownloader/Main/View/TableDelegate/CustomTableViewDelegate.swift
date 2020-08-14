@@ -10,17 +10,17 @@ import UIKit
 
 final class CustomTableViewDelegate: NSObject, UITableViewDelegate {
 	/// Кастомная таблица
-	var tableView: CustomTableView!
-	var presenter: TableViewDelegateOutput!
+	var tableView: UITableView!
+	var output: TableViewDelegateOutput!
 
-	init(tableView: CustomTableView, presenter: TableViewDelegateOutput){
+	init(tableView: UITableView, output: TableViewDelegateOutput){
 		super.init()
 		self.tableView = tableView
 		self.tableView.delegate = self
-		self.presenter = presenter
+		self.output = output
 	}
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		presenter.didSelect(indexPath: indexPath)
+		output.didSelect(indexPath: indexPath)
 	}
 
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

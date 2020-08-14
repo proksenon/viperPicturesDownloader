@@ -12,6 +12,8 @@ class UserDefaultsMock: UserDefaults {
 	var keys: [String] = []
 	var result: Any?
 	var setNewName: Bool = false
+	var synchron: Bool = false
+	var remove: Bool = false
 
 	override func set(_ value: Any?, forKey key: String) {
 		keys.append(key)
@@ -23,5 +25,14 @@ class UserDefaultsMock: UserDefaults {
 			return result
 		}
 		return nil
+	}
+	
+	override func synchronize() -> Bool {
+		synchron = true
+		return true
+	}
+
+	override func removeObject(forKey defaultName: String) {
+		remove = true
 	}
 }

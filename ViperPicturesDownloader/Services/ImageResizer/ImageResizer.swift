@@ -2,7 +2,7 @@ import UIKit
 
 final class ImageResizer: ImageResizerProtocol {
 	/// Ресайз картинки
-	func imageToSize(nameFile:String, size: CGSize?, data: Data?) ->Data? {
+	func imageToSize(size: CGSize?, data: Data?) ->Data? {
 		if let data = data, let size = size {
 			if let image = UIImage(data: data) {
 				let newImage = image.resizeImage(targetSize: size)

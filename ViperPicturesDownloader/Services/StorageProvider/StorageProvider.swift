@@ -9,8 +9,14 @@
 import Foundation
 
 final class StorageProvider: StorageProviderProtocol {
-	let fileProvider: FileProviderProtocol = FileProvider()
-	let userDefaultsWork = UserDefaultsWork()
+	let fileProvider: FileProviderProtocol
+	let userDefaultsWork: UserDefaultsWorkProtocol
+
+	init(fileProvider: FileProviderProtocol = FileProvider(),
+		 userDefaultsWork: UserDefaultsWorkProtocol = UserDefaultsWork()) {
+		self.fileProvider = fileProvider
+		self.userDefaultsWork = userDefaultsWork
+	}
 	/// Удаляет все файлы, созданные до даты
 	func freeStorage(befora date: Date? = Calendar.current.date(byAdding: .day, value: -2, to: Date())){
 		fileProvider.removeAllFiles(before: date)

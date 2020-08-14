@@ -6,9 +6,9 @@
 //  Copyright © 2020 18579132. All rights reserved.
 //
 
-import UIKit
-
-protocol ImageProviderProtocol {
-	func loadImage(url: String, size: CGSize?, completion: @escaping (UIImage?) -> Void)
-	func loadImages(urls:[String], size: CGSize?, completion: @escaping ([UIImage?]) -> Void)
-}
+//import UIKit
+//
+//protocol ImageProviderProtocol {
+//	func loadImage(url: String, size: CGSize?, completion: @escaping (UIImage?) -> Void)
+//	func loadImages(urls:[String], size: CGSize?, completion: @escaping ([UIImage?]) -> Void)
+//}

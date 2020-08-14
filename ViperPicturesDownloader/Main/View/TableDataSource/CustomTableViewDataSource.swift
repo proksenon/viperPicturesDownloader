@@ -10,19 +10,19 @@ import UIKit
 
 final class CustomTableViewDataSource:NSObject, UITableViewDataSource {
 	/// Кастомная таблица
-	var tableView: CustomTableView!
+	var tableView: UITableView!
 	/// Презентер
-	var presenter: TableViewDataSourceOutPut!
+	var output: TableViewDataSourceOutPut!
 	
-	init(tableView: CustomTableView, presenter: TableViewDataSourceOutPut){
+	init(tableView: UITableView, output: TableViewDataSourceOutPut){
 		super.init()
 		self.tableView = tableView
 		self.tableView.dataSource = self
-		self.presenter = presenter
+		self.output = output
 	}
 	/// Количество ячеек
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return presenter.numberOfRows()
+		return output.numberOfRows()
 	}
 	/// Работа с ячейкой
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -30,11 +30,11 @@ final class CustomTableViewDataSource:NSObject, UITableViewDataSource {
 		/// Размер изображения в ячейке
 		let size = CGSize(width: cell.contentView.frame.size.width,
 						  height: cell.contentView.frame.size.width)
-		presenter.setUpActivity(viewModel: ViewForActivity(view: cell.contentView))
-		presenter.startActivity()
-		presenter.getImage(indexPath: indexPath, size: ImageSize(size: size)) { (image) in
+		output.setUpActivity(viewModel: ViewForActivity(view: cell.contentView))
+		output.startActivity()
+		output.getImage(indexPath: indexPath, size: ImageSize(size: size)) { (image) in
 			cell.configureCell(image: image.image)
-			self.presenter.stopActivity()
+			self.output.stopActivity()
 		}
 		return cell
 	}

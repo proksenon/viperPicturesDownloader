@@ -1,5 +1,5 @@
 //
-//  TableiewDelegateOutputSpy.swift
+//  UserDefaultsWorkMock.swift
 //  ViperPicturesDownloaderTests
 //
 //  Created by 18579132 on 13.08.2020.
@@ -9,9 +9,9 @@
 import Foundation
 @testable import ViperPicturesDownloader
 
-class TableViewDelegateOutputSpy: TableViewDelegateOutput {
-	func didSelect(indexPath: IndexPath) {
+class UserDefaultsWorkMock: UserDefaultsWorkProtocol {
+	var remove: Bool = false
+	func removeObjects(urls: [String]) {
+		remove = true
 	}
-
-
 }

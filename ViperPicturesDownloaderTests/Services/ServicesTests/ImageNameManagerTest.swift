@@ -37,6 +37,13 @@ class ImageNameManagerTest: XCTestCase {
 		let nameFile = imageNameManager.getNameFileImage(url: "key", size: CGSize(width: 25, height: 25) )
 
 		XCTAssertTrue(defaults.setNewName, "New name didnt set")
+		XCTAssert(nameFile != currentNameFile, "New name didnt change")
+	}
+
+	func testCreateNewNameAndSetToUserDefaults() {
+		let nameFile = imageNameManager.getNameFileImage(url: "key", size: CGSize(width: 25, height: 25) )
+
+		XCTAssertTrue(defaults.setNewName, "New name didnt set")
 	}
 
 }

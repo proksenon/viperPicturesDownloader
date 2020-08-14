@@ -96,7 +96,7 @@ final class CollectionInteractor: CollectionInteractorInput {
 								size: CGSize?, completion: @escaping (UIImage?) -> Void) {
 		if let decryptData = decryptionDataFromFile(url: url,
 													nameFile: imageNameManager.getNameFileImage(url: url, size: nil)) {
-			if let newData = imageResizer.imageToSize(nameFile: nameFile, size: size, data: decryptData) {
+			if let newData = imageResizer.imageToSize(size: size, data: decryptData) {
 				completion (UIImage(data: newData))
 				dataToFile(nameFile: nameFile, data: newData)
 			} else {
