@@ -12,12 +12,21 @@ final class MainViewController: UIViewController {
 
 	typealias Presenter = MainViewOutput & TableViewDataSourceOutPut & TableViewDelegateOutput
 	var viewOutput: Presenter!
-	let configurator: MainConfiguratorProtocol = MainConfigurator()
+	var configurator: MainConfiguratorProtocol!
 	var tableView: CustomTableView!
 	var customTableViewDataSource: CustomTableViewDataSource!
 	var customTableViewDelegate: CustomTableViewDelegate!
 	/// кнопка перехода на колекшн вью
 	var segueToCollection: UIBarButtonItem!
+
+	init(configurator: MainConfiguratorProtocol = MainConfigurator()) {
+		super.init(nibName: nil, bundle: nil)
+		self.configurator = configurator
+	}
+
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -44,7 +53,7 @@ extension MainViewController: MainViewInput {
 		navigationItem.rightBarButtonItem = segueToCollection
 	}
 
-	@objc func makeCollection(_ sender: UIBarButtonItem){
+	@objc func makeCollection(_ sender: UIBarButtonItem? = nil){
 		viewOutput.pushCollection()
 	}
 }

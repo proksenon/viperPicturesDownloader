@@ -69,11 +69,26 @@
 		D50F518924E1808C0042BAD2 /* CollectionViewDelegateOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F518824E1808C0042BAD2 /* CollectionViewDelegateOutput.swift */; };
 		D50F518B24E181360042BAD2 /* CollectionInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F518A24E181360042BAD2 /* CollectionInteractorInput.swift */; };
 		D50F518D24E1814C0042BAD2 /* CollectionInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F518C24E1814C0042BAD2 /* CollectionInteractorOutput.swift */; };
-		D50F51B124E275DC0042BAD2 /* ViperPicturesDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F51B024E275DC0042BAD2 /* ViperPicturesDownloaderTests.swift */; };
+		D50F51B124E275DC0042BAD2 /* FileProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F51B024E275DC0042BAD2 /* FileProviderTest.swift */; };
 		D50F51B924E27F8C0042BAD2 /* ImageViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F51B824E27F8C0042BAD2 /* ImageViewInput.swift */; };
 		D50F51BB24E27F990042BAD2 /* ImageViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F51BA24E27F990042BAD2 /* ImageViewOutput.swift */; };
 		D50F51BD24E280170042BAD2 /* ImageInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F51BC24E280170042BAD2 /* ImageInteractorInput.swift */; };
 		D50F51BF24E280220042BAD2 /* ImageInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F51BE24E280220042BAD2 /* ImageInteractorOutput.swift */; };
+		D51C7EFD24E58133001541F7 /* MainPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7EFC24E58133001541F7 /* MainPresenterTest.swift */; };
+		D51C7EFF24E5816A001541F7 /* MainInteractorInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7EFE24E5816A001541F7 /* MainInteractorInputSpy.swift */; };
+		D51C7F0124E5817D001541F7 /* MainViewInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F0024E5817D001541F7 /* MainViewInputSpy.swift */; };
+		D51C7F0324E58363001541F7 /* MainViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F0224E58363001541F7 /* MainViewControllerTest.swift */; };
+		D51C7F0524E584EB001541F7 /* MainViewOutPutSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F0424E584EB001541F7 /* MainViewOutPutSpy.swift */; };
+		D51C7F0724E58DA9001541F7 /* TableViewDataSourceOutPutSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F0624E58DA9001541F7 /* TableViewDataSourceOutPutSpy.swift */; };
+		D51C7F0924E58E3F001541F7 /* TableViewDelegateOutputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F0824E58E3F001541F7 /* TableViewDelegateOutputSpy.swift */; };
+		D51C7F0D24E5B979001541F7 /* MainConfiguratorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F0C24E5B979001541F7 /* MainConfiguratorMock.swift */; };
+		D51C7F0F24E5C218001541F7 /* MainRouterInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F0E24E5C218001541F7 /* MainRouterInputSpy.swift */; };
+		D51C7F1124E5CB00001541F7 /* MainRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F1024E5CB00001541F7 /* MainRouterTests.swift */; };
+		D565EA4A24E5600F008897A6 /* EncryptionManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565EA4924E5600F008897A6 /* EncryptionManagerMock.swift */; };
+		D565EA4D24E56141008897A6 /* ImageNameManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565EA4C24E56141008897A6 /* ImageNameManagerMock.swift */; };
+		D565EA4F24E56198008897A6 /* ImageResizerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565EA4E24E56198008897A6 /* ImageResizerMock.swift */; };
+		D565EA5124E56206008897A6 /* StorageProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565EA5024E56206008897A6 /* StorageProviderMock.swift */; };
+		D565EA5324E56241008897A6 /* UserDefaultsWorkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565EA5224E56241008897A6 /* UserDefaultsWorkMock.swift */; };
 		D56A290524D42DEB00178564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A290424D42DEB00178564 /* AppDelegate.swift */; };
 		D56A290724D42DEB00178564 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A290624D42DEB00178564 /* SceneDelegate.swift */; };
 		D56A290924D42DEB00178564 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A290824D42DEB00178564 /* MainViewController.swift */; };
@@ -84,6 +99,13 @@
 		D56A291C24D431FF00178564 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A291B24D431FF00178564 /* MainInteractor.swift */; };
 		D56A291E24D4320D00178564 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A291D24D4320D00178564 /* MainRouter.swift */; };
 		D56A292024D4321F00178564 /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A291F24D4321F00178564 /* MainConfigurator.swift */; };
+		D5845CF524E3D7F200E2A695 /* MainTableCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5845CF424E3D7F200E2A695 /* MainTableCellTest.swift */; };
+		D5845CF724E3DB5A00E2A695 /* MainViewControllerBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5845CF624E3DB5A00E2A695 /* MainViewControllerBuild.swift */; };
+		D5845CF924E3E01F00E2A695 /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5845CF824E3E01F00E2A695 /* MainTableView.swift */; };
+		D5E96DB424E3F5F800C49255 /* MainInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E96DB324E3F5F800C49255 /* MainInteractorTest.swift */; };
+		D5E96DB824E3F71E00C49255 /* NetwokServceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E96DB724E3F71E00C49255 /* NetwokServceMock.swift */; };
+		D5E96DBC24E41EA400C49255 /* MainInteractorOutputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E96DBB24E41EA400C49255 /* MainInteractorOutputSpy.swift */; };
+		D5E96DBE24E4257D00C49255 /* FileProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E96DBD24E4257D00C49255 /* FileProviderMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,12 +184,27 @@
 		D50F518A24E181360042BAD2 /* CollectionInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionInteractorInput.swift; sourceTree = "<group>"; };
 		D50F518C24E1814C0042BAD2 /* CollectionInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionInteractorOutput.swift; sourceTree = "<group>"; };
 		D50F51AE24E275DC0042BAD2 /* ViperPicturesDownloaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViperPicturesDownloaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D50F51B024E275DC0042BAD2 /* ViperPicturesDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViperPicturesDownloaderTests.swift; sourceTree = "<group>"; };
+		D50F51B024E275DC0042BAD2 /* FileProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProviderTest.swift; sourceTree = "<group>"; };
 		D50F51B224E275DC0042BAD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D50F51B824E27F8C0042BAD2 /* ImageViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewInput.swift; sourceTree = "<group>"; };
 		D50F51BA24E27F990042BAD2 /* ImageViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewOutput.swift; sourceTree = "<group>"; };
 		D50F51BC24E280170042BAD2 /* ImageInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractorInput.swift; sourceTree = "<group>"; };
 		D50F51BE24E280220042BAD2 /* ImageInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractorOutput.swift; sourceTree = "<group>"; };
+		D51C7EFC24E58133001541F7 /* MainPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTest.swift; sourceTree = "<group>"; };
+		D51C7EFE24E5816A001541F7 /* MainInteractorInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorInputSpy.swift; sourceTree = "<group>"; };
+		D51C7F0024E5817D001541F7 /* MainViewInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewInputSpy.swift; sourceTree = "<group>"; };
+		D51C7F0224E58363001541F7 /* MainViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTest.swift; sourceTree = "<group>"; };
+		D51C7F0424E584EB001541F7 /* MainViewOutPutSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewOutPutSpy.swift; sourceTree = "<group>"; };
+		D51C7F0624E58DA9001541F7 /* TableViewDataSourceOutPutSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceOutPutSpy.swift; sourceTree = "<group>"; };
+		D51C7F0824E58E3F001541F7 /* TableViewDelegateOutputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDelegateOutputSpy.swift; sourceTree = "<group>"; };
+		D51C7F0C24E5B979001541F7 /* MainConfiguratorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfiguratorMock.swift; sourceTree = "<group>"; };
+		D51C7F0E24E5C218001541F7 /* MainRouterInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouterInputSpy.swift; sourceTree = "<group>"; };
+		D51C7F1024E5CB00001541F7 /* MainRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouterTests.swift; sourceTree = "<group>"; };
+		D565EA4924E5600F008897A6 /* EncryptionManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionManagerMock.swift; sourceTree = "<group>"; };
+		D565EA4C24E56141008897A6 /* ImageNameManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNameManagerMock.swift; sourceTree = "<group>"; };
+		D565EA4E24E56198008897A6 /* ImageResizerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResizerMock.swift; sourceTree = "<group>"; };
+		D565EA5024E56206008897A6 /* StorageProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProviderMock.swift; sourceTree = "<group>"; };
+		D565EA5224E56241008897A6 /* UserDefaultsWorkMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWorkMock.swift; sourceTree = "<group>"; };
 		D56A290124D42DEB00178564 /* ViperPicturesDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViperPicturesDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56A290424D42DEB00178564 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D56A290624D42DEB00178564 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +217,13 @@
 		D56A291B24D431FF00178564 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		D56A291D24D4320D00178564 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		D56A291F24D4321F00178564 /* MainConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfigurator.swift; sourceTree = "<group>"; };
+		D5845CF424E3D7F200E2A695 /* MainTableCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCellTest.swift; sourceTree = "<group>"; };
+		D5845CF624E3DB5A00E2A695 /* MainViewControllerBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerBuild.swift; sourceTree = "<group>"; };
+		D5845CF824E3E01F00E2A695 /* MainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
+		D5E96DB324E3F5F800C49255 /* MainInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorTest.swift; sourceTree = "<group>"; };
+		D5E96DB724E3F71E00C49255 /* NetwokServceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwokServceMock.swift; sourceTree = "<group>"; };
+		D5E96DBB24E41EA400C49255 /* MainInteractorOutputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorOutputSpy.swift; sourceTree = "<group>"; };
+		D5E96DBD24E4257D00C49255 /* FileProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProviderMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -561,10 +605,40 @@
 		D50F51AF24E275DC0042BAD2 /* ViperPicturesDownloaderTests */ = {
 			isa = PBXGroup;
 			children = (
-				D50F51B024E275DC0042BAD2 /* ViperPicturesDownloaderTests.swift */,
+				D50F51B024E275DC0042BAD2 /* FileProviderTest.swift */,
+				D5845CF624E3DB5A00E2A695 /* MainViewControllerBuild.swift */,
+				D51C7F0224E58363001541F7 /* MainViewControllerTest.swift */,
+				D5845CF424E3D7F200E2A695 /* MainTableCellTest.swift */,
+				D5845CF824E3E01F00E2A695 /* MainTableView.swift */,
+				D5E96DB324E3F5F800C49255 /* MainInteractorTest.swift */,
+				D51C7EFC24E58133001541F7 /* MainPresenterTest.swift */,
+				D51C7F1024E5CB00001541F7 /* MainRouterTests.swift */,
+				D5E96DBB24E41EA400C49255 /* MainInteractorOutputSpy.swift */,
+				D51C7EFE24E5816A001541F7 /* MainInteractorInputSpy.swift */,
+				D51C7F0024E5817D001541F7 /* MainViewInputSpy.swift */,
+				D51C7F0424E584EB001541F7 /* MainViewOutPutSpy.swift */,
+				D51C7F0E24E5C218001541F7 /* MainRouterInputSpy.swift */,
+				D51C7F0624E58DA9001541F7 /* TableViewDataSourceOutPutSpy.swift */,
+				D51C7F0824E58E3F001541F7 /* TableViewDelegateOutputSpy.swift */,
+				D51C7F0C24E5B979001541F7 /* MainConfiguratorMock.swift */,
+				D565EA4B24E5610F008897A6 /* ServicesMocks */,
 				D50F51B224E275DC0042BAD2 /* Info.plist */,
 			);
 			path = ViperPicturesDownloaderTests;
+			sourceTree = "<group>";
+		};
+		D565EA4B24E5610F008897A6 /* ServicesMocks */ = {
+			isa = PBXGroup;
+			children = (
+				D5E96DB724E3F71E00C49255 /* NetwokServceMock.swift */,
+				D565EA4924E5600F008897A6 /* EncryptionManagerMock.swift */,
+				D5E96DBD24E4257D00C49255 /* FileProviderMock.swift */,
+				D565EA4C24E56141008897A6 /* ImageNameManagerMock.swift */,
+				D565EA4E24E56198008897A6 /* ImageResizerMock.swift */,
+				D565EA5024E56206008897A6 /* StorageProviderMock.swift */,
+				D565EA5224E56241008897A6 /* UserDefaultsWorkMock.swift */,
+			);
+			path = ServicesMocks;
 			sourceTree = "<group>";
 		};
 		D56A28F824D42DEB00178564 = {
@@ -763,7 +837,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D50F51B124E275DC0042BAD2 /* ViperPicturesDownloaderTests.swift in Sources */,
+				D50F51B124E275DC0042BAD2 /* FileProviderTest.swift in Sources */,
+				D51C7EFF24E5816A001541F7 /* MainInteractorInputSpy.swift in Sources */,
+				D5E96DBC24E41EA400C49255 /* MainInteractorOutputSpy.swift in Sources */,
+				D51C7F0124E5817D001541F7 /* MainViewInputSpy.swift in Sources */,
+				D565EA5124E56206008897A6 /* StorageProviderMock.swift in Sources */,
+				D51C7F0924E58E3F001541F7 /* TableViewDelegateOutputSpy.swift in Sources */,
+				D5E96DBE24E4257D00C49255 /* FileProviderMock.swift in Sources */,
+				D5845CF524E3D7F200E2A695 /* MainTableCellTest.swift in Sources */,
+				D565EA4F24E56198008897A6 /* ImageResizerMock.swift in Sources */,
+				D5E96DB824E3F71E00C49255 /* NetwokServceMock.swift in Sources */,
+				D5845CF924E3E01F00E2A695 /* MainTableView.swift in Sources */,
+				D51C7F1124E5CB00001541F7 /* MainRouterTests.swift in Sources */,
+				D51C7F0324E58363001541F7 /* MainViewControllerTest.swift in Sources */,
+				D51C7F0F24E5C218001541F7 /* MainRouterInputSpy.swift in Sources */,
+				D51C7F0724E58DA9001541F7 /* TableViewDataSourceOutPutSpy.swift in Sources */,
+				D565EA5324E56241008897A6 /* UserDefaultsWorkMock.swift in Sources */,
+				D5E96DB424E3F5F800C49255 /* MainInteractorTest.swift in Sources */,
+				D5845CF724E3DB5A00E2A695 /* MainViewControllerBuild.swift in Sources */,
+				D51C7F0524E584EB001541F7 /* MainViewOutPutSpy.swift in Sources */,
+				D565EA4A24E5600F008897A6 /* EncryptionManagerMock.swift in Sources */,
+				D565EA4D24E56141008897A6 /* ImageNameManagerMock.swift in Sources */,
+				D51C7F0D24E5B979001541F7 /* MainConfiguratorMock.swift in Sources */,
+				D51C7EFD24E58133001541F7 /* MainPresenterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

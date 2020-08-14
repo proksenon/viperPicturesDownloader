@@ -6,6 +6,7 @@ final class FileProvider: FileProviderProtocol {
 	let tempDirectory = NSTemporaryDirectory()
 	let networkService: NetworkServiceProtocol = NetworkService()
 	let imageResizer = ImageResizer()
+	let limitedSizeFile = 1000000
 	/// Проверяет в памяти данные об оригинальной картинки
 	func checkOriginImage(url: String)->Bool {
 		if let _ = defaults.object(forKey: url) as? [String:String] {return true}
@@ -58,7 +59,7 @@ final class FileProvider: FileProviderProtocol {
 			let dateFile = try fileManager.attributesOfItem(atPath: path)[FileAttributeKey.creationDate] as! Date
 			let sizeFile = try fileManager.attributesOfItem(atPath: path)[FileAttributeKey.size] as! Int
 			if let date = date {
-				if date > dateFile || sizeFile > 1000000 {
+				if date > dateFile || sizeFile > limitedSizeFile {
 					try fileManager.removeItem(atPath: path)
 					print("file deleted")
 				}
