@@ -25,7 +25,7 @@ class FileProviderTest: XCTestCase {
 	func getFilesFromTempDirect()->[String]? {
 		do {
 			let files = try fileProvider.fileManager.contentsOfDirectory(atPath: fileProvider.tempDirectory)
-			XCTAssert(files.count >= 0, "files didnt exist")
+			XCTAssert(files.count > 0, "files didnt exist")
 			return files
 
 		} catch let error {

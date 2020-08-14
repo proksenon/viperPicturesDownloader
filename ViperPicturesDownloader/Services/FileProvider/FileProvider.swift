@@ -4,8 +4,6 @@ final class FileProvider: FileProviderProtocol {
 	let defaults = UserDefaults.standard
 	let fileManager = FileManager()
 	let tempDirectory = NSTemporaryDirectory()
-	let networkService: NetworkServiceProtocol = NetworkService()
-	let imageResizer = ImageResizer()
 	let limitedSizeFile = 1000000
 	/// Проверяет в памяти данные об оригинальной картинки
 	func checkOriginImage(url: String)->Bool {

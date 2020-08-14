@@ -286,5 +286,117 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5B7DC4C9-EDE2-4AB3-81D5-079792A0D607"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloaderTests/ServicesTests/NetworkServiceTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "testGetData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5B7DC4C9-EDE2-4AB3-81D5-079792A0D607 - 8fb5888712570d5f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ViperPicturesDownloaderTests.NetworkServiceTests.testGetData() -&gt; ()"
+                  moduleName = "ViperPicturesDownloaderTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a18579132/Documents/descriptionViperDonloader/ViperPicturesDownloaderTests/ServicesTests/NetworkServiceTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "847">
+               </Location>
+               <Location
+                  uuid = "5B7DC4C9-EDE2-4AB3-81D5-079792A0D607 - a1fc6db517f358f4"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.Data) -&gt; () in ViperPicturesDownloaderTests.NetworkServiceTests.testGetData() -&gt; ()"
+                  moduleName = "ViperPicturesDownloaderTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a18579132/Documents/descriptionViperDonloader/ViperPicturesDownloaderTests/ServicesTests/NetworkServiceTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "39">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1F7AE13E-59FB-4A77-AD7C-0D1A7047543C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloaderTests/ServicesTests/ImageNameManagerTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "testGetNameFileFromUserDefaults()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3A77CBF5-E202-499C-826D-8DD98052058C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloaderTests/ServicesTests/ImageNameManagerTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "testGetNameFileForImageWithSizeWhichHasOriginImage()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96A4494E-B617-4B5D-971A-05270EF2986D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloaderTests/ServicesTests/ImageNameManagerTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "testGetNameFileForImageWithSizeWhichHasOriginImage()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "205AB53A-4783-44BC-B7F0-6597918E5EE1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloaderTests/ServicesTests/ImageNameManagerTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "testGetNameFileForImageWithSizeWhichHasOriginImage()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

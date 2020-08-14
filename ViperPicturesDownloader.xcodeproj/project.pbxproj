@@ -84,6 +84,11 @@
 		D51C7F0D24E5B979001541F7 /* MainConfiguratorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F0C24E5B979001541F7 /* MainConfiguratorMock.swift */; };
 		D51C7F0F24E5C218001541F7 /* MainRouterInputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F0E24E5C218001541F7 /* MainRouterInputSpy.swift */; };
 		D51C7F1124E5CB00001541F7 /* MainRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F1024E5CB00001541F7 /* MainRouterTests.swift */; };
+		D51C7F1424E676F3001541F7 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F1324E676F3001541F7 /* NetworkServiceTests.swift */; };
+		D51C7F1624E67AFC001541F7 /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F1524E67AFC001541F7 /* URLSessionDataTaskMock.swift */; };
+		D51C7F1824E67B15001541F7 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F1724E67B15001541F7 /* URLSessionMock.swift */; };
+		D51C7F1A24E68B8D001541F7 /* UserDefaultsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F1924E68B8D001541F7 /* UserDefaultsMock.swift */; };
+		D51C7F1E24E68FCE001541F7 /* ImageNameManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F1D24E68FCE001541F7 /* ImageNameManagerTest.swift */; };
 		D565EA4A24E5600F008897A6 /* EncryptionManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565EA4924E5600F008897A6 /* EncryptionManagerMock.swift */; };
 		D565EA4D24E56141008897A6 /* ImageNameManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565EA4C24E56141008897A6 /* ImageNameManagerMock.swift */; };
 		D565EA4F24E56198008897A6 /* ImageResizerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565EA4E24E56198008897A6 /* ImageResizerMock.swift */; };
@@ -200,6 +205,11 @@
 		D51C7F0C24E5B979001541F7 /* MainConfiguratorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfiguratorMock.swift; sourceTree = "<group>"; };
 		D51C7F0E24E5C218001541F7 /* MainRouterInputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouterInputSpy.swift; sourceTree = "<group>"; };
 		D51C7F1024E5CB00001541F7 /* MainRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouterTests.swift; sourceTree = "<group>"; };
+		D51C7F1324E676F3001541F7 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		D51C7F1524E67AFC001541F7 /* URLSessionDataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskMock.swift; sourceTree = "<group>"; };
+		D51C7F1724E67B15001541F7 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		D51C7F1924E68B8D001541F7 /* UserDefaultsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMock.swift; sourceTree = "<group>"; };
+		D51C7F1D24E68FCE001541F7 /* ImageNameManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNameManagerTest.swift; sourceTree = "<group>"; };
 		D565EA4924E5600F008897A6 /* EncryptionManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionManagerMock.swift; sourceTree = "<group>"; };
 		D565EA4C24E56141008897A6 /* ImageNameManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNameManagerMock.swift; sourceTree = "<group>"; };
 		D565EA4E24E56198008897A6 /* ImageResizerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResizerMock.swift; sourceTree = "<group>"; };
@@ -605,14 +615,13 @@
 		D50F51AF24E275DC0042BAD2 /* ViperPicturesDownloaderTests */ = {
 			isa = PBXGroup;
 			children = (
-				D50F51B024E275DC0042BAD2 /* FileProviderTest.swift */,
 				D5845CF624E3DB5A00E2A695 /* MainViewControllerBuild.swift */,
 				D51C7F0224E58363001541F7 /* MainViewControllerTest.swift */,
+				D51C7EFC24E58133001541F7 /* MainPresenterTest.swift */,
+				D5E96DB324E3F5F800C49255 /* MainInteractorTest.swift */,
+				D51C7F1024E5CB00001541F7 /* MainRouterTests.swift */,
 				D5845CF424E3D7F200E2A695 /* MainTableCellTest.swift */,
 				D5845CF824E3E01F00E2A695 /* MainTableView.swift */,
-				D5E96DB324E3F5F800C49255 /* MainInteractorTest.swift */,
-				D51C7EFC24E58133001541F7 /* MainPresenterTest.swift */,
-				D51C7F1024E5CB00001541F7 /* MainRouterTests.swift */,
 				D5E96DBB24E41EA400C49255 /* MainInteractorOutputSpy.swift */,
 				D51C7EFE24E5816A001541F7 /* MainInteractorInputSpy.swift */,
 				D51C7F0024E5817D001541F7 /* MainViewInputSpy.swift */,
@@ -621,10 +630,21 @@
 				D51C7F0624E58DA9001541F7 /* TableViewDataSourceOutPutSpy.swift */,
 				D51C7F0824E58E3F001541F7 /* TableViewDelegateOutputSpy.swift */,
 				D51C7F0C24E5B979001541F7 /* MainConfiguratorMock.swift */,
+				D51C7F1224E674E3001541F7 /* ServicesTests */,
 				D565EA4B24E5610F008897A6 /* ServicesMocks */,
 				D50F51B224E275DC0042BAD2 /* Info.plist */,
 			);
 			path = ViperPicturesDownloaderTests;
+			sourceTree = "<group>";
+		};
+		D51C7F1224E674E3001541F7 /* ServicesTests */ = {
+			isa = PBXGroup;
+			children = (
+				D51C7F1324E676F3001541F7 /* NetworkServiceTests.swift */,
+				D50F51B024E275DC0042BAD2 /* FileProviderTest.swift */,
+				D51C7F1D24E68FCE001541F7 /* ImageNameManagerTest.swift */,
+			);
+			path = ServicesTests;
 			sourceTree = "<group>";
 		};
 		D565EA4B24E5610F008897A6 /* ServicesMocks */ = {
@@ -637,6 +657,9 @@
 				D565EA4E24E56198008897A6 /* ImageResizerMock.swift */,
 				D565EA5024E56206008897A6 /* StorageProviderMock.swift */,
 				D565EA5224E56241008897A6 /* UserDefaultsWorkMock.swift */,
+				D51C7F1524E67AFC001541F7 /* URLSessionDataTaskMock.swift */,
+				D51C7F1724E67B15001541F7 /* URLSessionMock.swift */,
+				D51C7F1924E68B8D001541F7 /* UserDefaultsMock.swift */,
 			);
 			path = ServicesMocks;
 			sourceTree = "<group>";
@@ -839,6 +862,7 @@
 			files = (
 				D50F51B124E275DC0042BAD2 /* FileProviderTest.swift in Sources */,
 				D51C7EFF24E5816A001541F7 /* MainInteractorInputSpy.swift in Sources */,
+				D51C7F1824E67B15001541F7 /* URLSessionMock.swift in Sources */,
 				D5E96DBC24E41EA400C49255 /* MainInteractorOutputSpy.swift in Sources */,
 				D51C7F0124E5817D001541F7 /* MainViewInputSpy.swift in Sources */,
 				D565EA5124E56206008897A6 /* StorageProviderMock.swift in Sources */,
@@ -847,6 +871,7 @@
 				D5845CF524E3D7F200E2A695 /* MainTableCellTest.swift in Sources */,
 				D565EA4F24E56198008897A6 /* ImageResizerMock.swift in Sources */,
 				D5E96DB824E3F71E00C49255 /* NetwokServceMock.swift in Sources */,
+				D51C7F1424E676F3001541F7 /* NetworkServiceTests.swift in Sources */,
 				D5845CF924E3E01F00E2A695 /* MainTableView.swift in Sources */,
 				D51C7F1124E5CB00001541F7 /* MainRouterTests.swift in Sources */,
 				D51C7F0324E58363001541F7 /* MainViewControllerTest.swift in Sources */,
@@ -855,6 +880,9 @@
 				D565EA5324E56241008897A6 /* UserDefaultsWorkMock.swift in Sources */,
 				D5E96DB424E3F5F800C49255 /* MainInteractorTest.swift in Sources */,
 				D5845CF724E3DB5A00E2A695 /* MainViewControllerBuild.swift in Sources */,
+				D51C7F1E24E68FCE001541F7 /* ImageNameManagerTest.swift in Sources */,
+				D51C7F1624E67AFC001541F7 /* URLSessionDataTaskMock.swift in Sources */,
+				D51C7F1A24E68B8D001541F7 /* UserDefaultsMock.swift in Sources */,
 				D51C7F0524E584EB001541F7 /* MainViewOutPutSpy.swift in Sources */,
 				D565EA4A24E5600F008897A6 /* EncryptionManagerMock.swift in Sources */,
 				D565EA4D24E56141008897A6 /* ImageNameManagerMock.swift in Sources */,

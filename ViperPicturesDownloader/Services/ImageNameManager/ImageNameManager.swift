@@ -1,7 +1,11 @@
 import UIKit
 
 final class ImageNameManager: ImageNameManagerProtocol {
-	let defaults = UserDefaults.standard
+	var defaults: UserDefaults
+
+	init(defaults: UserDefaults = UserDefaults.standard) {
+		self.defaults = defaults
+	}
 	/// Получает имя файла
 	func getNameFileImage(url: String, size: CGSize? = nil)-> String {
 		let sizeString = size?.toString() ?? "origin"
