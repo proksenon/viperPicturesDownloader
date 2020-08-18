@@ -13,11 +13,11 @@ final class CustomCollectionView: UICollectionView {
 	let flowLayout = ZoomAndSnapFlowLayout()
 
 	init() {
-		let layout = UICollectionViewFlowLayout()
-		layout.scrollDirection = .horizontal
-		super.init(frame: .zero, collectionViewLayout: layout)
+//		let layout = UICollectionViewFlowLayout()
+		//layout.scrollDirection = .horizontal
+		super.init(frame: .zero, collectionViewLayout: flowLayout)
 		backgroundColor = .white
-		collectionViewLayout = flowLayout
+//		collectionViewLayout = flowLayout
 		contentInsetAdjustmentBehavior = .always
 		showsHorizontalScrollIndicator = false
 		register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "cell")

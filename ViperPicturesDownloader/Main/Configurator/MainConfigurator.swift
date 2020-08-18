@@ -15,7 +15,7 @@ final class MainConfigurator : MainConfiguratorProtocol {
 		let interactor = MainInteractor(presenter: presenter)
 		let router = MainRouter(viewController: viewController)
 		
-		viewController.outout = presenter
+		viewController.output = presenter
 		presenter.interactor = interactor
 		presenter.router = router
 		

@@ -40,6 +40,7 @@ extension MainPresenter: MainViewOutput {
 
 	func configureView() {
 		view.setTableView()
+		view.setTableConstraints()
 		view.setButton()
 		view.setUpNavigationBar()
 		freeStorage()

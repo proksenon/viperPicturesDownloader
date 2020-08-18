@@ -10,6 +10,7 @@ import Foundation
 
 protocol MainViewInput: class {
 	func setTableView()
+	func setTableConstraints()
 	func setButton()
 	func setUpNavigationBar()
 }

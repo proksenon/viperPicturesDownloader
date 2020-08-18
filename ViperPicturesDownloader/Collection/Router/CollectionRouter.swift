@@ -18,7 +18,10 @@ final class CollectionRouter: CollectionRouterInput {
 	/// Переходит  на экран с картинкой
 	func push(image: Image) {
 		let nextVC = ImageViewController()
-		nextVC.image = image.image
-		viewController.navigationController?.pushViewController(nextVC, animated: true)
+				nextVC.configurator.configure(with: nextVC)
+				nextVC.moduleInput.configure(with: image)
+		//		let nextVC = ImageViewController()
+		//		nextVC.image = image.image
+				viewController.navigationController?.pushViewController(nextVC, animated: true)
 	}
 }

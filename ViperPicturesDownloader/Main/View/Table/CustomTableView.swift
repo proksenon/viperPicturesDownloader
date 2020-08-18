@@ -8,18 +8,17 @@
 import UIKit
 
 final class CustomTableView: UITableView {
-	/// устанавливает таблицу
-	func setTableView(viewController: MainViewController) {
+
+	init() {
+		super.init(frame: .zero, style: .grouped)
 		register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
 		tableFooterView = UIView()
 		separatorStyle = .none
-		reloadData()
-		translatesAutoresizingMaskIntoConstraints = false
-		NSLayoutConstraint.activate([
-			topAnchor.constraint(equalTo: viewController.view.topAnchor, constant: -50),
-			bottomAnchor.constraint(equalTo: viewController.view.bottomAnchor, constant: 50),
-			leftAnchor.constraint(equalTo: viewController.view.leftAnchor, constant: 0),
-			rightAnchor.constraint(equalTo: viewController.view.rightAnchor, constant: 0)
-		])
+
 	}
+
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
 }

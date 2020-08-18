@@ -10,4 +10,5 @@ import Foundation
 
 protocol CollectionViewInput: class {
 	func setCollection()
+	func setCollectionConstraint()
 }

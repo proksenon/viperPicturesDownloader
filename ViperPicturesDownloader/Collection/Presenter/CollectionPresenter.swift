@@ -37,6 +37,7 @@ final class CollectionPresenter {
 extension CollectionPresenter: CollectionViewOutput {
 	func configureView() {
 		view.setCollection()
+		view.setCollectionConstraint()
 		freeStorage()
 //		freeALL()
 	}

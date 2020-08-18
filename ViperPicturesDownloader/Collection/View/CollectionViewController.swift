@@ -11,7 +11,7 @@ import UIKit
 final class CollectionViewController: UIViewController {
 
 	typealias Presenter = CollectionViewOutput & CollectionViewDataSourceOutput & CollectionViewDelegateOutput
-	var viewOutput: Presenter!
+	var output: Presenter!
 	let configurator: CollectionConfiguratorProtocol = CollectionConfigurator()
 	var collectionView: CustomCollectionView!
 	var customCollectionDataSource: CustomCollectionViewDataSource!
@@ -20,7 +20,7 @@ final class CollectionViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configurator.configure(with: self)
-		viewOutput.configureView()
+		output.configureView()
 	}
 
 }
@@ -29,8 +29,17 @@ extension CollectionViewController: CollectionViewInput {
 	func setCollection() {
 		collectionView = CustomCollectionView()
 		view.addSubview(collectionView)
-		collectionView.setCollectionViewConstraints(collectionViewController: self)
-		customCollectionDataSource = CustomCollectionViewDataSource(collectionView: collectionView, presenter: viewOutput)
-		customCollectionDelegate = CustomCollectionViewDelegate(collectionView: collectionView, presenter: viewOutput)
+		customCollectionDataSource = CustomCollectionViewDataSource(collectionView: collectionView, presenter: output)
+		customCollectionDelegate = CustomCollectionViewDelegate(collectionView: collectionView, presenter: output)
+	}
+
+	func setCollectionConstraint() {
+		collectionView.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([
+			collectionView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0),
+			collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0),
+			collectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0),
+			collectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0)
+		])
 	}
 }

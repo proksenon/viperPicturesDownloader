@@ -11,7 +11,7 @@ import UIKit
 final class MainViewController: UIViewController {
 
 	typealias Presenter = MainViewOutput & TableViewDataSourceOutPut & TableViewDelegateOutput
-	var outout: Presenter!
+	var output: Presenter!
 	var configurator: MainConfiguratorProtocol!
 	var tableView: CustomTableView!
 	var customTableViewDataSource: CustomTableViewDataSource!
@@ -31,8 +31,7 @@ final class MainViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configurator.configure(with: self)
-
-		outout.configureView()
+		output.configureView()
 	}
 
 }
@@ -41,9 +40,18 @@ extension MainViewController: MainViewInput {
 	func setTableView() {
 		tableView = CustomTableView()
 		view.addSubview(tableView)
-		tableView.setTableView(viewController: self)
-		customTableViewDataSource = CustomTableViewDataSource(tableView: tableView, output: outout)
-		customTableViewDelegate = CustomTableViewDelegate(tableView: tableView, output: outout)
+//		tableView.setTableView(viewController: self)
+		customTableViewDataSource = CustomTableViewDataSource(tableView: tableView, output: output)
+		customTableViewDelegate = CustomTableViewDelegate(tableView: tableView, output: output)
+	}
+	func setTableConstraints() {
+		tableView.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([
+			tableView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: -50),
+			tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 50),
+			tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0),
+			tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0)
+		])
 	}
 	func setButton() {
 		segueToCollection = UIBarButtonItem(title: "Collection",
@@ -55,7 +63,7 @@ extension MainViewController: MainViewInput {
 	}
 
 	@objc func makeCollection(_ sender: UIBarButtonItem? = nil){
-		outout.pushCollection()
+		output.pushCollection()
 	}
 
 	func setUpNavigationBar() {

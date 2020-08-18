@@ -18,13 +18,16 @@ final class CustomTableViewCell: UITableViewCell {
 										height: UIScreen.main.bounds.size.height/3)
 		addSubview(customImageView)
 		/// констрейнты картинки во всю ячейку
+		setImageViewConsstraints()
+	 }
+	private func setImageViewConsstraints() {
+		/// констрейнты картинки во всю ячейку
 		customImageView.translatesAutoresizingMaskIntoConstraints = false
 		customImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
 		customImageView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
 		customImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
 		customImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-	 }
-
+	}
 	 required init?(coder aDecoder: NSCoder) {
 	   super.init(coder: aDecoder)
 	}
@@ -41,5 +44,4 @@ final class CustomTableViewCell: UITableViewCell {
 		customImageView.image = image
 		customImageView.contentMode = .scaleToFill
 	}
-
 }

@@ -17,12 +17,12 @@ class MainViewControllerBuild: XCTestCase {
 		
 		XCTAssertNotNil(viewController.configurator,
 						"MainViewController is nil after configuration")
-		XCTAssertNotNil(viewController.outout,
+		XCTAssertNotNil(viewController.output,
 						"MainViewController is nil after configuration")
-		XCTAssertTrue(viewController.outout is MainPresenter,
+		XCTAssertTrue(viewController.output is MainPresenter,
 					  "viewOutput is not MainPresenter")
 
-		let presenter = viewController.outout as? MainPresenter
+		let presenter = viewController.output as? MainPresenter
 
 		XCTAssertNotNil(presenter?.view,
 						"view in MainPresenter is nil after configuration")
