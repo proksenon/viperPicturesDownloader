@@ -11,4 +11,5 @@ import Foundation
 protocol MainViewInput: class {
 	func setTableView()
 	func setButton()
+	func setUpNavigationBar()
 }

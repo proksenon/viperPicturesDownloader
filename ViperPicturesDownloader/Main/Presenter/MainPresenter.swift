@@ -41,6 +41,7 @@ extension MainPresenter: MainViewOutput {
 	func configureView() {
 		view.setTableView()
 		view.setButton()
+		view.setUpNavigationBar()
 		freeStorage()
 //		freeALL()
 	}

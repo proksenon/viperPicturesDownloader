@@ -17,7 +17,7 @@ class MainConfiguratorMock: MainConfiguratorProtocol {
 	}
 
 	func configure(with viewController: MainViewController) {
-		viewController.viewOutput = output
+		viewController.outout = output
 	}
 
 

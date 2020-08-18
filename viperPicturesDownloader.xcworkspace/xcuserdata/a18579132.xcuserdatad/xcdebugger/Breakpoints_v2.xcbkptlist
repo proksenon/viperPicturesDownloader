@@ -414,5 +414,132 @@
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4B6377AC-E154-4CB6-984B-93FE835B1D51"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloader/Main/Router/MainRouter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "push(image:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "18B769A5-C719-4493-8030-976457C27F05"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloader/Image/Presenter/ImagePresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "configureView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A330E087-7A3A-45BE-924D-DBFBD120A2EA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloader/Image/Presenter/ImagePresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C92A3685-AAC3-48DE-9C0E-68E996B9DDC3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloader/Image/View/ImageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76AFF321-6EF8-4275-BC53-6551C2ABB1E0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloader/Image/Interactor/ImageInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "init(presenter:imageFilterManager:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "76AFF321-6EF8-4275-BC53-6551C2ABB1E0 - f93175893c74beb0"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 1 of ViperPicturesDownloader.ImageInteractor.init(presenter: ViperPicturesDownloader.ImageInteractorOuput, filter: ViperPicturesDownloader.ImageFilter) -&gt; ViperPicturesDownloader.ImageInteractor"
+                  moduleName = "ViperPicturesDownloader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a18579132/Documents/descriptionViperDonloader/ViperPicturesDownloader/Image/Interactor/ImageInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "76AFF321-6EF8-4275-BC53-6551C2ABB1E0 - e403ca239ebfa0d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ViperPicturesDownloader.ImageInteractor.__allocating_init(presenter: ViperPicturesDownloader.ImageInteractorOuput, filter: ViperPicturesDownloader.ImageFilter) -&gt; ViperPicturesDownloader.ImageInteractor"
+                  moduleName = "ViperPicturesDownloader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a18579132/Documents/descriptionViperDonloader/ViperPicturesDownloader/Image/Interactor/ImageInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "76AFF321-6EF8-4275-BC53-6551C2ABB1E0 - 1c72da914949ec9c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ViperPicturesDownloader.ImageInteractor.init(presenter: ViperPicturesDownloader.ImageInteractorOuput, filter: ViperPicturesDownloader.ImageFilter) -&gt; ViperPicturesDownloader.ImageInteractor"
+                  moduleName = "ViperPicturesDownloader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a18579132/Documents/descriptionViperDonloader/ViperPicturesDownloader/Image/Interactor/ImageInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "156">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

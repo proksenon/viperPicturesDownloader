@@ -11,4 +11,5 @@ import Foundation
 protocol ImageViewOutput: class {
 	func configureView()
 	func popViewController()
+	func filterImage()
 }

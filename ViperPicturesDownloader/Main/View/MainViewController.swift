@@ -11,7 +11,7 @@ import UIKit
 final class MainViewController: UIViewController {
 
 	typealias Presenter = MainViewOutput & TableViewDataSourceOutPut & TableViewDelegateOutput
-	var viewOutput: Presenter!
+	var outout: Presenter!
 	var configurator: MainConfiguratorProtocol!
 	var tableView: CustomTableView!
 	var customTableViewDataSource: CustomTableViewDataSource!
@@ -31,7 +31,8 @@ final class MainViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configurator.configure(with: self)
-		viewOutput.configureView()
+
+		outout.configureView()
 	}
 
 }
@@ -41,8 +42,8 @@ extension MainViewController: MainViewInput {
 		tableView = CustomTableView()
 		view.addSubview(tableView)
 		tableView.setTableView(viewController: self)
-		customTableViewDataSource = CustomTableViewDataSource(tableView: tableView, output: viewOutput)
-		customTableViewDelegate = CustomTableViewDelegate(tableView: tableView, output: viewOutput)
+		customTableViewDataSource = CustomTableViewDataSource(tableView: tableView, output: outout)
+		customTableViewDelegate = CustomTableViewDelegate(tableView: tableView, output: outout)
 	}
 	func setButton() {
 		segueToCollection = UIBarButtonItem(title: "Collection",
@@ -54,6 +55,14 @@ extension MainViewController: MainViewInput {
 	}
 
 	@objc func makeCollection(_ sender: UIBarButtonItem? = nil){
-		viewOutput.pushCollection()
+		outout.pushCollection()
+	}
+
+	func setUpNavigationBar() {
+		navigationController?.hidesBarsOnSwipe = true
+		navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+		navigationController?.navigationBar.shadowImage = UIImage()
+		navigationController?.navigationBar.isTranslucent = true
+		navigationController?.view.backgroundColor = UIColor.clear
 	}
 }

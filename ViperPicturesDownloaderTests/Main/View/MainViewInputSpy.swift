@@ -10,6 +10,10 @@ import Foundation
 @testable import ViperPicturesDownloader
 
 class MainViewInputSpy: MainViewInput {
+	func setUpNavigationBar() {
+	
+	}
+
 	var didSetTable: Bool = false
 	var didSetButton: Bool = false
 

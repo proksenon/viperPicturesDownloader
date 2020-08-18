@@ -13,6 +13,7 @@ final class CustomTableViewDataSource:NSObject, UITableViewDataSource {
 	var tableView: UITableView!
 	/// Презентер
 	var output: TableViewDataSourceOutPut!
+	let imageFilter = ImageFilter()
 	
 	init(tableView: UITableView, output: TableViewDataSourceOutPut){
 		super.init()
@@ -38,5 +39,6 @@ final class CustomTableViewDataSource:NSObject, UITableViewDataSource {
 		}
 		return cell
 	}
+
 
 }

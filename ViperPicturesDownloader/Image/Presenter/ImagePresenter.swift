@@ -23,7 +23,14 @@ class ImagePresenter {
 extension ImagePresenter: ImageViewOutput{
 
 	func configureView() {
-		view.loadImageView()
+		//view.loadImageView()
+
+		view.setUpImageView()
+		view.configureImageView()
+		view.setUpCollection()
+		view.constraintCollection()
+		view.setImage(with: interactor.originImageGet())
+
 		view.backgroundColor()
 		view.tapImage()
 	}
@@ -31,6 +38,37 @@ extension ImagePresenter: ImageViewOutput{
 	func popViewController() {
 		router.pop()
 	}
+
+	func filterImage() {
+		let filteredImage = interactor.filterToImage(indexPath: IndexPath(row: 1, section: 1))
+		view.setImage(with: filteredImage)
+	}
 }
 // MARK: - ImageInteractorOuput
 extension ImagePresenter: ImageInteractorOuput {}
+
+extension ImagePresenter: FilterCollectionViewDataSourceOutput {
+
+	func numberOfRows() -> Int {
+		return interactor.numberOfRows()
+	}
+	func getFilterIcon(indexPath: IndexPath)-> Image {
+		return interactor.getFilterIcon(indexPath: indexPath)
+	}
+}
+
+extension ImagePresenter: FilterCollectionViewDelegateOutput {
+
+	func didSelect(indexPath: IndexPath) {
+		let filterImage = interactor.didSelect(indexPath: indexPath)
+		view.setImage(with: filterImage)
+	}
+
+
+}
+
+extension ImagePresenter: ImageModuleInput {
+	func configure(with image: Image) {
+		interactor.originImageSet(image: image)
+	}
+}

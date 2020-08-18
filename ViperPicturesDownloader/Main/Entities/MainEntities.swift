@@ -34,6 +34,7 @@ final class MainEntities {
 /// Хранит картинку
 struct Image {
 	let image: UIImage?
+	var description: String? = ""
 }
 /// Хранит размер картинки
 struct ImageSize {

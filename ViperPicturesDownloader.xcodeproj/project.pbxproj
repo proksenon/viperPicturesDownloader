@@ -95,6 +95,19 @@
 		D51C7F2B24E6F7B8001541F7 /* TableViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F2A24E6F7B8001541F7 /* TableViewMock.swift */; };
 		D51C7F2D24E6F80D001541F7 /* CustomTableViewDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F2C24E6F80D001541F7 /* CustomTableViewDataSourceTest.swift */; };
 		D51C7F2F24E7043D001541F7 /* CustomTableViewDelegateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F2E24E7043D001541F7 /* CustomTableViewDelegateTest.swift */; };
+		D53255F624EBDA7800764898 /* ImageFilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53255F524EBDA7800764898 /* ImageFilterManager.swift */; };
+		D53255F824EBEDB600764898 /* ImageFilterManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53255F724EBEDB600764898 /* ImageFilterManagerProtocol.swift */; };
+		D53255FB24EBFE0F00764898 /* FiltersIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53255FA24EBFE0F00764898 /* FiltersIcons.swift */; };
+		D5581A8924E7173100958537 /* ImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5581A8824E7173100958537 /* ImageFilter.swift */; };
+		D5581A8B24E718F400958537 /* UIimageViewBlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5581A8A24E718F400958537 /* UIimageViewBlurEffect.swift */; };
+		D55FB18724EAA62800BF0249 /* FilterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB18624EAA62800BF0249 /* FilterCollectionView.swift */; };
+		D55FB18A24EAA77A00BF0249 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB18924EAA77A00BF0249 /* FilterCollectionViewCell.swift */; };
+		D55FB18E24EAA8F500BF0249 /* FilterCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB18D24EAA8F500BF0249 /* FilterCollectionDataSource.swift */; };
+		D55FB19024EAA9DB00BF0249 /* FilterCollectionDataSourceOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB18F24EAA9DB00BF0249 /* FilterCollectionDataSourceOutput.swift */; };
+		D55FB19224EAA9F600BF0249 /* FilterCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB19124EAA9F600BF0249 /* FilterCollectionViewDelegate.swift */; };
+		D55FB19424EAAA0900BF0249 /* FilterCollectionViewDelegateOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB19324EAAA0900BF0249 /* FilterCollectionViewDelegateOutput.swift */; };
+		D55FB19624EBC0CE00BF0249 /* ImageModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB19524EBC0CE00BF0249 /* ImageModuleInput.swift */; };
+		D55FB19824EBC0E100BF0249 /* ImageModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB19724EBC0E100BF0249 /* ImageModuleOutput.swift */; };
 		D565EA4A24E5600F008897A6 /* EncryptionManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565EA4924E5600F008897A6 /* EncryptionManagerMock.swift */; };
 		D565EA4D24E56141008897A6 /* ImageNameManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565EA4C24E56141008897A6 /* ImageNameManagerMock.swift */; };
 		D565EA4F24E56198008897A6 /* ImageResizerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565EA4E24E56198008897A6 /* ImageResizerMock.swift */; };
@@ -221,6 +234,19 @@
 		D51C7F2A24E6F7B8001541F7 /* TableViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewMock.swift; sourceTree = "<group>"; };
 		D51C7F2C24E6F80D001541F7 /* CustomTableViewDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewDataSourceTest.swift; sourceTree = "<group>"; };
 		D51C7F2E24E7043D001541F7 /* CustomTableViewDelegateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewDelegateTest.swift; sourceTree = "<group>"; };
+		D53255F524EBDA7800764898 /* ImageFilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilterManager.swift; sourceTree = "<group>"; };
+		D53255F724EBEDB600764898 /* ImageFilterManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilterManagerProtocol.swift; sourceTree = "<group>"; };
+		D53255FA24EBFE0F00764898 /* FiltersIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersIcons.swift; sourceTree = "<group>"; };
+		D5581A8824E7173100958537 /* ImageFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilter.swift; sourceTree = "<group>"; };
+		D5581A8A24E718F400958537 /* UIimageViewBlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIimageViewBlurEffect.swift; sourceTree = "<group>"; };
+		D55FB18624EAA62800BF0249 /* FilterCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionView.swift; sourceTree = "<group>"; };
+		D55FB18924EAA77A00BF0249 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		D55FB18D24EAA8F500BF0249 /* FilterCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionDataSource.swift; sourceTree = "<group>"; };
+		D55FB18F24EAA9DB00BF0249 /* FilterCollectionDataSourceOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionDataSourceOutput.swift; sourceTree = "<group>"; };
+		D55FB19124EAA9F600BF0249 /* FilterCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		D55FB19324EAAA0900BF0249 /* FilterCollectionViewDelegateOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewDelegateOutput.swift; sourceTree = "<group>"; };
+		D55FB19524EBC0CE00BF0249 /* ImageModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModuleInput.swift; sourceTree = "<group>"; };
+		D55FB19724EBC0E100BF0249 /* ImageModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModuleOutput.swift; sourceTree = "<group>"; };
 		D565EA4924E5600F008897A6 /* EncryptionManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionManagerMock.swift; sourceTree = "<group>"; };
 		D565EA4C24E56141008897A6 /* ImageNameManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNameManagerMock.swift; sourceTree = "<group>"; };
 		D565EA4E24E56198008897A6 /* ImageResizerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResizerMock.swift; sourceTree = "<group>"; };
@@ -303,6 +329,7 @@
 				D50F516924E15A3F0042BAD2 /* StorageProvider */,
 				D50F516A24E15A530042BAD2 /* ActivivtyIndicator */,
 				D50F516B24E15A630042BAD2 /* UserDefaultsWork */,
+				D5581A8724E7170B00958537 /* ImageFilter */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -312,6 +339,7 @@
 			children = (
 				D50F50B024D853880042BAD2 /* CGSizeStringExtension.swift */,
 				D50F50AE24D8530A0042BAD2 /* UIImageResizeExtension.swift */,
+				D5581A8A24E718F400958537 /* UIimageViewBlurEffect.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -348,6 +376,7 @@
 				D50F515C24E1574F0042BAD2 /* Interactor */,
 				D50F515F24E1576E0042BAD2 /* Router */,
 				D50F516224E157890042BAD2 /* Configurator */,
+				D53255F924EBFDD500764898 /* Entity */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -355,6 +384,9 @@
 		D50F50CE24DAB9EA0042BAD2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D55FB18B24EAA8BA00BF0249 /* CollectionDataSource */,
+				D55FB18C24EAA8C000BF0249 /* CollectionDelegate */,
+				D55FB18824EAA62D00BF0249 /* FilterCollection */,
 				D50F50CF24DABA030042BAD2 /* FullImageView.swift */,
 				D50F50C224DAB5560042BAD2 /* ImageViewController.swift */,
 				D50F51B824E27F8C0042BAD2 /* ImageViewInput.swift */,
@@ -472,6 +504,8 @@
 			isa = PBXGroup;
 			children = (
 				D50F50C424DAB57A0042BAD2 /* ImagePresenter.swift */,
+				D55FB19524EBC0CE00BF0249 /* ImageModuleInput.swift */,
+				D55FB19724EBC0E100BF0249 /* ImageModuleOutput.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -742,6 +776,51 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		D53255F924EBFDD500764898 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				D53255FA24EBFE0F00764898 /* FiltersIcons.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		D5581A8724E7170B00958537 /* ImageFilter */ = {
+			isa = PBXGroup;
+			children = (
+				D5581A8824E7173100958537 /* ImageFilter.swift */,
+				D53255F524EBDA7800764898 /* ImageFilterManager.swift */,
+				D53255F724EBEDB600764898 /* ImageFilterManagerProtocol.swift */,
+			);
+			path = ImageFilter;
+			sourceTree = "<group>";
+		};
+		D55FB18824EAA62D00BF0249 /* FilterCollection */ = {
+			isa = PBXGroup;
+			children = (
+				D55FB18624EAA62800BF0249 /* FilterCollectionView.swift */,
+				D55FB18924EAA77A00BF0249 /* FilterCollectionViewCell.swift */,
+			);
+			path = FilterCollection;
+			sourceTree = "<group>";
+		};
+		D55FB18B24EAA8BA00BF0249 /* CollectionDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				D55FB18D24EAA8F500BF0249 /* FilterCollectionDataSource.swift */,
+				D55FB18F24EAA9DB00BF0249 /* FilterCollectionDataSourceOutput.swift */,
+			);
+			path = CollectionDataSource;
+			sourceTree = "<group>";
+		};
+		D55FB18C24EAA8C000BF0249 /* CollectionDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D55FB19124EAA9F600BF0249 /* FilterCollectionViewDelegate.swift */,
+				D55FB19324EAAA0900BF0249 /* FilterCollectionViewDelegateOutput.swift */,
+			);
+			path = CollectionDelegate;
+			sourceTree = "<group>";
+		};
 		D565EA4B24E5610F008897A6 /* ServicesMocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1002,6 +1081,7 @@
 				D50F50A824D852A30042BAD2 /* ImageNameManager.swift in Sources */,
 				D50F51B924E27F8C0042BAD2 /* ImageViewInput.swift in Sources */,
 				D50F51BF24E280220042BAD2 /* ImageInteractorOutput.swift in Sources */,
+				D53255F624EBDA7800764898 /* ImageFilterManager.swift in Sources */,
 				D50F516D24E15DA40042BAD2 /* MainViewInput.swift in Sources */,
 				D50F506724D847350042BAD2 /* MainEntities.swift in Sources */,
 				D50F50AF24D8530A0042BAD2 /* UIImageResizeExtension.swift in Sources */,
@@ -1017,6 +1097,7 @@
 				D50F50CB24DAB5B30042BAD2 /* ImageConfigurator.swift in Sources */,
 				D50F506524D8356D0042BAD2 /* CustomTableViewDataSource.swift in Sources */,
 				D50F515624E156DF0042BAD2 /* CollectionConfiguratorProtocol.swift in Sources */,
+				D55FB18A24EAA77A00BF0249 /* FilterCollectionViewCell.swift in Sources */,
 				D50F50AB24D852A30042BAD2 /* ImageResizer.swift in Sources */,
 				D50F50E024DAE9870042BAD2 /* CustomCollectionView.swift in Sources */,
 				D50F50C324DAB5560042BAD2 /* ImageViewController.swift in Sources */,
@@ -1030,6 +1111,7 @@
 				D50F50DB24DAE5150042BAD2 /* CollectionConfigurator.swift in Sources */,
 				D56A290724D42DEB00178564 /* SceneDelegate.swift in Sources */,
 				D56A291C24D431FF00178564 /* MainInteractor.swift in Sources */,
+				D55FB19824EBC0E100BF0249 /* ImageModuleOutput.swift in Sources */,
 				D50F50B124D853880042BAD2 /* CGSizeStringExtension.swift in Sources */,
 				D50F505F24D827840042BAD2 /* CustomTableView.swift in Sources */,
 				D50F50D724DAE4E30042BAD2 /* CollectionInteractor.swift in Sources */,
@@ -1038,7 +1120,11 @@
 				D50F50D924DAE4FB0042BAD2 /* CollectionRouter.swift in Sources */,
 				D50F517B24E172DA0042BAD2 /* MainInteractorOutput.swift in Sources */,
 				D50F509724D8523B0042BAD2 /* FileProviderProtocol.swift in Sources */,
+				D55FB19424EAAA0900BF0249 /* FilterCollectionViewDelegateOutput.swift in Sources */,
+				D5581A8B24E718F400958537 /* UIimageViewBlurEffect.swift in Sources */,
 				D50F50D324DAE4980042BAD2 /* CollectionViewController.swift in Sources */,
+				D5581A8924E7173100958537 /* ImageFilter.swift in Sources */,
+				D55FB19224EAA9F600BF0249 /* FilterCollectionViewDelegate.swift in Sources */,
 				D50F518524E17DDB0042BAD2 /* CollectionViewOutput.swift in Sources */,
 				D50F50EB24DBECC10042BAD2 /* ActivityIndicator.swift in Sources */,
 				D50F518724E1807C0042BAD2 /* CollectionViewDataSourceOutput.swift in Sources */,
@@ -1047,9 +1133,11 @@
 				D50F50A524D852A30042BAD2 /* UserDefaultsWork.swift in Sources */,
 				D56A292024D4321F00178564 /* MainConfigurator.swift in Sources */,
 				D50F50B624D853C20042BAD2 /* KeyForEncrypte.swift in Sources */,
+				D53255F824EBEDB600764898 /* ImageFilterManagerProtocol.swift in Sources */,
 				D56A291A24D431E500178564 /* MainPresenter.swift in Sources */,
 				D50F508D24D851FE0042BAD2 /* NetworkService.swift in Sources */,
 				D50F50A924D852A30042BAD2 /* ZoomAndSnapFlowLayout.swift in Sources */,
+				D55FB19624EBC0CE00BF0249 /* ImageModuleInput.swift in Sources */,
 				D50F509924D8523B0042BAD2 /* ImageResizerProtocol.swift in Sources */,
 				D50F50BF24D9A8710042BAD2 /* UserDefaultsWorkProtocol.swift in Sources */,
 				D50F51BB24E27F990042BAD2 /* ImageViewOutput.swift in Sources */,
@@ -1062,10 +1150,14 @@
 				D50F50A724D852A30042BAD2 /* FileProvider.swift in Sources */,
 				D50F50B824D853C20042BAD2 /* EncryptionWork.swift in Sources */,
 				D50F50C524DAB57A0042BAD2 /* ImagePresenter.swift in Sources */,
+				D53255FB24EBFE0F00764898 /* FiltersIcons.swift in Sources */,
 				D50F518324E17DC00042BAD2 /* CollectionViewInput.swift in Sources */,
 				D50F50AA24D852A30042BAD2 /* ImageProvider.swift in Sources */,
+				D55FB18724EAA62800BF0249 /* FilterCollectionView.swift in Sources */,
+				D55FB19024EAA9DB00BF0249 /* FilterCollectionDataSourceOutput.swift in Sources */,
 				D50F50BA24D95D360042BAD2 /* CustomTableViewDelegate.swift in Sources */,
 				D50F515324E156B70042BAD2 /* CollectionRouterInput.swift in Sources */,
+				D55FB18E24EAA8F500BF0249 /* FilterCollectionDataSource.swift in Sources */,
 				D56A291E24D4320D00178564 /* MainRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1259,15 +1351,17 @@
 			baseConfigurationReference = C378E92C71E5A248718810BA /* Pods-ViperPicturesDownloader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5D5RK3QAMV;
+				DEVELOPMENT_TEAM = DFX963574W;
 				INFOPLIST_FILE = ViperPicturesDownloader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = NMZabludovskiy.ViperPicturesDownloader;
+				PRODUCT_BUNDLE_IDENTIFIER = PicturesDownloader;
 				PRODUCT_NAME = ViperPicturesDownloader;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1278,15 +1372,17 @@
 			baseConfigurationReference = 32179CF329B2741EBAA48969 /* Pods-ViperPicturesDownloader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5D5RK3QAMV;
+				DEVELOPMENT_TEAM = DFX963574W;
 				INFOPLIST_FILE = ViperPicturesDownloader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = NMZabludovskiy.ViperPicturesDownloader;
+				PRODUCT_BUNDLE_IDENTIFIER = PicturesDownloader;
 				PRODUCT_NAME = ViperPicturesDownloader;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

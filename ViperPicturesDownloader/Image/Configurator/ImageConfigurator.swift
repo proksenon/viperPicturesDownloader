@@ -16,6 +16,7 @@ class ImageConfigurator: ImageConfiguratorProtocol {
 		let router = ImageRouter(viewController: viewController)
 
 		viewController.outputView = presenter
+		viewController.moduleInput = presenter
 		presenter.interactor = interactor
 		presenter.router = router
 
