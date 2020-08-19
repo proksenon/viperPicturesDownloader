@@ -17,7 +17,7 @@ class ImageFilterManager: ImageFilterManagerProtocol {
 
 	init(imageFilter: ImageFilter = ImageFilter()) {
 		self.imageFilter = imageFilter
-		filters = [imageFilter.withoutFilter, imageFilter.sepiaToneFilter, imageFilter.colorControlsFilter, imageFilter.edgesFilter, imageFilter.noirFilter, imageFilter.gaussianBlurFilter]
+		filters = [imageFilter.withoutFilter, imageFilter.sepiaToneFilter, imageFilter.colorControlsFilter, imageFilter.edgesFilter, imageFilter.noirFilter, imageFilter.gaussianBlurFilter, imageFilter.pinkCrossPolynomial, imageFilter.spotColorFilter]
 		countFilters = filters.count
 	}
 

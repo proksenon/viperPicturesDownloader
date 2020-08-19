@@ -11,7 +11,8 @@ import UIKit
 final class MainEntities {
 	/// Ссылки на картинки
 	let urls: [String] = [
-		   "https://i.pinimg.com/originals/b3/c2/ff/b3c2ff8bcfad7ad8b6af0ceb99ffc7ef.jpg",
+		"https://allcalc.ru/addition/color/3.png",
+		"https://i.pinimg.com/originals/b3/c2/ff/b3c2ff8bcfad7ad8b6af0ceb99ffc7ef.jpg",
 		   "https://media.idownloadblog.com/wp-content/uploads/2020/06/iOS-14-iPhone-Wallpaper-iDownloadBlog-ispazio-dark-1.jpg",
 		   "https://9to5mac.com/wp-content/uploads/sites/6/2018/09/530.Bubble_Gray-414w-896h@2xiphone.jpg?quality=82&strip=all",
 		   "https://i.pinimg.com/originals/83/1d/95/831d95692a6441c47de359701bbb9933.jpg",

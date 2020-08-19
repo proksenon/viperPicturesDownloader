@@ -32,6 +32,9 @@ final class MainViewController: UIViewController {
 		super.viewDidLoad()
 		configurator.configure(with: self)
 		output.configureView()
+		UIApplication.shared.statusBarStyle = .lightContent
+
+		
 	}
 
 }
@@ -40,15 +43,14 @@ extension MainViewController: MainViewInput {
 	func setTableView() {
 		tableView = CustomTableView()
 		view.addSubview(tableView)
-//		tableView.setTableView(viewController: self)
 		customTableViewDataSource = CustomTableViewDataSource(tableView: tableView, output: output)
 		customTableViewDelegate = CustomTableViewDelegate(tableView: tableView, output: output)
 	}
 	func setTableConstraints() {
 		tableView.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([
-			tableView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: -50),
-			tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 50),
+			tableView.topAnchor.constraint(equalTo: self.view.topAnchor,constant: 0),
+			tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0),
 			tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0),
 			tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0)
 		])

@@ -59,7 +59,8 @@ extension ImageViewController: ImageViewInput {
 		imageView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
 		imageView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
 		imageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-		imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -150).isActive = true
+//		imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -150).isActive = true
+		imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 	}
 	func setUpCollection() {
 		collectionView = FilterCollectionView()
@@ -73,8 +74,8 @@ extension ImageViewController: ImageViewInput {
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
 		collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
 		collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-		collectionView.topAnchor.constraint(equalTo: imageView.bottomAnchor).isActive = true
 		collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+		collectionView.topAnchor.constraint(equalTo: view.bottomAnchor, constant: -150).isActive = true
 
 	}
 	func tapImage() {

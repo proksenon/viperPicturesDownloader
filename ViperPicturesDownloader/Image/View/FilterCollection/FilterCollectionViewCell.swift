@@ -14,22 +14,31 @@ class FilterCollectionViewCell: UICollectionViewCell {
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		contentView.addSubview(imageView)
-		contentView.addSubview(label)
-		label.textAlignment = .center
+		backgroundColor = .clear
+		setImageView()
+		setLabel()
 		constraintImageView()
 		constraintLabel()
-		backgroundColor = .white
 
 	}
-	func constraintImageView() {
+	private func setLabel() {
+		contentView.addSubview(label)
+		label.textAlignment = .center
+		label.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+		label.textColor = .white
+	}
+	private func setImageView() {
+		contentView.addSubview(imageView)
+		imageView.backgroundColor = .clear
+	}
+	private func constraintImageView() {
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 		imageView.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
 		imageView.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
 		imageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
 		imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
 	}
-	func constraintLabel() {
+	private func constraintLabel() {
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
 		label.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
