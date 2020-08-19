@@ -13,4 +13,8 @@ protocol MainViewInput: class {
 	func setTableConstraints()
 	func setButton()
 	func setUpNavigationBar()
+	func setStatusBarStyleLight()
+	func setupAlert()
+	func presentAlert()
+	func setAddUrlButton()
 }

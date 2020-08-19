@@ -11,4 +11,6 @@ import Foundation
 protocol MainViewOutput {
 	func configureView()
 	func pushCollection()
+	func didAddUrl(urlString: String?)
+	func presentAlert()
 }

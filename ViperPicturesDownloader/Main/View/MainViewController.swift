@@ -16,6 +16,8 @@ final class MainViewController: UIViewController {
 	var tableView: CustomTableView!
 	var customTableViewDataSource: CustomTableViewDataSource!
 	var customTableViewDelegate: CustomTableViewDelegate!
+	var alertVC: UIAlertController!
+	var addUrlButton: UIBarButtonItem!
 	/// кнопка перехода на колекшн вью
 	var segueToCollection: UIBarButtonItem!
 
@@ -32,9 +34,6 @@ final class MainViewController: UIViewController {
 		super.viewDidLoad()
 		configurator.configure(with: self)
 		output.configureView()
-		UIApplication.shared.statusBarStyle = .lightContent
-
-		
 	}
 
 }
@@ -61,11 +60,24 @@ extension MainViewController: MainViewInput {
 								 target: self,
 								 action: #selector(makeCollection(_:))
 								)
-		navigationItem.rightBarButtonItem = segueToCollection
+		navigationItem.leftBarButtonItem = segueToCollection
 	}
 
 	@objc func makeCollection(_ sender: UIBarButtonItem? = nil){
 		output.pushCollection()
+	}
+
+	func setAddUrlButton() {
+		addUrlButton = UIBarButtonItem(image: UIImage(systemName: "plus"),
+								 style: UIBarButtonItem.Style.done,
+								 target: self,
+								 action: #selector(addUrl(_:))
+								)
+		navigationItem.rightBarButtonItem = addUrlButton
+	}
+
+	@objc func addUrl(_ sender: UIBarButtonItem? = nil){
+		output.presentAlert()
 	}
 
 	func setUpNavigationBar() {
@@ -74,5 +86,29 @@ extension MainViewController: MainViewInput {
 		navigationController?.navigationBar.shadowImage = UIImage()
 		navigationController?.navigationBar.isTranslucent = true
 		navigationController?.view.backgroundColor = UIColor.clear
+	}
+
+	func setStatusBarStyleLight() {
+		UIApplication.shared.statusBarStyle = .lightContent
+	}
+
+	func setupAlert() {
+		alertVC = UIAlertController(title: "Введите ссылку на картинку", message: nil, preferredStyle: .alert)
+		alertVC.addTextField { (textField) in
+			textField.keyboardType = .alphabet
+			textField.placeholder = "url"
+		}
+		let alertAdd = UIAlertAction(title: "Добавить ссылку", style: .default) { [weak alertVC, weak output] (action) in
+			if let textfield = alertVC?.textFields?.first {
+				output?.didAddUrl(urlString: textfield.text)
+			}
+		}
+		let alertNo = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+		alertVC.addAction(alertAdd)
+		alertVC.addAction(alertNo)
+	}
+
+	func presentAlert() {
+		self.present(alertVC, animated: true)
 	}
 }

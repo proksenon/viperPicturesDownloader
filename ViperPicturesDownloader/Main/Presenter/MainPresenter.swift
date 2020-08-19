@@ -43,8 +43,19 @@ extension MainPresenter: MainViewOutput {
 		view.setTableConstraints()
 		view.setButton()
 		view.setUpNavigationBar()
+		view.setStatusBarStyleLight()
+		view.setupAlert()
+		view.setAddUrlButton()
 		freeStorage()
 //		freeALL()
+	}
+
+	func didAddUrl(urlString: String?) {
+		print(urlString)
+	}
+
+	func presentAlert() {
+		view.presentAlert()
 	}
 }
 // MARK: - TableViewDelegateOutput
