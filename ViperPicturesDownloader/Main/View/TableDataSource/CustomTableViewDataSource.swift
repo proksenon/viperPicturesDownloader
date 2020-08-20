@@ -40,5 +40,4 @@ final class CustomTableViewDataSource:NSObject, UITableViewDataSource {
 		return cell
 	}
 
-
 }

@@ -19,4 +19,5 @@ protocol MainInteractorInput: class {
 	func didAddUrl(urlString: String?)
 	func getImageUrls()
 	func saveImageUrls()
+	func deleteImage(indexPath: IndexPath)
 }

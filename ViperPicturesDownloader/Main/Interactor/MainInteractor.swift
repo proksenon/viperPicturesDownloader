@@ -37,6 +37,16 @@ final class MainInteractor : MainInteractorInput {
 		self.userDefaultsWork = userDefaultsWork
 	}
 
+	func deleteImage(indexPath: IndexPath) {
+		let urlDelete = imageUrls.urls[indexPath.row]
+		if let nameFile = imageNameManager.getNamefileFromDefaults(url: urlDelete, sizeString: "origin") {
+			fileProvider.removeFile(nameFile: nameFile, before: nil)
+		}
+		userDefaultsWork.removeObjects(urls: [urlDelete])
+		imageUrls.urls.remove(at: indexPath.row)
+		saveImageUrls()
+	}
+
 	func didAddUrl(urlString: String?) {
 		if let url = urlString {
 			imageUrls.urls.append(url)

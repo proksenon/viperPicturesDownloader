@@ -10,4 +10,5 @@ import Foundation
 
 protocol TableViewDelegateOutput: class {
 	func didSelect(indexPath: IndexPath)
+	func didDeleteImage(indexPath: IndexPath)
 }

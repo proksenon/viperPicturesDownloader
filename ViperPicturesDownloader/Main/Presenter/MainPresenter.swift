@@ -20,7 +20,7 @@ final class MainPresenter {
 	}
 	/// Очищает хранилище, удаляя файлы, которые лежат больше 2 дней
 	private func freeStorage() {
-		let date = Calendar.current.date(byAdding: .day, value: -2, to: Date())
+		let date = Calendar.current.date(byAdding: .day, value: 0, to: Date())
 		DispatchQueue.global(qos: .background).async {
 			self.interactor.freeStorage(befora: date)
 		}
@@ -47,7 +47,7 @@ extension MainPresenter: MainViewOutput {
 		view.setStatusBarStyleLight()
 		view.setupAlert()
 		view.setAddUrlButton()
-		//freeStorage()
+		freeStorage()
 		//freeALL()
 	}
 
@@ -67,6 +67,9 @@ extension MainPresenter: TableViewDelegateOutput {
 		getImage(indexPath: indexPath, size: ImageSize(size: nil)) { (image) in
 			self.router.push(image: image)
 		}
+	}
+	func didDeleteImage(indexPath: IndexPath) {
+		interactor.deleteImage(indexPath: indexPath)
 	}
 
 }

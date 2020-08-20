@@ -27,4 +27,15 @@ final class CustomTableViewDelegate: NSObject, UITableViewDelegate {
 		return UIScreen.main.bounds.size.height/3
 	}
 
+	func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+
+		let deleateAction = UITableViewRowAction(style: .default, title: "Удалить") { [weak output] (_, indexPath) in
+		output?.didDeleteImage(indexPath: indexPath)
+		tableView.deleteRows(at: [indexPath], with: .automatic)
+	}
+	//deleateAction.backgroundColor = .red
+		return [deleateAction]
+}
+
+
 }

@@ -51,13 +51,13 @@ final class FileProvider: FileProviderProtocol {
 		return (directory as NSString).appendingPathComponent(nameFile)
 	}
 	/// Удаляет ненужные файлы
-	private func removeFile(nameFile: String, before date: Date? = Date()) {
+	func removeFile(nameFile: String, before date: Date? = Date()) {
         do {
 			let path = getPath(nameFile: nameFile)
-			let dateFile = try fileManager.attributesOfItem(atPath: path)[FileAttributeKey.creationDate] as! Date
-			let sizeFile = try fileManager.attributesOfItem(atPath: path)[FileAttributeKey.size] as! Int
-			if let date = date {
-				if date > dateFile || sizeFile > limitedSizeFile {
+			let dateFile = try fileManager.attributesOfItem(atPath: path)[FileAttributeKey.creationDate] as? Date
+			let sizeFile = try fileManager.attributesOfItem(atPath: path)[FileAttributeKey.size] as? Int
+			if let date = date, let dataFile = dateFile, let sizeFile = sizeFile {
+				if date > dataFile || sizeFile > limitedSizeFile {
 					try fileManager.removeItem(atPath: path)
 					print("file deleted")
 				}

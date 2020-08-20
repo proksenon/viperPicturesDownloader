@@ -7,4 +7,5 @@ protocol FileProviderProtocol {
 	func getPath(nameFile: String, directory: String)->String
 	func writeToFile(data: Data, path: String)
 	func removeAllFiles(before date: Date?)
+	func removeFile(nameFile: String, before date: Date?)
 }
