@@ -11,7 +11,7 @@ import UIKit
 final class MainInteractor : MainInteractorInput {
 
 	weak var presenter: MainInteractorOutput!
-	let entities = MainEntities()
+	var imageUrls: ImageUrls!
 	var imageNameManager: ImageNameManagerProtocol!
 	var fileProvider: FileProviderProtocol!
 	var encryptionManager: EncryptionManagerProtocol!
@@ -36,6 +36,23 @@ final class MainInteractor : MainInteractorInput {
 		self.imageResizer = imageResizer
 		self.userDefaultsWork = userDefaultsWork
 	}
+
+	func didAddUrl(urlString: String?) {
+		if let url = urlString {
+			imageUrls.urls.append(url)
+			saveImageUrls()
+		}
+	}
+	func getImageUrls() {
+		if let imageUrlsFromStorage: ImageUrls = userDefaultsWork.getObjectWithDecoder(for: "imageUrls") {
+			imageUrls = imageUrlsFromStorage
+		} else {
+			imageUrls = ImageUrls()
+		}
+	}
+	func saveImageUrls() {
+		userDefaultsWork.setObjectWithDecoder(for: "imageUrls", object: imageUrls)
+	}
 	/// Устанавливает ActivityIndicator
 	func setUpActivityIndicator(viewModel: ViewForActivity) {
 		activityIndicator = ActivityIndicator(view: viewModel.view)
@@ -50,11 +67,11 @@ final class MainInteractor : MainInteractorInput {
 	}
 	/// Количество ячеек
 	func numberOfRows() -> Int {
-		return entities.urls.count
+		return imageUrls.urls.count
 	}
 	/// Получает картинку
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
-		let url = entities.urls[indexPath.row]
+		let url = imageUrls.urls[indexPath.row]
 		let nameFileOrigin = imageNameManager.getNameFileImage(url: url, size: nil)
 		if fileProvider.checkDirectory(nameFile: nameFileOrigin) {
 			imageFromCache(url: url, size: size) { (image) in
@@ -66,6 +83,7 @@ final class MainInteractor : MainInteractorInput {
 					completion(image)
 				}
 			}
+			completion(Image(image: UIImage(named: "defaultImage")))
 		}
 	}
 	/// Получает картинку с файлов
@@ -129,6 +147,6 @@ final class MainInteractor : MainInteractorInput {
 	/// Полностью очищает хранилище
 	func freeALL() {
 		freeStorage(befora: nil)
-		userDefaultsWork.removeObjects(urls: entities.urls)
+		userDefaultsWork.removeObjects(urls: imageUrls.urls)
 	}
 }

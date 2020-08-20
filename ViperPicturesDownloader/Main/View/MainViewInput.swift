@@ -17,4 +17,5 @@ protocol MainViewInput: class {
 	func setupAlert()
 	func presentAlert()
 	func setAddUrlButton()
+	func reloadTable()
 }

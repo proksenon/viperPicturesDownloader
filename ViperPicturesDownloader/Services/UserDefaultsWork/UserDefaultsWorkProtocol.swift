@@ -10,4 +10,8 @@ import Foundation
 
 protocol UserDefaultsWorkProtocol {
 	func removeObjects(urls: [String])
+	func setObject(for key: String, object: Any?)
+	func getObject(for key: String)->Any?
+	func setObjectWithDecoder<T: Encodable>(for key: String, object: T)
+	func getObjectWithDecoder<T: Decodable>(for key: String)-> T?
 }

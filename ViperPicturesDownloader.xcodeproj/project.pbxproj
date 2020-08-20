@@ -11,7 +11,7 @@
 		D50F505F24D827840042BAD2 /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F505E24D827840042BAD2 /* CustomTableView.swift */; };
 		D50F506124D827BB0042BAD2 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F506024D827BB0042BAD2 /* CustomTableViewCell.swift */; };
 		D50F506524D8356D0042BAD2 /* CustomTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F506424D8356D0042BAD2 /* CustomTableViewDataSource.swift */; };
-		D50F506724D847350042BAD2 /* MainEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F506624D847350042BAD2 /* MainEntities.swift */; };
+		D50F506724D847350042BAD2 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F506624D847350042BAD2 /* Entity.swift */; };
 		D50F508D24D851FE0042BAD2 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F508C24D851FE0042BAD2 /* NetworkService.swift */; };
 		D50F509624D8523B0042BAD2 /* ImageNameManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F508F24D8523A0042BAD2 /* ImageNameManagerProtocol.swift */; };
 		D50F509724D8523B0042BAD2 /* FileProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F509024D8523A0042BAD2 /* FileProviderProtocol.swift */; };
@@ -148,7 +148,7 @@
 		D50F505E24D827840042BAD2 /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
 		D50F506024D827BB0042BAD2 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		D50F506424D8356D0042BAD2 /* CustomTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewDataSource.swift; sourceTree = "<group>"; };
-		D50F506624D847350042BAD2 /* MainEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntities.swift; sourceTree = "<group>"; };
+		D50F506624D847350042BAD2 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		D50F508C24D851FE0042BAD2 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D50F508F24D8523A0042BAD2 /* ImageNameManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageNameManagerProtocol.swift; sourceTree = "<group>"; };
 		D50F509024D8523A0042BAD2 /* FileProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileProviderProtocol.swift; sourceTree = "<group>"; };
@@ -459,7 +459,7 @@
 		D50F514824E1552E0042BAD2 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				D50F506624D847350042BAD2 /* MainEntities.swift */,
+				D50F506624D847350042BAD2 /* Entity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1083,7 +1083,7 @@
 				D50F51BF24E280220042BAD2 /* ImageInteractorOutput.swift in Sources */,
 				D53255F624EBDA7800764898 /* ImageFilterManager.swift in Sources */,
 				D50F516D24E15DA40042BAD2 /* MainViewInput.swift in Sources */,
-				D50F506724D847350042BAD2 /* MainEntities.swift in Sources */,
+				D50F506724D847350042BAD2 /* Entity.swift in Sources */,
 				D50F50AF24D8530A0042BAD2 /* UIImageResizeExtension.swift in Sources */,
 				D50F518924E1808C0042BAD2 /* CollectionViewDelegateOutput.swift in Sources */,
 				D50F50E624DAEA240042BAD2 /* CustomCollectionDelegate.swift in Sources */,

@@ -6,6 +6,7 @@ final class ImageNameManager: ImageNameManagerProtocol {
 	init(defaults: UserDefaults = UserDefaults.standard) {
 		self.defaults = defaults
 	}
+	//[url : [size : namefile]]
 	/// Получает имя файла
 	func getNameFileImage(url: String, size: CGSize? = nil)-> String {
 		let sizeString = size?.toString() ?? "origin"

@@ -11,7 +11,7 @@ import UIKit
 final class CollectionInteractor: CollectionInteractorInput {
 	
 	weak var presenter: CollectionInteractorOutput!
-	let entities = MainEntities()
+	let imageUrls = ImageUrls()
 	var imageNameManager: ImageNameManagerProtocol!
 	var fileProvider: FileProviderProtocol!
 	var encryptionManager: EncryptionManagerProtocol!
@@ -50,11 +50,11 @@ final class CollectionInteractor: CollectionInteractorInput {
 	}
 	/// Количество ячеек
 	func numberOfRows() -> Int {
-		return entities.urls.count
+		return imageUrls.urls.count
 	}
 	/// Получает картинку
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
-		let url = entities.urls[indexPath.row]
+		let url = imageUrls.urls[indexPath.row]
 		let nameFileOrigin = imageNameManager.getNameFileImage(url: url, size: nil)
 		if fileProvider.checkDirectory(nameFile: nameFileOrigin) {
 			imageFromCache(url: url, size: size) { (image) in
@@ -129,6 +129,6 @@ final class CollectionInteractor: CollectionInteractorInput {
 	/// Полностью очищает хранилище
 	func freeALL() {
 		freeStorage(befora: nil)
-		userDefaultsWork.removeObjects(urls: entities.urls)
+		userDefaultsWork.removeObjects(urls: imageUrls.urls)
 	}
 }

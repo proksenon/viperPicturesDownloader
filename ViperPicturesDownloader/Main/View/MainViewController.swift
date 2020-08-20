@@ -54,6 +54,9 @@ extension MainViewController: MainViewInput {
 			tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0)
 		])
 	}
+	func reloadTable() {
+		tableView.reloadData()
+	}
 	func setButton() {
 		segueToCollection = UIBarButtonItem(title: "Collection",
 								 style: UIBarButtonItem.Style.done,
@@ -101,6 +104,7 @@ extension MainViewController: MainViewInput {
 		let alertAdd = UIAlertAction(title: "Добавить ссылку", style: .default) { [weak alertVC, weak output] (action) in
 			if let textfield = alertVC?.textFields?.first {
 				output?.didAddUrl(urlString: textfield.text)
+				textfield.text = ""
 			}
 		}
 		let alertNo = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)

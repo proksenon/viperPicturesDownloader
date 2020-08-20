@@ -39,6 +39,7 @@ extension MainPresenter: MainViewOutput {
 	}
 
 	func configureView() {
+		interactor.getImageUrls()
 		view.setTableView()
 		view.setTableConstraints()
 		view.setButton()
@@ -46,12 +47,13 @@ extension MainPresenter: MainViewOutput {
 		view.setStatusBarStyleLight()
 		view.setupAlert()
 		view.setAddUrlButton()
-		freeStorage()
-//		freeALL()
+		//freeStorage()
+		//freeALL()
 	}
 
 	func didAddUrl(urlString: String?) {
-		print(urlString)
+		interactor.didAddUrl(urlString: urlString)
+		view.reloadTable()
 	}
 
 	func presentAlert() {

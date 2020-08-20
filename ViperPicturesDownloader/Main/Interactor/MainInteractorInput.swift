@@ -16,4 +16,7 @@ protocol MainInteractorInput: class {
 	func setUpActivityIndicator(viewModel: ViewForActivity)
 	func startActivity()
 	func stopActivity()
+	func didAddUrl(urlString: String?)
+	func getImageUrls()
+	func saveImageUrls()
 }
