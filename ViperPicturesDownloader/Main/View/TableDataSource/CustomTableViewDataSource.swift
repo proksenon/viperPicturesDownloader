@@ -9,11 +9,9 @@
 import UIKit
 
 final class CustomTableViewDataSource:NSObject, UITableViewDataSource {
-	/// Кастомная таблица
+
 	var tableView: UITableView!
-	/// Презентер
 	var output: TableViewDataSourceOutPut!
-	let imageFilter = ImageFilter()
 	
 	init(tableView: UITableView, output: TableViewDataSourceOutPut){
 		super.init()

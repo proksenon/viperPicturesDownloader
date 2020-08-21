@@ -9,6 +9,6 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-	func getData(url: URL, completion: @escaping (Data) -> ())
+	func getData(url: URL, completion: @escaping (Data?) -> ())
 }
 

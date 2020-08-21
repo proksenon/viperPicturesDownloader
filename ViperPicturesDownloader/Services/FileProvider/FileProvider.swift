@@ -5,11 +5,7 @@ final class FileProvider: FileProviderProtocol {
 	let fileManager = FileManager()
 	let tempDirectory = NSTemporaryDirectory()
 	let limitedSizeFile = 10000000000
-	/// Проверяет в памяти данные об оригинальной картинки
-	func checkOriginImage(url: String)->Bool {
-		if let _ = defaults.object(forKey: url) as? [String:String] {return true}
-		return false
-	}
+
 	/// Записывает данные в файл
 	func writeToFile(data: Data, path: String){
 		do {
@@ -30,7 +26,6 @@ final class FileProvider: FileProviderProtocol {
 				}
 			}
 			print("File not found")
-			return false
 		   } catch let error as NSError {
 			   print(error)
 		   }

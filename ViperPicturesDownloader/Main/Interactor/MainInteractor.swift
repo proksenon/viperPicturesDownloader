@@ -19,6 +19,7 @@ final class MainInteractor : MainInteractorInput {
 	var imageResizer: ImageResizerProtocol!
 	var userDefaultsWork: UserDefaultsWorkProtocol!
 	var activityIndicator: ActivityIndicatorProtocol!
+	let imageFilterManager = ImageFilterManager()
 
 	init(presenter: MainInteractorOutput,
 		 imageNameManager: ImageNameManagerProtocol = ImageNameManager(),
@@ -60,6 +61,7 @@ final class MainInteractor : MainInteractorInput {
 			imageUrls = ImageUrls()
 		}
 	}
+
 	func saveImageUrls() {
 		userDefaultsWork.setObjectWithDecoder(for: "imageUrls", object: imageUrls)
 	}
@@ -79,6 +81,13 @@ final class MainInteractor : MainInteractorInput {
 	func numberOfRows() -> Int {
 		return imageUrls.urls.count
 	}
+	func getImageWithBlur(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
+		getImage(indexPath: indexPath, size: size) { (image) in
+			self.imageFilterManager.originImage = image.image
+			let imageWithBlur = self.imageFilterManager.apllyFilter(indexPath: IndexPath(row: 5, section: 1))
+			completion(Image(image: imageWithBlur))
+		}
+	}
 	/// Получает картинку
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
 		let url = imageUrls.urls[indexPath.row]
@@ -90,10 +99,13 @@ final class MainInteractor : MainInteractorInput {
 		} else {
 			if let currentUrl = URL(string: url) {
 				downloadImage(currentUrl: currentUrl, url: url, nameFileOrigin: nameFileOrigin, size: size) { (image) in
-					completion(image)
+					if image.image == nil {
+						completion(Image(image: UIImage(named: "defaultImage")))
+					} else {
+						completion(image)
+					}
 				}
 			}
-			completion(Image(image: UIImage(named: "defaultImage")))
 		}
 	}
 	/// Получает картинку с файлов
@@ -125,8 +137,8 @@ final class MainInteractor : MainInteractorInput {
 		if let decryptData = decryptionDataFromFile(url: url,
 													nameFile: imageNameManager.getNameFileImage(url: url, size: nil)) {
 			if let newData = imageResizer.imageToSize(size: size, data: decryptData) {
-				completion (UIImage(data: newData))
 				dataToFile(nameFile: nameFile, data: newData)
+				completion (UIImage(data: newData))
 			} else {
 				completion (UIImage(data: decryptData))
 			}
@@ -143,6 +155,7 @@ final class MainInteractor : MainInteractorInput {
 	private func downloadImage(currentUrl: URL, url: String,
 							   nameFileOrigin: String, size: ImageSize, completion: @escaping (Image)->Void) {
 		networkService.getData(url: currentUrl) { (data) in
+			guard let data = data else {completion(Image(image: nil)); return}
 			self.dataToFile(nameFile: nameFileOrigin, data: data)
 			let nameFile = self.imageNameManager.getNameFileImage(url: url, size: size.size)
 			self.originalToSize(url: url, nameFile: nameFile, size: size.size) { (image) in

@@ -9,9 +9,9 @@ final class NetworkService: NetworkServiceProtocol {
 		self.dispatchQueue = dispatchQueue
 	}
 	/// Получает данные
-	public func getData(url: URL, completion: @escaping (Data) -> ()) {
+	public func getData(url: URL, completion: @escaping (Data?) -> ()) {
 		session.dataTask(with: url) { (data, resonse, error) in
-			guard let data = data else {return}
+			//guard let data = data else {return}
 			self.dispatchQueue.async {
 				completion(data)
 			}

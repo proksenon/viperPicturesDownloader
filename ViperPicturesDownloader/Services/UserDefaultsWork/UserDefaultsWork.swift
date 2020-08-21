@@ -47,23 +47,5 @@ final class UserDefaultsWork: UserDefaultsWorkProtocol {
 		}
 		return nil
 	}
-//    let encoder = JSONEncoder()
-//    //let defaults = UserDefaults.standard
-//    let decoder = JSONDecoder()
-//    func savePersonInfo(personInfo: PersonInfo?) {
-//        if personInfo != nil {
-//            if let encoded = try? encoder.encode(personInfo) {
-//                defaults.set(encoded, forKey: "PersonInfo")
-//                defaults.synchronize()
-//            }
-//        }
-//    }
-//    func loadPersonInfo() -> PersonInfo? {
-//        if let personInfo = defaults.object(forKey: "PersonInfo") as? Data {
-//            if let loadedPerson = try? decoder.decode(PersonInfo.self, from: personInfo) {
-//                return loadedPerson
-//            }
-//        }
-//        return nil
-//    }
+	
 }

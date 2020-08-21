@@ -44,7 +44,7 @@ class ImageFilter {
 		if let currentFilter = CIFilter(name: "CIGaussianBlur") {
 			let beginImage = CIImage(image: inputImage)
 			currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-			currentFilter.setValue((5.0), forKey: kCIInputRadiusKey)
+			currentFilter.setValue((2.5), forKey: kCIInputRadiusKey)
 
 			return inputToOutputImage(currentFilter: currentFilter)
 		}

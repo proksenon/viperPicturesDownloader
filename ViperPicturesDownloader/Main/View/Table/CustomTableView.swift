@@ -14,12 +14,7 @@ final class CustomTableView: UITableView {
 		register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
 		tableFooterView = UIView()
 		separatorStyle = .none
-//		insetsContentViewsToSafeArea = false
 		contentInsetAdjustmentBehavior = .never
-		//tableHeaderView?.isHidden = true
-//		automaticallyAdjustsScrollIndicatorInsets = false
-//		contentView.frame.size = CGSize(width: UIScreen.main.bounds.size.width,
-//		height: UIScreen.main.bounds.size.height/3)
 
 	}
 

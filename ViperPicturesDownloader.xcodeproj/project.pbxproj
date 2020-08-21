@@ -125,6 +125,8 @@
 		D56A292024D4321F00178564 /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A291F24D4321F00178564 /* MainConfigurator.swift */; };
 		D5845CF524E3D7F200E2A695 /* MainTableCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5845CF424E3D7F200E2A695 /* MainTableCellTest.swift */; };
 		D5845CF724E3DB5A00E2A695 /* MainViewControllerBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5845CF624E3DB5A00E2A695 /* MainViewControllerBuild.swift */; };
+		D58BAC5F24EFBBB7006A3DB4 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58BAC5E24EFBBB7006A3DB4 /* AlertHelper.swift */; };
+		D58BAC6124EFBE70006A3DB4 /* AlertHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58BAC6024EFBE70006A3DB4 /* AlertHelperProtocol.swift */; };
 		D5E96DB424E3F5F800C49255 /* MainInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E96DB324E3F5F800C49255 /* MainInteractorTest.swift */; };
 		D5E96DB824E3F71E00C49255 /* NetwokServceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E96DB724E3F71E00C49255 /* NetwokServceMock.swift */; };
 		D5E96DBC24E41EA400C49255 /* MainInteractorOutputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E96DBB24E41EA400C49255 /* MainInteractorOutputSpy.swift */; };
@@ -266,6 +268,8 @@
 		D56A291F24D4321F00178564 /* MainConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfigurator.swift; sourceTree = "<group>"; };
 		D5845CF424E3D7F200E2A695 /* MainTableCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCellTest.swift; sourceTree = "<group>"; };
 		D5845CF624E3DB5A00E2A695 /* MainViewControllerBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerBuild.swift; sourceTree = "<group>"; };
+		D58BAC5E24EFBBB7006A3DB4 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		D58BAC6024EFBE70006A3DB4 /* AlertHelperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelperProtocol.swift; sourceTree = "<group>"; };
 		D5E96DB324E3F5F800C49255 /* MainInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorTest.swift; sourceTree = "<group>"; };
 		D5E96DB724E3F71E00C49255 /* NetwokServceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwokServceMock.swift; sourceTree = "<group>"; };
 		D5E96DBB24E41EA400C49255 /* MainInteractorOutputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorOutputSpy.swift; sourceTree = "<group>"; };
@@ -364,6 +368,8 @@
 				D56A290824D42DEB00178564 /* MainViewController.swift */,
 				D50F516C24E15DA40042BAD2 /* MainViewInput.swift */,
 				D50F516E24E1608C0042BAD2 /* MainViewOutput.swift */,
+				D58BAC5E24EFBBB7006A3DB4 /* AlertHelper.swift */,
+				D58BAC6024EFBE70006A3DB4 /* AlertHelperProtocol.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1105,6 +1111,7 @@
 				D50F514424E154EC0042BAD2 /* MainRouterInput.swift in Sources */,
 				D50F50B724D853C20042BAD2 /* EncryptionManager.swift in Sources */,
 				D50F51BD24E280170042BAD2 /* ImageInteractorInput.swift in Sources */,
+				D58BAC6124EFBE70006A3DB4 /* AlertHelperProtocol.swift in Sources */,
 				D50F518B24E181360042BAD2 /* CollectionInteractorInput.swift in Sources */,
 				D56A290524D42DEB00178564 /* AppDelegate.swift in Sources */,
 				D50F509824D8523B0042BAD2 /* ImageProviderProtocol.swift in Sources */,
@@ -1118,6 +1125,7 @@
 				D50F50A624D852A30042BAD2 /* StorageProvider.swift in Sources */,
 				D50F517724E16BA90042BAD2 /* TableViewDelegateOutput.swift in Sources */,
 				D50F50D924DAE4FB0042BAD2 /* CollectionRouter.swift in Sources */,
+				D58BAC5F24EFBBB7006A3DB4 /* AlertHelper.swift in Sources */,
 				D50F517B24E172DA0042BAD2 /* MainInteractorOutput.swift in Sources */,
 				D50F509724D8523B0042BAD2 /* FileProviderProtocol.swift in Sources */,
 				D55FB19424EAAA0900BF0249 /* FilterCollectionViewDelegateOutput.swift in Sources */,

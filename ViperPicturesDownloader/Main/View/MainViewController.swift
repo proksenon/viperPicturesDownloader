@@ -17,6 +17,7 @@ final class MainViewController: UIViewController {
 	var customTableViewDataSource: CustomTableViewDataSource!
 	var customTableViewDelegate: CustomTableViewDelegate!
 	var alertVC: UIAlertController!
+	var alertHelper: AlertHelperProtocol!
 	var addUrlButton: UIBarButtonItem!
 	/// кнопка перехода на колекшн вью
 	var segueToCollection: UIBarButtonItem!
@@ -97,19 +98,10 @@ extension MainViewController: MainViewInput {
 
 	func setupAlert() {
 		alertVC = UIAlertController(title: "Введите ссылку на картинку", message: nil, preferredStyle: .alert)
-		alertVC.addTextField { (textField) in
-			textField.keyboardType = .alphabet
-			textField.placeholder = "url"
+		alertHelper = AlertHelper()
+		alertHelper.setupAlert(alertVC: alertVC) { [weak output] (urlString) in
+			output?.didAddUrl(urlString: urlString)
 		}
-		let alertAdd = UIAlertAction(title: "Добавить ссылку", style: .default) { [weak alertVC, weak output] (action) in
-			if let textfield = alertVC?.textFields?.first {
-				output?.didAddUrl(urlString: textfield.text)
-				textfield.text = ""
-			}
-		}
-		let alertNo = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
-		alertVC.addAction(alertAdd)
-		alertVC.addAction(alertNo)
 	}
 
 	func presentAlert() {
