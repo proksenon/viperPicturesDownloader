@@ -8,6 +8,7 @@
 
 
 import Foundation
+import UIKit
 /// Презентер главного экрана
 final class MainPresenter {
 
@@ -59,6 +60,10 @@ extension MainPresenter: MainViewOutput {
 	func presentAlert() {
 		view.presentAlert()
 	}
+	func imageFromLibrary(image: Image) {
+		interactor.setImage(imageModel: image)
+		view.reloadTable()
+	}
 }
 // MARK: - TableViewDelegateOutput
 extension MainPresenter: TableViewDelegateOutput {
@@ -89,12 +94,12 @@ extension MainPresenter: TableViewDataSourceOutPut {
 	}
 
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
-		interactor.getImageWithBlur(indexPath: indexPath, size: size) { (image) in
-			completion(image)
-		}
-//		interactor.getImage(indexPath: indexPath, size: size) { (image) in
+//		interactor.getImageWithBlur(indexPath: indexPath, size: size) { (image) in
 //			completion(image)
 //		}
+		interactor.getImage(indexPath: indexPath, size: size) { (image) in
+			completion(image)
+		}
 	}
 
 	func numberOfRows() ->Int {

@@ -48,7 +48,7 @@ final class ImageNameManager: ImageNameManagerProtocol {
 		}
 		return nil
 	}
-	func addNameFileForSize(url: String, sizeString: String, dictNameFiles: [String: String])-> String {
+	private func addNameFileForSize(url: String, sizeString: String, dictNameFiles: [String: String])-> String {
 		let nameFile = createNameImage()
 		var newDictNameFiles = dictNameFiles
 		newDictNameFiles[sizeString] = nameFile

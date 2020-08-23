@@ -99,12 +99,51 @@ extension MainViewController: MainViewInput {
 	func setupAlert() {
 		alertVC = UIAlertController(title: "Введите ссылку на картинку", message: nil, preferredStyle: .alert)
 		alertHelper = AlertHelper()
-		alertHelper.setupAlert(alertVC: alertVC) { [weak output] (urlString) in
+		alertHelper.setupAlert(alertVC: alertVC)
+		alertHelper.alertTextFieldSet()
+		alertHelper.alertAddButtonSet { [weak output] (urlString) in
 			output?.didAddUrl(urlString: urlString)
 		}
+		alertHelper.alertCancleButtonSet()
+		let alertPhoto = UIAlertAction(title: "photo", style: .default) { (action) in
+			self.showImagePickerController(source: .photoLibrary)
+		}
+		let alertCamera = UIAlertAction(title: "camera", style: .default) { (action) in
+			self.showImagePickerController(source: .camera)
+		}
+		alertVC.addAction(alertPhoto)
+		alertVC.addAction(alertCamera)
 	}
 
 	func presentAlert() {
 		self.present(alertVC, animated: true)
+	}
+}
+
+extension MainViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+	func showImagePickerController(source: UIImagePickerController.SourceType) {
+		let imagePickerController = UIImagePickerController()
+		imagePickerController.delegate = self
+		imagePickerController.allowsEditing = false
+		imagePickerController.sourceType = source
+		present(imagePickerController, animated: true, completion: nil)
+	}
+
+	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+		let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+		let imageUrl = info[UIImagePickerController.InfoKey.imageURL] as? URL
+		var imageUrlString: String?
+		var imageFrom: ImageFrom
+		if imageUrl == nil {
+			imageUrlString = UUID().uuidString
+			imageFrom = .camera
+		} else {
+			imageUrlString = imageUrl?.absoluteString
+			imageFrom = .photoLibrary
+		}
+
+		output.imageFromLibrary(image: Image(image: image, urlString: imageUrlString, from: imageFrom))
+		dismiss(animated: true, completion: nil)
 	}
 }

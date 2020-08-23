@@ -21,4 +21,5 @@ protocol MainInteractorInput: class {
 	func getImageUrls()
 	func saveImageUrls()
 	func deleteImage(indexPath: IndexPath)
+	func setImage(imageModel: Image)
 }

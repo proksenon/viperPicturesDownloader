@@ -5,9 +5,12 @@ final class FileProvider: FileProviderProtocol {
 	let fileManager = FileManager()
 	let tempDirectory = NSTemporaryDirectory()
 	let limitedSizeFile = 10000000000
+	static var work = 0
 
 	/// Записывает данные в файл
 	func writeToFile(data: Data, path: String){
+		FileProvider.work = FileProvider.work + 1
+		print("WORKTT = \(FileProvider.work)")
 		do {
 			try data.write(to: URL(fileURLWithPath: path))
 			print("File text.txt created at temp directory")
@@ -34,6 +37,7 @@ final class FileProvider: FileProviderProtocol {
 	/// Считывает данные с файла
 	func readFile(nameFile: String)->Data? {
 		let path = getPath(nameFile: nameFile)
+		print(tempDirectory.utf8CString )
 		print("try to read \(nameFile) with path = \(path)")
 		if let contentsOfFile = NSData(contentsOf: URL(fileURLWithPath: path)) as Data? {
 			print("return data")
@@ -75,5 +79,17 @@ final class FileProvider: FileProviderProtocol {
             print("error occured while deleting file: \(error.localizedDescription)")
         }
 	}
-
+	func removeFilesWithType() {
+		do {
+			let filesInDirectory = try fileManager.contentsOfDirectory(atPath: tempDirectory)
+			for file in filesInDirectory {
+				if file.hasSuffix(".jpeg") {
+					let path = getPath(nameFile: file)
+					try fileManager.removeItem(atPath: path)
+				}
+			} //try fileManager.attributesOfItem(atPath: path)[FileAttributeKey.size] as? Int
+		} catch let error as NSError {
+            print("error occured while deleting file: \(error.localizedDescription)")
+        }
+	}
 }

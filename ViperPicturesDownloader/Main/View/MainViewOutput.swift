@@ -13,4 +13,5 @@ protocol MainViewOutput {
 	func pushCollection()
 	func didAddUrl(urlString: String?)
 	func presentAlert()
+	func imageFromLibrary(image: Image)
 }

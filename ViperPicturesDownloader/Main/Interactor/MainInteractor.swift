@@ -40,11 +40,17 @@ final class MainInteractor : MainInteractorInput {
 
 	func deleteImage(indexPath: IndexPath) {
 		let urlDelete = imageUrls.urls[indexPath.row]
-		if let nameFile = imageNameManager.getNamefileFromDefaults(url: urlDelete, sizeString: "origin") {
-			fileProvider.removeFile(nameFile: nameFile, before: nil)
+		if let imagesSize = userDefaultsWork.getObject(for: urlDelete) as? [String: String] {
+			for (size, nameFile) in imagesSize {
+				fileProvider.removeFile(nameFile: nameFile, before: nil)
+			}
 		}
+//		if let nameFile = imageNameManager.getNamefileFromDefaults(url: urlDelete, sizeString: "origin") {
+//			fileProvider.removeFile(nameFile: nameFile, before: nil)
+//		}
 		userDefaultsWork.removeObjects(urls: [urlDelete])
 		imageUrls.urls.remove(at: indexPath.row)
+		print(imageUrls.urls.count)
 		saveImageUrls()
 	}
 
@@ -88,6 +94,31 @@ final class MainInteractor : MainInteractorInput {
 			completion(Image(image: imageWithBlur))
 		}
 	}
+
+	//устанавливает картинку из фотоальбома
+	func setImage(imageModel: Image) {
+		guard let urlString = imageModel.urlString, let image = imageModel.image else { return }
+		let nameFile = imageNameManager.getNameFileImage(url: urlString, size: nil)
+		if !fileProvider.checkDirectory(nameFile: nameFile) {
+			var dataFromImage: Data
+			switch imageModel.from {
+			case .camera:
+				guard let data = image.jpegData(compressionQuality: 0.8) else { return }
+				dataFromImage = data
+			default:
+				guard let data = image.pngData() else { return }
+				dataFromImage = data
+			}
+			//guard let data = image.pngData() else { return }
+	
+			dataToFile(nameFile: nameFile, data: dataFromImage)
+			imageUrls.urls.append(urlString)
+			saveImageUrls()
+		}
+		fileProvider.removeFilesWithType()
+
+	}
+
 	/// Получает картинку
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
 		let url = imageUrls.urls[indexPath.row]
@@ -126,7 +157,7 @@ final class MainInteractor : MainInteractorInput {
 	private func decryptionDataFromFile(url: String, nameFile: String)-> Data? {
 		if let data = fileProvider.readFile(nameFile: nameFile) {
 			if let decryptData = encryptionManager.decryptionData(data: data) {
-				return decryptData
+				return decryptData//decryptData
 			}
 		}
 		return nil
@@ -148,7 +179,7 @@ final class MainInteractor : MainInteractorInput {
 	private func dataToFile(nameFile: String, data: Data) {
 		let path = self.fileProvider.getPath(nameFile: nameFile, directory: NSTemporaryDirectory())
 		if let encryptData = encryptionManager.encryptionData(data: data) {
-			self.fileProvider.writeToFile(data: encryptData, path: path)
+			self.fileProvider.writeToFile(data: encryptData, path: path)//encryptData
 		}
 	}
 	/// Скачивает картинку
@@ -157,7 +188,7 @@ final class MainInteractor : MainInteractorInput {
 		networkService.getData(url: currentUrl) { (data) in
 			guard let data = data else {completion(Image(image: nil)); return}
 			self.dataToFile(nameFile: nameFileOrigin, data: data)
-			let nameFile = self.imageNameManager.getNameFileImage(url: url, size: size.size)
+			let nameFile = self.imageNameManager.getNameFileImage(url: url, size: size.size)///тут косяк
 			self.originalToSize(url: url, nameFile: nameFile, size: size.size) { (image) in
 				completion(Image(image: image))
 			}

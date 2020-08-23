@@ -368,8 +368,6 @@
 				D56A290824D42DEB00178564 /* MainViewController.swift */,
 				D50F516C24E15DA40042BAD2 /* MainViewInput.swift */,
 				D50F516E24E1608C0042BAD2 /* MainViewOutput.swift */,
-				D58BAC5E24EFBBB7006A3DB4 /* AlertHelper.swift */,
-				D58BAC6024EFBE70006A3DB4 /* AlertHelperProtocol.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -870,6 +868,7 @@
 				D56A290424D42DEB00178564 /* AppDelegate.swift */,
 				D56A290624D42DEB00178564 /* SceneDelegate.swift */,
 				D50F50AD24D852D60042BAD2 /* Extensions */,
+				D58BAC6324EFC5A2006A3DB4 /* Helpers */,
 				D50F50AC24D852AC0042BAD2 /* Services */,
 				D56A291824D431CA00178564 /* Main */,
 				D50F50D124DAE4670042BAD2 /* Collection */,
@@ -893,6 +892,23 @@
 				D50F514824E1552E0042BAD2 /* Entities */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		D58BAC6224EFC58F006A3DB4 /* AlertHelper */ = {
+			isa = PBXGroup;
+			children = (
+				D58BAC5E24EFBBB7006A3DB4 /* AlertHelper.swift */,
+				D58BAC6024EFBE70006A3DB4 /* AlertHelperProtocol.swift */,
+			);
+			path = AlertHelper;
+			sourceTree = "<group>";
+		};
+		D58BAC6324EFC5A2006A3DB4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D58BAC6224EFC58F006A3DB4 /* AlertHelper */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
