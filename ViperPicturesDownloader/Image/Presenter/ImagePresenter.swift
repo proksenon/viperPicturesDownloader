@@ -23,16 +23,13 @@ class ImagePresenter {
 extension ImagePresenter: ImageViewOutput{
 
 	func configureView() {
-		//view.loadImageView()
-
 		view.setUpImageView()
 		view.configureImageView()
 		view.setUpCollection()
 		view.constraintCollection()
 		view.setImage(with: interactor.originImageGet())
-
 		view.backgroundColor()
-		view.tapImage()
+		view.setUpSaveButton()
 	}
 
 	func popViewController() {

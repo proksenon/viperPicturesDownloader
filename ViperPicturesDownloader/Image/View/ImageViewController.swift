@@ -17,16 +17,8 @@ class ImageViewController: UIViewController {
 	var collectionView: FilterCollectionView!
 	var filterCollectionDataSource: FilterCollectionViewDataSource!
 	var filterCollectionDelegate: FilterCollectionViewDelegate!
-	var image: UIImage? {
-		didSet {
-			origIma = image
-		}
-	}
-	var filtredImage: UIImage?
-	var effect: Bool = false
-	let filter = ImageFilter()
-	var origIma: UIImage?
 	var imageView: UIImageView!
+	var saveImageButton: UIBarButtonItem!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -42,16 +34,9 @@ extension ImageViewController: ImageViewInput {
 		view.backgroundColor = .white
 	}
 
-	func loadImageView() {
-//		let view = FullImageView()
-//		view.imageView.image = origIma
-//		self.view = view
-	}
-
 	func setUpImageView() {
 		imageView = UIImageView()
 		view.addSubview(imageView)
-		imageView.image = origIma
 	}
 
 	func configureImageView() {
@@ -65,7 +50,6 @@ extension ImageViewController: ImageViewInput {
 	func setUpCollection() {
 		collectionView = FilterCollectionView()
 		view.addSubview(collectionView)
-		//collectionView.setCollectionViewConstraints(collectionViewController: self)
 		filterCollectionDataSource = FilterCollectionViewDataSource(collectionView: collectionView, output: outputView)
 		filterCollectionDelegate = FilterCollectionViewDelegate(collectionView: collectionView, output: outputView)
 	}
@@ -78,28 +62,15 @@ extension ImageViewController: ImageViewInput {
 		collectionView.topAnchor.constraint(equalTo: view.bottomAnchor, constant: -150).isActive = true
 
 	}
-	func tapImage() {
-//		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapFilter))
-//		collectionView.addGestureRecognizer(tapGesture)
-	}
-
-
-	@objc func tapGestureDone(){
-		outputView.popViewController()
-	}
-	/// по тапу применятся на картинку эффект
-	@objc func tapFilter() {
-		outputView.filterImage()
-//		effect = !effect
-//		if effect {
-//			origIma = filter.edgesFilter(image: image)
-//		} else {
-//			origIma = image
-//		}
-//		imageView.image = origIma
-	}
 
 	func setImage(with image: Image) {
 		imageView.image = image.image
+	}
+	func setUpSaveButton() {
+		saveImageButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveImage(_ :)))
+		navigationItem.rightBarButtonItem = saveImageButton
+	}
+	@objc func saveImage(_ sender: UIBarButtonItem) {
+		UIImageWriteToSavedPhotosAlbum(imageView.image!, nil, nil,nil)
 	}
 }

@@ -9,14 +9,11 @@
 import Foundation
 
 protocol ImageViewInput: class {
-	func loadImageView()
-
 	func setUpImageView()
 	func configureImageView()
 	func setUpCollection()
 	func constraintCollection()
 	func setImage(with image: Image)
-	
+	func setUpSaveButton()
 	func backgroundColor()
-	func tapImage()
 }
