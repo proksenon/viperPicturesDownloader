@@ -97,26 +97,36 @@ final class MainInteractor : MainInteractorInput {
 
 	//устанавливает картинку из фотоальбома
 	func setImage(imageModel: Image) {
-		guard let urlString = imageModel.urlString, let image = imageModel.image else { return }
-		let nameFile = imageNameManager.getNameFileImage(url: urlString, size: nil)
-		if !fileProvider.checkDirectory(nameFile: nameFile) {
-			var dataFromImage: Data
-			switch imageModel.from {
-			case .camera:
-				guard let data = image.jpegData(compressionQuality: 0.8) else { return }
-				dataFromImage = data
-			default:
-				guard let data = image.pngData() else { return }
-				dataFromImage = data
+		var imageUrlString: String!
+		var imageFormat: ImageFormat = .png
+		guard let image = imageModel.image else { return }
+		if imageModel.urlString == nil {
+			imageUrlString = UUID().uuidString
+			imageFormat = .jpeg
+		} else {
+			guard let urlString = imageModel.urlString else { return }
+			imageUrlString = urlString
+			if imageUrlString.hasSuffix(".jpeg") {
+				imageFormat = .jpeg
 			}
-			//guard let data = image.pngData() else { return }
-	
-			dataToFile(nameFile: nameFile, data: dataFromImage)
-			imageUrls.urls.append(urlString)
+		}
+		guard let data = imageToDataWith(format: imageFormat, image: image) else { return }
+		let nameFile = imageNameManager.getNameFileImage(url: imageUrlString, size: nil)
+		if !fileProvider.checkDirectory(nameFile: nameFile) {
+			dataToFile(nameFile: nameFile, data: data)
+			imageUrls.urls.append(imageUrlString)
 			saveImageUrls()
 		}
-		fileProvider.removeFilesWithType()
-
+//		fileProvider.removeFilesWithType()
+	}
+	
+	private func imageToDataWith(format: ImageFormat, image: UIImage)-> Data? {
+		switch format {
+		case .jpeg:
+			return image.jpegData(compressionQuality: 0.8)
+		default:
+			return image.pngData()
+		}
 	}
 
 	/// Получает картинку

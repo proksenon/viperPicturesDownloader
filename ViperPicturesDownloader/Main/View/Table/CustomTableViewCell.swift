@@ -11,15 +11,33 @@ import UIKit
 final class CustomTableViewCell: UITableViewCell {
 
 	let customImageView = UIImageView()
+	let activityIndicator = UIActivityIndicatorView()
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 			super.init(style: style, reuseIdentifier: reuseIdentifier)
 		contentView.frame.size = CGSize(width: UIScreen.main.bounds.size.width,
 										height: UIScreen.main.bounds.size.height/3)
+//		addSubview(activityIndicator)
+		setActivivty()
 		addSubview(customImageView)
 		/// констрейнты картинки во всю ячейку
 		setImageViewConsstraints()
+//		activityIndicator.style = .large
+//		activityIndicator.center = contentView.center
+//		activityIndicator.startAnimating()
 	 }
+	private func setActivivty() {
+		addSubview(activityIndicator)
+		activityIndicator.style = .large
+		activityIndicator.center = contentView.center
+		startActivity()
+	}
+	func stopActivity() {
+		activityIndicator.stopAnimating()
+	}
+	func startActivity() {
+		activityIndicator.startAnimating()
+	}
 	private func setImageViewConsstraints() {
 		/// констрейнты картинки во всю ячейку
 		customImageView.translatesAutoresizingMaskIntoConstraints = false

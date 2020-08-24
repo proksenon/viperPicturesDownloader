@@ -101,8 +101,10 @@ extension MainViewController: MainViewInput {
 		alertHelper = AlertHelper()
 		alertHelper.setupAlert(alertVC: alertVC)
 		alertHelper.alertTextFieldSet()
-		alertHelper.alertAddButtonSet { [weak output] (urlString) in
-			output?.didAddUrl(urlString: urlString)
+		alertHelper.alertAddButtonSet { [weak output, alertVC] (urlString) in
+			if alertVC?.textFields?.first?.text != "" {
+				output?.didAddUrl(urlString: urlString)
+			}
 		}
 		alertHelper.alertCancleButtonSet()
 		let alertPhoto = UIAlertAction(title: "photo", style: .default) { (action) in
@@ -133,17 +135,18 @@ extension MainViewController: UIImagePickerControllerDelegate, UINavigationContr
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 		let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
 		let imageUrl = info[UIImagePickerController.InfoKey.imageURL] as? URL
-		var imageUrlString: String?
-		var imageFrom: ImageFrom
-		if imageUrl == nil {
-			imageUrlString = UUID().uuidString
-			imageFrom = .camera
-		} else {
-			imageUrlString = imageUrl?.absoluteString
-			imageFrom = .photoLibrary
-		}
-
-		output.imageFromLibrary(image: Image(image: image, urlString: imageUrlString, from: imageFrom))
+//		var imageUrlString: String?
+//		var imageFrom: ImageFrom
+//		if imageUrl == nil {
+//			imageUrlString = UUID().uuidString
+//			imageFrom = .camera
+//		} else {
+//			imageUrlString = imageUrl?.absoluteString
+//			imageFrom = .photoLibrary
+//		}
+//
+//		output.imageFromLibrary(image: Image(image: image, urlString: imageUrlString, from: imageFrom))
+		output.imageFromLibrary(image: Image(image: image, urlString: imageUrl?.absoluteString))
 		dismiss(animated: true, completion: nil)
 	}
 }

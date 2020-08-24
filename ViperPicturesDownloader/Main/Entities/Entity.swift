@@ -37,7 +37,7 @@ struct Image {
 	let image: UIImage?
 	var description: String? = ""
 	var urlString: String? = ""
-	var from: ImageFrom = .internet
+//	var from: ImageFrom = .internet
 }
 /// Хранит размер картинки
 struct ImageSize {
@@ -48,8 +48,13 @@ struct ViewForActivity {
 	let view: UIView
 }
 
-enum ImageFrom {
-	case internet
-	case photoLibrary
-	case camera
+//enum ImageFrom {
+//	case internet
+//	case photoLibrary
+//	case camera
+//}
+
+enum ImageFormat {
+	case png
+	case jpeg
 }
