@@ -19,6 +19,7 @@ class ImageViewController: UIViewController {
 	var filterCollectionDelegate: FilterCollectionViewDelegate!
 	var imageView: UIImageView!
 	var saveImageButton: UIBarButtonItem!
+	var alertVC: UIAlertController!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -60,17 +61,24 @@ extension ImageViewController: ImageViewInput {
 		collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
 		collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 		collectionView.topAnchor.constraint(equalTo: view.bottomAnchor, constant: -150).isActive = true
-
 	}
 
 	func setImage(with image: Image) {
 		imageView.image = image.image
 	}
+
 	func setUpSaveButton() {
 		saveImageButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveImage(_ :)))
 		navigationItem.rightBarButtonItem = saveImageButton
 	}
+
 	@objc func saveImage(_ sender: UIBarButtonItem) {
 		UIImageWriteToSavedPhotosAlbum(imageView.image!, nil, nil,nil)
+		alertVC = UIAlertController(title: "Успешно", message: "Картинка добавлена", preferredStyle: .alert)
+		self.present(alertVC, animated: true) { [weak alertVC] in
+			sleep(1)
+			alertVC?.dismiss(animated: true, completion: nil)
+		}
 	}
+
 }
