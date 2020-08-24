@@ -18,28 +18,12 @@ final class CollectionPresenter {
 		self.view = view
 	}
 
-
-	/// Очищает хранилище, удаляя файлы, которые лежат больше 2 дней
-	private func freeStorage() {
-		let date = Calendar.current.date(byAdding: .day, value: -2, to: Date())
-		DispatchQueue.global(qos: .background).async {
-			self.interactor.freeStorage(befora: date)
-		}
-	}
-	/// Полностью очищает хранилище
-	private func freeALL(){
-		interactor.freeALL()
-	}
-
-
 }
 // MARK: - CollectionViewOutput
 extension CollectionPresenter: CollectionViewOutput {
 	func configureView() {
 		view.setCollection()
 		view.setCollectionConstraint()
-		freeStorage()
-//		freeALL()
 	}
 }
 // MARK: - CollectionViewDelegateOutput
@@ -52,18 +36,6 @@ extension CollectionPresenter: CollectionViewDelegateOutput {
 }
 // MARK: - CollectionViewDataSourceOutput
 extension CollectionPresenter: CollectionViewDataSourceOutput {
-
-	func setUpActivity(viewModel: ViewForActivity) {
-		interactor.setUpActivityIndicator(viewModel: viewModel)
-	}
-
-	func startActivity() {
-		interactor.startActivity()
-	}
-
-	func stopActivity() {
-		interactor.stopActivity()
-	}
 
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
 		interactor.getImage(indexPath: indexPath, size: size) { (image) in
@@ -78,4 +50,12 @@ extension CollectionPresenter: CollectionViewDataSourceOutput {
 // MARK: - CollectionInteractorOutput
 extension CollectionPresenter: CollectionInteractorOutput {
 	
+}
+
+extension CollectionPresenter: CollectionModuleInput {
+	func configure(with imagesUrl: ImageUrls) {
+		interactor.setImageUrls(with: imagesUrl)
+	}
+
+
 }

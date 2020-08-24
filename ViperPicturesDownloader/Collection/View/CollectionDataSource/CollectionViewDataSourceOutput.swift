@@ -9,9 +9,6 @@
 import Foundation
 
 protocol CollectionViewDataSourceOutput: class {
-	func setUpActivity(viewModel: ViewForActivity)
-	func startActivity()
-	func stopActivity()
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void)
 	func numberOfRows() ->Int
 }

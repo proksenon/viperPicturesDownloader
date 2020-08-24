@@ -11,7 +11,7 @@ import UIKit
 final class CollectionInteractor: CollectionInteractorInput {
 	
 	weak var presenter: CollectionInteractorOutput!
-	let imageUrls = ImageUrls()
+	var imageUrls: ImageUrls!
 	var imageNameManager: ImageNameManagerProtocol!
 	var fileProvider: FileProviderProtocol!
 	var encryptionManager: EncryptionManagerProtocol!
@@ -36,17 +36,8 @@ final class CollectionInteractor: CollectionInteractorInput {
 		self.imageResizer = imageResizer
 		self.userDefaultsWork = userDefaultsWork
 	}
-	/// Устанавливает ActivityIndicator
-	func setUpActivityIndicator(viewModel: ViewForActivity) {
-		activityIndicator = ActivityIndicator(view: viewModel.view)
-	}
-	/// Включает ActivityIndicator
-	func startActivity() {
-		activityIndicator.startActivity()
-	}
-	/// Выключает ActivityIndicator
-	func stopActivity() {
-		activityIndicator.stopActivity()
+	func setImageUrls(with urls: ImageUrls) {
+		imageUrls = urls
 	}
 	/// Количество ячеек
 	func numberOfRows() -> Int {
@@ -123,13 +114,5 @@ final class CollectionInteractor: CollectionInteractorInput {
 			}
 		}
 	}
-	/// Очищает хранилище, удаляя файлы, которые лежат больше 2 дней
-	func freeStorage(befora date: Date? = Calendar.current.date(byAdding: .day, value: -2, to: Date())){
-		fileProvider.removeAllFiles(before: date)
-	}
-	/// Полностью очищает хранилище
-	func freeALL() {
-		freeStorage(befora: nil)
-		userDefaultsWork.removeObjects(urls: imageUrls.urls)
-	}
+
 }

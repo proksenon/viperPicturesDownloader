@@ -11,9 +11,5 @@ import Foundation
 protocol CollectionInteractorInput: class {
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void)
 	func numberOfRows() -> Int
-	func freeStorage(befora date: Date?)
-	func freeALL()
-	func setUpActivityIndicator(viewModel: ViewForActivity)
-	func startActivity()
-	func stopActivity()
+	func setImageUrls(with urls: ImageUrls)
 }

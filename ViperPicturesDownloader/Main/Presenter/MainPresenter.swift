@@ -36,11 +36,11 @@ final class MainPresenter {
 extension MainPresenter: MainViewOutput {
 
 	func pushCollection() {
-		router.pushCollection()
+		router.pushCollection(with: interactor.getImageUrls())
 	}
 
 	func configureView() {
-		interactor.getImageUrls()
+		interactor.setImageUrls()
 		view.setTableView()
 		view.setTableConstraints()
 		view.setButton()
@@ -80,18 +80,6 @@ extension MainPresenter: TableViewDelegateOutput {
 }
 // MARK: - TableViewDataSourceOutPut
 extension MainPresenter: TableViewDataSourceOutPut {
-
-	func setUpActivity(viewModel: ViewForActivity) {
-		interactor.setUpActivityIndicator(viewModel: viewModel)
-	}
-
-	func startActivity() {
-		interactor.startActivity()
-	}
-
-	func stopActivity() {
-		interactor.stopActivity()
-	}
 
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
 //		interactor.getImageWithBlur(indexPath: indexPath, size: size) { (image) in

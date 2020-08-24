@@ -127,6 +127,8 @@
 		D5845CF724E3DB5A00E2A695 /* MainViewControllerBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5845CF624E3DB5A00E2A695 /* MainViewControllerBuild.swift */; };
 		D58BAC5F24EFBBB7006A3DB4 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58BAC5E24EFBBB7006A3DB4 /* AlertHelper.swift */; };
 		D58BAC6124EFBE70006A3DB4 /* AlertHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58BAC6024EFBE70006A3DB4 /* AlertHelperProtocol.swift */; };
+		D5C765D524F3F6A500495553 /* CollectionModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C765D424F3F6A500495553 /* CollectionModuleInput.swift */; };
+		D5C765D724F3F6BB00495553 /* CollectionModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C765D624F3F6BB00495553 /* CollectionModuleOutput.swift */; };
 		D5E96DB424E3F5F800C49255 /* MainInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E96DB324E3F5F800C49255 /* MainInteractorTest.swift */; };
 		D5E96DB824E3F71E00C49255 /* NetwokServceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E96DB724E3F71E00C49255 /* NetwokServceMock.swift */; };
 		D5E96DBC24E41EA400C49255 /* MainInteractorOutputSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E96DBB24E41EA400C49255 /* MainInteractorOutputSpy.swift */; };
@@ -270,6 +272,8 @@
 		D5845CF624E3DB5A00E2A695 /* MainViewControllerBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerBuild.swift; sourceTree = "<group>"; };
 		D58BAC5E24EFBBB7006A3DB4 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		D58BAC6024EFBE70006A3DB4 /* AlertHelperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelperProtocol.swift; sourceTree = "<group>"; };
+		D5C765D424F3F6A500495553 /* CollectionModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModuleInput.swift; sourceTree = "<group>"; };
+		D5C765D624F3F6BB00495553 /* CollectionModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModuleOutput.swift; sourceTree = "<group>"; };
 		D5E96DB324E3F5F800C49255 /* MainInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorTest.swift; sourceTree = "<group>"; };
 		D5E96DB724E3F71E00C49255 /* NetwokServceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwokServceMock.swift; sourceTree = "<group>"; };
 		D5E96DBB24E41EA400C49255 /* MainInteractorOutputSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorOutputSpy.swift; sourceTree = "<group>"; };
@@ -472,6 +476,8 @@
 			isa = PBXGroup;
 			children = (
 				D50F50D424DAE4B60042BAD2 /* CollectionPresenter.swift */,
+				D5C765D424F3F6A500495553 /* CollectionModuleInput.swift */,
+				D5C765D624F3F6BB00495553 /* CollectionModuleOutput.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1096,6 +1102,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5C765D524F3F6A500495553 /* CollectionModuleInput.swift in Sources */,
 				D50F50BD24D996B50042BAD2 /* EncryptionManagerProtocol.swift in Sources */,
 				D50F50E224DAE9C40042BAD2 /* CustomCollectionViewCell.swift in Sources */,
 				D50F50ED24DBECED0042BAD2 /* ActivityIndicatorProtocol.swift in Sources */,
@@ -1179,6 +1186,7 @@
 				D50F50AA24D852A30042BAD2 /* ImageProvider.swift in Sources */,
 				D55FB18724EAA62800BF0249 /* FilterCollectionView.swift in Sources */,
 				D55FB19024EAA9DB00BF0249 /* FilterCollectionDataSourceOutput.swift in Sources */,
+				D5C765D724F3F6BB00495553 /* CollectionModuleOutput.swift in Sources */,
 				D50F50BA24D95D360042BAD2 /* CustomTableViewDelegate.swift in Sources */,
 				D50F515324E156B70042BAD2 /* CollectionRouterInput.swift in Sources */,
 				D55FB18E24EAA8F500BF0249 /* FilterCollectionDataSource.swift in Sources */,

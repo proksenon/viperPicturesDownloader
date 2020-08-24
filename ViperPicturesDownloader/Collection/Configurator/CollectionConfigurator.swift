@@ -16,6 +16,7 @@ final class CollectionConfigurator: CollectionConfiguratorProtocol {
 		let router = CollectionRouter(viewController: viewController)
 
 		viewController.output = presenter
+		viewController.moduleInput = presenter
 		presenter.interactor = interactor
 		presenter.router = router
 

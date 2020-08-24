@@ -11,18 +11,18 @@ import UIKit
 final class CustomCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 
 	var collectionView: CustomCollectionView!
-	var presenter: CollectionViewDataSourceOutput!
+	var output: CollectionViewDataSourceOutput!
 
-	init(collectionView: CustomCollectionView, presenter: CollectionViewDataSourceOutput){
+	init(collectionView: CustomCollectionView, output: CollectionViewDataSourceOutput){
 		super.init()
 		self.collectionView = collectionView
 		self.collectionView.dataSource = self
-		self.presenter = presenter
+		self.output = output
 	}
 
 
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return presenter.numberOfRows()
+		return output.numberOfRows()
 	}
 
 	func collectionView(_ collectionView: UICollectionView,
@@ -31,12 +31,10 @@ final class CustomCollectionViewDataSource: NSObject, UICollectionViewDataSource
 													  for: indexPath) as! CustomCollectionViewCell
 		let size = CGSize(width: cell.contentView.frame.size.width,
 						  height: cell.contentView.frame.size.width)
-		presenter.setUpActivity(viewModel: ViewForActivity(view: cell.contentView))
-		presenter.startActivity()
-		presenter.getImage(indexPath: indexPath, size: ImageSize(size: size)) { (image) in
+		output.getImage(indexPath: indexPath, size: ImageSize(size: size)) { (image) in
 			cell.imageView.image = image.image
 			cell.imageView.contentMode = .scaleAspectFit
-			self.presenter.stopActivity()
+			cell.stopActivity()
 		}
 		return cell
 	}

@@ -9,13 +9,12 @@
 import UIKit
 
 class ImageFilter {
-
 	let context = CIContext(options: nil)
 
-	private func inputToOutputImage(currentFilter: CIFilter)-> UIImage? {
+	private func inputToOutputImage(currentFilter: CIFilter, imageOrientetion: UIImage.Orientation )-> UIImage? {
 		if let output = currentFilter.outputImage {
 			if let cgimg = context.createCGImage(output, from: output.extent) {
-				let processedImage = UIImage(cgImage: cgimg)
+				let processedImage = UIImage(cgImage: cgimg, scale: 1.0, orientation: imageOrientetion)
 				return processedImage
 				// do something interesting with the processed image
 			}
@@ -25,18 +24,15 @@ class ImageFilter {
 
 	func sepiaToneFilter(image: UIImage?)-> UIImage? {
 		guard let inputImage = image else {return nil}
-
 		if let currentFilter = CIFilter(name: "CISepiaTone") {
 			let beginImage = CIImage(image: inputImage)
 			currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
 			currentFilter.setValue(0.3, forKey: kCIInputIntensityKey)
 
-			return inputToOutputImage(currentFilter: currentFilter)
+			return inputToOutputImage(currentFilter: currentFilter, imageOrientetion: inputImage.imageOrientation)
 		}
 		return nil
 	}
-
-
 
 	func gaussianBlurFilter(image: UIImage?)-> UIImage? {
 		guard let inputImage = image else {return nil}
@@ -46,7 +42,7 @@ class ImageFilter {
 			currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
 			currentFilter.setValue((2.5), forKey: kCIInputRadiusKey)
 
-			return inputToOutputImage(currentFilter: currentFilter)
+			return inputToOutputImage(currentFilter: currentFilter, imageOrientetion: inputImage.imageOrientation)
 		}
 		return nil
 	}
@@ -61,7 +57,7 @@ class ImageFilter {
 			currentFilter.setValue(5, forKey: kCIInputSaturationKey)
 			currentFilter.setValue(1, forKey: kCIInputContrastKey)
 
-			return inputToOutputImage(currentFilter: currentFilter)
+			return inputToOutputImage(currentFilter: currentFilter, imageOrientetion: inputImage.imageOrientation)
 		}
 		return nil
 	}
@@ -71,9 +67,10 @@ class ImageFilter {
 
 		if let currentFilter = CIFilter(name: "CIPhotoEffectNoir") {
 			let beginImage = CIImage(image: inputImage)
+
 			currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
 
-			return inputToOutputImage(currentFilter: currentFilter)
+			return inputToOutputImage(currentFilter: currentFilter, imageOrientetion: inputImage.imageOrientation)
 		}
 		return nil
 	}
@@ -86,7 +83,7 @@ class ImageFilter {
 			currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
 			currentFilter.setValue(20, forKey: kCIInputIntensityKey)
 
-			return inputToOutputImage(currentFilter: currentFilter)
+			return inputToOutputImage(currentFilter: currentFilter, imageOrientetion: inputImage.imageOrientation)
 		}
 		return nil
 	}
@@ -103,7 +100,7 @@ class ImageFilter {
 			currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
 			//currentFilter.setValue(20, forKey: "inputRedCoefficients")
 
-			return inputToOutputImage(currentFilter: currentFilter)
+			return inputToOutputImage(currentFilter: currentFilter, imageOrientetion: inputImage.imageOrientation)
 		}
 		return nil
 	}
@@ -130,7 +127,7 @@ class ImageFilter {
 			currentFilter.setValue(1, forKey: "inputCloseness3")
 			currentFilter.setValue(1, forKey: "inputContrast3")
 
-			return inputToOutputImage(currentFilter: currentFilter)
+			return inputToOutputImage(currentFilter: currentFilter, imageOrientetion: inputImage.imageOrientation)
 		}
 		return nil
 	}

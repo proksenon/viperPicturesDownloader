@@ -12,6 +12,7 @@ final class CollectionViewController: UIViewController {
 
 	typealias Presenter = CollectionViewOutput & CollectionViewDataSourceOutput & CollectionViewDelegateOutput
 	var output: Presenter!
+	var moduleInput: CollectionModuleInput!
 	let configurator: CollectionConfiguratorProtocol = CollectionConfigurator()
 	var collectionView: CustomCollectionView!
 	var customCollectionDataSource: CustomCollectionViewDataSource!
@@ -19,7 +20,7 @@ final class CollectionViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		configurator.configure(with: self)
+//		configurator.configure(with: self)
 		output.configureView()
 	}
 
@@ -29,8 +30,8 @@ extension CollectionViewController: CollectionViewInput {
 	func setCollection() {
 		collectionView = CustomCollectionView()
 		view.addSubview(collectionView)
-		customCollectionDataSource = CustomCollectionViewDataSource(collectionView: collectionView, presenter: output)
-		customCollectionDelegate = CustomCollectionViewDelegate(collectionView: collectionView, presenter: output)
+		customCollectionDataSource = CustomCollectionViewDataSource(collectionView: collectionView, output: output)
+		customCollectionDelegate = CustomCollectionViewDelegate(collectionView: collectionView, output: output)
 	}
 
 	func setCollectionConstraint() {

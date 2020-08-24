@@ -38,6 +38,9 @@ final class MainInteractor : MainInteractorInput {
 		self.userDefaultsWork = userDefaultsWork
 	}
 
+	func getImageUrls() -> ImageUrls {
+		return imageUrls
+	}
 	func deleteImage(indexPath: IndexPath) {
 		let urlDelete = imageUrls.urls[indexPath.row]
 		if let imagesSize = userDefaultsWork.getObject(for: urlDelete) as? [String: String] {
@@ -45,9 +48,6 @@ final class MainInteractor : MainInteractorInput {
 				fileProvider.removeFile(nameFile: nameFile, before: nil)
 			}
 		}
-//		if let nameFile = imageNameManager.getNamefileFromDefaults(url: urlDelete, sizeString: "origin") {
-//			fileProvider.removeFile(nameFile: nameFile, before: nil)
-//		}
 		userDefaultsWork.removeObjects(urls: [urlDelete])
 		imageUrls.urls.remove(at: indexPath.row)
 		print(imageUrls.urls.count)
@@ -60,7 +60,7 @@ final class MainInteractor : MainInteractorInput {
 			saveImageUrls()
 		}
 	}
-	func getImageUrls() {
+	func setImageUrls() {
 		if let imageUrlsFromStorage: ImageUrls = userDefaultsWork.getObjectWithDecoder(for: "imageUrls") {
 			imageUrls = imageUrlsFromStorage
 		} else {
@@ -70,18 +70,6 @@ final class MainInteractor : MainInteractorInput {
 
 	func saveImageUrls() {
 		userDefaultsWork.setObjectWithDecoder(for: "imageUrls", object: imageUrls)
-	}
-	/// Устанавливает ActivityIndicator
-	func setUpActivityIndicator(viewModel: ViewForActivity) {
-		activityIndicator = ActivityIndicator(view: viewModel.view)
-	}
-	/// Включает ActivityIndicator
-	func startActivity() {
-		activityIndicator.startActivity()
-	}
-	/// Выключает ActivityIndicator
-	func stopActivity() {
-		activityIndicator.stopActivity()
 	}
 	/// Количество ячеек
 	func numberOfRows() -> Int {
@@ -123,7 +111,7 @@ final class MainInteractor : MainInteractorInput {
 	private func imageToDataWith(format: ImageFormat, image: UIImage)-> Data? {
 		switch format {
 		case .jpeg:
-			return image.jpegData(compressionQuality: 0.8)
+			return image.jpegData(compressionQuality: 1)
 		default:
 			return image.pngData()
 		}

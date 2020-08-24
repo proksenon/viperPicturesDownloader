@@ -488,10 +488,10 @@
             filePath = "ViperPicturesDownloader/Image/Interactor/ImageInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "init(presenter:imageFilterManager:)"
-            landmarkType = "7">
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "ImageInteractor"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "76AFF321-6EF8-4275-BC53-6551C2ABB1E0 - f93175893c74beb0"
@@ -599,8 +599,8 @@
             filePath = "ViperPicturesDownloader/Main/Interactor/MainInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "MainInteractor"
             landmarkType = "3">
          </BreakpointContent>
@@ -615,8 +615,8 @@
             filePath = "ViperPicturesDownloader/Main/Interactor/MainInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "setImage(imageModel:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -679,8 +679,8 @@
             filePath = "ViperPicturesDownloader/Main/Interactor/MainInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "getImage(indexPath:size:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -704,16 +704,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1EF2B8EB-5AC4-4350-A323-B39FC9F6AB92"
+            uuid = "32F2D04D-547B-4322-9A96-15B110B03A2C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ViperPicturesDownloader/Main/View/MainViewController.swift"
+            filePath = "ViperPicturesDownloader/Services/ImageFilter/ImageFilter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "inputToOutputImage(currentFilter:imageOrientetion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

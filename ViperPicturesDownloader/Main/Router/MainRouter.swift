@@ -20,16 +20,18 @@ final class MainRouter : MainRouterInput {
 		let nextVC = ImageViewController()
 		nextVC.configurator.configure(with: nextVC)
 		nextVC.moduleInput.configure(with: image)
-//		let nextVC = ImageViewController()
-//		nextVC.image = image.image
+
 		viewController.navigationController?.pushViewController(nextVC, animated: true)
 	}
 	/// Переходит на коллекш
-	func pushCollection() {
+	func pushCollection(with imageUrls: ImageUrls) {
+		let nextVC = CollectionViewController()
+		nextVC.configurator.configure(with: nextVC)
+		nextVC.moduleInput.configure(with: imageUrls)
 		let navigationController = UINavigationController(
             rootViewController: CollectionViewController()
         )
-		let nextVC = CollectionViewController()
+		//let nextVC = CollectionViewController()
 		viewController.navigationController?.pushViewController(nextVC, animated: true)
 	}
 }

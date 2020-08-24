@@ -14,12 +14,10 @@ protocol MainInteractorInput: class {
 	func numberOfRows() -> Int
 	func freeStorage(befora date: Date?)
 	func freeALL()
-	func setUpActivityIndicator(viewModel: ViewForActivity)
-	func startActivity()
-	func stopActivity()
 	func didAddUrl(urlString: String?)
-	func getImageUrls()
+	func setImageUrls()
 	func saveImageUrls()
 	func deleteImage(indexPath: IndexPath)
 	func setImage(imageModel: Image)
+	func getImageUrls() -> ImageUrls
 }

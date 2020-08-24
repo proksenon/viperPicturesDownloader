@@ -9,6 +9,6 @@
 import Foundation
 
 protocol MainRouterInput: class {
-	func pushCollection()
+	func pushCollection(with imageUrls: ImageUrls)
 	func push(image: Image)
 }

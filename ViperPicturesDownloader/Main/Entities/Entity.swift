@@ -44,9 +44,9 @@ struct ImageSize {
 	var size: CGSize? = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 }
 /// Хранит view
-struct ViewForActivity {
-	let view: UIView
-}
+//struct ViewForActivity {
+//	let view: UIView
+//}
 
 //enum ImageFrom {
 //	case internet

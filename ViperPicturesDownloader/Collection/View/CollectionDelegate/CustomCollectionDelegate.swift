@@ -11,17 +11,17 @@ import UIKit
 final class CustomCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
 	var collectionView: CustomCollectionView!
-	var presenter: CollectionViewDelegateOutput!
+	var output: CollectionViewDelegateOutput!
 
-	init(collectionView: CustomCollectionView, presenter: CollectionViewDelegateOutput){
+	init(collectionView: CustomCollectionView, output: CollectionViewDelegateOutput){
 		super.init()
 		self.collectionView = collectionView
 		self.collectionView.delegate = self
-		self.presenter = presenter
+		self.output = output
 	}
 
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		presenter.didSelect(indexPath: indexPath)
+		output.didSelect(indexPath: indexPath)
 	}
 
 	func collectionView(_ collectionView: UICollectionView,
