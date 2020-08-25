@@ -33,7 +33,6 @@ final class CustomTableViewDelegate: NSObject, UITableViewDelegate {
 		output?.didDeleteImage(indexPath: indexPath)
 		tableView.deleteRows(at: [indexPath], with: .automatic)
 	}
-	//deleateAction.backgroundColor = .red
 		return [deleateAction]
 }
 

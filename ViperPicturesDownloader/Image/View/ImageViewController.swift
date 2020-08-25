@@ -32,7 +32,7 @@ class ImageViewController: UIViewController {
 extension ImageViewController: ImageViewInput {
 
 	func backgroundColor() {
-		view.backgroundColor = .white
+		view.backgroundColor = UIColor.gray
 	}
 
 	func setUpImageView() {
@@ -47,6 +47,7 @@ extension ImageViewController: ImageViewInput {
 		imageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
 //		imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -150).isActive = true
 		imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+		imageView.contentMode = .scaleAspectFit
 	}
 	func setUpCollection() {
 		collectionView = FilterCollectionView()
