@@ -11,5 +11,6 @@ import UIKit
 protocol ImageFilterManagerProtocol {
 	var originImage: UIImage? { get set }
 	var countFilters: Int! { get }
-	func apllyFilter(indexPath: IndexPath)-> UIImage?
+	func apllyFilter(indexPath: IndexPath, customParametrs: CustomParametrs?)-> UIImage?
+	func getParametrs(indexPath: IndexPath)-> [ParametrInfo]?
 }

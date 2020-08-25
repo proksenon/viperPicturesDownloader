@@ -24,8 +24,12 @@ class ImageInteractor: ImageInteractorInput {
 		self.imageFilterManager = imageFilterManager
 	}
 
-	func didSelect(indexPath: IndexPath)-> Image {
-		return filterToImage(indexPath: indexPath)
+	func didSelect(indexPath: IndexPath, customParametrs: CustomParametrs? = nil)-> Image {
+		return filterToImage(indexPath: indexPath, customParametrs: customParametrs)
+	}
+
+	func getParamsAt(indexPath: IndexPath)->[ParametrInfo]? {
+		return imageFilterManager.getParametrs(indexPath: indexPath)
 	}
 
 	func originImageSet(image: Image) {
@@ -35,9 +39,9 @@ class ImageInteractor: ImageInteractorInput {
 	func originImageGet()-> Image {
 		return Image(image: imageFilterManager.originImage)
 	}
-
-	func filterToImage(indexPath: IndexPath)->Image {
-		let filterImage = imageFilterManager.apllyFilter(indexPath: indexPath)
+//private
+	func filterToImage(indexPath: IndexPath, customParametrs: CustomParametrs? = nil)->Image {
+		let filterImage = imageFilterManager.apllyFilter(indexPath: indexPath, customParametrs: customParametrs)
 		return Image(image: filterImage)
 	}
 

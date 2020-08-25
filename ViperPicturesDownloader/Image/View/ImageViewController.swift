@@ -20,6 +20,11 @@ class ImageViewController: UIViewController {
 	var imageView: UIImageView!
 	var saveImageButton: UIBarButtonItem!
 	var alertVC: UIAlertController!
+	var slider1: UISlider!
+	var slider2: UISlider!
+	var slider3: UISlider!
+	var sliders: [UISlider]!
+	var cancleButton: UIButton!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -33,6 +38,82 @@ extension ImageViewController: ImageViewInput {
 
 	func backgroundColor() {
 		view.backgroundColor = UIColor.gray
+	}
+
+	func setCancleButton() {
+		cancleButton = UIButton()
+		cancleButton.setTitle("Cancle", for: .normal)
+		cancleButton.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+		cancleButton.addTarget(self, action: #selector(cancleButtonDidTapped), for: .touchUpInside)
+		view.addSubview(cancleButton)
+
+		cancleButton.translatesAutoresizingMaskIntoConstraints = false
+		//cancleButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 35).isActive = true
+		cancleButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+		cancleButton.bottomAnchor.constraint(equalTo: slider1.topAnchor, constant: -20).isActive = true
+		cancleButton.heightAnchor.constraint(equalToConstant: CGFloat(50)).isActive = true
+		cancleButton.widthAnchor.constraint(equalToConstant: CGFloat(100)).isActive = true
+
+
+	}
+	@IBAction func cancleButtonDidTapped() {
+		outputView.hidenSlidersAndShowCollection()
+	}
+	func isHiddenCancleButton(_ isHidden: Bool) {
+		cancleButton.isHidden = isHidden
+	}
+
+	private func setupSlider(slider: inout UISlider) {
+		slider.addTarget(self, action: #selector(sliderAction), for: .touchUpInside)
+		slider.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+		slider.maximumTrackTintColor = .white
+		view.addSubview(slider)
+	}
+
+	func setupSliders() {
+		slider1 = UISlider()
+		slider2 = UISlider()
+		slider3 = UISlider()
+		sliders = [slider1, slider2, slider3]
+		for var slider in sliders {
+			setupSlider(slider: &slider)
+		}
+
+		slider1.translatesAutoresizingMaskIntoConstraints = false
+		slider1.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 35).isActive = true
+		slider1.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -35).isActive = true
+		slider1.topAnchor.constraint(equalTo: view.bottomAnchor, constant: -200).isActive = true
+
+		slider2.translatesAutoresizingMaskIntoConstraints = false
+		slider2.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 35).isActive = true
+		slider2.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -35).isActive = true
+		slider2.topAnchor.constraint(equalTo: slider1.bottomAnchor, constant: 15).isActive = true
+
+		slider3.translatesAutoresizingMaskIntoConstraints = false
+		slider3.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 35).isActive = true
+		slider3.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -35).isActive = true
+		slider3.topAnchor.constraint(equalTo: slider2.bottomAnchor, constant: 15).isActive = true
+
+	}
+
+	func setDefaultValueToSlider(sliderNubme: Int, minValue: Float, maxValue: Float, defaultValue: Float) {
+		sliders[sliderNubme].maximumValue = maxValue
+		sliders[sliderNubme].minimumValue = minValue
+		sliders[sliderNubme].setValue(defaultValue, animated: true)
+	}
+
+	@IBAction func sliderAction(sender: UISlider) {
+		outputView.filterImage(customParametr: CustomParametrs(parametrs: [slider1.value, slider2.value, slider3.value]))
+	}
+
+	func ishiddenCollection(_ isHidden: Bool) {
+		collectionView.isHidden = isHidden
+	}
+	
+	func isHiddenSliders(count: Int, _ isHidden: Bool) {
+		for index in 0..<count {
+			sliders[index].isHidden = isHidden
+		}
 	}
 
 	func setUpImageView() {

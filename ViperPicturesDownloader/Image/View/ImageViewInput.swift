@@ -16,4 +16,10 @@ protocol ImageViewInput: class {
 	func setImage(with image: Image)
 	func setUpSaveButton()
 	func backgroundColor()
+	func setupSliders()
+	func ishiddenCollection(_ isHidden: Bool)
+	func isHiddenSliders(count: Int, _ isHidden: Bool)
+	func setDefaultValueToSlider(sliderNubme: Int, minValue: Float, maxValue: Float, defaultValue: Float)
+	func setCancleButton()
+	func isHiddenCancleButton(_ isHidden: Bool)
 }

@@ -105,7 +105,7 @@ final class MainInteractor : MainInteractorInput {
 			imageUrls.urls.append(imageUrlString)
 			saveImageUrls()
 		}
-//		fileProvider.removeFilesWithType()
+		fileProvider.removeFilesWithType()
 	}
 	
 	private func imageToDataWith(format: ImageFormat, image: UIImage)-> Data? {

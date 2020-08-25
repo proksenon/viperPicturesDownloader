@@ -14,6 +14,8 @@ class ImagePresenter {
 	var interactor: ImageInteractorInput!
 	var router: ImageRouterInput!
 
+	var indexPath: IndexPath!
+
 	init(view: ImageViewInput) {
 		self.view = view
 	}
@@ -30,15 +32,24 @@ extension ImagePresenter: ImageViewOutput{
 		view.setImage(with: interactor.originImageGet())
 		view.backgroundColor()
 		view.setUpSaveButton()
+		view.setupSliders()
+		view.isHiddenSliders(count: 3, true)
+		view.setCancleButton()
+		view.isHiddenCancleButton(true)
 	}
 
 	func popViewController() {
 		router.pop()
 	}
 
-	func filterImage() {
-		let filteredImage = interactor.filterToImage(indexPath: IndexPath(row: 1, section: 1))
+	func filterImage(customParametr: CustomParametrs) {
+		let filteredImage = interactor.didSelect(indexPath: indexPath, customParametrs: customParametr)
 		view.setImage(with: filteredImage)
+	}
+	func hidenSlidersAndShowCollection() {
+		view.isHiddenSliders(count: 3, true)
+		view.ishiddenCollection(false)
+		view.isHiddenCancleButton(true)
 	}
 }
 // MARK: - ImageInteractorOuput
@@ -57,8 +68,24 @@ extension ImagePresenter: FilterCollectionViewDataSourceOutput {
 extension ImagePresenter: FilterCollectionViewDelegateOutput {
 
 	func didSelect(indexPath: IndexPath) {
-		let filterImage = interactor.didSelect(indexPath: indexPath)
-		view.setImage(with: filterImage)
+		self.indexPath = indexPath
+		if let filterParametrs = interactor.getParamsAt(indexPath: indexPath) {
+			var parametrs: [Float] = []
+			for index in 0..<filterParametrs.count {
+				let parametr = filterParametrs[index]
+				view.setDefaultValueToSlider(sliderNubme: index, minValue: parametr.startValue , maxValue: parametr.endValue, defaultValue: parametr.defaultValue)
+				parametrs.append(parametr.defaultValue)
+			}
+			let filterImage = interactor.didSelect(indexPath: indexPath, customParametrs: CustomParametrs(parametrs: parametrs))
+			view.setImage(with: filterImage)
+			view.ishiddenCollection(true)
+			view.isHiddenCancleButton(false)
+			view.isHiddenSliders(count: filterParametrs.count, false)
+		} else {
+
+			let filterImage = interactor.didSelect(indexPath: indexPath, customParametrs: nil)
+			view.setImage(with: filterImage)
+		}
 	}
 
 

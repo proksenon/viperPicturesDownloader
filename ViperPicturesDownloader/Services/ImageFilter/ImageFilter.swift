@@ -22,19 +22,22 @@ class ImageFilter {
 		return nil
 	}
 
-	func sepiaToneFilter(image: UIImage?)-> UIImage? {
+	func sepiaToneFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
 		guard let inputImage = image else {return nil}
+
+		var intensity = customParametrs?.parametrs[0]
+
 		if let currentFilter = CIFilter(name: "CISepiaTone") {
 			let beginImage = CIImage(image: inputImage)
 			currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-			currentFilter.setValue(0.3, forKey: kCIInputIntensityKey)
+			currentFilter.setValue(intensity, forKey: kCIInputIntensityKey)//0.3
 
 			return inputToOutputImage(currentFilter: currentFilter, imageOrientetion: inputImage.imageOrientation)
 		}
 		return nil
 	}
 
-	func gaussianBlurFilter(image: UIImage?)-> UIImage? {
+	func gaussianBlurFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
 		guard let inputImage = image else {return nil}
 
 		if let currentFilter = CIFilter(name: "CIGaussianBlur") {
@@ -47,22 +50,26 @@ class ImageFilter {
 		return nil
 	}
 
-	func colorControlsFilter(image: UIImage?)-> UIImage? {
-		guard let inputImage = image else {return nil}
+	func colorControlsFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
+		guard let inputImage = image, let customParametrs = customParametrs else {return nil}
 
+		let brightness = customParametrs.parametrs[0]
+		let saturation = customParametrs.parametrs[1]
+		let contrast = customParametrs.parametrs[2]
+		
 		if let currentFilter = CIFilter(name: "CIColorControls") {
 			let beginImage = CIImage(image: inputImage)
 			currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-			currentFilter.setValue(0, forKey: kCIInputBrightnessKey)//0-1
-			currentFilter.setValue(5, forKey: kCIInputSaturationKey)
-			currentFilter.setValue(1, forKey: kCIInputContrastKey)
+			currentFilter.setValue(brightness, forKey: kCIInputBrightnessKey)//0-1 0
+			currentFilter.setValue(saturation, forKey: kCIInputSaturationKey)//5
+			currentFilter.setValue(contrast, forKey: kCIInputContrastKey)//1
 
 			return inputToOutputImage(currentFilter: currentFilter, imageOrientetion: inputImage.imageOrientation)
 		}
 		return nil
 	}
 
-	func noirFilter(image: UIImage?)-> UIImage? {
+	func noirFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
 		guard let inputImage = image else {return nil}
 
 		if let currentFilter = CIFilter(name: "CIPhotoEffectNoir") {
@@ -75,20 +82,22 @@ class ImageFilter {
 		return nil
 	}
 
-	func edgesFilter(image: UIImage?)-> UIImage? {
+	func edgesFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
 		guard let inputImage = image else {return nil}
+
+		var intensity = customParametrs?.parametrs[0]
 
 		if let currentFilter = CIFilter(name: "CIEdges") {
 			let beginImage = CIImage(image: inputImage)
 			currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-			currentFilter.setValue(20, forKey: kCIInputIntensityKey)
+			currentFilter.setValue(intensity, forKey: kCIInputIntensityKey)//20
 
 			return inputToOutputImage(currentFilter: currentFilter, imageOrientetion: inputImage.imageOrientation)
 		}
 		return nil
 	}
 
-	func pinkCrossPolynomial(image: UIImage?)-> UIImage? {
+	func pinkCrossPolynomial(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
 		guard let inputImage = image else {return nil}
 
 		let param = ["inputRedCoefficients" : CIVector(values: [1, 1, 0, 0, 0, 0, 0, 0, 0, 0], count: 10),
@@ -106,7 +115,7 @@ class ImageFilter {
 	}
 
 
-	func spotColorFilter(image: UIImage?)-> UIImage? {
+	func spotColorFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
 		guard let inputImage = image else {return nil}
 
 		if let currentFilter = CIFilter(name: "CISpotColor") {
@@ -118,12 +127,12 @@ class ImageFilter {
 			currentFilter.setValue(1, forKey: "inputContrast1")
 
 			currentFilter.setValue(CIColor.red, forKey: "inputCenterColor2")
-			currentFilter.setValue(CIColor.red, forKey: "inputReplacementColor2")
+			currentFilter.setValue(CIColor.blue, forKey: "inputReplacementColor2")
 			currentFilter.setValue(1, forKey: "inputCloseness2")
 			currentFilter.setValue(1, forKey: "inputContrast2")
 
 			currentFilter.setValue(CIColor.blue, forKey: "inputCenterColor3")
-			currentFilter.setValue(CIColor.blue, forKey: "inputReplacementColor3")
+			currentFilter.setValue(CIColor.green, forKey: "inputReplacementColor3")
 			currentFilter.setValue(1, forKey: "inputCloseness3")
 			currentFilter.setValue(1, forKey: "inputContrast3")
 
@@ -132,7 +141,7 @@ class ImageFilter {
 		return nil
 	}
 
-	func withoutFilter(image: UIImage?)-> UIImage? {
+	func withoutFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
 		return image
 	}
 

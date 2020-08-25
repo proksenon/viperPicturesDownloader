@@ -11,5 +11,6 @@ import Foundation
 protocol ImageViewOutput: class {
 	func configureView()
 	func popViewController()
-	func filterImage()
+	func filterImage(customParametr: CustomParametrs)
+	func hidenSlidersAndShowCollection() 
 }
