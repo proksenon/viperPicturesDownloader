@@ -25,6 +25,7 @@ class ImageViewController: UIViewController {
 	var slider3: UISlider!
 	var sliders: [UISlider]!
 	var cancleButton: UIButton!
+	var lastValue: Float = 0
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -46,28 +47,21 @@ extension ImageViewController: ImageViewInput {
 		cancleButton.backgroundColor = UIColor.black.withAlphaComponent(0.3)
 		cancleButton.addTarget(self, action: #selector(cancleButtonDidTapped), for: .touchUpInside)
 		view.addSubview(cancleButton)
-
+	}
+	func setCancleButtonConstraints() {
 		cancleButton.translatesAutoresizingMaskIntoConstraints = false
-		//cancleButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 35).isActive = true
 		cancleButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
 		cancleButton.bottomAnchor.constraint(equalTo: slider1.topAnchor, constant: -20).isActive = true
 		cancleButton.heightAnchor.constraint(equalToConstant: CGFloat(50)).isActive = true
 		cancleButton.widthAnchor.constraint(equalToConstant: CGFloat(100)).isActive = true
-
-
 	}
+
 	@IBAction func cancleButtonDidTapped() {
 		outputView.hidenSlidersAndShowCollection()
 	}
+
 	func isHiddenCancleButton(_ isHidden: Bool) {
 		cancleButton.isHidden = isHidden
-	}
-
-	private func setupSlider(slider: inout UISlider) {
-		slider.addTarget(self, action: #selector(sliderAction), for: .touchUpInside)
-		slider.backgroundColor = UIColor.black.withAlphaComponent(0.3)
-		slider.maximumTrackTintColor = .white
-		view.addSubview(slider)
 	}
 
 	func setupSliders() {
@@ -78,22 +72,26 @@ extension ImageViewController: ImageViewInput {
 		for var slider in sliders {
 			setupSlider(slider: &slider)
 		}
+	}
 
-		slider1.translatesAutoresizingMaskIntoConstraints = false
-		slider1.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 35).isActive = true
-		slider1.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -35).isActive = true
-		slider1.topAnchor.constraint(equalTo: view.bottomAnchor, constant: -200).isActive = true
+	private func setupSlider(slider: inout UISlider) {
+		slider.addTarget(self, action: #selector(sliderAction), for: .allTouchEvents)
+		slider.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+		slider.maximumTrackTintColor = .white
+		view.addSubview(slider)
+	}
 
-		slider2.translatesAutoresizingMaskIntoConstraints = false
-		slider2.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 35).isActive = true
-		slider2.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -35).isActive = true
-		slider2.topAnchor.constraint(equalTo: slider1.bottomAnchor, constant: 15).isActive = true
+	func setSlidersConstraint() {
+		setSliderConstaints(slider: slider1, topConstrantTo: view, with: -200)
+		setSliderConstaints(slider: slider2, topConstrantTo: slider1, with: 15)
+		setSliderConstaints(slider: slider3, topConstrantTo: slider2, with: 15)
+	}
 
-		slider3.translatesAutoresizingMaskIntoConstraints = false
-		slider3.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 35).isActive = true
-		slider3.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -35).isActive = true
-		slider3.topAnchor.constraint(equalTo: slider2.bottomAnchor, constant: 15).isActive = true
-
+	private func setSliderConstaints(slider: UISlider, topConstrantTo: UIView, with constant: CGFloat) {
+		slider.translatesAutoresizingMaskIntoConstraints = false
+		slider.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 35).isActive = true
+		slider.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -35).isActive = true
+		slider.topAnchor.constraint(equalTo: topConstrantTo.bottomAnchor, constant: constant).isActive = true
 	}
 
 	func setDefaultValueToSlider(sliderNubme: Int, minValue: Float, maxValue: Float, defaultValue: Float) {
@@ -103,7 +101,10 @@ extension ImageViewController: ImageViewInput {
 	}
 
 	@IBAction func sliderAction(sender: UISlider) {
-		outputView.filterImage(customParametr: CustomParametrs(parametrs: [slider1.value, slider2.value, slider3.value]))
+//		if lastValue + 0.1 < sender.value || lastValue - 0.1 > sender.value {
+			outputView.filterImage(customParametr: CustomParametrs(parametrs: [slider1.value, slider2.value, slider3.value]))
+//			lastValue = round(sender.value*10)/10
+//		}
 	}
 
 	func ishiddenCollection(_ isHidden: Bool) {
@@ -126,7 +127,6 @@ extension ImageViewController: ImageViewInput {
 		imageView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
 		imageView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
 		imageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-//		imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -150).isActive = true
 		imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 		imageView.contentMode = .scaleAspectFit
 	}

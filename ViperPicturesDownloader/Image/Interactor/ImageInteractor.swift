@@ -40,7 +40,7 @@ class ImageInteractor: ImageInteractorInput {
 		return Image(image: imageFilterManager.originImage)
 	}
 //private
-	func filterToImage(indexPath: IndexPath, customParametrs: CustomParametrs? = nil)->Image {
+	private func filterToImage(indexPath: IndexPath, customParametrs: CustomParametrs? = nil)->Image {
 		let filterImage = imageFilterManager.apllyFilter(indexPath: indexPath, customParametrs: customParametrs)
 		return Image(image: filterImage)
 	}

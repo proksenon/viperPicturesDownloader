@@ -39,12 +39,14 @@ class ImageFilterManager: ImageFilterManagerProtocol {
 								 parametrs: [ParametrInfo(startValue: 0.0, endValue: 100.0, defaultValue: 20.0)])
 		noirFilter = FilterInfo(filter: imageFilter.noirFilter,
 								 parametrs: nil)
-		gaussianBlurFilter = FilterInfo(filter: imageFilter.edgesFilter,
-								 parametrs: [ParametrInfo(startValue: 0.0, endValue: 100.0, defaultValue: 20.0)])
-		pinkCrossPolynomial = FilterInfo(filter: imageFilter.edgesFilter,
-								 parametrs: [ParametrInfo(startValue: 0.0, endValue: 100.0, defaultValue: 20.0)])
-		spotColorFilter = FilterInfo(filter: imageFilter.edgesFilter,
-								 parametrs: [ParametrInfo(startValue: 0.0, endValue: 100.0, defaultValue: 20.0)])
+		gaussianBlurFilter = FilterInfo(filter: imageFilter.gaussianBlurFilter,
+										parametrs: [ParametrInfo(startValue: 0.0, endValue: 100.0, defaultValue: 2.5)])
+		pinkCrossPolynomial = FilterInfo(filter: imageFilter.pinkCrossPolynomial,
+								 parametrs: nil)
+		spotColorFilter = FilterInfo(filter: imageFilter.spotColorFilter,
+								 parametrs: [ParametrInfo(startValue: 0.0, endValue: 1.0, defaultValue: 1),
+											 ParametrInfo(startValue: 0.0, endValue: 1.0, defaultValue: 1),
+											 ParametrInfo(startValue: 0.0, endValue: 1.0, defaultValue: 1)])
 
 
 		filters = [withoutFilter, sepiaToneFilter, colorControlsFilter, edgesFilter, noirFilter, gaussianBlurFilter, pinkCrossPolynomial, spotColorFilter]

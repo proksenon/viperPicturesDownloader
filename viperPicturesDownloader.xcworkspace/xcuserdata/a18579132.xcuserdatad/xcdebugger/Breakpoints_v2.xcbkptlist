@@ -456,8 +456,8 @@
             filePath = "ViperPicturesDownloader/Image/Presenter/ImagePresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99">
+            startingLineNumber = "100"
+            endingLineNumber = "100">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -470,8 +470,8 @@
             filePath = "ViperPicturesDownloader/Image/View/ImageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "backgroundColor()"
             landmarkType = "7">
          </BreakpointContent>
@@ -725,8 +725,8 @@
             filePath = "ViperPicturesDownloader/Image/View/ImageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "sliderAction(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -741,8 +741,8 @@
             filePath = "ViperPicturesDownloader/Image/Presenter/ImagePresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "didSelect(indexPath:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -757,8 +757,8 @@
             filePath = "ViperPicturesDownloader/Image/Presenter/ImagePresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "didSelect(indexPath:)"
             landmarkType = "7">
          </BreakpointContent>

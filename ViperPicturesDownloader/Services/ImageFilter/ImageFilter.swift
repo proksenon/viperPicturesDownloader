@@ -40,10 +40,12 @@ class ImageFilter {
 	func gaussianBlurFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
 		guard let inputImage = image else {return nil}
 
+		var radius = customParametrs?.parametrs[0]
+
 		if let currentFilter = CIFilter(name: "CIGaussianBlur") {
 			let beginImage = CIImage(image: inputImage)
 			currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-			currentFilter.setValue((2.5), forKey: kCIInputRadiusKey)
+			currentFilter.setValue(radius, forKey: kCIInputRadiusKey)//(2.5)
 
 			return inputToOutputImage(currentFilter: currentFilter, imageOrientetion: inputImage.imageOrientation)
 		}
@@ -118,22 +120,26 @@ class ImageFilter {
 	func spotColorFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
 		guard let inputImage = image else {return nil}
 
+		var closenessG = customParametrs?.parametrs[0]
+		var closenessR = customParametrs?.parametrs[1]
+		var closenessB = customParametrs?.parametrs[2]
+
 		if let currentFilter = CIFilter(name: "CISpotColor") {
 			let beginImage = CIImage(image: inputImage)
 			currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
 			currentFilter.setValue(CIColor.green, forKey: "inputCenterColor1")
 			currentFilter.setValue(CIColor.red, forKey: "inputReplacementColor1")
-			currentFilter.setValue(1, forKey: "inputCloseness1")
+			currentFilter.setValue(closenessG, forKey: "inputCloseness1")
 			currentFilter.setValue(1, forKey: "inputContrast1")
 
 			currentFilter.setValue(CIColor.red, forKey: "inputCenterColor2")
 			currentFilter.setValue(CIColor.blue, forKey: "inputReplacementColor2")
-			currentFilter.setValue(1, forKey: "inputCloseness2")
+			currentFilter.setValue(closenessR, forKey: "inputCloseness2")
 			currentFilter.setValue(1, forKey: "inputContrast2")
 
 			currentFilter.setValue(CIColor.blue, forKey: "inputCenterColor3")
 			currentFilter.setValue(CIColor.green, forKey: "inputReplacementColor3")
-			currentFilter.setValue(1, forKey: "inputCloseness3")
+			currentFilter.setValue(closenessB, forKey: "inputCloseness3")
 			currentFilter.setValue(1, forKey: "inputContrast3")
 
 			return inputToOutputImage(currentFilter: currentFilter, imageOrientetion: inputImage.imageOrientation)

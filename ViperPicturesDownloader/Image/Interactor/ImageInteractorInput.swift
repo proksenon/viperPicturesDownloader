@@ -13,7 +13,6 @@ protocol ImageInteractorInput: class {
 	func didSelect(indexPath: IndexPath, customParametrs: CustomParametrs?)-> Image
 	func originImageSet(image: Image)
 	func originImageGet()-> Image
-	func filterToImage(indexPath: IndexPath, customParametrs: CustomParametrs?)->Image
 	func numberOfRows()-> Int
 	func getFilterIcon(indexPath: IndexPath)->Image
 	func getParamsAt(indexPath: IndexPath)->[ParametrInfo]?

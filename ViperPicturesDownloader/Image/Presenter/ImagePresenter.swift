@@ -33,8 +33,10 @@ extension ImagePresenter: ImageViewOutput{
 		view.backgroundColor()
 		view.setUpSaveButton()
 		view.setupSliders()
+		view.setSlidersConstraint()
 		view.isHiddenSliders(count: 3, true)
 		view.setCancleButton()
+		view.setCancleButtonConstraints()
 		view.isHiddenCancleButton(true)
 	}
 
@@ -42,14 +44,18 @@ extension ImagePresenter: ImageViewOutput{
 		router.pop()
 	}
 
-	func filterImage(customParametr: CustomParametrs) {
+	func filterImage(customParametr: CustomParametrs?) {
 		let filteredImage = interactor.didSelect(indexPath: indexPath, customParametrs: customParametr)
 		view.setImage(with: filteredImage)
 	}
 	func hidenSlidersAndShowCollection() {
-		view.isHiddenSliders(count: 3, true)
-		view.ishiddenCollection(false)
-		view.isHiddenCancleButton(true)
+		showCollection(countSliders: 3, true)
+	}
+
+	private func showCollection(countSliders: Int, _ isShow: Bool) {
+		view.isHiddenSliders(count: countSliders, isShow)
+		view.ishiddenCollection(!isShow)
+		view.isHiddenCancleButton(isShow)
 	}
 }
 // MARK: - ImageInteractorOuput
@@ -76,15 +82,10 @@ extension ImagePresenter: FilterCollectionViewDelegateOutput {
 				view.setDefaultValueToSlider(sliderNubme: index, minValue: parametr.startValue , maxValue: parametr.endValue, defaultValue: parametr.defaultValue)
 				parametrs.append(parametr.defaultValue)
 			}
-			let filterImage = interactor.didSelect(indexPath: indexPath, customParametrs: CustomParametrs(parametrs: parametrs))
-			view.setImage(with: filterImage)
-			view.ishiddenCollection(true)
-			view.isHiddenCancleButton(false)
-			view.isHiddenSliders(count: filterParametrs.count, false)
+			filterImage(customParametr: CustomParametrs(parametrs: parametrs))
+			showCollection(countSliders: filterParametrs.count, false)
 		} else {
-
-			let filterImage = interactor.didSelect(indexPath: indexPath, customParametrs: nil)
-			view.setImage(with: filterImage)
+			filterImage(customParametr: nil)
 		}
 	}
 
