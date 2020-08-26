@@ -76,11 +76,11 @@ final class MainInteractor : MainInteractorInput {
 		return imageUrls.urls.count
 	}
 	func getImageWithBlur(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
-		getImage(indexPath: indexPath, size: size) { (image) in
-			self.imageFilterManager.originImage = image.image
-			let imageWithBlur = self.imageFilterManager.apllyFilter(indexPath: IndexPath(row: 5, section: 1))
-			completion(Image(image: imageWithBlur))
-		}
+//		getImage(indexPath: indexPath, size: size) { (image) in
+//			self.imageFilterManager.originImage = image.image
+//			let imageWithBlur = self.imageFilterManager.apllyFilter(indexPath: IndexPath(row: 5, section: 1))
+//			completion(Image(image: imageWithBlur))
+//		}
 	}
 
 	//устанавливает картинку из фотоальбома

@@ -24,8 +24,11 @@ class ImageInteractor: ImageInteractorInput {
 		self.imageFilterManager = imageFilterManager
 	}
 
-	func didSelect(indexPath: IndexPath, customParametrs: CustomParametrs? = nil)-> Image {
-		return filterToImage(indexPath: indexPath, customParametrs: customParametrs)
+	func didSelect(indexPath: IndexPath, customParametrs: CustomParametrs? = nil, completion: @escaping (Image)->Void) {
+//		return filterToImage(indexPath: indexPath, customParametrs: customParametrs)
+		filterToImage(indexPath: indexPath, customParametrs: customParametrs) { (imageModel) in
+			completion(imageModel)
+		}
 	}
 
 	func getParamsAt(indexPath: IndexPath)->[ParametrInfo]? {
@@ -40,9 +43,12 @@ class ImageInteractor: ImageInteractorInput {
 		return Image(image: imageFilterManager.originImage)
 	}
 //private
-	private func filterToImage(indexPath: IndexPath, customParametrs: CustomParametrs? = nil)->Image {
-		let filterImage = imageFilterManager.apllyFilter(indexPath: indexPath, customParametrs: customParametrs)
-		return Image(image: filterImage)
+	private func filterToImage(indexPath: IndexPath, customParametrs: CustomParametrs? = nil, completion: @escaping (Image)->Void){
+//		let filterImage = imageFilterManager.apllyFilter(indexPath: indexPath, customParametrs: customParametrs)
+		imageFilterManager.apllyFilter(indexPath: indexPath, customParametrs: customParametrs) { (image) in
+			completion(Image(image: image))
+		}
+		//return Image(image: filterImage)
 	}
 
 	func numberOfRows()-> Int{

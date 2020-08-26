@@ -10,7 +10,7 @@ import UIKit
 
 protocol ImageInteractorInput: class {
 	var image: Image! { get set }
-	func didSelect(indexPath: IndexPath, customParametrs: CustomParametrs?)-> Image
+	func didSelect(indexPath: IndexPath, customParametrs: CustomParametrs?, completion: @escaping (Image)->Void)
 	func originImageSet(image: Image)
 	func originImageGet()-> Image
 	func numberOfRows()-> Int

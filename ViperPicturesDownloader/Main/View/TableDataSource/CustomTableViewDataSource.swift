@@ -29,8 +29,9 @@ final class CustomTableViewDataSource:NSObject, UITableViewDataSource {
 		/// Размер изображения в ячейке
 		let size = CGSize(width: cell.contentView.frame.size.width,
 						  height: cell.contentView.frame.size.width)
+		cell.currentIndexPath = indexPath
 		output.getImage(indexPath: indexPath, size: ImageSize(size: size)) { (image) in
-			cell.configureCell(image: image.image)
+			cell.configureCell(image: image.image, indexPath: indexPath)
 			cell.stopActivity()
 		}
 		return cell

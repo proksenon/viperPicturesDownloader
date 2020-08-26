@@ -45,8 +45,11 @@ extension ImagePresenter: ImageViewOutput{
 	}
 
 	func filterImage(customParametr: CustomParametrs?) {
-		let filteredImage = interactor.didSelect(indexPath: indexPath, customParametrs: customParametr)
-		view.setImage(with: filteredImage)
+//		let filteredImage = interactor.didSelect(indexPath: indexPath, customParametrs: customParametr)
+		interactor.didSelect(indexPath: indexPath, customParametrs: customParametr) { (imageModel) in
+			self.view.setImage(with: imageModel)
+		}
+//		view.setImage(with: filteredImage)
 	}
 	func hidenSlidersAndShowCollection() {
 		showCollection(countSliders: 3, true)

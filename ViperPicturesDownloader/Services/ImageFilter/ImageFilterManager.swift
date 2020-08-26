@@ -55,9 +55,13 @@ class ImageFilterManager: ImageFilterManagerProtocol {
 		countFilters = filters.count
 	}
 
-	func apllyFilter(indexPath: IndexPath, customParametrs: CustomParametrs? = nil)-> UIImage? {
-		filterImage = filters[indexPath.row].filter(originImage, customParametrs)
-		return filterImage
+	func apllyFilter(indexPath: IndexPath, customParametrs: CustomParametrs? = nil, completion: @escaping (UIImage?)-> Void) {
+		DispatchQueue.global().async {
+			self.filterImage = self.filters[indexPath.row].filter(self.originImage, customParametrs)
+			DispatchQueue.main.async {
+				completion(self.filterImage)
+			}
+		}
 	}
 	func getParametrs(indexPath: IndexPath)-> [ParametrInfo]?{
 		return filters[indexPath.row].parametrs

@@ -12,19 +12,20 @@ final class CustomTableViewCell: UITableViewCell {
 
 	let customImageView = UIImageView()
 	let activityIndicator = UIActivityIndicatorView()
+	var currentIndexPath: IndexPath! {
+		didSet {
+			customImageView.image = nil
+			startActivity()
+		}
+	}
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 			super.init(style: style, reuseIdentifier: reuseIdentifier)
 		contentView.frame.size = CGSize(width: UIScreen.main.bounds.size.width,
 										height: UIScreen.main.bounds.size.height/3)
-//		addSubview(activityIndicator)
 		setActivivty()
 		addSubview(customImageView)
-		/// констрейнты картинки во всю ячейку
 		setImageViewConsstraints()
-//		activityIndicator.style = .large
-//		activityIndicator.center = contentView.center
-//		activityIndicator.startAnimating()
 	 }
 	private func setActivivty() {
 		addSubview(activityIndicator)
@@ -58,8 +59,12 @@ final class CustomTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 	/// метод устанавливает картинку
-	func configureCell(image: UIImage?) {
-		customImageView.image = image
-		customImageView.contentMode = .scaleToFill
+	func configureCell(image: UIImage?, indexPath: IndexPath) {
+		if currentIndexPath == indexPath {
+			customImageView.image = image
+			customImageView.contentMode = .scaleToFill
+		}
+//		customImageView.image = image
+//		customImageView.contentMode = .scaleToFill
 	}
 }

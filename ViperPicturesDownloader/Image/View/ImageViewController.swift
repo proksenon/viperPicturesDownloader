@@ -75,7 +75,7 @@ extension ImageViewController: ImageViewInput {
 	}
 
 	private func setupSlider(slider: inout UISlider) {
-		slider.addTarget(self, action: #selector(sliderAction), for: .allTouchEvents)
+		slider.addTarget(self, action: #selector(sliderAction), for: .touchUpInside)
 		slider.backgroundColor = UIColor.black.withAlphaComponent(0.3)
 		slider.maximumTrackTintColor = .white
 		view.addSubview(slider)
@@ -101,10 +101,10 @@ extension ImageViewController: ImageViewInput {
 	}
 
 	@IBAction func sliderAction(sender: UISlider) {
-//		if lastValue + 0.1 < sender.value || lastValue - 0.1 > sender.value {
+		if lastValue + 0.01 < sender.value || lastValue - 0.01 > sender.value {
 			outputView.filterImage(customParametr: CustomParametrs(parametrs: [slider1.value, slider2.value, slider3.value]))
-//			lastValue = round(sender.value*10)/10
-//		}
+			lastValue = round(sender.value*100)/100
+		}
 	}
 
 	func ishiddenCollection(_ isHidden: Bool) {

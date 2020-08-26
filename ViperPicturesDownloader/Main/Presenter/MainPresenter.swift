@@ -49,7 +49,7 @@ extension MainPresenter: MainViewOutput {
 		view.setupAlert()
 		view.setAddUrlButton()
 		//freeStorage()
-//		freeALL()
+		freeALL()
 	}
 
 	func didAddUrl(urlString: String?) {
