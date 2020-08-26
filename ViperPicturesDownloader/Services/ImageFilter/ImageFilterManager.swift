@@ -10,10 +10,7 @@ import UIKit
 
 class ImageFilterManager: ImageFilterManagerProtocol {
 	let imageFilter: ImageFilter
-//	var filters: [(UIImage?)->UIImage?]
 	var filters: [FilterInfo]
-	var originImage: UIImage?
-	var filterImage: UIImage?
 	var countFilters: Int!
 
 	var withoutFilter: FilterInfo!
@@ -51,15 +48,14 @@ class ImageFilterManager: ImageFilterManagerProtocol {
 
 		filters = [withoutFilter, sepiaToneFilter, colorControlsFilter, edgesFilter, noirFilter, gaussianBlurFilter, pinkCrossPolynomial, spotColorFilter]
 
-//		filters = [imageFilter.withoutFilter, imageFilter.sepiaToneFilter, imageFilter.colorControlsFilter, imageFilter.edgesFilter, imageFilter.noirFilter, imageFilter.gaussianBlurFilter, imageFilter.pinkCrossPolynomial, imageFilter.spotColorFilter]
 		countFilters = filters.count
 	}
 
-	func apllyFilter(indexPath: IndexPath, customParametrs: CustomParametrs? = nil, completion: @escaping (UIImage?)-> Void) {
+	func apllyFilter(image: UIImage?, indexPath: IndexPath, customParametrs: CustomParametrs? = nil, completion: @escaping (UIImage?)-> Void) {
 		DispatchQueue.global().async {
-			self.filterImage = self.filters[indexPath.row].filter(self.originImage, customParametrs)
+			let filteredImage = self.filters[indexPath.row].filter(image, customParametrs)
 			DispatchQueue.main.async {
-				completion(self.filterImage)
+				completion(filteredImage)
 			}
 		}
 	}

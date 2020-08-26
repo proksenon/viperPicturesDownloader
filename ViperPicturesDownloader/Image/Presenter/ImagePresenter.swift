@@ -35,8 +35,8 @@ extension ImagePresenter: ImageViewOutput{
 		view.setupSliders()
 		view.setSlidersConstraint()
 		view.isHiddenSliders(count: 3, true)
-		view.setCancleButton()
-		view.setCancleButtonConstraints()
+		view.setCancelButton()
+		view.setCancelButtonConstraints()
 		view.isHiddenCancleButton(true)
 	}
 
@@ -44,12 +44,13 @@ extension ImagePresenter: ImageViewOutput{
 		router.pop()
 	}
 
+	func saveImageToLibrary() {
+		interactor.saveImageToLibrary()
+	}
 	func filterImage(customParametr: CustomParametrs?) {
-//		let filteredImage = interactor.didSelect(indexPath: indexPath, customParametrs: customParametr)
-		interactor.didSelect(indexPath: indexPath, customParametrs: customParametr) { (imageModel) in
+		interactor.filterToImage(indexPath: indexPath, customParametrs: customParametr) { (imageModel) in
 			self.view.setImage(with: imageModel)
 		}
-//		view.setImage(with: filteredImage)
 	}
 	func hidenSlidersAndShowCollection() {
 		showCollection(countSliders: 3, true)

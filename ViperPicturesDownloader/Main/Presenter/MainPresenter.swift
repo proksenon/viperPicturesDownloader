@@ -8,7 +8,7 @@
 
 
 import Foundation
-import UIKit
+//import UIKit
 /// Презентер главного экрана
 final class MainPresenter {
 
@@ -48,8 +48,8 @@ extension MainPresenter: MainViewOutput {
 		view.setStatusBarStyleLight()
 		view.setupAlert()
 		view.setAddUrlButton()
-		//freeStorage()
-		freeALL()
+//		freeStorage()
+//		freeALL()
 	}
 
 	func didAddUrl(urlString: String?) {

@@ -33,6 +33,8 @@ final class MainViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		print(UIScreen.main.bounds.size.width)
+		print(UIScreen.main.bounds.size.height)
 		configurator.configure(with: self)
 		output.configureView()
 	}

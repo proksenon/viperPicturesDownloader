@@ -24,7 +24,7 @@ class ImageViewController: UIViewController {
 	var slider2: UISlider!
 	var slider3: UISlider!
 	var sliders: [UISlider]!
-	var cancleButton: UIButton!
+	var cancelButton: UIButton!
 	var lastValue: Float = 0
 
 	override func viewDidLoad() {
@@ -41,27 +41,27 @@ extension ImageViewController: ImageViewInput {
 		view.backgroundColor = UIColor.gray
 	}
 
-	func setCancleButton() {
-		cancleButton = UIButton()
-		cancleButton.setTitle("Cancle", for: .normal)
-		cancleButton.backgroundColor = UIColor.black.withAlphaComponent(0.3)
-		cancleButton.addTarget(self, action: #selector(cancleButtonDidTapped), for: .touchUpInside)
-		view.addSubview(cancleButton)
+	func setCancelButton() {
+		cancelButton = UIButton()
+		cancelButton.setTitle("Cancel", for: .normal)
+		cancelButton.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+		cancelButton.addTarget(self, action: #selector(cancelButtonDidTapped), for: .touchUpInside)
+		view.addSubview(cancelButton)
 	}
-	func setCancleButtonConstraints() {
-		cancleButton.translatesAutoresizingMaskIntoConstraints = false
-		cancleButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-		cancleButton.bottomAnchor.constraint(equalTo: slider1.topAnchor, constant: -20).isActive = true
-		cancleButton.heightAnchor.constraint(equalToConstant: CGFloat(50)).isActive = true
-		cancleButton.widthAnchor.constraint(equalToConstant: CGFloat(100)).isActive = true
+	func setCancelButtonConstraints() {
+		cancelButton.translatesAutoresizingMaskIntoConstraints = false
+		cancelButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+		cancelButton.bottomAnchor.constraint(equalTo: slider1.topAnchor, constant: -20).isActive = true
+		cancelButton.heightAnchor.constraint(equalToConstant: CGFloat(50)).isActive = true
+		cancelButton.widthAnchor.constraint(equalToConstant: CGFloat(100)).isActive = true
 	}
 
-	@IBAction func cancleButtonDidTapped() {
+	@IBAction func cancelButtonDidTapped() {
 		outputView.hidenSlidersAndShowCollection()
 	}
 
 	func isHiddenCancleButton(_ isHidden: Bool) {
-		cancleButton.isHidden = isHidden
+		cancelButton.isHidden = isHidden
 	}
 
 	func setupSliders() {
@@ -75,7 +75,7 @@ extension ImageViewController: ImageViewInput {
 	}
 
 	private func setupSlider(slider: inout UISlider) {
-		slider.addTarget(self, action: #selector(sliderAction), for: .touchUpInside)
+		slider.addTarget(self, action: #selector(sliderAction), for: .allTouchEvents)
 		slider.backgroundColor = UIColor.black.withAlphaComponent(0.3)
 		slider.maximumTrackTintColor = .white
 		view.addSubview(slider)
@@ -101,10 +101,10 @@ extension ImageViewController: ImageViewInput {
 	}
 
 	@IBAction func sliderAction(sender: UISlider) {
-		if lastValue + 0.01 < sender.value || lastValue - 0.01 > sender.value {
+//		if lastValue + 0.01 < sender.value || lastValue - 0.01 > sender.value {
 			outputView.filterImage(customParametr: CustomParametrs(parametrs: [slider1.value, slider2.value, slider3.value]))
-			lastValue = round(sender.value*100)/100
-		}
+//			lastValue = round(sender.value*100)/100
+//		}
 	}
 
 	func ishiddenCollection(_ isHidden: Bool) {
@@ -155,7 +155,7 @@ extension ImageViewController: ImageViewInput {
 	}
 
 	@objc func saveImage(_ sender: UIBarButtonItem) {
-		UIImageWriteToSavedPhotosAlbum(imageView.image!, nil, nil,nil)
+		outputView.saveImageToLibrary()
 		alertVC = UIAlertController(title: "Успешно", message: "Картинка добавлена", preferredStyle: .alert)
 		self.present(alertVC, animated: true) { [weak alertVC] in
 			sleep(1)

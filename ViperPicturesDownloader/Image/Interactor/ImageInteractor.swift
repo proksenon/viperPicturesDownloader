@@ -11,44 +11,61 @@ import UIKit
 class ImageInteractor: ImageInteractorInput {
 
 	weak var presenter: ImageInteractorOuput!
-//	var filter: ImageFilter!
-//	var filters: [(UIImage?)->UIImage?]!
-//	var filterImage: UIImage?
-//	var effect: Bool = false
+
 	let filtersImages = FiltersIcons()
 	var imageFilterManager: ImageFilterManagerProtocol!
-	var image: Image!
+	var originImage: Image! {
+		didSet {
+			let image = originImage.image?.resizeImage(targetSize: ImageSize().size!)
+			resizedImage = Image(image: image)
+		}
+	}
+	var resizedImage: Image!
+	var lastIndex: IndexPath?
+	var lastCustomParametrs: CustomParametrs?
 
 	init(presenter: ImageInteractorOuput, imageFilterManager: ImageFilterManagerProtocol = ImageFilterManager()) {
 		self.presenter = presenter
 		self.imageFilterManager = imageFilterManager
 	}
 
-	func didSelect(indexPath: IndexPath, customParametrs: CustomParametrs? = nil, completion: @escaping (Image)->Void) {
-//		return filterToImage(indexPath: indexPath, customParametrs: customParametrs)
-		filterToImage(indexPath: indexPath, customParametrs: customParametrs) { (imageModel) in
-			completion(imageModel)
-		}
-	}
+//	func didSelect(indexPath: IndexPath, customParametrs: CustomParametrs? = nil, completion: @escaping (Image)->Void) {
+////		return filterToImage(indexPath: indexPath, customParametrs: customParametrs)
+//		filterToImage(indexPath: indexPath, customParametrs: customParametrs) { (imageModel) in
+//			completion(imageModel)
+//		}
+//	}
 
 	func getParamsAt(indexPath: IndexPath)->[ParametrInfo]? {
 		return imageFilterManager.getParametrs(indexPath: indexPath)
 	}
 
 	func originImageSet(image: Image) {
-		imageFilterManager.originImage = image.image
+		originImage = image
+		//imageFilterManager.originImage = originImage.image?.resizeImage(targetSize: ImageSize().size!)
+	}
+
+	func saveImageToLibrary() {
+		guard let index = lastIndex else {return}
+
+		imageFilterManager.apllyFilter(image: originImage.image, indexPath: index, customParametrs: lastCustomParametrs) { (image) in
+			if let image = image {
+				UIImageWriteToSavedPhotosAlbum(image, nil, nil,nil)
+			}
+		}
 	}
 
 	func originImageGet()-> Image {
-		return Image(image: imageFilterManager.originImage)
+		return originImage
 	}
-//private
-	private func filterToImage(indexPath: IndexPath, customParametrs: CustomParametrs? = nil, completion: @escaping (Image)->Void){
-//		let filterImage = imageFilterManager.apllyFilter(indexPath: indexPath, customParametrs: customParametrs)
-		imageFilterManager.apllyFilter(indexPath: indexPath, customParametrs: customParametrs) { (image) in
+
+	func filterToImage(indexPath: IndexPath, customParametrs: CustomParametrs? = nil, completion: @escaping (Image)->Void){
+		lastIndex = indexPath
+		lastCustomParametrs = customParametrs
+
+		imageFilterManager.apllyFilter(image: resizedImage.image, indexPath: indexPath, customParametrs: customParametrs) { (image) in
 			completion(Image(image: image))
 		}
-		//return Image(image: filterImage)
 	}
 
 	func numberOfRows()-> Int{

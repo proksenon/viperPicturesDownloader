@@ -21,7 +21,7 @@ protocol ImageViewInput: class {
 	func ishiddenCollection(_ isHidden: Bool)
 	func isHiddenSliders(count: Int, _ isHidden: Bool)
 	func setDefaultValueToSlider(sliderNubme: Int, minValue: Float, maxValue: Float, defaultValue: Float)
-	func setCancleButton()
-	func setCancleButtonConstraints()
+	func setCancelButton()
+	func setCancelButtonConstraints()
 	func isHiddenCancleButton(_ isHidden: Bool)
 }
