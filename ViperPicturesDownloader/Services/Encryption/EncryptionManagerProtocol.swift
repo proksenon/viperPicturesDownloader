@@ -9,6 +9,8 @@
 import Foundation
 
 protocol EncryptionManagerProtocol {
+	/// Расшифровывает данные
 	func decryptionData(data: Data?)-> Data?
+	/// Шифрует данные
 	func encryptionData(data: Data?)-> Data?
 }

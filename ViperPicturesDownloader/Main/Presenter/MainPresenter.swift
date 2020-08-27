@@ -21,7 +21,7 @@ final class MainPresenter {
 	}
 	/// Очищает хранилище, удаляя файлы, которые лежат больше 2 дней
 	private func freeStorage() {
-		let date = Calendar.current.date(byAdding: .day, value: -5, to: Date())
+		let date = Calendar.current.date(byAdding: .day, value: -2, to: Date())
 		DispatchQueue.global(qos: .background).async {
 			self.interactor.freeStorage(befora: date)
 		}
@@ -48,22 +48,31 @@ extension MainPresenter: MainViewOutput {
 		view.setStatusBarStyleLight()
 		view.setupAlert()
 		view.setAddUrlButton()
-//		freeStorage()
+		freeStorage()
 //		freeALL()
 	}
 
 	func didAddUrl(urlString: String?) {
 		interactor.didAddUrl(urlString: urlString)
 		view.reloadTable()
+		scrollTableToLast()
 	}
 
 	func presentAlert() {
 		view.presentAlert()
 	}
+
 	func imageFromLibrary(image: Image) {
 		interactor.setImage(imageModel: image)
 		view.reloadTable()
+		scrollTableToLast()
 	}
+
+	private func scrollTableToLast() {
+		let lastIndexPath = IndexPath(row: numberOfRows() - 1, section: 0)
+		view.scrollTableTo(indexPath: lastIndexPath)
+	}
+
 }
 // MARK: - TableViewDelegateOutput
 extension MainPresenter: TableViewDelegateOutput {
@@ -82,9 +91,6 @@ extension MainPresenter: TableViewDelegateOutput {
 extension MainPresenter: TableViewDataSourceOutPut {
 
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
-//		interactor.getImageWithBlur(indexPath: indexPath, size: size) { (image) in
-//			completion(image)
-//		}
 		interactor.getImage(indexPath: indexPath, size: size) { (image) in
 			completion(image)
 		}

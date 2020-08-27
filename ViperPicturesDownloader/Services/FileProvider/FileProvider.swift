@@ -6,7 +6,6 @@ final class FileProvider: FileProviderProtocol {
 	let tempDirectory = NSTemporaryDirectory()
 	let limitedSizeFile = 10000000000
 
-	/// Записывает данные в файл
 	func writeToFile(data: Data, path: String){
 		do {
 			try data.write(to: URL(fileURLWithPath: path))
@@ -15,23 +14,19 @@ final class FileProvider: FileProviderProtocol {
 			print("could't create file text.txt because of error: \(error)")
 		}
 	}
-	/// Проверяет директорию на существования файла
+	
 	func checkDirectory(nameFile: String) ->Bool {
-//		do {
-			guard let filesInDirectory = getAllFilesFromDirectory() else { return false}
-			for file in filesInDirectory {
-				if file == nameFile{
-					print("\(nameFile) found")
-					return true
-				}
+		guard let filesInDirectory = getAllFilesFromDirectory() else { return false}
+		for file in filesInDirectory {
+			if file == nameFile{
+				print("\(nameFile) found")
+				return true
 			}
-			print("File not found")
-//		   } catch let error as NSError {
-//			   print(error)
-//		   }
-		   return false
-	   }
-	/// Считывает данные с файла
+		}
+		print("File not found")
+	   return false
+   }
+
 	func readFile(nameFile: String)->Data? {
 		let path = getPath(nameFile: nameFile)
 		print(tempDirectory.utf8CString )
@@ -42,11 +37,11 @@ final class FileProvider: FileProviderProtocol {
 		}
 		return nil
 	}
-	/// Получает путь к файлу
+	
 	func getPath(nameFile: String, directory: String = NSTemporaryDirectory())->String{
 		return (directory as NSString).appendingPathComponent(nameFile)
 	}
-	/// Удаляет ненужные файлы
+	
 	func removeFile(nameFile: String, before date: Date? = Date()) {
 		let path = getPath(nameFile: nameFile)
         do {
@@ -65,31 +60,13 @@ final class FileProvider: FileProviderProtocol {
             print("error occured while deleting file: \(error.localizedDescription)")
         }
 	}
-	/// Удаляет все файлы
+	
 	func removeAllFiles(before date: Date? = Date()) {
-//		do {
 		guard let filesInDirectory = getAllFilesFromDirectory() else {return}
 		for file in filesInDirectory {
 			removeFile(nameFile: file, before: date)
 		}
-//		} catch let error as NSError {
-//            print("error occured while deleting file: \(error.localizedDescription)")
-//        }
 	}
-//	func removeFilesWithType() {
-//		let files = getAllFilesFromDirectory()
-//		do {
-//			let filesInDirectory = try fileManager.contentsOfDirectory(atPath: tempDirectory)
-//			for file in filesInDirectory {
-//				if file.hasSuffix(".jpeg") || file.hasSuffix(".png") {
-//					let path = getPath(nameFile: file)
-//					try fileManager.removeItem(atPath: path)
-//				}
-//			} //try fileManager.attributesOfItem(atPath: path)[FileAttributeKey.size] as? Int
-//		} catch let error as NSError {
-//            print("error occured while deleting file: \(error.localizedDescription)")
-//        }
-//	}
 
 	func removeFilesWithType() {
 		guard let filesInDirectory = getAllFilesFromDirectory() else {return}

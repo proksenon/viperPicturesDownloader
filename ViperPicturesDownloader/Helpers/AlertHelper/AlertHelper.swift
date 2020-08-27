@@ -14,20 +14,6 @@ class AlertHelper: AlertHelperProtocol {
 
 	func setupAlert(alertVC: UIAlertController) {
 		self.alertVC = alertVC
-		//alertVC = UIAlertController(title: "Введите ссылку на картинку", message: nil, preferredStyle: .alert)
-//		alertVC.addTextField { (textField) in
-//			textField.keyboardType = .alphabet
-//			textField.placeholder = "url"
-//		}
-//		let alertAdd = UIAlertAction(title: "Добавить ссылку", style: .default) { [weak alertVC] (action) in
-//			if let textfield = alertVC?.textFields?.first {
-//				completion(textfield.text)
-//				textfield.text = ""
-//			}
-//		}
-//		let alertCancle = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
-//		alertVC.addAction(alertAdd)
-//		alertVC.addAction(alertCancle)
 	}
 
 	func alertTextFieldSet() {
@@ -48,11 +34,8 @@ class AlertHelper: AlertHelperProtocol {
 	}
 
 	func alertCancleButtonSet() {
-				let alertCancle = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
-				alertVC.addAction(alertCancle)
-	}
-	func alertPhotoLibrary() {
-		
+		let alertCancle = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+		alertVC.addAction(alertCancle)
 	}
 
 }

@@ -31,30 +31,4 @@ struct ImageUrls: Codable {
 		   "https://i.ibb.co/859Y0g0/White-Light.jpg",
 		   "https://i.pinimg.com/originals/00/50/6c/00506cf573becf40a03414cae253551c.jpg"
 	   ]
-}//https://9to5mac.com/wp-content/uploads/sites/6/2018/09/530.Bubble_Gray-414w-896h@2xiphone.jpg?quality=82&strip=all
-/// Хранит картинку
-struct Image {
-	let image: UIImage?
-	var description: String? = ""
-	var urlString: String? = ""
-//	var from: ImageFrom = .internet
-}
-/// Хранит размер картинки
-struct ImageSize {
-	var size: CGSize? = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-}
-/// Хранит view
-//struct ViewForActivity {
-//	let view: UIView
-//}
-
-//enum ImageFrom {
-//	case internet
-//	case photoLibrary
-//	case camera
-//}
-
-enum ImageFormat {
-	case png
-	case jpeg
 }

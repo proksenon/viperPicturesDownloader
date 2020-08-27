@@ -25,7 +25,6 @@ class ImageViewController: UIViewController {
 	var slider3: UISlider!
 	var sliders: [UISlider]!
 	var cancelButton: UIButton!
-	var lastValue: Float = 0
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -101,10 +100,7 @@ extension ImageViewController: ImageViewInput {
 	}
 
 	@IBAction func sliderAction(sender: UISlider) {
-//		if lastValue + 0.01 < sender.value || lastValue - 0.01 > sender.value {
-			outputView.filterImage(customParametr: CustomParametrs(parametrs: [slider1.value, slider2.value, slider3.value]))
-//			lastValue = round(sender.value*100)/100
-//		}
+		outputView.filterImage(customParametr: CustomParametrs(parametrs: [slider1.value, slider2.value, slider3.value]))
 	}
 
 	func ishiddenCollection(_ isHidden: Bool) {

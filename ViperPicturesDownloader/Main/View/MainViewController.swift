@@ -60,6 +60,11 @@ extension MainViewController: MainViewInput {
 	func reloadTable() {
 		tableView.reloadData()
 	}
+
+	func scrollTableTo(indexPath: IndexPath) {
+		tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+	}
+
 	func setButton() {
 		segueToCollection = UIBarButtonItem(title: "Collection",
 								 style: UIBarButtonItem.Style.done,

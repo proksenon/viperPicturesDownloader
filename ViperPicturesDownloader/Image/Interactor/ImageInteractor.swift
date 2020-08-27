@@ -29,20 +29,12 @@ class ImageInteractor: ImageInteractorInput {
 		self.imageFilterManager = imageFilterManager
 	}
 
-//	func didSelect(indexPath: IndexPath, customParametrs: CustomParametrs? = nil, completion: @escaping (Image)->Void) {
-////		return filterToImage(indexPath: indexPath, customParametrs: customParametrs)
-//		filterToImage(indexPath: indexPath, customParametrs: customParametrs) { (imageModel) in
-//			completion(imageModel)
-//		}
-//	}
-
 	func getParamsAt(indexPath: IndexPath)->[ParametrInfo]? {
 		return imageFilterManager.getParametrs(indexPath: indexPath)
 	}
 
 	func originImageSet(image: Image) {
 		originImage = image
-		//imageFilterManager.originImage = originImage.image?.resizeImage(targetSize: ImageSize().size!)
 	}
 
 	func saveImageToLibrary() {
@@ -71,7 +63,13 @@ class ImageInteractor: ImageInteractorInput {
 	func numberOfRows()-> Int{
 		return imageFilterManager.countFilters
 	}
+	
 	func getFilterIcon(indexPath: IndexPath)->Image {
-		filtersImages.images[indexPath.row]
+		if let imageIconModel = imageFilterManager.getFiltersIcon(indexPath: indexPath) {
+			return imageIconModel
+		} else {
+			return Image(image: nil)
+		}
+//		filtersImages.images[indexPath.row]
 	}
 }

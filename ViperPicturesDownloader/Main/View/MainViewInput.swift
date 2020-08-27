@@ -18,4 +18,5 @@ protocol MainViewInput: class {
 	func presentAlert()
 	func setAddUrlButton()
 	func reloadTable()
+	func scrollTableTo(indexPath: IndexPath)
 }

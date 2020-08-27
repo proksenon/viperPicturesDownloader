@@ -18,7 +18,6 @@ final class MainInteractor : MainInteractorInput {
 	var networkService: NetworkServiceProtocol!
 	var imageResizer: ImageResizerProtocol!
 	var userDefaultsWork: UserDefaultsWorkProtocol!
-	var activityIndicator: ActivityIndicatorProtocol!
 	let imageFilterManager = ImageFilterManager()
 
 	init(presenter: MainInteractorOutput,
@@ -41,16 +40,16 @@ final class MainInteractor : MainInteractorInput {
 	func getImageUrls() -> ImageUrls {
 		return imageUrls
 	}
+
 	func deleteImage(indexPath: IndexPath) {
 		let urlDelete = imageUrls.urls[indexPath.row]
 		if let imagesSize = userDefaultsWork.getObject(for: urlDelete) as? [String: String] {
-			for (size, nameFile) in imagesSize {
+			for (_, nameFile) in imagesSize {
 				fileProvider.removeFile(nameFile: nameFile, before: nil)
 			}
 		}
 		userDefaultsWork.removeObjects(urls: [urlDelete])
 		imageUrls.urls.remove(at: indexPath.row)
-		print(imageUrls.urls.count)
 		saveImageUrls()
 	}
 
@@ -60,6 +59,7 @@ final class MainInteractor : MainInteractorInput {
 			saveImageUrls()
 		}
 	}
+
 	func setImageUrls() {
 		if let imageUrlsFromStorage: ImageUrls = userDefaultsWork.getObjectWithDecoder(for: "imageUrls") {
 			imageUrls = imageUrlsFromStorage
@@ -75,14 +75,6 @@ final class MainInteractor : MainInteractorInput {
 	func numberOfRows() -> Int {
 		return imageUrls.urls.count
 	}
-	func getImageWithBlur(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
-//		getImage(indexPath: indexPath, size: size) { (image) in
-//			self.imageFilterManager.originImage = image.image
-//			let imageWithBlur = self.imageFilterManager.apllyFilter(indexPath: IndexPath(row: 5, section: 1))
-//			completion(Image(image: imageWithBlur))
-//		}
-	}
-
 	//устанавливает картинку из фотоальбома
 	func setImage(imageModel: Image) {
 		var imageUrlString: String!

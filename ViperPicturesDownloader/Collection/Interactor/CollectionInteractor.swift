@@ -18,7 +18,6 @@ final class CollectionInteractor: CollectionInteractorInput {
 	var networkService: NetworkServiceProtocol!
 	var imageResizer: ImageResizerProtocol!
 	var userDefaultsWork: UserDefaultsWorkProtocol!
-	var activityIndicator: ActivityIndicatorProtocol!
 
 	init(presenter: CollectionInteractorOutput,
 		 imageNameManager: ImageNameManagerProtocol = ImageNameManager(),

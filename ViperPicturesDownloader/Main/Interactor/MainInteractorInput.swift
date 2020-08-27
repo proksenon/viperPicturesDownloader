@@ -10,7 +10,6 @@ import Foundation
 
 protocol MainInteractorInput: class {
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void)
-	func getImageWithBlur(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void)
 	func numberOfRows() -> Int
 	func freeStorage(befora date: Date?)
 	func freeALL()

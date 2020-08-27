@@ -56,10 +56,10 @@ extension ImagePresenter: ImageViewOutput{
 		showCollection(countSliders: 3, true)
 	}
 
-	private func showCollection(countSliders: Int, _ isShow: Bool) {
-		view.isHiddenSliders(count: countSliders, isShow)
-		view.ishiddenCollection(!isShow)
-		view.isHiddenCancleButton(isShow)
+	private func showCollection(countSliders: Int, _ isntHidden: Bool) {
+		view.isHiddenSliders(count: countSliders, isntHidden)
+		view.ishiddenCollection(!isntHidden)
+		view.isHiddenCancleButton(isntHidden)
 	}
 }
 // MARK: - ImageInteractorOuput
@@ -80,17 +80,25 @@ extension ImagePresenter: FilterCollectionViewDelegateOutput {
 	func didSelect(indexPath: IndexPath) {
 		self.indexPath = indexPath
 		if let filterParametrs = interactor.getParamsAt(indexPath: indexPath) {
-			var parametrs: [Float] = []
-			for index in 0..<filterParametrs.count {
-				let parametr = filterParametrs[index]
-				view.setDefaultValueToSlider(sliderNubme: index, minValue: parametr.startValue , maxValue: parametr.endValue, defaultValue: parametr.defaultValue)
-				parametrs.append(parametr.defaultValue)
-			}
+			let parametrs = setDefaultValue(filterParametrs: filterParametrs)
 			filterImage(customParametr: CustomParametrs(parametrs: parametrs))
 			showCollection(countSliders: filterParametrs.count, false)
 		} else {
 			filterImage(customParametr: nil)
 		}
+	}
+
+	private func setDefaultValue(filterParametrs: [ParametrInfo])-> [Float] {
+		var parametrs: [Float] = []
+		for index in 0..<filterParametrs.count {
+			let parametr = filterParametrs[index]
+			view.setDefaultValueToSlider(sliderNubme: index,
+										 minValue: parametr.startValue,
+										 maxValue: parametr.endValue,
+										 defaultValue: parametr.defaultValue)
+			parametrs.append(parametr.defaultValue)
+		}
+		return parametrs
 	}
 
 

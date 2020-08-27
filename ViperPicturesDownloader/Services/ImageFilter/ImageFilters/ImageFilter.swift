@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageFilter {
+class ImageFilter: ImageFilterProtocol {
 	let context = CIContext(options: nil)
 
 	private func inputToOutputImage(currentFilter: CIFilter, imageOrientetion: UIImage.Orientation )-> UIImage? {
@@ -16,16 +16,19 @@ class ImageFilter {
 			if let cgimg = context.createCGImage(output, from: output.extent) {
 				let processedImage = UIImage(cgImage: cgimg, scale: 1.0, orientation: imageOrientetion)
 				return processedImage
-				// do something interesting with the processed image
 			}
 		}
 		return nil
 	}
 
-	func sepiaToneFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
-		guard let inputImage = image else {return nil}
+	func withoutFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
+		return image
+	}
 
-		var intensity = customParametrs?.parametrs[0]
+	func sepiaToneFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
+		guard let inputImage = image, let customParametrs = customParametrs, customParametrs.parametrs.count >= 1 else {return nil}
+
+		let intensity = customParametrs.parametrs[0]
 
 		if let currentFilter = CIFilter(name: "CISepiaTone") {
 			let beginImage = CIImage(image: inputImage)
@@ -37,34 +40,34 @@ class ImageFilter {
 		return nil
 	}
 
-	func gaussianBlurFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
-		guard let inputImage = image else {return nil}
-
-		var radius = customParametrs?.parametrs[0]
-
-		if let currentFilter = CIFilter(name: "CIGaussianBlur") {
-			let beginImage = CIImage(image: inputImage)
-			currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-			currentFilter.setValue(radius, forKey: kCIInputRadiusKey)//(2.5)
-
-			return inputToOutputImage(currentFilter: currentFilter, imageOrientetion: inputImage.imageOrientation)
-		}
-		return nil
-	}
-
 	func colorControlsFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
-		guard let inputImage = image, let customParametrs = customParametrs else {return nil}
+		guard let inputImage = image, let customParametrs = customParametrs, customParametrs.parametrs.count >= 3 else {return nil}
 
 		let brightness = customParametrs.parametrs[0]
 		let saturation = customParametrs.parametrs[1]
 		let contrast = customParametrs.parametrs[2]
-		
+
 		if let currentFilter = CIFilter(name: "CIColorControls") {
 			let beginImage = CIImage(image: inputImage)
 			currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
 			currentFilter.setValue(brightness, forKey: kCIInputBrightnessKey)//0-1 0
 			currentFilter.setValue(saturation, forKey: kCIInputSaturationKey)//5
 			currentFilter.setValue(contrast, forKey: kCIInputContrastKey)//1
+
+			return inputToOutputImage(currentFilter: currentFilter, imageOrientetion: inputImage.imageOrientation)
+		}
+		return nil
+	}
+
+	func edgesFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
+		guard let inputImage = image, let customParametrs = customParametrs, customParametrs.parametrs.count >= 1 else {return nil}
+
+		let intensity = customParametrs.parametrs[0]
+
+		if let currentFilter = CIFilter(name: "CIEdges") {
+			let beginImage = CIImage(image: inputImage)
+			currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+			currentFilter.setValue(intensity, forKey: kCIInputIntensityKey)//20
 
 			return inputToOutputImage(currentFilter: currentFilter, imageOrientetion: inputImage.imageOrientation)
 		}
@@ -84,15 +87,15 @@ class ImageFilter {
 		return nil
 	}
 
-	func edgesFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
-		guard let inputImage = image else {return nil}
+	func gaussianBlurFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
+		guard let inputImage = image, let customParametrs = customParametrs, customParametrs.parametrs.count >= 1 else {return nil}
 
-		var intensity = customParametrs?.parametrs[0]
+		let radius = customParametrs.parametrs[0]
 
-		if let currentFilter = CIFilter(name: "CIEdges") {
+		if let currentFilter = CIFilter(name: "CIGaussianBlur") {
 			let beginImage = CIImage(image: inputImage)
 			currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-			currentFilter.setValue(intensity, forKey: kCIInputIntensityKey)//20
+			currentFilter.setValue(radius, forKey: kCIInputRadiusKey)//(2.5)
 
 			return inputToOutputImage(currentFilter: currentFilter, imageOrientetion: inputImage.imageOrientation)
 		}
@@ -109,7 +112,6 @@ class ImageFilter {
 		if let currentFilter = CIFilter(name: "CIColorCrossPolynomial", parameters: param) {
 			let beginImage = CIImage(image: inputImage)
 			currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-			//currentFilter.setValue(20, forKey: "inputRedCoefficients")
 
 			return inputToOutputImage(currentFilter: currentFilter, imageOrientetion: inputImage.imageOrientation)
 		}
@@ -118,11 +120,11 @@ class ImageFilter {
 
 
 	func spotColorFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
-		guard let inputImage = image else {return nil}
+		guard let inputImage = image, let customParametrs = customParametrs, customParametrs.parametrs.count >= 3 else {return nil}
 
-		var closenessG = customParametrs?.parametrs[0]
-		var closenessR = customParametrs?.parametrs[1]
-		var closenessB = customParametrs?.parametrs[2]
+		let closenessG = customParametrs.parametrs[0]
+		let closenessR = customParametrs.parametrs[1]
+		let closenessB = customParametrs.parametrs[2]
 
 		if let currentFilter = CIFilter(name: "CISpotColor") {
 			let beginImage = CIImage(image: inputImage)
@@ -145,10 +147,6 @@ class ImageFilter {
 			return inputToOutputImage(currentFilter: currentFilter, imageOrientetion: inputImage.imageOrientation)
 		}
 		return nil
-	}
-
-	func withoutFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
-		return image
 	}
 
 }
