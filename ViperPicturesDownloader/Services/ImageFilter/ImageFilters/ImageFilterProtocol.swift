@@ -9,7 +9,9 @@
 import UIKit
 
 protocol ImageFilterProtocol: class {
+	///  Без фильтра
 	func withoutFilter(image: UIImage?, customParametrs: CustomParametrs?)-> UIImage?
+	///                                          Фильтры картинок
 	func sepiaToneFilter(image: UIImage?, customParametrs: CustomParametrs?)-> UIImage?
 	func colorControlsFilter(image: UIImage?, customParametrs: CustomParametrs?)-> UIImage?
 	func edgesFilter(image: UIImage?, customParametrs: CustomParametrs?)-> UIImage?

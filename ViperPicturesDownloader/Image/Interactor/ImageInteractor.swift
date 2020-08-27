@@ -12,7 +12,7 @@ class ImageInteractor: ImageInteractorInput {
 
 	weak var presenter: ImageInteractorOuput!
 
-	let filtersImages = FiltersIcons()
+//	let filtersImages = FiltersIcons()
 	var imageFilterManager: ImageFilterManagerProtocol!
 	var originImage: Image! {
 		didSet {

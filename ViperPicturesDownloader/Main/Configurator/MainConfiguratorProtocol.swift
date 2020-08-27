@@ -9,5 +9,6 @@
 import Foundation
 
 protocol MainConfiguratorProtocol: class {
+	///  Конфигурирует модуль Main
 	func configure(with viewController: MainViewController)
 }

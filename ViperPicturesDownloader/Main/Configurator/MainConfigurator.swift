@@ -11,19 +11,19 @@ import Foundation
 final class MainConfigurator : MainConfiguratorProtocol {
 
 	func configure(with viewController: MainViewController) {
-		///Конфигурация модуля
+		///  Конфигурация модуля
 		let presenter = MainPresenter(view: viewController)
 		let interactor = MainInteractor(presenter: presenter)
 		let router = MainRouter(viewController: viewController)
-		///Таблица
+		///  Таблица
 		let customTableViewDelegate = CustomTableViewDelegate(output: presenter)
 		let customTableViewDataSource = CustomTableViewDataSource(output: presenter)
 		let customTableView = CustomTableView()
-		///Конфигурация модуля
+		///  Конфигурация модуля
 		viewController.output = presenter
 		presenter.interactor = interactor
 		presenter.router = router
-		///Таблица
+		///  Таблица
 		presenter.customTableViewDelegate = customTableViewDelegate
 		presenter.customTableViewDataSource = customTableViewDataSource
 		customTableView.delegate = customTableViewDelegate

@@ -8,13 +8,13 @@
 
 import UIKit
 
-struct FiltersIcons {
-	var images: [Image] = [Image(image: UIImage(named: "origin"), description: "Origin"),
-						   Image(image: UIImage(named: "sepiaTone"), description: "Sepia"),
-						   Image(image: UIImage(named: "colorControls"), description: "ColContr"),
-						   Image(image: UIImage(named: "edges"), description: "Edges"),
-						   Image(image: UIImage(named: "noir"), description: "Noir"),
-						   Image(image: UIImage(named: "gaussinBlur"), description: "Blur"),
-						   Image(image: UIImage(named: "origin"), description: "Colors"),
-						   Image(image: UIImage(named: "origin"), description: "colorSpot")]
-}
+//struct FiltersIcons {
+//	var images: [Image] = [Image(image: UIImage(named: "origin"), description: "Origin"),
+//						   Image(image: UIImage(named: "sepiaTone"), description: "Sepia"),
+//						   Image(image: UIImage(named: "colorControls"), description: "ColContr"),
+//						   Image(image: UIImage(named: "edges"), description: "Edges"),
+//						   Image(image: UIImage(named: "noir"), description: "Noir"),
+//						   Image(image: UIImage(named: "gaussinBlur"), description: "Blur"),
+//						   Image(image: UIImage(named: "origin"), description: "Colors"),
+//						   Image(image: UIImage(named: "origin"), description: "colorSpot")]
+//}
