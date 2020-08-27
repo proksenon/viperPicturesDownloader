@@ -15,6 +15,8 @@ final class MainPresenter {
 	weak var view: MainViewInput!
 	var interactor: MainInteractorInput!
 	var router: MainRouterInput!
+	var customTableViewDataSource: CustomTableViewDataSource!
+	var customTableViewDelegate: CustomTableViewDelegate!
 
 	init(view: MainViewInput) {
 		self.view = view
@@ -43,7 +45,8 @@ extension MainPresenter: MainViewOutput {
 		interactor.setImageUrls()
 		view.setTableView()
 		view.setTableConstraints()
-		view.setButton()
+		view.reloadTable()
+		view.setSegueToCollectionButton()
 		view.setUpNavigationBar()
 		view.setStatusBarStyleLight()
 		view.setupAlert()

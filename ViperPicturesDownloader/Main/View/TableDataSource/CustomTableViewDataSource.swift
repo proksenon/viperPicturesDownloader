@@ -10,13 +10,10 @@ import UIKit
 
 final class CustomTableViewDataSource:NSObject, UITableViewDataSource {
 
-	var tableView: UITableView!
 	var output: TableViewDataSourceOutPut!
 	
-	init(tableView: UITableView, output: TableViewDataSourceOutPut){
+	init(output: TableViewDataSourceOutPut){
 		super.init()
-		self.tableView = tableView
-		self.tableView.dataSource = self
 		self.output = output
 	}
 	/// Количество ячеек

@@ -9,14 +9,24 @@
 import Foundation
 
 protocol MainViewInput: class {
+	///  Устанавиливает таблицу
 	func setTableView()
+	///  Устанавливает констрейнты для таблицы
 	func setTableConstraints()
-	func setButton()
+	///  Устанавливает кнопку "Collection" перехода на колекшн вью
+	func setSegueToCollectionButton()
+	///  Настраивает NavigationBar
 	func setUpNavigationBar()
+	///  Меняет цвет StatusBar на светлый
 	func setStatusBarStyleLight()
+	///  Устанавливает Alert
 	func setupAlert()
+	///  Показывает Alert
 	func presentAlert()
+	///  Устанавливает кнопку "+"
 	func setAddUrlButton()
+	///  Обновляет таблицу
 	func reloadTable()
+	///  Опускается в низ таблицы
 	func scrollTableTo(indexPath: IndexPath)
 }

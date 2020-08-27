@@ -71,11 +71,10 @@ final class MainInteractor : MainInteractorInput {
 	func saveImageUrls() {
 		userDefaultsWork.setObjectWithDecoder(for: "imageUrls", object: imageUrls)
 	}
-	/// Количество ячеек
 	func numberOfRows() -> Int {
 		return imageUrls.urls.count
 	}
-	//устанавливает картинку из фотоальбома
+
 	func setImage(imageModel: Image) {
 		var imageUrlString: String!
 		var imageFormat: ImageFormat = .png
@@ -109,7 +108,6 @@ final class MainInteractor : MainInteractorInput {
 		}
 	}
 
-	/// Получает картинку
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
 		let url = imageUrls.urls[indexPath.row]
 		let nameFileOrigin = imageNameManager.getNameFileImage(url: url, size: nil)
@@ -129,7 +127,7 @@ final class MainInteractor : MainInteractorInput {
 			}
 		}
 	}
-	/// Получает картинку с файлов
+	/// 	Получает картинку с файлов
 	private func imageFromCache(url: String, size: ImageSize, completion: @escaping (Image)->Void) {
 		let nameFile = imageNameManager.getNameFileImage(url: url, size: size.size)
 		if fileProvider.checkDirectory(nameFile: nameFile) {
@@ -143,7 +141,7 @@ final class MainInteractor : MainInteractorInput {
 				}
 			}
 	}
-	/// Расшифровывает данные с файла
+	/// 	Расшифровывает данные с файла
 	private func decryptionDataFromFile(url: String, nameFile: String)-> Data? {
 		if let data = fileProvider.readFile(nameFile: nameFile) {
 			if let decryptData = encryptionManager.decryptionData(data: data) {
@@ -152,7 +150,7 @@ final class MainInteractor : MainInteractorInput {
 		}
 		return nil
 	}
-	/// Оригинальную картинку превращает в нужный размер
+	/// 	Оригинальную картинку превращает в нужный размер
 	private func originalToSize(url: String, nameFile: String,
 								size: CGSize?, completion: @escaping (UIImage?) -> Void) {
 		if let decryptData = decryptionDataFromFile(url: url,
@@ -165,14 +163,14 @@ final class MainInteractor : MainInteractorInput {
 			}
 		}
 	}
-	/// Записывает дата в файл
+	/// 	Записывает Data в файл
 	private func dataToFile(nameFile: String, data: Data) {
 		let path = self.fileProvider.getPath(nameFile: nameFile, directory: NSTemporaryDirectory())
 		if let encryptData = encryptionManager.encryptionData(data: data) {
 			self.fileProvider.writeToFile(data: encryptData, path: path)//encryptData
 		}
 	}
-	/// Скачивает картинку
+	/// 	Скачивает картинку
 	private func downloadImage(currentUrl: URL, url: String,
 							   nameFileOrigin: String, size: ImageSize, completion: @escaping (Image)->Void) {
 		networkService.getData(url: currentUrl) { (data) in
@@ -184,11 +182,11 @@ final class MainInteractor : MainInteractorInput {
 			}
 		}
 	}
-	/// Очищает хранилище, удаляя файлы, которые лежат больше 2 дней
+
 	func freeStorage(befora date: Date? = Calendar.current.date(byAdding: .day, value: -2, to: Date())){
 		fileProvider.removeAllFiles(before: date)
 	}
-	/// Полностью очищает хранилище
+	
 	func freeALL() {
 		freeStorage(befora: nil)
 		userDefaultsWork.removeObjects(urls: imageUrls.urls)

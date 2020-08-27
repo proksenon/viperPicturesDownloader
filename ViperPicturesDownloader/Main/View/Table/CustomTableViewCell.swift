@@ -27,20 +27,23 @@ final class CustomTableViewCell: UITableViewCell {
 		addSubview(customImageView)
 		setImageViewConsstraints()
 	 }
+	///Устанавливает индикатор загрузки
 	private func setActivivty() {
 		addSubview(activityIndicator)
 		activityIndicator.style = .large
 		activityIndicator.center = contentView.center
 		startActivity()
 	}
+	///Остонавливает индикатор загрузки
 	func stopActivity() {
 		activityIndicator.stopAnimating()
 	}
+	/// Запускает индикатор загрузки
 	func startActivity() {
 		activityIndicator.startAnimating()
 	}
+	/// Устанавливает констрейнты для ImageView
 	private func setImageViewConsstraints() {
-		/// констрейнты картинки во всю ячейку
 		customImageView.translatesAutoresizingMaskIntoConstraints = false
 		customImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
 		customImageView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
@@ -64,7 +67,5 @@ final class CustomTableViewCell: UITableViewCell {
 			customImageView.image = image
 			customImageView.contentMode = .scaleToFill
 		}
-//		customImageView.image = image
-//		customImageView.contentMode = .scaleToFill
 	}
 }

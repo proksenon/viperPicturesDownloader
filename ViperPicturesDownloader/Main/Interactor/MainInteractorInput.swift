@@ -9,14 +9,24 @@
 import Foundation
 
 protocol MainInteractorInput: class {
+	///  Получает картинку
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void)
+	///  Требуемое колличество ячеек
 	func numberOfRows() -> Int
+	///  Очищает хранилище, удаляя файлы, которые лежат больше 2 дней
 	func freeStorage(befora date: Date?)
+	///  Полностью очищает хранилище
 	func freeALL()
+	///  Добавляет ссылку на картинку
 	func didAddUrl(urlString: String?)
+	///  Загружает ссылки картинок из UserDefaults или стандартые ссылки
 	func setImageUrls()
+	///  Сохраняет текущие ссылки на картинки
 	func saveImageUrls()
+	///  Удаляет картинку
 	func deleteImage(indexPath: IndexPath)
+	///  Обрабатывает картинку с камеры или библиотеки и сохраняет
 	func setImage(imageModel: Image)
+	///  Возвращает текушие ссылки на картинки
 	func getImageUrls() -> ImageUrls
 }

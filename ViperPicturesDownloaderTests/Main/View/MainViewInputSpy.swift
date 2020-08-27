@@ -21,7 +21,7 @@ class MainViewInputSpy: MainViewInput {
 		didSetTable = true
 	}
 
-	func setButton() {
+	func setSegueToCollectionButton() {
 		didSetButton = true
 	}
 

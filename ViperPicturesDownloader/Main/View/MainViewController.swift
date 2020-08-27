@@ -10,16 +10,14 @@ import UIKit
 // View главного экрана 
 final class MainViewController: UIViewController {
 
-	typealias Presenter = MainViewOutput & TableViewDataSourceOutPut & TableViewDelegateOutput
-	var output: Presenter!
+//	typealias Presenter = MainViewOutput & TableViewDataSourceOutPut & TableViewDelegateOutput
+	var output: MainViewOutput!
 	var configurator: MainConfiguratorProtocol!
 	var tableView: CustomTableView!
-	var customTableViewDataSource: CustomTableViewDataSource!
-	var customTableViewDelegate: CustomTableViewDelegate!
 	var alertVC: UIAlertController!
 	var alertHelper: AlertHelperProtocol!
 	var addUrlButton: UIBarButtonItem!
-	/// кнопка перехода на колекшн вью
+	/// кнопка segueToCollection переходbn на колекшн вью
 	var segueToCollection: UIBarButtonItem!
 
 	init(configurator: MainConfiguratorProtocol = MainConfigurator()) {
@@ -33,8 +31,6 @@ final class MainViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		print(UIScreen.main.bounds.size.width)
-		print(UIScreen.main.bounds.size.height)
 		configurator.configure(with: self)
 		output.configureView()
 	}
@@ -42,12 +38,11 @@ final class MainViewController: UIViewController {
 }
 // MARK: - MainViewInput
 extension MainViewController: MainViewInput {
+
 	func setTableView() {
-		tableView = CustomTableView()
 		view.addSubview(tableView)
-		customTableViewDataSource = CustomTableViewDataSource(tableView: tableView, output: output)
-		customTableViewDelegate = CustomTableViewDelegate(tableView: tableView, output: output)
 	}
+
 	func setTableConstraints() {
 		tableView.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([
@@ -57,6 +52,7 @@ extension MainViewController: MainViewInput {
 			tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0)
 		])
 	}
+	
 	func reloadTable() {
 		tableView.reloadData()
 	}
@@ -65,7 +61,7 @@ extension MainViewController: MainViewInput {
 		tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
 	}
 
-	func setButton() {
+	func setSegueToCollectionButton() {
 		segueToCollection = UIBarButtonItem(title: "Collection",
 								 style: UIBarButtonItem.Style.done,
 								 target: self,
@@ -114,11 +110,11 @@ extension MainViewController: MainViewInput {
 			}
 		}
 		alertHelper.alertCancleButtonSet()
-		let alertPhoto = UIAlertAction(title: "photo", style: .default) { (action) in
-			self.showImagePickerController(source: .photoLibrary)
+		let alertPhoto = UIAlertAction(title: "photo", style: .default) { [weak self] (action) in
+			self?.showImagePickerController(source: .photoLibrary)
 		}
-		let alertCamera = UIAlertAction(title: "camera", style: .default) { (action) in
-			self.showImagePickerController(source: .camera)
+		let alertCamera = UIAlertAction(title: "camera", style: .default) { [weak self] (action) in
+			self?.showImagePickerController(source: .camera)
 		}
 		alertVC.addAction(alertPhoto)
 		alertVC.addAction(alertCamera)
