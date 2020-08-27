@@ -10,7 +10,7 @@ import UIKit
 
 final class CustomTableViewDelegate: NSObject, UITableViewDelegate {
 
-	var output: TableViewDelegateOutput!
+	weak var output: TableViewDelegateOutput!
 
 	init(output: TableViewDelegateOutput){
 		super.init()

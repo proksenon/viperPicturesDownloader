@@ -13,7 +13,7 @@ final class MainViewController: UIViewController {
 //	typealias Presenter = MainViewOutput & TableViewDataSourceOutPut & TableViewDelegateOutput
 	var output: MainViewOutput!
 	var configurator: MainConfiguratorProtocol!
-	var tableView: CustomTableView!
+	var tableView: UITableView!
 	var alertVC: UIAlertController!
 	var alertHelper: AlertHelperProtocol!
 	var addUrlButton: UIBarButtonItem!

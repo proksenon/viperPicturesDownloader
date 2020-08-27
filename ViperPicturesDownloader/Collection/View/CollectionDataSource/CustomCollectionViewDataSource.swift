@@ -10,13 +10,10 @@ import UIKit
 
 final class CustomCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 
-	var collectionView: CustomCollectionView!
 	var output: CollectionViewDataSourceOutput!
 
-	init(collectionView: CustomCollectionView, output: CollectionViewDataSourceOutput){
+	init(output: CollectionViewDataSourceOutput){
 		super.init()
-		self.collectionView = collectionView
-		self.collectionView.dataSource = self
 		self.output = output
 	}
 

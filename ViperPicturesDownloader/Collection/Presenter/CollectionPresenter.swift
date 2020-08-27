@@ -13,6 +13,8 @@ final class CollectionPresenter {
 	weak var view: CollectionViewInput!
 	var interactor: CollectionInteractorInput!
 	var router: CollectionRouterInput!
+	var customCollectionDataSource: CustomCollectionViewDataSource!
+	var customCollectionDelegate: CustomCollectionViewDelegate!
 
 	init(view: CollectionViewInput) {
 		self.view = view

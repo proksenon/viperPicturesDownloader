@@ -10,13 +10,10 @@ import UIKit
 // View экрана с колекцией
 final class CollectionViewController: UIViewController {
 
-	typealias Presenter = CollectionViewOutput & CollectionViewDataSourceOutput & CollectionViewDelegateOutput
-	var output: Presenter!
+	var output: CollectionViewOutput!
 	var moduleInput: CollectionModuleInput!
 	let configurator: CollectionConfiguratorProtocol = CollectionConfigurator()
-	var collectionView: CustomCollectionView!
-	var customCollectionDataSource: CustomCollectionViewDataSource!
-	var customCollectionDelegate: CustomCollectionViewDelegate!
+	var collectionView: UICollectionView!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -28,10 +25,7 @@ final class CollectionViewController: UIViewController {
 // MARK: - CollectionViewInput
 extension CollectionViewController: CollectionViewInput {
 	func setCollection() {
-		collectionView = CustomCollectionView()
 		view.addSubview(collectionView)
-		customCollectionDataSource = CustomCollectionViewDataSource(collectionView: collectionView, output: output)
-		customCollectionDelegate = CustomCollectionViewDelegate(collectionView: collectionView, output: output)
 	}
 
 	func setCollectionConstraint() {

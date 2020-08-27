@@ -10,13 +10,10 @@ import UIKit
 
 final class CustomCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-	var collectionView: CustomCollectionView!
 	var output: CollectionViewDelegateOutput!
 
-	init(collectionView: CustomCollectionView, output: CollectionViewDelegateOutput){
+	init(output: CollectionViewDelegateOutput){
 		super.init()
-		self.collectionView = collectionView
-		self.collectionView.delegate = self
 		self.output = output
 	}
 

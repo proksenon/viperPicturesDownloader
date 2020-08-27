@@ -10,7 +10,7 @@ import UIKit
 
 final class CustomTableViewDataSource:NSObject, UITableViewDataSource {
 
-	var output: TableViewDataSourceOutPut!
+	weak var output: TableViewDataSourceOutPut!
 	
 	init(output: TableViewDataSourceOutPut){
 		super.init()
