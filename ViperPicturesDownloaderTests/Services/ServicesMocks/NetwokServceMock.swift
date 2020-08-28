@@ -10,7 +10,7 @@ import UIKit
 @testable import ViperPicturesDownloader
 
 class NetworkServiceMock: NetworkServiceProtocol {
-	var result: Data = UIImage(named: "defaultImage")!.pngData()!
+	var result: Data!
 
 	func getData(url: URL, completion: @escaping (Data?) -> ()) {
 		completion(result)

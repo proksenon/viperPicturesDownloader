@@ -17,7 +17,9 @@ class FileProviderMock: FileProviderProtocol {
 	private var change: Bool = false
 	var wasWritten: Bool = false
 	var wasRemovedAll: Bool = false
-	var result: Data = UIImage(named: "defaultImage")!.pngData()!
+	var didRemoveFile: Bool = false
+	var didRemoveFileWithType: Bool = false
+	var result: Data!
 
 	func checkOriginImage(url: String) -> Bool {
 		return checkOriginImage
@@ -50,11 +52,11 @@ class FileProviderMock: FileProviderProtocol {
 	}
 
 	func removeFile(nameFile: String, before date: Date?) {
-
+		didRemoveFile = true
 	}
 
 	func removeFilesWithType() {
-		
+		didRemoveFileWithType = true
 	}
 
 

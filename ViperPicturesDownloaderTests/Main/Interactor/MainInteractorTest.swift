@@ -13,15 +13,16 @@ class MainInteractorTest: XCTestCase {
 
 	var output: MainInteractorOutput!
 	var interactor: MainInteractor!
-	var networkService: NetworkServiceProtocol!
+	var networkService: NetworkServiceMock!
 	var fileProvider: FileProviderMock!
 	var encryptionManager: EncryptionManagerProtocol!
 	var imageNameManager: ImageNameManagerProtocol!
 	var imageResizer: ImageResizerMock!
-	var userDefaultsWork: UserDefaultsWorkProtocol!
+	var userDefaultsWork: UserDefaultsWorkMock!
 
 	let indexPath = IndexPath(row: 2, section: 1)
 	let imageSize = ImageSize(size: nil)
+	let image = UIImage(named: "defaultImage")
 
     override func setUp() {
 		output = MainInteractorOutputSpy()
@@ -32,6 +33,7 @@ class MainInteractorTest: XCTestCase {
 		imageResizer = ImageResizerMock()
 		userDefaultsWork = UserDefaultsWorkMock()
 		interactor = MainInteractor(presenter: output, imageNameManager: imageNameManager, fileProvider: fileProvider, encryptionManager: encryptionManager, networkService: networkService, imageResizer: imageResizer, userDefaultsWork: userDefaultsWork)
+		interactor.setImageUrls()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
@@ -47,29 +49,31 @@ class MainInteractorTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-	func testNetworkService() {
+	func testGetImageNetworkService() {
 
-		var defoultImage: UIImage? = UIImage(named: "defaultImage")
+		let defoultImage: UIImage? = UIImage(named: "defaultImage")
+		let data = defoultImage?.pngData()
 
 		fileProvider.checkDirectory = false
+		networkService.result = data
+		fileProvider.result = data
 		interactor.getImage(indexPath: indexPath, size: imageSize) { (image) in
-			defoultImage = image.image
-
 			XCTAssertNotNil(image.image)
-			XCTAssert(image.image == defoultImage, "wrong Image")
+			XCTAssertTrue(self.fileProvider.wasWritten, "file didnt written")
 		}
 	}
 
-	func testImageFromCacheWithSize() {
+	func testGetImageFromCacheWithSize() {
 
 		fileProvider.checkDirectory = true
 
 		interactor.getImage(indexPath: indexPath, size: imageSize) { (image) in
 			XCTAssertNotNil(image.image)
+			XCTAssertFalse(self.fileProvider.wasWritten, "file didnt written")
 		}
 	}
 
-	func testImageFromCacheWithSuccessResize() {
+	func testGetImageFromCacheWithSuccessResize() {
 
 		fileProvider.checkDirectory = true
 		fileProvider.changeCheckDirectory = true
@@ -78,7 +82,7 @@ class MainInteractorTest: XCTestCase {
 		}
 	}
 
-	func testImageFromCacheWithFailureResize() {
+	func testGetImageFromCacheWithFailureResize() {
 
 		fileProvider.checkDirectory = true
 		fileProvider.changeCheckDirectory = true
@@ -88,4 +92,73 @@ class MainInteractorTest: XCTestCase {
 		}
 	}
 
+	func testDeleteImage() {
+		let imageSize = ["size": "nameFile"]
+		let count = interactor.imageUrls.urls.count
+
+		userDefaultsWork.object = imageSize
+		interactor.deleteImage(indexPath: indexPath)
+
+		XCTAssertTrue(fileProvider.didRemoveFile, "File didnt remove")
+		XCTAssertTrue(userDefaultsWork.remove, "Url didnt delete from userDefaults")
+		XCTAssert(count - 1 == interactor.imageUrls.urls.count, "Urls didnt delete from array")
+		XCTAssertTrue(userDefaultsWork.setObjectWithDecoderForKey, "не сохранен новый список ссылок")
+	}
+
+	func testDidAddUrlWithString() {
+		let count = interactor.imageUrls.urls.count
+
+		interactor.didAddUrl(urlString: "url")
+
+		XCTAssert(count + 1 == interactor.imageUrls.urls.count, "Urls didnt delete from array")
+		XCTAssertTrue(userDefaultsWork.setObjectWithDecoderForKey, "не сохранен новый список ссылок")
+	}
+
+	func testDidAddUrlWithNil() {
+		let count = interactor.imageUrls.urls.count
+
+		interactor.didAddUrl(urlString: nil)
+
+		XCTAssert(count == interactor.imageUrls.urls.count, "Urls did add from array")
+		XCTAssertFalse(userDefaultsWork.setObjectWithDecoderForKey, "Cохранен новый список ссылок")
+	}
+
+	func testSetImageFromCamera() {
+		let count = interactor.imageUrls.urls.count
+		let imageModel = Image(image: image, urlString: nil)
+
+		fileProvider.checkDirectory = false
+		interactor.setImage(imageModel: imageModel)
+
+		XCTAssert(count + 1 == interactor.imageUrls.urls.count, "Urls didnt delete from array")
+		XCTAssertTrue(userDefaultsWork.setObjectWithDecoderForKey, "не сохранен новый список ссылок")
+		XCTAssertTrue(self.fileProvider.wasWritten, "file didnt written")
+		XCTAssertTrue(fileProvider.didRemoveFileWithType, "file png and jpeg didnt delete")
+	}
+
+	func testSetImageFromLibrary() {
+		let count = interactor.imageUrls.urls.count
+		let imageModel = Image(image: image, urlString: "url")
+
+		fileProvider.checkDirectory = false
+		interactor.setImage(imageModel: imageModel)
+
+		XCTAssert(count + 1 == interactor.imageUrls.urls.count, "Urls didnt delete from array")
+		XCTAssertTrue(userDefaultsWork.setObjectWithDecoderForKey, "не сохранен новый список ссылок")
+		XCTAssertTrue(self.fileProvider.wasWritten, "file didnt written")
+		XCTAssertTrue(fileProvider.didRemoveFileWithType, "file png and jpeg didnt delete")
+	}
+
+	func testFreeStorage() {
+		interactor.freeStorage()
+
+		XCTAssertTrue(fileProvider.wasRemovedAll, "Didnt remove all files")
+	}
+
+	func testFreeAll() {
+		interactor.freeALL()
+
+		XCTAssertTrue(fileProvider.wasRemovedAll, "Didnt remove all files")
+		XCTAssertTrue(userDefaultsWork.remove, "Didnt remove all urls from UserDefaults")
+	}
 }

@@ -597,8 +597,8 @@
             filePath = "ViperPicturesDownloader/Main/Interactor/MainInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "MainInteractor"
             landmarkType = "3">
          </BreakpointContent>
@@ -613,8 +613,8 @@
             filePath = "ViperPicturesDownloader/Main/Interactor/MainInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "setImage(imageModel:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -677,8 +677,8 @@
             filePath = "ViperPicturesDownloader/Main/Interactor/MainInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "getImage(indexPath:size:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -985,6 +985,54 @@
             endingLineNumber = "31"
             landmarkName = "configure(with:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2CEF4AAE-596E-4D10-B7CA-5E1FA36AE81D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloaderTests/Main/Interactor/MainInteractorTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "testGetImageNetworkService()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2CEF4AAE-596E-4D10-B7CA-5E1FA36AE81D - 5b3e8d9c356658f4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ViperPicturesDownloaderTests.MainInteractorTest.testGetImageNetworkService() -&gt; ()"
+                  moduleName = "ViperPicturesDownloaderTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a18579132/Documents/descriptionViperDonloader/ViperPicturesDownloaderTests/Main/Interactor/MainInteractorTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "1230">
+               </Location>
+               <Location
+                  uuid = "2CEF4AAE-596E-4D10-B7CA-5E1FA36AE81D - a92fd9e9f7438fc9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ViperPicturesDownloader.Image) -&gt; () in ViperPicturesDownloaderTests.MainInteractorTest.testGetImageNetworkService() -&gt; ()"
+                  moduleName = "ViperPicturesDownloaderTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a18579132/Documents/descriptionViperDonloader/ViperPicturesDownloaderTests/Main/Interactor/MainInteractorTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "165">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

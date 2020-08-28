@@ -71,6 +71,7 @@ final class MainInteractor : MainInteractorInput {
 	func saveImageUrls() {
 		userDefaultsWork.setObjectWithDecoder(for: "imageUrls", object: imageUrls)
 	}
+	
 	func numberOfRows() -> Int {
 		return imageUrls.urls.count
 	}
