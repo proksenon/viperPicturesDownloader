@@ -13,6 +13,16 @@ class MainViewInputSpy: MainViewInput {
 
 	var didSetTable: Bool = false
 	var didSetButton: Bool = false
+	var didSetViewBackgroud: Bool = false
+	var didSetTableConstraints: Bool = false
+	var didSetStatusBarStyleLight: Bool = false
+	var didSetupAlert: Bool = false
+	var didPresentAlert: Bool = false
+	var didSetAddUrlButton: Bool = false
+	var didReloadTable: Bool = false
+	var didScrollTableTo: Bool = false
+	var didSetupNavigationBar: Bool = false
+
 
 	func setTableView() {
 		didSetTable = true
@@ -23,38 +33,38 @@ class MainViewInputSpy: MainViewInput {
 	}
 
 	func setViewBackgroud() {
-
+		didSetViewBackgroud = true
 	}
 
 	func setTableConstraints() {
-
+		didSetTableConstraints = true
 	}
 
 	func setStatusBarStyleLight() {
-
+		didSetStatusBarStyleLight = true
 	}
 
 	func setupAlert() {
-
+		didSetupAlert = true
 	}
 
 	func presentAlert() {
-
+		didPresentAlert = true
 	}
 
 	func setAddUrlButton() {
-
+		didSetAddUrlButton = true
 	}
 
 	func reloadTable() {
-
+		didReloadTable = true
 	}
 
 	func scrollTableTo(indexPath: IndexPath) {
-
+		didScrollTableTo = true
 	}
 
 	func setUpNavigationBar() {
-
+		didSetupNavigationBar = true
 	}
 }

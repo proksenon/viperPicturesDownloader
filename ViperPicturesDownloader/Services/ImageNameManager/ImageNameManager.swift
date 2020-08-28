@@ -1,11 +1,10 @@
 import UIKit
 
 final class ImageNameManager: ImageNameManagerProtocol {
-	var defaults: UserDefaults
-	let userDefaultsWork = UserDefaultsWork()
+	var userDefaultsWork: UserDefaultsWorkProtocol
 
-	init(defaults: UserDefaults = UserDefaults.standard) {
-		self.defaults = defaults
+	init(userDefaultsWork: UserDefaultsWorkProtocol = UserDefaultsWork()) {
+		self.userDefaultsWork = userDefaultsWork
 	}
 
 	func getNameFileImage(url: String, size: CGSize? = nil)-> String {

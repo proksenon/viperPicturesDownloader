@@ -9,7 +9,7 @@
 import XCTest
 @testable import ViperPicturesDownloader
 
-class UserDefaultsTest: XCTestCase {
+class UserDefaultsWorkTest: XCTestCase {
 	var userDefaultsWork: UserDefaultsWorkProtocol!
 	var userDefaultsMock: UserDefaultsMock!
 
@@ -24,10 +24,37 @@ class UserDefaultsTest: XCTestCase {
 		userDefaultsWork = nil
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+
 	func testRemoveObjects() {
 		userDefaultsWork.removeObjects(urls: [""])
 
 		XCTAssertTrue(userDefaultsMock.remove, "Didnt remove data")
 		XCTAssertTrue(userDefaultsMock.synchron, "Didnt synchrone data")
 	}
+
+	func testSetObject() {
+		userDefaultsWork.setObject(for: "", object: "")
+
+		XCTAssertTrue(userDefaultsMock.setNewName, "Didnt remove data")
+		XCTAssertTrue(userDefaultsMock.synchron, "Didnt synchrone data")
+	}
+
+	func testGetObject() {
+		userDefaultsMock.result = "result"
+		userDefaultsMock.keys = ["url"]
+
+		if let result = userDefaultsWork.getObject(for: "url") as? String {
+			XCTAssertTrue(result == "result", "Wrong identificator")
+		} else {
+			XCTAssert(1 == 2, "Result must be string")
+		}
+	}
+
+	func testSetObjectWithDecoder() {
+		userDefaultsWork.setObjectWithDecoder(for: "key", object: "Value")
+
+		XCTAssertTrue(userDefaultsMock.setNewName, "Didnt remove data")
+		XCTAssertTrue(userDefaultsMock.synchron, "Didnt synchrone data")
+	}
+
 }

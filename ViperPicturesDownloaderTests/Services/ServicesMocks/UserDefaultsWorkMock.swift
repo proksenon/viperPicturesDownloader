@@ -15,6 +15,7 @@ class UserDefaultsWorkMock: UserDefaultsWorkProtocol {
 	var getObjectForKey: Bool = false
 	var setObjectWithDecoderForKey: Bool = false
 	var getObjectWithDecoderForKey: Bool = false
+	var object: Any!
 
 	func setObject(for key: String, object: Any?) {
 		setObjectForKey = true
@@ -22,7 +23,7 @@ class UserDefaultsWorkMock: UserDefaultsWorkProtocol {
 
 	func getObject(for key: String) -> Any? {
 		getObjectForKey = true
-		return nil
+		return object
 	}
 
 	func setObjectWithDecoder<T>(for key: String, object: T) where T : Encodable {

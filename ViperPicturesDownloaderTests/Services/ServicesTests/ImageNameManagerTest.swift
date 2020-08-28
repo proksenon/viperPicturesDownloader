@@ -10,40 +10,64 @@ import XCTest
 @testable import ViperPicturesDownloader
 
 class ImageNameManagerTest: XCTestCase {
-	var defaults: UserDefaultsMock!
+	var userDefaultsWorkMock: UserDefaultsWorkMock!
 	var imageNameManager: ImageNameManagerProtocol!
     override func setUp() {
-		defaults = UserDefaultsMock()
-		imageNameManager = ImageNameManager(defaults: defaults)
+		userDefaultsWorkMock = UserDefaultsWorkMock()
+		imageNameManager = ImageNameManager(userDefaultsWork: userDefaultsWorkMock)
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDown() {
+		userDefaultsWorkMock = nil
+		imageNameManager = nil
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-	func testGetNameFileFromUserDefaults() {
-		defaults.keys.append("key")
+	func testGetNameFileFromDefaultsWhereHasSize() {
 		let currentNameFile = "nameFile"
-		defaults.result = ["25.0x25.0": currentNameFile]
-		let nameFile = imageNameManager.getNameFileImage(url: "key", size: CGSize(width: 25, height: 25) )
+		let stringSize = "25.0x25.0"
+		userDefaultsWorkMock.object = [stringSize: currentNameFile]
 
-		XCTAssert(nameFile == currentNameFile , "Didnt get namFile from UserDefaults")
+		let nameFile = imageNameManager.getNamefileFromDefaults(url: "url", sizeString: stringSize)
+
+		XCTAssertTrue(userDefaultsWorkMock.getObjectForKey, "Didnt get values")
+		XCTAssertFalse(userDefaultsWorkMock.setObjectForKey, "Did set values")
+		XCTAssert(currentNameFile == nameFile, "Another name")
 	}
-	func testGetNameFileForImageWithSizeWhichHasOriginImage() {
-		defaults.keys.append("key")
+
+	func testGetNameFileFromDefaultsWhereHasNotSize() {
 		let currentNameFile = "nameFile"
-		defaults.result = ["origin": currentNameFile]
-		let nameFile = imageNameManager.getNameFileImage(url: "key", size: CGSize(width: 25, height: 25) )
+		let stringSize = "25.0x25.0"
+		userDefaultsWorkMock.object = ["origin": currentNameFile]
 
-		XCTAssertTrue(defaults.setNewName, "New name didnt set")
-		XCTAssert(nameFile != currentNameFile, "New name didnt change")
+		let nameFile = imageNameManager.getNamefileFromDefaults(url: "url", sizeString: stringSize)
+
+		XCTAssertTrue(userDefaultsWorkMock.getObjectForKey, "Didnt get values")
+		XCTAssertTrue(userDefaultsWorkMock.setObjectForKey, "Did set values")
+		XCTAssert(currentNameFile != nameFile, "Another name")
 	}
 
-	func testCreateNewNameAndSetToUserDefaults() {
-		let nameFile = imageNameManager.getNameFileImage(url: "key", size: CGSize(width: 25, height: 25) )
+	func testGetNameFileFromDefaultsFailure() {
+		let currentNameFile = "nameFile"
+		let stringSize = "25.0x25.0"
+		userDefaultsWorkMock.object = "jj"
 
-		XCTAssertTrue(defaults.setNewName, "New name didnt set")
+		let nameFile = imageNameManager.getNamefileFromDefaults(url: "url", sizeString: stringSize)
+
+		XCTAssertTrue(userDefaultsWorkMock.getObjectForKey, "Didnt get values")
+		XCTAssertFalse(userDefaultsWorkMock.setObjectForKey, "Did set values")
+		XCTAssert(nameFile == nil, "Another name")
 	}
 
+	func testGetNameFileImageSuccess() {
+		let currentNameFile = "nameFile"
+		let stringSize = "25.0x25.0"
+		userDefaultsWorkMock.object = ["origin": currentNameFile]
+
+		let nameFile = imageNameManager.getNameFileImage(url: "url", size: nil)
+
+		XCTAssertTrue(userDefaultsWorkMock.getObjectForKey, "Didnt get values")
+		XCTAssert(nameFile == currentNameFile, "Another name")
+	}
 }

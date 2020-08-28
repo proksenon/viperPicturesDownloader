@@ -15,7 +15,6 @@ class MainPresenterTest: XCTestCase {
 	var router: MainRouterInputSpy!
 	var presenter: MainPresenter!
 	let indexPath = IndexPath(item: 2, section: 1)
-//	let viewForActivity = ViewForActivity(view: UIView(frame: .zero))
 
     override func setUp() {
 		view = MainViewInputSpy()
@@ -24,6 +23,9 @@ class MainPresenterTest: XCTestCase {
 		presenter = MainPresenter(view: view)
 		presenter.interactor = interactor
 		presenter.router = router
+		let urls = ImageUrls()
+		interactor.number = urls.urls.count
+		interactor.imageUrls = urls
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
@@ -47,6 +49,12 @@ class MainPresenterTest: XCTestCase {
 
 		XCTAssertTrue(view.didSetTable, "table didnt set")
 		XCTAssertTrue(view.didSetButton, "Button didnt set")
+		XCTAssertTrue(view.didSetViewBackgroud, "Didnt set Background")
+		XCTAssertTrue(view.didSetTableConstraints, "Table constaints didnt set")
+		XCTAssertTrue(view.didSetStatusBarStyleLight, "Style stroryboard didnt set")
+		XCTAssertTrue(view.didSetupAlert, "Akert didnt set")
+		XCTAssertTrue(view.didSetAddUrlButton, "AddButton didnt set")
+		XCTAssertTrue(view.didSetupNavigationBar, "NavigationBar didnt set")
 		DispatchQueue.global(qos: .background).async {
 			XCTAssertTrue(self.interactor.didFreeStorage, "Didnt free Storage")
 		}
@@ -55,26 +63,21 @@ class MainPresenterTest: XCTestCase {
 	func testDidSelect() {
 		presenter.didSelect(indexPath: indexPath)
 
+		XCTAssertTrue(interactor.didGetImage, "Didnt push after select row")
 		XCTAssertTrue(router.didPush, "Didnt push after select row")
 	}
 
-//	func testSetUpActivity() {
-//		presenter.setUpActivity(viewModel: viewForActivity)
-//
-//		XCTAssertTrue(interactor.setActivity, "Didnt set Activity")
-//	}
-//
-//	func testStartActivity() {
-//		presenter.startActivity()
-//
-//		XCTAssertTrue(interactor.didStartActivity, "Didnt start Activity")
-//	}
-//
-//	func testStopActivity() {
-//		presenter.stopActivity()
-//
-//		XCTAssertTrue(interactor.didStopActivity, "Didnt stop Activity")
-//	}
+	func testPresentAlert() {
+		presenter.presentAlert()
+
+		XCTAssertTrue(view.didPresentAlert, "Alert didnt present")
+	}
+
+	func testReloadTable() {
+		presenter.view.reloadTable()
+
+		XCTAssertTrue(view.didReloadTable, "Table didnt reload")
+	}
 
 	func testGetImage() {
 		presenter.getImage(indexPath: indexPath, size: ImageSize(size: nil)) { (image) in
@@ -85,10 +88,33 @@ class MainPresenterTest: XCTestCase {
 	}
 
 	func testNumberOfRows() {
+
 		let number = presenter.numberOfRows()
 
 		XCTAssertTrue(interactor.getNumberOfRows, "Didnt get numberOfROws")
 		XCTAssert(number == interactor.number, "Wrong numberOfRows")
+	}
+
+	func testDidAddUrl() {
+		presenter.didAddUrl(urlString: "sss")
+
+		XCTAssertTrue(interactor.addUrl, "Url didnt add")
+		XCTAssertTrue(view.didReloadTable, "Table didnt reload")
+		XCTAssertTrue(view.didScrollTableTo, "Table didnt scroll to")
+	}
+
+	func testImageFromLibrary() {
+		presenter.imageFromLibrary(image: Image(image: nil))
+
+		XCTAssertTrue(interactor.didSetImage, "Urls didnt set")
+		XCTAssertTrue(view.didReloadTable, "Table didnt reload")
+		XCTAssertTrue(view.didScrollTableTo, "Table didnt scroll to")
+	}
+
+	func testDidDeleteImage() {
+		presenter.didDeleteImage(indexPath: indexPath)
+
+		XCTAssertTrue(interactor.didDeleteImage, "Image didnt delete")
 	}
 
 }

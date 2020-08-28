@@ -34,27 +34,3 @@ class MainViewOutputSpy: MainViewOutput {
 		push = true
 	}
 }
-
-extension MainViewOutputSpy: TableViewDataSourceOutPut {
-
-	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image) -> Void) {
-		completion(Image(image: nil))
-	}
-
-	func numberOfRows() -> Int {
-		return 1
-	}
-
-
-}
-extension MainViewOutputSpy: TableViewDelegateOutput {
-	func didDeleteImage(indexPath: IndexPath) {
-		
-	}
-
-	func didSelect(indexPath: IndexPath) {
-
-	}
-
-
-}

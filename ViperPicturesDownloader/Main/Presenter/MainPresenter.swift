@@ -46,7 +46,6 @@ extension MainPresenter: MainViewOutput {
 		view.setViewBackgroud()
 		view.setTableView()
 		view.setTableConstraints()
-		view.reloadTable()
 		view.setSegueToCollectionButton()
 		view.setUpNavigationBar()
 		view.setStatusBarStyleLight()
