@@ -36,7 +36,11 @@ class ImageInteractor: ImageInteractorInput {
 	}
 
 	func saveImageToLibrary() {
-		guard let index = lastIndex else {return}
+		guard let index = lastIndex else {
+			guard let image = originImage.image else {return}
+			UIImageWriteToSavedPhotosAlbum(image, nil, nil,nil)
+			return
+		}
 
 		imageFilterManager.apllyFilter(image: originImage.image, indexPath: index, customParametrs: lastCustomParametrs) { (image) in
 			if let image = image {
