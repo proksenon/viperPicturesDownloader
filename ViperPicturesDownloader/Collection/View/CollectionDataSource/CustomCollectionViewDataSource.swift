@@ -10,7 +10,7 @@ import UIKit
 
 final class CustomCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 
-	var output: CollectionViewDataSourceOutput!
+	weak var output: CollectionViewDataSourceOutput!
 
 	init(output: CollectionViewDataSourceOutput){
 		super.init()

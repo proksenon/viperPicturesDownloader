@@ -15,7 +15,7 @@ class ImageRouter: ImageRouterInput {
 	init(viewController: ImageViewController) {
 		self.viewController = viewController
 	}
-	// Закрывает экран
+
 	func pop() {
 		viewController.navigationController?.popViewController(animated: true)
 	}

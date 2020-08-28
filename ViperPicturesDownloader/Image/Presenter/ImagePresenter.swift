@@ -13,14 +13,15 @@ class ImagePresenter {
 	weak var view: ImageViewInput!
 	var interactor: ImageInteractorInput!
 	var router: ImageRouterInput!
-
+	var filterCollectionDataSource: FilterCollectionViewDataSource!
+	var filterCollectionDelegate: FilterCollectionViewDelegate!
 	var indexPath: IndexPath!
 
 	init(view: ImageViewInput) {
 		self.view = view
 	}
-
 }
+
 // MARK: - ImageViewOutput
 extension ImagePresenter: ImageViewOutput{
 
@@ -47,11 +48,13 @@ extension ImagePresenter: ImageViewOutput{
 	func saveImageToLibrary() {
 		interactor.saveImageToLibrary()
 	}
+	
 	func filterImage(customParametr: CustomParametrs?) {
 		interactor.filterToImage(indexPath: indexPath, customParametrs: customParametr) { (imageModel) in
 			self.view.setImage(with: imageModel)
 		}
 	}
+
 	func hidenSlidersAndShowCollection() {
 		showCollection(countSliders: 3, true)
 	}
@@ -65,6 +68,7 @@ extension ImagePresenter: ImageViewOutput{
 // MARK: - ImageInteractorOuput
 extension ImagePresenter: ImageInteractorOuput {}
 
+// MARK: - FilterCollectionViewDataSourceOutput
 extension ImagePresenter: FilterCollectionViewDataSourceOutput {
 
 	func numberOfRows() -> Int {
@@ -74,7 +78,7 @@ extension ImagePresenter: FilterCollectionViewDataSourceOutput {
 		return interactor.getFilterIcon(indexPath: indexPath)
 	}
 }
-
+// MARK: - FilterCollectionViewDelegateOutput
 extension ImagePresenter: FilterCollectionViewDelegateOutput {
 
 	func didSelect(indexPath: IndexPath) {
@@ -104,6 +108,7 @@ extension ImagePresenter: FilterCollectionViewDelegateOutput {
 
 }
 
+// MARK: - ImageModuleInput
 extension ImagePresenter: ImageModuleInput {
 	func configure(with image: Image) {
 		interactor.originImageSet(image: image)

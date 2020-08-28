@@ -10,13 +10,10 @@ import UIKit
 
 final class FilterCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 
-	var collectionView: FilterCollectionView!
-	var output: FilterCollectionViewDataSourceOutput!
+	weak var output: FilterCollectionViewDataSourceOutput!
 
-	init(collectionView: FilterCollectionView, output: FilterCollectionViewDataSourceOutput){
+	init(output: FilterCollectionViewDataSourceOutput){
 		super.init()
-		self.collectionView = collectionView
-		self.collectionView.dataSource = self
 		self.output = output
 	}
 

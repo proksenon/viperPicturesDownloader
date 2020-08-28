@@ -9,5 +9,6 @@
 import Foundation
 
 protocol FilterCollectionViewDelegateOutput: class {
+	///  Передает, что выбран фильтр
 	func didSelect(indexPath: IndexPath)
 }

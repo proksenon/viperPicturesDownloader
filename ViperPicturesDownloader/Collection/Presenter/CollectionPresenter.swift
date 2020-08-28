@@ -53,7 +53,7 @@ extension CollectionPresenter: CollectionViewDataSourceOutput {
 extension CollectionPresenter: CollectionInteractorOutput {
 	
 }
-
+// MARK: - CollectionModuleInput
 extension CollectionPresenter: CollectionModuleInput {
 	func configure(with imagesUrl: ImageUrls) {
 		interactor.setImageUrls(with: imagesUrl)

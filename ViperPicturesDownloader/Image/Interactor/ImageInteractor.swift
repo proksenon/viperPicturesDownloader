@@ -11,8 +11,6 @@ import UIKit
 class ImageInteractor: ImageInteractorInput {
 
 	weak var presenter: ImageInteractorOuput!
-
-//	let filtersImages = FiltersIcons()
 	var imageFilterManager: ImageFilterManagerProtocol!
 	var originImage: Image! {
 		didSet {
@@ -60,16 +58,15 @@ class ImageInteractor: ImageInteractorInput {
 		}
 	}
 
-	func numberOfRows()-> Int{
+	func numberOfRows()-> Int {
 		return imageFilterManager.countFilters
 	}
 	
-	func getFilterIcon(indexPath: IndexPath)->Image {
+	func getFilterIcon(indexPath: IndexPath)-> Image {
 		if let imageIconModel = imageFilterManager.getFiltersIcon(indexPath: indexPath) {
 			return imageIconModel
 		} else {
 			return Image(image: nil)
 		}
-//		filtersImages.images[indexPath.row]
 	}
 }

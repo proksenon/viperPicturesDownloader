@@ -10,6 +10,30 @@ import Foundation
 @testable import ViperPicturesDownloader
 
 class MainInteractorInputSpy: MainInteractorInput {
+	func didAddUrl(urlString: String?) {
+		
+	}
+
+	func setImageUrls() {
+
+	}
+
+	func saveImageUrls() {
+
+	}
+
+	func deleteImage(indexPath: IndexPath) {
+
+	}
+
+	func setImage(imageModel: Image) {
+
+	}
+
+	func getImageUrls() -> ImageUrls {
+		return ImageUrls()
+	}
+
 	var didGetImage: Bool = false
 	var getNumberOfRows: Bool = false
 	var didFreeStorage: Bool = false
@@ -35,18 +59,6 @@ class MainInteractorInputSpy: MainInteractorInput {
 
 	func freeALL() {
 		didFreeStorage = true
-	}
-
-	func setUpActivityIndicator(viewModel: ViewForActivity) {
-		setActivity = true
-	}
-
-	func startActivity() {
-		didStartActivity = true
-	}
-
-	func stopActivity() {
-		didStopActivity = true
 	}
 
 

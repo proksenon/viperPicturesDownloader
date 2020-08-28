@@ -9,7 +9,10 @@
 import Foundation
 
 protocol CollectionInteractorInput: class {
+	///  Получает картинку
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void)
+	///  Возвращает количество ячеек
 	func numberOfRows() -> Int
+	///  Устанавливает ссылки на картинки
 	func setImageUrls(with urls: ImageUrls)
 }

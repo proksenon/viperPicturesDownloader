@@ -9,5 +9,6 @@
 import Foundation
 
 protocol CollectionModuleInput: class {
+	///  Конфигурирует ссылки картинок
 	func configure(with imagesUrl: ImageUrls)
 }

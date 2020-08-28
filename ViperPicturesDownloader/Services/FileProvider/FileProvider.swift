@@ -1,15 +1,19 @@
 import Foundation
 
 final class FileProvider: FileProviderProtocol {
-	let defaults = UserDefaults.standard
-	let fileManager = FileManager()
-	let tempDirectory = NSTemporaryDirectory()
+
+	var fileManager: FileManager
+	var tempDirectory: String
 	let limitedSizeFile = 10000000000
 
+	init(fileManager: FileManager = FileManager(),
+		 tempDirectory: String = NSTemporaryDirectory()) {
+		self.fileManager = fileManager
+		self.tempDirectory = tempDirectory
+	}
 	func writeToFile(data: Data, path: String){
 		do {
 			try data.write(to: URL(fileURLWithPath: path))
-			print("File text.txt created at temp directory")
 		} catch let error as NSError {
 			print("could't create file text.txt because of error: \(error)")
 		}
@@ -23,7 +27,6 @@ final class FileProvider: FileProviderProtocol {
 				return true
 			}
 		}
-		print("File not found")
 	   return false
    }
 
@@ -32,7 +35,6 @@ final class FileProvider: FileProviderProtocol {
 		print(tempDirectory.utf8CString )
 		print("try to read \(nameFile) with path = \(path)")
 		if let contentsOfFile = NSData(contentsOf: URL(fileURLWithPath: path)) as Data? {
-			print("return data")
 			return contentsOfFile
 		}
 		return nil
@@ -50,11 +52,9 @@ final class FileProvider: FileProviderProtocol {
 			if let date = date, let dataFile = dateFile, let sizeFile = sizeFile {
 				if date > dataFile || sizeFile > limitedSizeFile {
 					removeItem(path: path)
-					print("file deleted")
 				}
 			} else {
 				removeItem(path: path)
-				print("file deleted")
 			}
         } catch let error as NSError {
             print("error occured while deleting file: \(error.localizedDescription)")

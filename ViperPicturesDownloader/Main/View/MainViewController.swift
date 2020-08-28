@@ -10,14 +10,13 @@ import UIKit
 // View главного экрана 
 final class MainViewController: UIViewController {
 
-//	typealias Presenter = MainViewOutput & TableViewDataSourceOutPut & TableViewDelegateOutput
 	var output: MainViewOutput!
 	var configurator: MainConfiguratorProtocol!
 	var tableView: UITableView!
 	var alertVC: UIAlertController!
 	var alertHelper: AlertHelperProtocol!
 	var addUrlButton: UIBarButtonItem!
-	/// кнопка segueToCollection переходbn на колекшн вью
+	/// кнопка segueToCollection переход на колекшн вью
 	var segueToCollection: UIBarButtonItem!
 
 	init(configurator: MainConfiguratorProtocol = MainConfigurator()) {
@@ -38,6 +37,10 @@ final class MainViewController: UIViewController {
 }
 // MARK: - MainViewInput
 extension MainViewController: MainViewInput {
+
+	func setViewBackgroud() {
+		view.backgroundColor = .gray
+	}
 
 	func setTableView() {
 		view.addSubview(tableView)

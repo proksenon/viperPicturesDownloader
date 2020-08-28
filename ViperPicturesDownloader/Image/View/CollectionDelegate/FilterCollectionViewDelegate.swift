@@ -10,14 +10,10 @@ import UIKit
 
 final class FilterCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-	var collectionView: FilterCollectionView!
-	var output: FilterCollectionViewDelegateOutput!
-	let filter = ImageFilter()
+	weak var output: FilterCollectionViewDelegateOutput!
 
-	init(collectionView: FilterCollectionView, output: FilterCollectionViewDelegateOutput){
+	init(output: FilterCollectionViewDelegateOutput){
 		super.init()
-		self.collectionView = collectionView
-		self.collectionView.delegate = self
 		self.output = output
 	}
 

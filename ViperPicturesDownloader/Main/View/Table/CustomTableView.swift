@@ -15,6 +15,7 @@ final class CustomTableView: UITableView {
 		tableFooterView = UIView()
 		separatorStyle = .none
 		contentInsetAdjustmentBehavior = .never
+		backgroundColor = .gray
 
 	}
 

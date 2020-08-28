@@ -28,9 +28,7 @@ final class CustomTableViewDelegate: NSObject, UITableViewDelegate {
 		let deleateAction = UITableViewRowAction(style: .default, title: "Удалить") { [weak output] (_, indexPath) in
 		output?.didDeleteImage(indexPath: indexPath)
 		tableView.deleteRows(at: [indexPath], with: .automatic)
-	}
+		}
 		return [deleateAction]
-}
-
-
+	}
 }

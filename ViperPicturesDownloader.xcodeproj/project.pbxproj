@@ -85,14 +85,12 @@
 		D51C7F1A24E68B8D001541F7 /* UserDefaultsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F1924E68B8D001541F7 /* UserDefaultsMock.swift */; };
 		D51C7F1E24E68FCE001541F7 /* ImageNameManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F1D24E68FCE001541F7 /* ImageNameManagerTest.swift */; };
 		D51C7F2024E6BB99001541F7 /* ImageResizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F1F24E6BB99001541F7 /* ImageResizerTests.swift */; };
-		D51C7F2724E6F081001541F7 /* StorageProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F2624E6F081001541F7 /* StorageProviderTest.swift */; };
 		D51C7F2924E6F33C001541F7 /* UserDefaultsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F2824E6F33C001541F7 /* UserDefaultsTest.swift */; };
 		D51C7F2B24E6F7B8001541F7 /* TableViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F2A24E6F7B8001541F7 /* TableViewMock.swift */; };
 		D51C7F2D24E6F80D001541F7 /* CustomTableViewDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F2C24E6F80D001541F7 /* CustomTableViewDataSourceTest.swift */; };
 		D51C7F2F24E7043D001541F7 /* CustomTableViewDelegateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F2E24E7043D001541F7 /* CustomTableViewDelegateTest.swift */; };
 		D53255F624EBDA7800764898 /* ImageFilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53255F524EBDA7800764898 /* ImageFilterManager.swift */; };
 		D53255F824EBEDB600764898 /* ImageFilterManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53255F724EBEDB600764898 /* ImageFilterManagerProtocol.swift */; };
-		D53255FB24EBFE0F00764898 /* FiltersIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53255FA24EBFE0F00764898 /* FiltersIcons.swift */; };
 		D535F7EF24F7E9F4001AEDA4 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D535F7EE24F7E9F4001AEDA4 /* Models.swift */; };
 		D535F7F124F7FF35001AEDA4 /* ImageFilterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D535F7F024F7FF35001AEDA4 /* ImageFilterProtocol.swift */; };
 		D5581A8924E7173100958537 /* ImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5581A8824E7173100958537 /* ImageFilter.swift */; };
@@ -108,7 +106,6 @@
 		D565EA4A24E5600F008897A6 /* EncryptionManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565EA4924E5600F008897A6 /* EncryptionManagerMock.swift */; };
 		D565EA4D24E56141008897A6 /* ImageNameManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565EA4C24E56141008897A6 /* ImageNameManagerMock.swift */; };
 		D565EA4F24E56198008897A6 /* ImageResizerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565EA4E24E56198008897A6 /* ImageResizerMock.swift */; };
-		D565EA5124E56206008897A6 /* StorageProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565EA5024E56206008897A6 /* StorageProviderMock.swift */; };
 		D565EA5324E56241008897A6 /* UserDefaultsWorkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565EA5224E56241008897A6 /* UserDefaultsWorkMock.swift */; };
 		D56A290524D42DEB00178564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A290424D42DEB00178564 /* AppDelegate.swift */; };
 		D56A290724D42DEB00178564 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A290624D42DEB00178564 /* SceneDelegate.swift */; };
@@ -124,6 +121,7 @@
 		D5845CF724E3DB5A00E2A695 /* MainViewControllerBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5845CF624E3DB5A00E2A695 /* MainViewControllerBuild.swift */; };
 		D58BAC5F24EFBBB7006A3DB4 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58BAC5E24EFBBB7006A3DB4 /* AlertHelper.swift */; };
 		D58BAC6124EFBE70006A3DB4 /* AlertHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58BAC6024EFBE70006A3DB4 /* AlertHelperProtocol.swift */; };
+		D5B03FE924F912780023E5DE /* FileManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B03FE824F912780023E5DE /* FileManagerMock.swift */; };
 		D5C765D524F3F6A500495553 /* CollectionModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C765D424F3F6A500495553 /* CollectionModuleInput.swift */; };
 		D5C765D724F3F6BB00495553 /* CollectionModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C765D624F3F6BB00495553 /* CollectionModuleOutput.swift */; };
 		D5E96DB424E3F5F800C49255 /* MainInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E96DB324E3F5F800C49255 /* MainInteractorTest.swift */; };
@@ -225,14 +223,12 @@
 		D51C7F1924E68B8D001541F7 /* UserDefaultsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMock.swift; sourceTree = "<group>"; };
 		D51C7F1D24E68FCE001541F7 /* ImageNameManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNameManagerTest.swift; sourceTree = "<group>"; };
 		D51C7F1F24E6BB99001541F7 /* ImageResizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResizerTests.swift; sourceTree = "<group>"; };
-		D51C7F2624E6F081001541F7 /* StorageProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProviderTest.swift; sourceTree = "<group>"; };
 		D51C7F2824E6F33C001541F7 /* UserDefaultsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsTest.swift; sourceTree = "<group>"; };
 		D51C7F2A24E6F7B8001541F7 /* TableViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewMock.swift; sourceTree = "<group>"; };
 		D51C7F2C24E6F80D001541F7 /* CustomTableViewDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewDataSourceTest.swift; sourceTree = "<group>"; };
 		D51C7F2E24E7043D001541F7 /* CustomTableViewDelegateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewDelegateTest.swift; sourceTree = "<group>"; };
 		D53255F524EBDA7800764898 /* ImageFilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilterManager.swift; sourceTree = "<group>"; };
 		D53255F724EBEDB600764898 /* ImageFilterManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilterManagerProtocol.swift; sourceTree = "<group>"; };
-		D53255FA24EBFE0F00764898 /* FiltersIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersIcons.swift; sourceTree = "<group>"; };
 		D535F7EE24F7E9F4001AEDA4 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		D535F7F024F7FF35001AEDA4 /* ImageFilterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilterProtocol.swift; sourceTree = "<group>"; };
 		D5581A8824E7173100958537 /* ImageFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilter.swift; sourceTree = "<group>"; };
@@ -248,7 +244,6 @@
 		D565EA4924E5600F008897A6 /* EncryptionManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionManagerMock.swift; sourceTree = "<group>"; };
 		D565EA4C24E56141008897A6 /* ImageNameManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNameManagerMock.swift; sourceTree = "<group>"; };
 		D565EA4E24E56198008897A6 /* ImageResizerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResizerMock.swift; sourceTree = "<group>"; };
-		D565EA5024E56206008897A6 /* StorageProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProviderMock.swift; sourceTree = "<group>"; };
 		D565EA5224E56241008897A6 /* UserDefaultsWorkMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWorkMock.swift; sourceTree = "<group>"; };
 		D56A290124D42DEB00178564 /* ViperPicturesDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViperPicturesDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56A290424D42DEB00178564 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -266,6 +261,7 @@
 		D5845CF624E3DB5A00E2A695 /* MainViewControllerBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerBuild.swift; sourceTree = "<group>"; };
 		D58BAC5E24EFBBB7006A3DB4 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		D58BAC6024EFBE70006A3DB4 /* AlertHelperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelperProtocol.swift; sourceTree = "<group>"; };
+		D5B03FE824F912780023E5DE /* FileManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerMock.swift; sourceTree = "<group>"; };
 		D5C765D424F3F6A500495553 /* CollectionModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModuleInput.swift; sourceTree = "<group>"; };
 		D5C765D624F3F6BB00495553 /* CollectionModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModuleOutput.swift; sourceTree = "<group>"; };
 		D5E96DB324E3F5F800C49255 /* MainInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorTest.swift; sourceTree = "<group>"; };
@@ -376,7 +372,6 @@
 				D50F515C24E1574F0042BAD2 /* Interactor */,
 				D50F515F24E1576E0042BAD2 /* Router */,
 				D50F516224E157890042BAD2 /* Configurator */,
-				D53255F924EBFDD500764898 /* Entity */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -656,7 +651,6 @@
 				D50F51B024E275DC0042BAD2 /* FileProviderTest.swift */,
 				D51C7F1D24E68FCE001541F7 /* ImageNameManagerTest.swift */,
 				D51C7F1F24E6BB99001541F7 /* ImageResizerTests.swift */,
-				D51C7F2624E6F081001541F7 /* StorageProviderTest.swift */,
 				D51C7F2824E6F33C001541F7 /* UserDefaultsTest.swift */,
 			);
 			path = ServicesTests;
@@ -759,14 +753,6 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		D53255F924EBFDD500764898 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				D53255FA24EBFE0F00764898 /* FiltersIcons.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
 		D535F7ED24F7E9C8001AEDA4 /* CommonEntity */ = {
 			isa = PBXGroup;
 			children = (
@@ -837,11 +823,11 @@
 				D5E96DBD24E4257D00C49255 /* FileProviderMock.swift */,
 				D565EA4C24E56141008897A6 /* ImageNameManagerMock.swift */,
 				D565EA4E24E56198008897A6 /* ImageResizerMock.swift */,
-				D565EA5024E56206008897A6 /* StorageProviderMock.swift */,
 				D565EA5224E56241008897A6 /* UserDefaultsWorkMock.swift */,
 				D51C7F1524E67AFC001541F7 /* URLSessionDataTaskMock.swift */,
 				D51C7F1724E67B15001541F7 /* URLSessionMock.swift */,
 				D51C7F1924E68B8D001541F7 /* UserDefaultsMock.swift */,
+				D5B03FE824F912780023E5DE /* FileManagerMock.swift */,
 			);
 			path = ServicesMocks;
 			sourceTree = "<group>";
@@ -1067,7 +1053,6 @@
 				D51C7F1824E67B15001541F7 /* URLSessionMock.swift in Sources */,
 				D5E96DBC24E41EA400C49255 /* MainInteractorOutputSpy.swift in Sources */,
 				D51C7F0124E5817D001541F7 /* MainViewInputSpy.swift in Sources */,
-				D565EA5124E56206008897A6 /* StorageProviderMock.swift in Sources */,
 				D51C7F0924E58E3F001541F7 /* TableViewDelegateOutputSpy.swift in Sources */,
 				D5E96DBE24E4257D00C49255 /* FileProviderMock.swift in Sources */,
 				D5845CF524E3D7F200E2A695 /* MainTableCellTest.swift in Sources */,
@@ -1083,9 +1068,9 @@
 				D5E96DB424E3F5F800C49255 /* MainInteractorTest.swift in Sources */,
 				D5845CF724E3DB5A00E2A695 /* MainViewControllerBuild.swift in Sources */,
 				D51C7F1E24E68FCE001541F7 /* ImageNameManagerTest.swift in Sources */,
+				D5B03FE924F912780023E5DE /* FileManagerMock.swift in Sources */,
 				D51C7F2B24E6F7B8001541F7 /* TableViewMock.swift in Sources */,
 				D51C7F1624E67AFC001541F7 /* URLSessionDataTaskMock.swift in Sources */,
-				D51C7F2724E6F081001541F7 /* StorageProviderTest.swift in Sources */,
 				D51C7F2024E6BB99001541F7 /* ImageResizerTests.swift in Sources */,
 				D51C7F1A24E68B8D001541F7 /* UserDefaultsMock.swift in Sources */,
 				D51C7F0524E584EB001541F7 /* MainViewOutPutSpy.swift in Sources */,
@@ -1177,7 +1162,6 @@
 				D50F50A724D852A30042BAD2 /* FileProvider.swift in Sources */,
 				D50F50B824D853C20042BAD2 /* EncryptionWork.swift in Sources */,
 				D50F50C524DAB57A0042BAD2 /* ImagePresenter.swift in Sources */,
-				D53255FB24EBFE0F00764898 /* FiltersIcons.swift in Sources */,
 				D50F518324E17DC00042BAD2 /* CollectionViewInput.swift in Sources */,
 				D50F50AA24D852A30042BAD2 /* ImageProvider.swift in Sources */,
 				D55FB18724EAA62800BF0249 /* FilterCollectionView.swift in Sources */,

@@ -10,66 +10,101 @@ import XCTest
 @testable import ViperPicturesDownloader
 
 class FileProviderTest: XCTestCase {
-	var fileProvider: FileProvider!
+	var fileProvider: FileProviderProtocol!
+	var fileManagerMock: FileManagerMock!
+
 
     override func setUp() {
-		fileProvider = FileProvider()
+		fileManagerMock = FileManagerMock()
+		fileProvider = FileProvider(fileManager: fileManagerMock)
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDown() {
+		fileManagerMock = nil
 		fileProvider = nil
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-	
-	func getFilesFromTempDirect()->[String]? {
-		do {
-			let files = try fileProvider.fileManager.contentsOfDirectory(atPath: fileProvider.tempDirectory)
-			XCTAssert(files.count > 0, "files didnt exist")
-			return files
 
-		} catch let error {
-			XCTAssertNotNil(error)
-		}
-		return nil
+	func testCheckDirectorySuccess() {
+		fileManagerMock.files = ["file1", "Apple", "Bread"]
+
+		let result = fileProvider.checkDirectory(nameFile: "file1")
+
+		XCTAssert(result, "file didnt found")
 	}
 
-	func testFileFounden() {
+	func testCheckDirectoryFailure() {
+		fileManagerMock.files = ["file1", "Apple", "Bread"]
 
-		let hasNtFile = fileProvider.checkDirectory(nameFile: "asda")
-		if let files = getFilesFromTempDirect() {
-			let hasFile = fileProvider.checkDirectory(nameFile: files[0])
-			XCTAssert(hasFile, "existent file didnt founded")
-		}
-		XCTAssert(!hasNtFile, "non-existent file was founded")
+		let result = fileProvider.checkDirectory(nameFile: "file")
+
+		XCTAssertFalse(result, "non-existent file found")
 	}
 
-	func testGetImage() {
-	let interactor = MainInteractor(presenter: MainPresenter(view: MainViewController()))
-	var testImage: UIImage?
-		interactor.getImage(indexPath: IndexPath(row: 2, section: 1), size: ImageSize(size: nil)) { (image) in
-			testImage = image.image
-		}
-	XCTAssertNotNil(testImage)
+	func testRemoveFileWithOldData() {
+		fileManagerMock.atributes = [FileAttributeKey.creationDate: Calendar.current.date(byAdding: .day, value: -4, to: Date()) as Any, FileAttributeKey.size: 10000]
+
+		fileProvider.removeFile(nameFile: "file", before: Date())
+
+		XCTAssertTrue(fileManagerMock.remove, "File didnt deleted")
 	}
 
-	func testDataFromFileCheck() {
+	func testRemoveFileWithNormalData() {
+		fileManagerMock.atributes = [FileAttributeKey.creationDate: Date() as Any, FileAttributeKey.size: 10000]
 
-		let nameFile: String!
+		fileProvider.removeFile(nameFile: "file", before: Calendar.current.date(byAdding: .day, value: -4, to: Date()))
 
-		if let files = getFilesFromTempDirect() {
-			nameFile = files[0]
-			let data = fileProvider.readFile(nameFile: nameFile)
-			let nilData = fileProvider.readFile(nameFile: "Foo")
-			XCTAssertNotNil(data, "existent data didnt")
-			XCTAssertNil(nilData, "non-existent data")
-		}
+		XCTAssertFalse(fileManagerMock.remove, "File did delete")
 	}
 
-//	func testClearFiles() {
-//		let fileProvider = FileProvider()
-//		fileProvider.removeAllFiles(before: Date())
-//		XCTAssert(try fileProvider.fileManager.contentsOfDirectory(atPath: fileProvider.tempDirectory).count == 0, "directory is nt clear")
-//	}
+	func testRemoveFileWithBigSize() {
+		fileManagerMock.atributes = [FileAttributeKey.creationDate: Date(), FileAttributeKey.size: 10000000002]
 
+		fileProvider.removeFile(nameFile: "file", before: Calendar.current.date(byAdding: .day, value: -4, to: Date()))
+
+		XCTAssertTrue(fileManagerMock.remove, "File didnt deleted")
+	}
+
+	func testRemoveFileWithNormalSize() {
+		fileManagerMock.atributes = [FileAttributeKey.creationDate: Date(), FileAttributeKey.size: 1000]
+
+		fileProvider.removeFile(nameFile: "file", before: Calendar.current.date(byAdding: .day, value: -4, to: Date()))
+
+		XCTAssertFalse(fileManagerMock.remove, "File did deleted")
+	}
+
+	func testRemoveFileWithOutDateAndSize() {
+		fileManagerMock.atributes = [FileAttributeKey.creationDate: Date(), FileAttributeKey.size: 10]
+
+		fileProvider.removeFile(nameFile: "file", before: nil)
+
+		XCTAssertTrue(fileManagerMock.remove, "File didnt deleted")
+	}
+
+	func testRemoveAllFiles() {
+		fileManagerMock.files = ["file1", "Apple", "Bread"]
+		fileManagerMock.atributes = [FileAttributeKey.creationDate: Date(), FileAttributeKey.size: 10]
+
+		fileProvider.removeAllFiles(before: nil)
+
+		XCTAssertTrue(fileManagerMock.remove, "File didnt deleted")
+
+	}
+
+	func testRemoveFilesWithTypeSuccess() {
+		fileManagerMock.files = ["file1", "Apple", "Bread.jpeg"]
+
+		fileProvider.removeFilesWithType()
+
+		XCTAssertTrue(fileManagerMock.remove, "File didnt deleted")
+	}
+
+	func testRemoveFilesWithTypeFailure() {
+		fileManagerMock.files = ["file1", "Apple", "Bread"]
+
+		fileProvider.removeFilesWithType()
+
+		XCTAssertFalse(fileManagerMock.remove, "File did deleted")
+	}
 }

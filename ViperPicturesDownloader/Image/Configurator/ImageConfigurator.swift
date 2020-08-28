@@ -15,11 +15,20 @@ class ImageConfigurator: ImageConfiguratorProtocol {
 		let interactor = ImageInteractor(presenter: presenter)
 		let router = ImageRouter(viewController: viewController)
 
+		let filterCollectionView = FilterCollectionView()
+		let filterCollectionDelegate = FilterCollectionViewDelegate(output: presenter)
+		let filterCollectionDataSorce = FilterCollectionViewDataSource(output: presenter)
+
 		viewController.outputView = presenter
 		viewController.moduleInput = presenter
 		presenter.interactor = interactor
 		presenter.router = router
 
+		presenter.filterCollectionDelegate = filterCollectionDelegate
+		presenter.filterCollectionDataSource = filterCollectionDataSorce
+		filterCollectionView.delegate = filterCollectionDelegate
+		filterCollectionView.dataSource = filterCollectionDataSorce
+		viewController.collectionView = filterCollectionView
 	}
 
 }

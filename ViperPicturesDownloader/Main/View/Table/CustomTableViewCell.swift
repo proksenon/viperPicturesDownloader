@@ -27,22 +27,22 @@ final class CustomTableViewCell: UITableViewCell {
 		addSubview(customImageView)
 		setImageViewConsstraints()
 	 }
-	///Устанавливает индикатор загрузки
+	///		Устанавливает индикатор загрузки
 	private func setActivivty() {
 		addSubview(activityIndicator)
 		activityIndicator.style = .large
 		activityIndicator.center = contentView.center
 		startActivity()
 	}
-	///Остонавливает индикатор загрузки
+	///  Остонавливает индикатор загрузки
 	func stopActivity() {
 		activityIndicator.stopAnimating()
 	}
-	/// Запускает индикатор загрузки
+	///  Запускает индикатор загрузки
 	func startActivity() {
 		activityIndicator.startAnimating()
 	}
-	/// Устанавливает констрейнты для ImageView
+	///		 Устанавливает констрейнты для ImageView
 	private func setImageViewConsstraints() {
 		customImageView.translatesAutoresizingMaskIntoConstraints = false
 		customImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
@@ -61,7 +61,7 @@ final class CustomTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-	/// метод устанавливает картинку
+	///  Метод устанавливает картинку
 	func configureCell(image: UIImage?, indexPath: IndexPath) {
 		if currentIndexPath == indexPath {
 			customImageView.image = image

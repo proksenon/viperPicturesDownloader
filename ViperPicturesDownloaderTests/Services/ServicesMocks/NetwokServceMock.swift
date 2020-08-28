@@ -12,9 +12,8 @@ import UIKit
 class NetworkServiceMock: NetworkServiceProtocol {
 	var result: Data = UIImage(named: "defaultImage")!.pngData()!
 
-	func getData(url: URL, completion: @escaping (Data) -> ()) {
+	func getData(url: URL, completion: @escaping (Data?) -> ()) {
 		completion(result)
 	}
-
 
 }

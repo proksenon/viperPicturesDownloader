@@ -10,6 +10,10 @@ import UIKit
 @testable import ViperPicturesDownloader
 
 class ImageNameManagerMock: ImageNameManagerProtocol {
+	func getNamefileFromDefaults(url: String, sizeString: String) -> String? {
+		return "defaultImage"
+	}
+
 
 	func getNameFileImage(url: String, size: CGSize?) -> String {
 		return "defaultImage"

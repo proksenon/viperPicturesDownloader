@@ -9,6 +9,8 @@
 import Foundation
 
 protocol FilterCollectionViewDataSourceOutput: class {
+	///  Возвращает количество ячеек
 	func numberOfRows()-> Int
+	///  Возвращает иконки фильтров
 	func getFilterIcon(indexPath: IndexPath)-> Image
 }

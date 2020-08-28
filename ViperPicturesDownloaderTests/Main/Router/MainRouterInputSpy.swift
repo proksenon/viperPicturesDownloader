@@ -10,11 +10,10 @@ import Foundation
 @testable import ViperPicturesDownloader
 
 class MainRouterInputSpy: MainRouterInput {
-
 	var didPushCollection: Bool = false
 	var didPush: Bool = false
 
-	func pushCollection() {
+	func pushCollection(with imageUrls: ImageUrls) {
 		didPushCollection = true
 	}
 

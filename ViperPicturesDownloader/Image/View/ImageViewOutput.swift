@@ -9,9 +9,14 @@
 import Foundation
 
 protocol ImageViewOutput: class {
+	///  Конфигурирует ImageViewController
 	func configureView()
+	///  Закрывает ImageViewController
 	func popViewController()
+	///  Сохраняет картинку в библиотеку
 	func saveImageToLibrary()
+	///  Вызывает фильтр с пользовательскими параметрами
 	func filterImage(customParametr: CustomParametrs?)
+	///  Скрывает слайдеры и показывает колекшнвью с фильтрами
 	func hidenSlidersAndShowCollection() 
 }

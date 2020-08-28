@@ -10,7 +10,7 @@ import UIKit
 
 final class CustomCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-	var output: CollectionViewDelegateOutput!
+	weak var output: CollectionViewDelegateOutput!
 
 	init(output: CollectionViewDelegateOutput){
 		super.init()

@@ -9,5 +9,6 @@
 import Foundation
 
 protocol CollectionRouterInput: class {
+	///  Переходит  на экран ImageViewController
 	func push(image: Image)
 }

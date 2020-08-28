@@ -43,6 +43,7 @@ extension MainPresenter: MainViewOutput {
 
 	func configureView() {
 		interactor.setImageUrls()
+		view.setViewBackgroud()
 		view.setTableView()
 		view.setTableConstraints()
 		view.reloadTable()

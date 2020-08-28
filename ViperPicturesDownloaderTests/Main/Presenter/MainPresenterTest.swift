@@ -15,7 +15,7 @@ class MainPresenterTest: XCTestCase {
 	var router: MainRouterInputSpy!
 	var presenter: MainPresenter!
 	let indexPath = IndexPath(item: 2, section: 1)
-	let viewForActivity = ViewForActivity(view: UIView(frame: .zero))
+//	let viewForActivity = ViewForActivity(view: UIView(frame: .zero))
 
     override func setUp() {
 		view = MainViewInputSpy()
@@ -58,23 +58,23 @@ class MainPresenterTest: XCTestCase {
 		XCTAssertTrue(router.didPush, "Didnt push after select row")
 	}
 
-	func testSetUpActivity() {
-		presenter.setUpActivity(viewModel: viewForActivity)
-
-		XCTAssertTrue(interactor.setActivity, "Didnt set Activity")
-	}
-
-	func testStartActivity() {
-		presenter.startActivity()
-
-		XCTAssertTrue(interactor.didStartActivity, "Didnt start Activity")
-	}
-
-	func testStopActivity() {
-		presenter.stopActivity()
-
-		XCTAssertTrue(interactor.didStopActivity, "Didnt stop Activity")
-	}
+//	func testSetUpActivity() {
+//		presenter.setUpActivity(viewModel: viewForActivity)
+//
+//		XCTAssertTrue(interactor.setActivity, "Didnt set Activity")
+//	}
+//
+//	func testStartActivity() {
+//		presenter.startActivity()
+//
+//		XCTAssertTrue(interactor.didStartActivity, "Didnt start Activity")
+//	}
+//
+//	func testStopActivity() {
+//		presenter.stopActivity()
+//
+//		XCTAssertTrue(interactor.didStopActivity, "Didnt stop Activity")
+//	}
 
 	func testGetImage() {
 		presenter.getImage(indexPath: indexPath, size: ImageSize(size: nil)) { (image) in

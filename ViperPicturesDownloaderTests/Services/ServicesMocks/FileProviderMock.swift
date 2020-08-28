@@ -49,5 +49,13 @@ class FileProviderMock: FileProviderProtocol {
 		wasRemovedAll = true
 	}
 
+	func removeFile(nameFile: String, before date: Date?) {
+
+	}
+
+	func removeFilesWithType() {
+		
+	}
+
 
 }

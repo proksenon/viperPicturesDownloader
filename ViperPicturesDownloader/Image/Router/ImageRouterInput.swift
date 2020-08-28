@@ -9,5 +9,6 @@
 import Foundation
 
 protocol ImageRouterInput: class {
+	///  Закрывает экран
 	func pop()
 }

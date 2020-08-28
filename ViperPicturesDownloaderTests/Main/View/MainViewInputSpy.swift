@@ -10,9 +10,6 @@ import Foundation
 @testable import ViperPicturesDownloader
 
 class MainViewInputSpy: MainViewInput {
-	func setUpNavigationBar() {
-	
-	}
 
 	var didSetTable: Bool = false
 	var didSetButton: Bool = false
@@ -25,4 +22,39 @@ class MainViewInputSpy: MainViewInput {
 		didSetButton = true
 	}
 
+	func setViewBackgroud() {
+
+	}
+
+	func setTableConstraints() {
+
+	}
+
+	func setStatusBarStyleLight() {
+
+	}
+
+	func setupAlert() {
+
+	}
+
+	func presentAlert() {
+
+	}
+
+	func setAddUrlButton() {
+
+	}
+
+	func reloadTable() {
+
+	}
+
+	func scrollTableTo(indexPath: IndexPath) {
+
+	}
+
+	func setUpNavigationBar() {
+
+	}
 }

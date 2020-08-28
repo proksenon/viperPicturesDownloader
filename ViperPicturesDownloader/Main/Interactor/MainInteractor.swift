@@ -109,6 +109,7 @@ final class MainInteractor : MainInteractorInput {
 	}
 
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
+		guard imageUrls.urls.count >= indexPath.row else {return}
 		let url = imageUrls.urls[indexPath.row]
 		let nameFileOrigin = imageNameManager.getNameFileImage(url: url, size: nil)
 		if fileProvider.checkDirectory(nameFile: nameFileOrigin) {

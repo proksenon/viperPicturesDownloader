@@ -10,8 +10,21 @@ import Foundation
 @testable import ViperPicturesDownloader
 
 class MainViewOutputSpy: MainViewOutput {
+
 	var configure: Bool = false
 	var push: Bool = false
+
+	func didAddUrl(urlString: String?) {
+
+	}
+
+	func presentAlert() {
+
+	}
+
+	func imageFromLibrary(image: Image) {
+
+	}
 
 	func configureView() {
 		configure = true
@@ -21,18 +34,8 @@ class MainViewOutputSpy: MainViewOutput {
 		push = true
 	}
 }
+
 extension MainViewOutputSpy: TableViewDataSourceOutPut {
-	func setUpActivity(viewModel: ViewForActivity) {
-
-	}
-
-	func startActivity() {
-
-	}
-
-	func stopActivity() {
-
-	}
 
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image) -> Void) {
 		completion(Image(image: nil))
@@ -45,6 +48,10 @@ extension MainViewOutputSpy: TableViewDataSourceOutPut {
 
 }
 extension MainViewOutputSpy: TableViewDelegateOutput {
+	func didDeleteImage(indexPath: IndexPath) {
+		
+	}
+
 	func didSelect(indexPath: IndexPath) {
 
 	}

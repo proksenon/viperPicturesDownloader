@@ -9,5 +9,6 @@
 import Foundation
 
 protocol ImageModuleInput: class {
+	///  Устанавливает входящую картинку
 	func configure(with image: Image)
 }

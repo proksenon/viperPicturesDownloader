@@ -10,25 +10,21 @@ import UIKit
 /// Экран с картинкой
 class ImageViewController: UIViewController {
 
-	typealias Presenter = ImageViewOutput & FilterCollectionViewDataSourceOutput & FilterCollectionViewDelegateOutput
-	var outputView: Presenter!
+	var outputView: ImageViewOutput!
 	var moduleInput: ImageModuleInput!
 	let configurator: ImageConfiguratorProtocol = ImageConfigurator()
-	var collectionView: FilterCollectionView!
-	var filterCollectionDataSource: FilterCollectionViewDataSource!
-	var filterCollectionDelegate: FilterCollectionViewDelegate!
+	var collectionView: UICollectionView!
 	var imageView: UIImageView!
 	var saveImageButton: UIBarButtonItem!
+	var cancelButton: UIButton!
 	var alertVC: UIAlertController!
 	var slider1: UISlider!
 	var slider2: UISlider!
 	var slider3: UISlider!
 	var sliders: [UISlider]!
-	var cancelButton: UIButton!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		//configurator.configure(with: self)
 		outputView.configureView()
 	}
 
@@ -39,7 +35,7 @@ extension ImageViewController: ImageViewInput {
 	func backgroundColor() {
 		view.backgroundColor = UIColor.gray
 	}
-
+	// MARK: - CancleButton
 	func setCancelButton() {
 		cancelButton = UIButton()
 		cancelButton.setTitle("Cancel", for: .normal)
@@ -62,7 +58,7 @@ extension ImageViewController: ImageViewInput {
 	func isHiddenCancleButton(_ isHidden: Bool) {
 		cancelButton.isHidden = isHidden
 	}
-
+	// MARK: - Sliders
 	func setupSliders() {
 		slider1 = UISlider()
 		slider2 = UISlider()
@@ -103,16 +99,12 @@ extension ImageViewController: ImageViewInput {
 		outputView.filterImage(customParametr: CustomParametrs(parametrs: [slider1.value, slider2.value, slider3.value]))
 	}
 
-	func ishiddenCollection(_ isHidden: Bool) {
-		collectionView.isHidden = isHidden
-	}
-	
 	func isHiddenSliders(count: Int, _ isHidden: Bool) {
 		for index in 0..<count {
 			sliders[index].isHidden = isHidden
 		}
 	}
-
+	// MARK: - ImageView
 	func setUpImageView() {
 		imageView = UIImageView()
 		view.addSubview(imageView)
@@ -126,11 +118,13 @@ extension ImageViewController: ImageViewInput {
 		imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 		imageView.contentMode = .scaleAspectFit
 	}
+
+	func setImage(with image: Image) {
+		imageView.image = image.image
+	}
+	// MARK: - CollectionView
 	func setUpCollection() {
-		collectionView = FilterCollectionView()
 		view.addSubview(collectionView)
-		filterCollectionDataSource = FilterCollectionViewDataSource(collectionView: collectionView, output: outputView)
-		filterCollectionDelegate = FilterCollectionViewDelegate(collectionView: collectionView, output: outputView)
 	}
 
 	func constraintCollection() {
@@ -141,10 +135,10 @@ extension ImageViewController: ImageViewInput {
 		collectionView.topAnchor.constraint(equalTo: view.bottomAnchor, constant: -150).isActive = true
 	}
 
-	func setImage(with image: Image) {
-		imageView.image = image.image
+	func ishiddenCollection(_ isHidden: Bool) {
+		collectionView.isHidden = isHidden
 	}
-
+	// MARK: - SaveButton
 	func setUpSaveButton() {
 		saveImageButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveImage(_ :)))
 		navigationItem.rightBarButtonItem = saveImageButton
@@ -158,5 +152,4 @@ extension ImageViewController: ImageViewInput {
 			alertVC?.dismiss(animated: true, completion: nil)
 		}
 	}
-
 }

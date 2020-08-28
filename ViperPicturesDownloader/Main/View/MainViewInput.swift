@@ -9,6 +9,8 @@
 import Foundation
 
 protocol MainViewInput: class {
+	///  Устанавливает View background
+	func setViewBackgroud()
 	///  Устанавиливает таблицу
 	func setTableView()
 	///  Устанавливает констрейнты для таблицы

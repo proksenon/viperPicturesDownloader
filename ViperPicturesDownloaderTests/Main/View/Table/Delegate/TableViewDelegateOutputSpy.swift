@@ -16,5 +16,10 @@ class TableViewDelegateOutputSpy: TableViewDelegateOutput {
 		select = true
 	}
 
+	func didDeleteImage(indexPath: IndexPath) {
+		
+	}
+
+
 
 }

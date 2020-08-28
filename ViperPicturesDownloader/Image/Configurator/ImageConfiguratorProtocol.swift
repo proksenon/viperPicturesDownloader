@@ -9,5 +9,6 @@
 import Foundation
 
 protocol ImageConfiguratorProtocol: class {
+	///  Конфигурирует модуль Image
 	func configure(with viewController: ImageViewController)
 }

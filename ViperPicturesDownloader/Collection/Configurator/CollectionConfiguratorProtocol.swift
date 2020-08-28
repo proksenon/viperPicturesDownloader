@@ -9,5 +9,6 @@
 import Foundation
 
 protocol CollectionConfiguratorProtocol: class {
+	///  Конфигурирует Collection Module
 	func configure(with viewController: CollectionViewController)
 }
