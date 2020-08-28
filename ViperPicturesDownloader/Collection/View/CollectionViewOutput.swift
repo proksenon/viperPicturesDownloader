@@ -9,5 +9,6 @@
 import Foundation
 
 protocol CollectionViewOutput: class {
+	///  Конфигурирует CollectionViewController
 	func configureView()
 }

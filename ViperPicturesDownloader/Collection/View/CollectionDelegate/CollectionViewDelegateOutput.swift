@@ -9,5 +9,6 @@
 import Foundation
 
 protocol CollectionViewDelegateOutput: class {
+	///  Выбрана ячейка, переходит на ImageViewController, отправляя туда картинку
 	func didSelect(indexPath: IndexPath)
 }

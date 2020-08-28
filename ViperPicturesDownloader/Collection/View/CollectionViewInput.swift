@@ -9,6 +9,8 @@
 import Foundation
 
 protocol CollectionViewInput: class {
+	///  Устанавливает CollectionVIew
 	func setCollection()
+	///  Устанавливает констрейнты на CollectionView
 	func setCollectionConstraint()
 }

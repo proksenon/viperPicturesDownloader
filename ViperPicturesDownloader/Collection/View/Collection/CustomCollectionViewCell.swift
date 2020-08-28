@@ -9,14 +9,16 @@
 import UIKit
 
 final class CustomCollectionViewCell: UICollectionViewCell {
+	
 	var imageView = UIImageView()
 	let activityIndicator = UIActivityIndicatorView()
+
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		setActivivty()
 		contentView.addSubview(imageView)
 		setImageView()
-		backgroundColor = .white
+		backgroundColor = .clear
 
 	}
 	private func setActivivty() {

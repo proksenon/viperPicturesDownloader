@@ -9,8 +9,8 @@
 import Foundation
 
 protocol TableViewDelegateOutput: class {
-	//Выбрана ячейка, переходит на ImageViewController, отправляя туда картинку
+	///  Выбрана ячейка, переходит на ImageViewController, отправляя туда картинку
 	func didSelect(indexPath: IndexPath)
-	//Удаляет картинку из приложения(с таблицы, с кеша, ссылку на картиинку)
+	///  Удаляет картинку из приложения(с таблицы, с кеша, ссылку на картиинку)
 	func didDeleteImage(indexPath: IndexPath)
 }

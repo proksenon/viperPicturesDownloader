@@ -17,7 +17,6 @@ final class CollectionViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-//		configurator.configure(with: self)
 		output.configureView()
 	}
 

@@ -9,8 +9,8 @@
 import Foundation
 
 protocol TableViewDataSourceOutPut: class {
-	/// Получает картинку
+	///  Получает картинку
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void)
-	/// Колличество ячеек
+	///  Колличество ячеек
 	func numberOfRows() ->Int
 }

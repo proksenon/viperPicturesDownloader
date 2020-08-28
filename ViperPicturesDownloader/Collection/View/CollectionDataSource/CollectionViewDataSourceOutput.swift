@@ -9,6 +9,8 @@
 import Foundation
 
 protocol CollectionViewDataSourceOutput: class {
+	///  Получает картинку
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void)
+	///  Колличество ячеек
 	func numberOfRows() ->Int
 }
