@@ -178,7 +178,7 @@ final class MainInteractor : MainInteractorInput {
 		networkService.getData(url: currentUrl) { (data) in
 			guard let data = data else {completion(Image(image: nil)); return}
 			self.dataToFile(nameFile: nameFileOrigin, data: data)
-			let nameFile = self.imageNameManager.getNameFileImage(url: url, size: size.size)///тут косяк
+			let nameFile = self.imageNameManager.getNameFileImage(url: url, size: size.size)
 			self.originalToSize(url: url, nameFile: nameFile, size: size.size) { (image) in
 				completion(Image(image: image))
 			}
