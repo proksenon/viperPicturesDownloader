@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AlertHelperProtocol {
-	func setupAlert(alertVC: UIAlertController)
+	func setupAlert(alertVC: UIAlertController?)
 	func alertTextFieldSet()
 	func alertAddButtonSet(completion: @escaping (String?)-> Void)
 	func alertCancleButtonSet()

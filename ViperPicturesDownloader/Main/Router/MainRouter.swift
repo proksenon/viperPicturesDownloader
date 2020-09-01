@@ -10,7 +10,7 @@ import UIKit
 /// Роутер главного экрана
 final class MainRouter : MainRouterInput {
 
-	weak var viewController: UIViewController!
+	weak var viewController: UIViewController?
 
 	init(viewController: MainViewController) {
 		self.viewController = viewController
@@ -18,16 +18,17 @@ final class MainRouter : MainRouterInput {
 	
 	func push(image: Image) {
 		let nextVC = ImageViewController()
-		nextVC.configurator.configure(with: nextVC)
+		let configurator = ImageConfigurator()
+		configurator.configure(with: nextVC)
 		nextVC.moduleInput.configure(with: image)
-
-		viewController.navigationController?.pushViewController(nextVC, animated: true)
+		viewController?.navigationController?.pushViewController(nextVC, animated: true)
 	}
 
-	func pushCollection(with imageUrls: ImageUrls) {
+	func pushCollection(with imageUrls: ImageUrls?) {
 		let nextVC = CollectionViewController()
-		nextVC.configurator.configure(with: nextVC)
+		let configurator = CollectionConfigurator()
+		configurator.configure(with: nextVC)
 		nextVC.moduleInput.configure(with: imageUrls)
-		viewController.navigationController?.pushViewController(nextVC, animated: true)
+		viewController?.navigationController?.pushViewController(nextVC, animated: true)
 	}
 }

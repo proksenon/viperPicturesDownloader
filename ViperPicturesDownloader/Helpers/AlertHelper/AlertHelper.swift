@@ -10,14 +10,14 @@ import UIKit
 
 class AlertHelper: AlertHelperProtocol {
 
-	var alertVC: UIAlertController!
+	var alertVC: UIAlertController?
 
-	func setupAlert(alertVC: UIAlertController) {
+	func setupAlert(alertVC: UIAlertController?) {
 		self.alertVC = alertVC
 	}
 
 	func alertTextFieldSet() {
-		alertVC.addTextField { (textField) in
+		alertVC?.addTextField { (textField) in
 			textField.keyboardType = .alphabet
 			textField.placeholder = "url"
 		}
@@ -30,12 +30,12 @@ class AlertHelper: AlertHelperProtocol {
 				textfield.text = ""
 			}
 		}
-		alertVC.addAction(alertAdd)
+		alertVC?.addAction(alertAdd)
 	}
 
 	func alertCancleButtonSet() {
 		let alertCancle = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
-		alertVC.addAction(alertCancle)
+		alertVC?.addAction(alertCancle)
 	}
 
 }

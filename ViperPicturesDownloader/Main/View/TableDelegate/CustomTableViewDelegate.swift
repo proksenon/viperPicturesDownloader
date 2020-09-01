@@ -10,14 +10,14 @@ import UIKit
 
 final class CustomTableViewDelegate: NSObject, UITableViewDelegate {
 
-	weak var output: TableViewDelegateOutput!
+	weak var output: TableViewDelegateOutput?
 
 	init(output: TableViewDelegateOutput){
 		super.init()
 		self.output = output
 	}
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		output.didSelect(indexPath: indexPath)
+		output?.didSelect(indexPath: indexPath)
 	}
 
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

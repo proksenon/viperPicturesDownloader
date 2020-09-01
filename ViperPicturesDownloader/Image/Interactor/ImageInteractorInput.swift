@@ -10,7 +10,7 @@ import UIKit
 
 protocol ImageInteractorInput: class {
 	///  Обращается к менеджеру фильтров, и применяет фильтр
-	func filterToImage(indexPath: IndexPath, customParametrs: CustomParametrs?, completion: @escaping (Image)->Void)
+	func filterToImage(indexPath: IndexPath, customParametrs: CustomParameters?, completion: @escaping (Image)->Void)
 	///  Устанавливает оригинальную картинку
 	func originImageSet(image: Image)
 	///  Сохраняет картинку в библиотеку
@@ -22,5 +22,5 @@ protocol ImageInteractorInput: class {
 	///  Возвращает иконки фильтров
 	func getFilterIcon(indexPath: IndexPath)->Image
 	///  Возвращает стандартные параметры фильтра
-	func getParamsAt(indexPath: IndexPath)->[ParametrInfo]?
+	func getParamsAt(indexPath: IndexPath)->[DefaultParameters]?
 }

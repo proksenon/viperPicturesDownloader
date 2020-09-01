@@ -49,7 +49,7 @@ extension ImagePresenter: ImageViewOutput{
 		interactor.saveImageToLibrary()
 	}
 	
-	func filterImage(customParametr: CustomParametrs?) {
+	func filterImage(customParametr: CustomParameters?) {
 		interactor.filterToImage(indexPath: indexPath, customParametrs: customParametr) { (imageModel) in
 			self.view.setImage(with: imageModel)
 		}
@@ -85,14 +85,14 @@ extension ImagePresenter: FilterCollectionViewDelegateOutput {
 		self.indexPath = indexPath
 		if let filterParametrs = interactor.getParamsAt(indexPath: indexPath) {
 			let parametrs = setDefaultValue(filterParametrs: filterParametrs)
-			filterImage(customParametr: CustomParametrs(parametrs: parametrs))
+			filterImage(customParametr: CustomParameters(parameters: parametrs))
 			showCollection(countSliders: filterParametrs.count, false)
 		} else {
 			filterImage(customParametr: nil)
 		}
 	}
 
-	private func setDefaultValue(filterParametrs: [ParametrInfo])-> [Float] {
+	private func setDefaultValue(filterParametrs: [DefaultParameters])-> [Float] {
 		var parametrs: [Float] = []
 		for index in 0..<filterParametrs.count {
 			let parametr = filterParametrs[index]
@@ -110,7 +110,8 @@ extension ImagePresenter: FilterCollectionViewDelegateOutput {
 
 // MARK: - ImageModuleInput
 extension ImagePresenter: ImageModuleInput {
-	func configure(with image: Image) {
+	func configure(with image: Image?) {
+		guard let image = image else { return }
 		interactor.originImageSet(image: image)
 	}
 }

@@ -18,7 +18,8 @@ final class CollectionRouter: CollectionRouterInput {
 
 	func push(image: Image) {
 		let nextVC = ImageViewController()
-		nextVC.configurator.configure(with: nextVC)
+		let configurator = ImageConfigurator()
+		configurator.configure(with: nextVC)
 		nextVC.moduleInput.configure(with: image)
 		viewController.navigationController?.pushViewController(nextVC, animated: true)
 	}

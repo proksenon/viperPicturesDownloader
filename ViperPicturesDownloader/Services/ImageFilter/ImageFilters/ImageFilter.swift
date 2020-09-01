@@ -21,14 +21,14 @@ class ImageFilter: ImageFilterProtocol {
 		return nil
 	}
 
-	func withoutFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
+	func withoutFilter(image: UIImage?, customParametrs: CustomParameters? = nil)-> UIImage? {
 		return image
 	}
 
-	func sepiaToneFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
-		guard let inputImage = image, let customParametrs = customParametrs, customParametrs.parametrs.count >= 1 else {return nil}
+	func sepiaToneFilter(image: UIImage?, customParametrs: CustomParameters? = nil)-> UIImage? {
+		guard let inputImage = image, let customParametrs = customParametrs, customParametrs.parameters.count >= 1 else {return nil}
 
-		let intensity = customParametrs.parametrs[0]
+		let intensity = customParametrs.parameters[0]
 
 		if let currentFilter = CIFilter(name: "CISepiaTone") {
 			let beginImage = CIImage(image: inputImage)
@@ -40,12 +40,12 @@ class ImageFilter: ImageFilterProtocol {
 		return nil
 	}
 
-	func colorControlsFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
-		guard let inputImage = image, let customParametrs = customParametrs, customParametrs.parametrs.count >= 3 else {return nil}
+	func colorControlsFilter(image: UIImage?, customParametrs: CustomParameters? = nil)-> UIImage? {
+		guard let inputImage = image, let customParametrs = customParametrs, customParametrs.parameters.count >= 3 else {return nil}
 
-		let brightness = customParametrs.parametrs[0]
-		let saturation = customParametrs.parametrs[1]
-		let contrast = customParametrs.parametrs[2]
+		let brightness = customParametrs.parameters[0]
+		let saturation = customParametrs.parameters[1]
+		let contrast = customParametrs.parameters[2]
 
 		if let currentFilter = CIFilter(name: "CIColorControls") {
 			let beginImage = CIImage(image: inputImage)
@@ -59,10 +59,10 @@ class ImageFilter: ImageFilterProtocol {
 		return nil
 	}
 
-	func edgesFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
-		guard let inputImage = image, let customParametrs = customParametrs, customParametrs.parametrs.count >= 1 else {return nil}
+	func edgesFilter(image: UIImage?, customParametrs: CustomParameters? = nil)-> UIImage? {
+		guard let inputImage = image, let customParametrs = customParametrs, customParametrs.parameters.count >= 1 else {return nil}
 
-		let intensity = customParametrs.parametrs[0]
+		let intensity = customParametrs.parameters[0]
 
 		if let currentFilter = CIFilter(name: "CIEdges") {
 			let beginImage = CIImage(image: inputImage)
@@ -74,7 +74,7 @@ class ImageFilter: ImageFilterProtocol {
 		return nil
 	}
 
-	func noirFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
+	func noirFilter(image: UIImage?, customParametrs: CustomParameters? = nil)-> UIImage? {
 		guard let inputImage = image else {return nil}
 
 		if let currentFilter = CIFilter(name: "CIPhotoEffectNoir") {
@@ -87,10 +87,10 @@ class ImageFilter: ImageFilterProtocol {
 		return nil
 	}
 
-	func gaussianBlurFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
-		guard let inputImage = image, let customParametrs = customParametrs, customParametrs.parametrs.count >= 1 else {return nil}
+	func gaussianBlurFilter(image: UIImage?, customParametrs: CustomParameters? = nil)-> UIImage? {
+		guard let inputImage = image, let customParametrs = customParametrs, customParametrs.parameters.count >= 1 else {return nil}
 
-		let radius = customParametrs.parametrs[0]
+		let radius = customParametrs.parameters[0]
 
 		if let currentFilter = CIFilter(name: "CIGaussianBlur") {
 			let beginImage = CIImage(image: inputImage)
@@ -102,7 +102,7 @@ class ImageFilter: ImageFilterProtocol {
 		return nil
 	}
 
-	func pinkCrossPolynomial(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
+	func pinkCrossPolynomial(image: UIImage?, customParametrs: CustomParameters? = nil)-> UIImage? {
 		guard let inputImage = image else {return nil}
 
 		let param = ["inputRedCoefficients" : CIVector(values: [1, 1, 0, 0, 0, 0, 0, 0, 0, 0], count: 10),
@@ -119,12 +119,12 @@ class ImageFilter: ImageFilterProtocol {
 	}
 
 
-	func spotColorFilter(image: UIImage?, customParametrs: CustomParametrs? = nil)-> UIImage? {
-		guard let inputImage = image, let customParametrs = customParametrs, customParametrs.parametrs.count >= 3 else {return nil}
+	func spotColorFilter(image: UIImage?, customParametrs: CustomParameters? = nil)-> UIImage? {
+		guard let inputImage = image, let customParametrs = customParametrs, customParametrs.parameters.count >= 3 else {return nil}
 
-		let closenessG = customParametrs.parametrs[0]
-		let closenessR = customParametrs.parametrs[1]
-		let closenessB = customParametrs.parametrs[2]
+		let closenessG = customParametrs.parameters[0]
+		let closenessR = customParametrs.parameters[1]
+		let closenessB = customParametrs.parameters[2]
 
 		if let currentFilter = CIFilter(name: "CISpotColor") {
 			let beginImage = CIImage(image: inputImage)

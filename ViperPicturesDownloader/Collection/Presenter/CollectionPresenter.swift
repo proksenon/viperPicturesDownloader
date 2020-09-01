@@ -55,7 +55,8 @@ extension CollectionPresenter: CollectionInteractorOutput {
 }
 // MARK: - CollectionModuleInput
 extension CollectionPresenter: CollectionModuleInput {
-	func configure(with imagesUrl: ImageUrls) {
+	func configure(with imagesUrl: ImageUrls?) {
+		guard let imagesUrl = imagesUrl else { return }
 		interactor.setImageUrls(with: imagesUrl)
 	}
 

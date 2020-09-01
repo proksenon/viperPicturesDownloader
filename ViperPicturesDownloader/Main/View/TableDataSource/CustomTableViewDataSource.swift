@@ -10,7 +10,7 @@ import UIKit
 
 final class CustomTableViewDataSource:NSObject, UITableViewDataSource {
 
-	weak var output: TableViewDataSourceOutPut!
+	weak var output: TableViewDataSourceOutPut?
 	
 	init(output: TableViewDataSourceOutPut){
 		super.init()
@@ -18,7 +18,7 @@ final class CustomTableViewDataSource:NSObject, UITableViewDataSource {
 	}
 	/// Количество ячеек
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return output.numberOfRows()
+		return output?.numberOfRows() ?? 0
 	}
 	/// Работа с ячейкой
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -27,7 +27,7 @@ final class CustomTableViewDataSource:NSObject, UITableViewDataSource {
 		let size = CGSize(width: cell.contentView.frame.size.width,
 						  height: cell.contentView.frame.size.width)
 		cell.currentIndexPath = indexPath
-		output.getImage(indexPath: indexPath, size: ImageSize(size: size)) { (image) in
+		output?.getImage(indexPath: indexPath, size: ImageSize(size: size)) { (image) in
 			cell.configureCell(image: image.image, indexPath: indexPath)
 			cell.stopActivity()
 		}

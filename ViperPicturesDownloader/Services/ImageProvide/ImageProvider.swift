@@ -70,7 +70,7 @@
 //		var images: [UIImage?] = []
 //		var imagesWithUrl: [String:UIImage] = [:]
 //		let downloadGroup = DispatchGroup()
-//		
+//
 //		for url in urls {
 //			downloadGroup.enter()
 //			self.loadImage(url: url, size: size) { (image) in
@@ -83,7 +83,7 @@
 //			completion(images)
 //		}
 //	}
-//
+
 //	private func sortImages(imagesWithUrl: [String: UIImage], urls: [String])->[UIImage?] {
 //		var images: [UIImage?] = []
 //		for url in urls {

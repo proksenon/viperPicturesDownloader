@@ -20,14 +20,14 @@ class ImageInteractor: ImageInteractorInput {
 	}
 	var resizedImage: Image!
 	var lastIndex: IndexPath?
-	var lastCustomParametrs: CustomParametrs?
+	var lastCustomParametrs: CustomParameters?
 
 	init(presenter: ImageInteractorOuput, imageFilterManager: ImageFilterManagerProtocol = ImageFilterManager()) {
 		self.presenter = presenter
 		self.imageFilterManager = imageFilterManager
 	}
 
-	func getParamsAt(indexPath: IndexPath)->[ParametrInfo]? {
+	func getParamsAt(indexPath: IndexPath)->[DefaultParameters]? {
 		return imageFilterManager.getParametrs(indexPath: indexPath)
 	}
 
@@ -53,7 +53,7 @@ class ImageInteractor: ImageInteractorInput {
 		return originImage
 	}
 
-	func filterToImage(indexPath: IndexPath, customParametrs: CustomParametrs? = nil, completion: @escaping (Image)->Void){
+	func filterToImage(indexPath: IndexPath, customParametrs: CustomParameters? = nil, completion: @escaping (Image)->Void){
 		lastIndex = indexPath
 		lastCustomParametrs = customParametrs
 

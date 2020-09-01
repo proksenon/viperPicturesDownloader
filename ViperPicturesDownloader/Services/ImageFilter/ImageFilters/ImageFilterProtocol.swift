@@ -10,13 +10,13 @@ import UIKit
 
 protocol ImageFilterProtocol: class {
 	///  Без фильтра
-	func withoutFilter(image: UIImage?, customParametrs: CustomParametrs?)-> UIImage?
+	func withoutFilter(image: UIImage?, customParametrs: CustomParameters?)-> UIImage?
 	///                                          Фильтры картинок
-	func sepiaToneFilter(image: UIImage?, customParametrs: CustomParametrs?)-> UIImage?
-	func colorControlsFilter(image: UIImage?, customParametrs: CustomParametrs?)-> UIImage?
-	func edgesFilter(image: UIImage?, customParametrs: CustomParametrs?)-> UIImage?
-	func noirFilter(image: UIImage?, customParametrs: CustomParametrs?)-> UIImage?
-	func gaussianBlurFilter(image: UIImage?, customParametrs: CustomParametrs?)-> UIImage?
-	func pinkCrossPolynomial(image: UIImage?, customParametrs: CustomParametrs?)-> UIImage?
-	func spotColorFilter(image: UIImage?, customParametrs: CustomParametrs?)-> UIImage?
+	func sepiaToneFilter(image: UIImage?, customParametrs: CustomParameters?)-> UIImage?
+	func colorControlsFilter(image: UIImage?, customParametrs: CustomParameters?)-> UIImage?
+	func edgesFilter(image: UIImage?, customParametrs: CustomParameters?)-> UIImage?
+	func noirFilter(image: UIImage?, customParametrs: CustomParameters?)-> UIImage?
+	func gaussianBlurFilter(image: UIImage?, customParametrs: CustomParameters?)-> UIImage?
+	func pinkCrossPolynomial(image: UIImage?, customParametrs: CustomParameters?)-> UIImage?
+	func spotColorFilter(image: UIImage?, customParametrs: CustomParameters?)-> UIImage?
 }

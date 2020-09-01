@@ -12,7 +12,7 @@ class ImageViewController: UIViewController {
 
 	var outputView: ImageViewOutput!
 	var moduleInput: ImageModuleInput!
-	let configurator: ImageConfiguratorProtocol = ImageConfigurator()
+//	let configurator: ImageConfiguratorProtocol = ImageConfigurator()
 	var collectionView: UICollectionView!
 	var imageView: UIImageView!
 	var saveImageButton: UIBarButtonItem!
@@ -96,7 +96,7 @@ extension ImageViewController: ImageViewInput {
 	}
 
 	@IBAction func sliderAction(sender: UISlider) {
-		outputView.filterImage(customParametr: CustomParametrs(parametrs: [slider1.value, slider2.value, slider3.value]))
+		outputView.filterImage(customParametr: CustomParameters(parameters: [slider1.value, slider2.value, slider3.value]))
 	}
 
 	func isHiddenSliders(count: Int, _ isHidden: Bool) {

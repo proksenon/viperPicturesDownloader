@@ -12,7 +12,7 @@ final class CollectionViewController: UIViewController {
 
 	var output: CollectionViewOutput!
 	var moduleInput: CollectionModuleInput!
-	let configurator: CollectionConfiguratorProtocol = CollectionConfigurator()
+//	let configurator: CollectionConfiguratorProtocol = CollectionConfigurator()
 	var collectionView: UICollectionView!
 
 	override func viewDidLoad() {

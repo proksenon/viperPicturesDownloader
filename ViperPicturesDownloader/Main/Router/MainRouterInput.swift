@@ -10,7 +10,7 @@ import Foundation
 
 protocol MainRouterInput: class {
 	///  Переходит на CollectionViewController
-	func pushCollection(with imageUrls: ImageUrls)
+	func pushCollection(with imageUrls: ImageUrls?)
 	///  Переходит  на ImageViewController
 	func push(image: Image)
 }

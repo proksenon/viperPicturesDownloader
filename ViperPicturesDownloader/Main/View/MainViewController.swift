@@ -10,14 +10,14 @@ import UIKit
 // View главного экрана 
 final class MainViewController: UIViewController {
 
-	var output: MainViewOutput!
-	var configurator: MainConfiguratorProtocol!
-	var tableView: UITableView!
-	var alertVC: UIAlertController!
-	var alertHelper: AlertHelperProtocol!
-	var addUrlButton: UIBarButtonItem!
+	var output: MainViewOutput?
+	var configurator: MainConfiguratorProtocol?
+	var tableView: UITableView?
+	var alertVC: UIAlertController?
+	var alertHelper: AlertHelperProtocol?
+	var addUrlButton: UIBarButtonItem?
 	/// кнопка segueToCollection переход на колекшн вью
-	var segueToCollection: UIBarButtonItem!
+	var segueToCollection: UIBarButtonItem?
 
 	init(configurator: MainConfiguratorProtocol = MainConfigurator()) {
 		super.init(nibName: nil, bundle: nil)
@@ -30,8 +30,8 @@ final class MainViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		configurator.configure(with: self)
-		output.configureView()
+		configurator?.configure(with: self)
+		output?.configureView()
 	}
 
 }
@@ -43,10 +43,13 @@ extension MainViewController: MainViewInput {
 	}
 
 	func setTableView() {
-		view.addSubview(tableView)
+		if let tableView = tableView {
+			view.addSubview(tableView)
+		}
 	}
 
 	func setTableConstraints() {
+		guard let tableView = tableView else {return}
 		tableView.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([
 			tableView.topAnchor.constraint(equalTo: self.view.topAnchor,constant: 0),
@@ -57,11 +60,11 @@ extension MainViewController: MainViewInput {
 	}
 	
 	func reloadTable() {
-		tableView.reloadData()
+		tableView?.reloadData()
 	}
 
 	func scrollTableTo(indexPath: IndexPath) {
-		tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+		tableView?.scrollToRow(at: indexPath, at: .bottom, animated: true)
 	}
 
 	func setSegueToCollectionButton() {
@@ -74,7 +77,7 @@ extension MainViewController: MainViewInput {
 	}
 
 	@objc func makeCollection(_ sender: UIBarButtonItem? = nil){
-		output.pushCollection()
+		output?.pushCollection()
 	}
 
 	func setAddUrlButton() {
@@ -87,7 +90,7 @@ extension MainViewController: MainViewInput {
 	}
 
 	@objc func addUrl(_ sender: UIBarButtonItem? = nil){
-		output.presentAlert()
+		output?.presentAlert()
 	}
 
 	func setUpNavigationBar() {
@@ -105,25 +108,26 @@ extension MainViewController: MainViewInput {
 	func setupAlert() {
 		alertVC = UIAlertController(title: "Введите ссылку на картинку", message: nil, preferredStyle: .alert)
 		alertHelper = AlertHelper()
-		alertHelper.setupAlert(alertVC: alertVC)
-		alertHelper.alertTextFieldSet()
-		alertHelper.alertAddButtonSet { [weak output, alertVC] (urlString) in
+		alertHelper?.setupAlert(alertVC: alertVC)
+		alertHelper?.alertTextFieldSet()
+		alertHelper?.alertAddButtonSet { [weak output, alertVC] (urlString) in
 			if alertVC?.textFields?.first?.text != "" {
 				output?.didAddUrl(urlString: urlString)
 			}
 		}
-		alertHelper.alertCancleButtonSet()
+		alertHelper?.alertCancleButtonSet()
 		let alertPhoto = UIAlertAction(title: "photo", style: .default) { [weak self] (action) in
 			self?.showImagePickerController(source: .photoLibrary)
 		}
 		let alertCamera = UIAlertAction(title: "camera", style: .default) { [weak self] (action) in
 			self?.showImagePickerController(source: .camera)
 		}
-		alertVC.addAction(alertPhoto)
-		alertVC.addAction(alertCamera)
+		alertVC?.addAction(alertPhoto)
+		alertVC?.addAction(alertCamera)
 	}
 
 	func presentAlert() {
+		guard let alertVC = alertVC else {return}
 		self.present(alertVC, animated: true)
 	}
 }
@@ -141,7 +145,7 @@ extension MainViewController: UIImagePickerControllerDelegate, UINavigationContr
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 		let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
 		let imageUrl = info[UIImagePickerController.InfoKey.imageURL] as? URL
-		output.imageFromLibrary(image: Image(image: image, urlString: imageUrl?.absoluteString))
+		output?.imageFromLibrary(image: Image(image: image, urlString: imageUrl?.absoluteString))
 		dismiss(animated: true, completion: nil)
 	}
 }
