@@ -12,7 +12,7 @@ final class CustomTableViewCell: UITableViewCell {
 
 	let customImageView = UIImageView()
 	let activityIndicator = UIActivityIndicatorView()
-	var currentIndexPath: IndexPath! {
+	var currentIndexPath: IndexPath? {
 		didSet {
 			customImageView.image = nil
 			startActivity()

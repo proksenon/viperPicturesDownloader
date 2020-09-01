@@ -22,7 +22,7 @@ protocol ImageViewInput: class {
 	///  Устанавливает слайдерам констрейнты
 	func setSlidersConstraint()
 	///  Устанавливает слайдерам стандартные параметры фиьтра
-	func setDefaultValueToSlider(sliderNubme: Int, minValue: Float, maxValue: Float, defaultValue: Float)
+	func setDefaultValueToSlider(sliderNubmer: Int, minValue: Float, maxValue: Float, defaultValue: Float)
 	///  Скрывает или показывает (количество: count ) слайдеры
 	func isHiddenSliders(count: Int, _ isHidden: Bool)
 	///  Устанавливает ImageView

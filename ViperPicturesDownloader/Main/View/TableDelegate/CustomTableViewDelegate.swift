@@ -17,7 +17,9 @@ final class CustomTableViewDelegate: NSObject, UITableViewDelegate {
 		self.output = output
 	}
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		output?.didSelect(indexPath: indexPath)
+		guard let output = output else { return }
+
+		output.didSelect(indexPath: indexPath)
 	}
 
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -25,9 +27,10 @@ final class CustomTableViewDelegate: NSObject, UITableViewDelegate {
 	}
 
 	func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+		guard let output = output else { return nil }
 		let deleateAction = UITableViewRowAction(style: .default, title: "Удалить") { [weak output] (_, indexPath) in
-		output?.didDeleteImage(indexPath: indexPath)
-		tableView.deleteRows(at: [indexPath], with: .automatic)
+			output?.didDeleteImage(indexPath: indexPath)
+			tableView.deleteRows(at: [indexPath], with: .automatic)
 		}
 		return [deleateAction]
 	}

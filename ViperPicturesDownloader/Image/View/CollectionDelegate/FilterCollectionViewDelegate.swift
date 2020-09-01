@@ -10,7 +10,7 @@ import UIKit
 
 final class FilterCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-	weak var output: FilterCollectionViewDelegateOutput!
+	weak var output: FilterCollectionViewDelegateOutput?
 
 	init(output: FilterCollectionViewDelegateOutput){
 		super.init()
@@ -18,6 +18,7 @@ final class FilterCollectionViewDelegate: NSObject, UICollectionViewDelegate, UI
 	}
 
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		guard let output = output else { return }
 		output.didSelect(indexPath: indexPath)
 		collectionView.cellForItem(at: indexPath)?.isUserInteractionEnabled = false
 	}

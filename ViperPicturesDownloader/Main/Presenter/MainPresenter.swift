@@ -23,14 +23,17 @@ final class MainPresenter {
 	}
 	/// Очищает хранилище, удаляя файлы, которые лежат больше 2 дней
 	private func freeStorage() {
+		guard let interactor = interactor else { return }
 		let date = Calendar.current.date(byAdding: .day, value: -2, to: Date())
 		DispatchQueue.global(qos: .background).async {
-			self.interactor?.freeStorage(befora: date)
+			interactor.freeStorage(befora: date)
 		}
 	}
 	/// Полностью очищает хранилище
 	private func freeALL(){
-		interactor?.freeALL()
+		guard let interactor = interactor else { return }
+
+		interactor.freeALL()
 	}
 
 }
@@ -38,42 +41,58 @@ final class MainPresenter {
 extension MainPresenter: MainViewOutput {
 
 	func pushCollection() {
-		router?.pushCollection(with: interactor?.getImageUrls())
+		guard let router = router else { return }
+
+		router.pushCollection(with: interactor?.getImageUrls())
 	}
 
 	func configureView() {
-		interactor?.setImageUrls()
-		view?.setViewBackgroud()
-		view?.setTableView()
-		view?.setTableConstraints()
-		view?.setSegueToCollectionButton()
-		view?.setUpNavigationBar()
-		view?.setStatusBarStyleLight()
-		view?.setupAlert()
-		view?.setAddUrlButton()
+		guard let interactor = interactor else { return }
+		guard let view = view else { return }
+
+		interactor.setImageUrls()
+		view.setViewBackgroud()
+		view.setTableView()
+		view.setTableConstraints()
+		view.setSegueToCollectionButton()
+		view.setUpNavigationBar()
+		view.setStatusBarStyleLight()
+		view.setupAlert()
+		view.setAddUrlButton()
 		freeStorage()
 //		freeALL()
 	}
 
 	func didAddUrl(urlString: String?) {
-		interactor?.didAddUrl(urlString: urlString)
-		view?.reloadTable()
+		guard let interactor = interactor else { return }
+		guard let view = view else { return }
+
+		interactor.didAddUrl(urlString: urlString)
+		view.reloadTable()
 		scrollTableToLast()
 	}
 
 	func presentAlert() {
-		view?.presentAlert()
+		guard let view = view else { return }
+		view.presentAlert()
 	}
 
 	func imageFromLibrary(image: Image) {
-		interactor?.setImage(imageModel: image)
-		view?.reloadTable()
+		guard let interactor = interactor else { return }
+		guard let view = view else { return }
+
+		interactor.setImage(imageModel: image)
+		view.reloadTable()
 		scrollTableToLast()
 	}
 
 	private func scrollTableToLast() {
-		let lastIndexPath = IndexPath(row: numberOfRows() - 1, section: 0)
-		view?.scrollTableTo(indexPath: lastIndexPath)
+		guard let view = view else { return }
+
+		let index = numberOfRows() - 1
+		guard index > 0 else { return }
+		let lastIndexPath = IndexPath(row: index, section: 0)
+		view.scrollTableTo(indexPath: lastIndexPath)
 	}
 
 }
@@ -81,12 +100,17 @@ extension MainPresenter: MainViewOutput {
 extension MainPresenter: TableViewDelegateOutput {
 
 	func didSelect(indexPath: IndexPath) {
-		interactor?.getImage(indexPath: indexPath, size: ImageSize(size: nil)) { [weak router] (image) in
+		guard let interactor = interactor else { return }
+		guard let router = router else { return }
+
+		interactor.getImage(indexPath: indexPath, size: ImageSize(size: nil)) { [weak router] (image) in
 			router?.push(image: image)
 		}
 	}
 	func didDeleteImage(indexPath: IndexPath) {
-		interactor?.deleteImage(indexPath: indexPath)
+		guard let interactor = interactor else { return }
+
+		interactor.deleteImage(indexPath: indexPath)
 	}
 
 }
@@ -94,7 +118,9 @@ extension MainPresenter: TableViewDelegateOutput {
 extension MainPresenter: TableViewDataSourceOutPut {
 
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
-		interactor?.getImage(indexPath: indexPath, size: size) { (image) in
+		guard let interactor = interactor else { return }
+
+		interactor.getImage(indexPath: indexPath, size: size) { (image) in
 			completion(image)
 		}
 	}

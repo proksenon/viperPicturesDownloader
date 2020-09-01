@@ -10,13 +10,13 @@ import UIKit
 /// Интерактор экрана с колекцией
 final class CollectionInteractor: CollectionInteractorInput {
 	
-	weak var presenter: CollectionInteractorOutput!
-	var imageUrls: ImageUrls!
-	var imageNameManager: ImageNameManagerProtocol!
-	var fileProvider: FileProviderProtocol!
-	var encryptionManager: EncryptionManagerProtocol!
-	var networkService: NetworkServiceProtocol!
-	var imageResizer: ImageResizerProtocol!
+	weak var presenter: CollectionInteractorOutput?
+	var imageUrls: ImageUrls?
+	var imageNameManager: ImageNameManagerProtocol?
+	var fileProvider: FileProviderProtocol?
+	var encryptionManager: EncryptionManagerProtocol?
+	var networkService: NetworkServiceProtocol?
+	var imageResizer: ImageResizerProtocol?
 
 	init(presenter: CollectionInteractorOutput,
 		 imageNameManager: ImageNameManagerProtocol = ImageNameManager(),
@@ -38,10 +38,15 @@ final class CollectionInteractor: CollectionInteractorInput {
 	}
 	
 	func numberOfRows() -> Int {
+		guard let imageUrls = imageUrls else { return 0 }
 		return imageUrls.urls.count
 	}
 
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
+		guard let imageUrls = imageUrls else { return }
+		guard let imageNameManager = imageNameManager else { return }
+		guard let fileProvider = fileProvider else { return }
+
 		let url = imageUrls.urls[indexPath.row]
 		let nameFileOrigin = imageNameManager.getNameFileImage(url: url, size: nil)
 		if fileProvider.checkDirectory(nameFile: nameFileOrigin) {
@@ -58,6 +63,9 @@ final class CollectionInteractor: CollectionInteractorInput {
 	}
 	///		Получает картинку с файлов
 	private func imageFromCache(url: String, size: ImageSize, completion: @escaping (Image)->Void) {
+		guard let imageNameManager = imageNameManager else { return }
+		guard let fileProvider = fileProvider else { return }
+
 		let nameFile = imageNameManager.getNameFileImage(url: url, size: size.size)
 		if fileProvider.checkDirectory(nameFile: nameFile) {
 			if let decryptData = decryptionDataFromFile(url: url, nameFile: nameFile) {
@@ -72,6 +80,9 @@ final class CollectionInteractor: CollectionInteractorInput {
 	}
 	/// 	Расшифровывает данные с файла
 	private func decryptionDataFromFile(url: String, nameFile: String)-> Data? {
+		guard let fileProvider = fileProvider else { return nil }
+		guard let encryptionManager = encryptionManager else { return nil }
+
 		if let data = fileProvider.readFile(nameFile: nameFile) {
 			if let decryptData = encryptionManager.decryptionData(data: data) {
 				return decryptData
@@ -82,6 +93,9 @@ final class CollectionInteractor: CollectionInteractorInput {
 	/// 	Оригинальную картинку превращает в нужный размер
 	private func originalToSize(url: String, nameFile: String,
 								size: CGSize?, completion: @escaping (UIImage?) -> Void) {
+		guard let imageNameManager = imageNameManager else { return }
+		guard let imageResizer = imageResizer else { return }
+
 		if let decryptData = decryptionDataFromFile(url: url,
 													nameFile: imageNameManager.getNameFileImage(url: url, size: nil)) {
 			if let newData = imageResizer.imageToSize(size: size, data: decryptData) {
@@ -94,18 +108,24 @@ final class CollectionInteractor: CollectionInteractorInput {
 	}
 	/// 	Записывает дата в файл
 	private func dataToFile(nameFile: String, data: Data) {
-		let path = self.fileProvider.getPath(nameFile: nameFile, directory: NSTemporaryDirectory())
+		guard let fileProvider = fileProvider else { return }
+		guard let encryptionManager = encryptionManager else { return }
+
+		let path = fileProvider.getPath(nameFile: nameFile, directory: NSTemporaryDirectory())
 		if let encryptData = encryptionManager.encryptionData(data: data) {
-			self.fileProvider.writeToFile(data: encryptData, path: path)
+			fileProvider.writeToFile(data: encryptData, path: path)
 		}
 	}
 	/// 	Скачивает картинку
 	private func downloadImage(currentUrl: URL, url: String,
 							   nameFileOrigin: String, size: ImageSize, completion: @escaping (Image)->Void) {
+		guard let networkService = networkService else { return }
+		guard let imageNameManager = imageNameManager else { return }
+
 		networkService.getData(url: currentUrl) { (data) in
 			guard let data = data else {completion(Image(image: nil)); return}
 			self.dataToFile(nameFile: nameFileOrigin, data: data)
-			let nameFile = self.imageNameManager.getNameFileImage(url: url, size: size.size)
+			let nameFile = imageNameManager.getNameFileImage(url: url, size: size.size)
 			self.originalToSize(url: url, nameFile: nameFile, size: size.size) { (image) in
 				completion(Image(image: image))
 			}

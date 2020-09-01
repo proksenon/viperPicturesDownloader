@@ -20,7 +20,8 @@ final class MainRouter : MainRouterInput {
 		let nextVC = ImageViewController()
 		let configurator = ImageConfigurator()
 		configurator.configure(with: nextVC)
-		nextVC.moduleInput.configure(with: image)
+		guard let nextVCModuleInput = nextVC.moduleInput else { return }
+		nextVCModuleInput.configure(with: image)
 		viewController?.navigationController?.pushViewController(nextVC, animated: true)
 	}
 
@@ -28,7 +29,8 @@ final class MainRouter : MainRouterInput {
 		let nextVC = CollectionViewController()
 		let configurator = CollectionConfigurator()
 		configurator.configure(with: nextVC)
-		nextVC.moduleInput.configure(with: imageUrls)
+		guard let nextVCModuleInput = nextVC.moduleInput else {return}
+		nextVCModuleInput.configure(with: imageUrls)
 		viewController?.navigationController?.pushViewController(nextVC, animated: true)
 	}
 }

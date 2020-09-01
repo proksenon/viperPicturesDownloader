@@ -10,11 +10,11 @@ import Foundation
 /// Презентер экрана с колекцией
 final class CollectionPresenter {
 
-	weak var view: CollectionViewInput!
-	var interactor: CollectionInteractorInput!
-	var router: CollectionRouterInput!
-	var customCollectionDataSource: CustomCollectionViewDataSource!
-	var customCollectionDelegate: CustomCollectionViewDelegate!
+	weak var view: CollectionViewInput?
+	var interactor: CollectionInteractorInput?
+	var router: CollectionRouterInput?
+	var customCollectionDataSource: CustomCollectionViewDataSource?
+	var customCollectionDelegate: CustomCollectionViewDelegate?
 
 	init(view: CollectionViewInput) {
 		self.view = view
@@ -24,6 +24,7 @@ final class CollectionPresenter {
 // MARK: - CollectionViewOutput
 extension CollectionPresenter: CollectionViewOutput {
 	func configureView() {
+		guard let view = view else { return }
 		view.setCollection()
 		view.setCollectionConstraint()
 	}
@@ -31,8 +32,9 @@ extension CollectionPresenter: CollectionViewOutput {
 // MARK: - CollectionViewDelegateOutput
 extension CollectionPresenter: CollectionViewDelegateOutput {
 	func didSelect(indexPath: IndexPath) {
+		guard let router = router else { return }
 		getImage(indexPath: indexPath, size: ImageSize(size: nil)) { (image) in
-			self.router.push(image: image)
+			router.push(image: image)
 		}
 	}
 }
@@ -40,12 +42,14 @@ extension CollectionPresenter: CollectionViewDelegateOutput {
 extension CollectionPresenter: CollectionViewDataSourceOutput {
 
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
+		guard let interactor = interactor else { return }
 		interactor.getImage(indexPath: indexPath, size: size) { (image) in
 			completion(image)
 		}
 	}
 
 	func numberOfRows() ->Int {
+		guard let interactor = interactor else { return 0 }
 		return interactor.numberOfRows()
 	}
 }
@@ -57,6 +61,7 @@ extension CollectionPresenter: CollectionInteractorOutput {
 extension CollectionPresenter: CollectionModuleInput {
 	func configure(with imagesUrl: ImageUrls?) {
 		guard let imagesUrl = imagesUrl else { return }
+		guard let interactor = interactor else { return }
 		interactor.setImageUrls(with: imagesUrl)
 	}
 

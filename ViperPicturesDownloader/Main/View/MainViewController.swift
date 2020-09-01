@@ -30,8 +30,10 @@ final class MainViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		configurator?.configure(with: self)
-		output?.configureView()
+		guard let configurator = configurator else { return }
+		configurator.configure(with: self)
+		guard let output = output else { return }
+		output.configureView()
 	}
 
 }
@@ -60,11 +62,13 @@ extension MainViewController: MainViewInput {
 	}
 	
 	func reloadTable() {
-		tableView?.reloadData()
+		guard let tableView = tableView else {return}
+		tableView.reloadData()
 	}
 
 	func scrollTableTo(indexPath: IndexPath) {
-		tableView?.scrollToRow(at: indexPath, at: .bottom, animated: true)
+		guard let tableView = tableView else {return}
+		tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
 	}
 
 	func setSegueToCollectionButton() {
@@ -77,7 +81,8 @@ extension MainViewController: MainViewInput {
 	}
 
 	@objc func makeCollection(_ sender: UIBarButtonItem? = nil){
-		output?.pushCollection()
+		guard let output = output else { return }
+		output.pushCollection()
 	}
 
 	func setAddUrlButton() {
@@ -90,7 +95,8 @@ extension MainViewController: MainViewInput {
 	}
 
 	@objc func addUrl(_ sender: UIBarButtonItem? = nil){
-		output?.presentAlert()
+		guard let output = output else { return }
+		output.presentAlert()
 	}
 
 	func setUpNavigationBar() {
@@ -108,22 +114,25 @@ extension MainViewController: MainViewInput {
 	func setupAlert() {
 		alertVC = UIAlertController(title: "Введите ссылку на картинку", message: nil, preferredStyle: .alert)
 		alertHelper = AlertHelper()
-		alertHelper?.setupAlert(alertVC: alertVC)
-		alertHelper?.alertTextFieldSet()
-		alertHelper?.alertAddButtonSet { [weak output, alertVC] (urlString) in
-			if alertVC?.textFields?.first?.text != "" {
-				output?.didAddUrl(urlString: urlString)
+		guard let alertHelper = alertHelper else { return }
+		guard let alertVC = alertVC else { return }
+		guard let output = output else { return }
+		alertHelper.setupAlert(alertVC: alertVC)
+		alertHelper.alertTextFieldSet()
+		alertHelper.alertAddButtonSet { (urlString) in
+			if alertVC.textFields?.first?.text != "" {
+				output.didAddUrl(urlString: urlString)
 			}
 		}
-		alertHelper?.alertCancleButtonSet()
+		alertHelper.alertCancleButtonSet()
 		let alertPhoto = UIAlertAction(title: "photo", style: .default) { [weak self] (action) in
 			self?.showImagePickerController(source: .photoLibrary)
 		}
 		let alertCamera = UIAlertAction(title: "camera", style: .default) { [weak self] (action) in
 			self?.showImagePickerController(source: .camera)
 		}
-		alertVC?.addAction(alertPhoto)
-		alertVC?.addAction(alertCamera)
+		alertVC.addAction(alertPhoto)
+		alertVC.addAction(alertCamera)
 	}
 
 	func presentAlert() {
@@ -143,9 +152,10 @@ extension MainViewController: UIImagePickerControllerDelegate, UINavigationContr
 	}
 
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+		guard let output = output else { return }
 		let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
 		let imageUrl = info[UIImagePickerController.InfoKey.imageURL] as? URL
-		output?.imageFromLibrary(image: Image(image: image, urlString: imageUrl?.absoluteString))
+		output.imageFromLibrary(image: Image(image: image, urlString: imageUrl?.absoluteString))
 		dismiss(animated: true, completion: nil)
 	}
 }

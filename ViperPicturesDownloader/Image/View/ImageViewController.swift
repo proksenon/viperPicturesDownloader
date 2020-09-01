@@ -10,22 +10,22 @@ import UIKit
 /// Экран с картинкой
 class ImageViewController: UIViewController {
 
-	var outputView: ImageViewOutput!
-	var moduleInput: ImageModuleInput!
-//	let configurator: ImageConfiguratorProtocol = ImageConfigurator()
-	var collectionView: UICollectionView!
-	var imageView: UIImageView!
-	var saveImageButton: UIBarButtonItem!
-	var cancelButton: UIButton!
-	var alertVC: UIAlertController!
-	var slider1: UISlider!
-	var slider2: UISlider!
-	var slider3: UISlider!
-	var sliders: [UISlider]!
+	var output: ImageViewOutput?
+	var moduleInput: ImageModuleInput?
+	var collectionView: UICollectionView?
+	var imageView: UIImageView?
+	var saveImageButton: UIBarButtonItem?
+	var cancelButton: UIButton?
+	var alertVC: UIAlertController?
+	var slider1: UISlider?
+	var slider2: UISlider?
+	var slider3: UISlider?
+	var sliders: [UISlider]?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		outputView.configureView()
+		guard let output = output else { return }
+		output.configureView()
 	}
 
 }
@@ -38,12 +38,16 @@ extension ImageViewController: ImageViewInput {
 	// MARK: - CancleButton
 	func setCancelButton() {
 		cancelButton = UIButton()
+		guard let cancelButton = cancelButton else { return }
 		cancelButton.setTitle("Cancel", for: .normal)
 		cancelButton.backgroundColor = UIColor.black.withAlphaComponent(0.3)
 		cancelButton.addTarget(self, action: #selector(cancelButtonDidTapped), for: .touchUpInside)
 		view.addSubview(cancelButton)
 	}
 	func setCancelButtonConstraints() {
+		guard let cancelButton = cancelButton else { return }
+		guard let slider1 = slider1 else { return }
+
 		cancelButton.translatesAutoresizingMaskIntoConstraints = false
 		cancelButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
 		cancelButton.bottomAnchor.constraint(equalTo: slider1.topAnchor, constant: -20).isActive = true
@@ -52,10 +56,14 @@ extension ImageViewController: ImageViewInput {
 	}
 
 	@IBAction func cancelButtonDidTapped() {
-		outputView.hidenSlidersAndShowCollection()
+		guard let output = output else { return }
+
+		output.hidenSlidersAndShowCollection()
 	}
 
 	func isHiddenCancleButton(_ isHidden: Bool) {
+		guard let cancelButton = cancelButton else { return }
+
 		cancelButton.isHidden = isHidden
 	}
 	// MARK: - Sliders
@@ -63,7 +71,9 @@ extension ImageViewController: ImageViewInput {
 		slider1 = UISlider()
 		slider2 = UISlider()
 		slider3 = UISlider()
+		guard let slider1 = slider1, let slider2 = slider2, let slider3 = slider3 else { return }
 		sliders = [slider1, slider2, slider3]
+		guard let sliders = sliders else { return }
 		for var slider in sliders {
 			setupSlider(slider: &slider)
 		}
@@ -77,6 +87,7 @@ extension ImageViewController: ImageViewInput {
 	}
 
 	func setSlidersConstraint() {
+		guard let slider1 = slider1, let slider2 = slider2, let slider3 = slider3 else { return }
 		setSliderConstaints(slider: slider1, topConstrantTo: view, with: -200)
 		setSliderConstaints(slider: slider2, topConstrantTo: slider1, with: 15)
 		setSliderConstaints(slider: slider3, topConstrantTo: slider2, with: 15)
@@ -89,17 +100,24 @@ extension ImageViewController: ImageViewInput {
 		slider.topAnchor.constraint(equalTo: topConstrantTo.bottomAnchor, constant: constant).isActive = true
 	}
 
-	func setDefaultValueToSlider(sliderNubme: Int, minValue: Float, maxValue: Float, defaultValue: Float) {
-		sliders[sliderNubme].maximumValue = maxValue
-		sliders[sliderNubme].minimumValue = minValue
-		sliders[sliderNubme].setValue(defaultValue, animated: true)
+	func setDefaultValueToSlider(sliderNubmer: Int, minValue: Float, maxValue: Float, defaultValue: Float) {
+		guard let sliders = sliders else { return }
+
+		sliders[sliderNubmer].maximumValue = maxValue
+		sliders[sliderNubmer].minimumValue = minValue
+		sliders[sliderNubmer].setValue(defaultValue, animated: true)
 	}
 
 	@IBAction func sliderAction(sender: UISlider) {
-		outputView.filterImage(customParametr: CustomParameters(parameters: [slider1.value, slider2.value, slider3.value]))
+		guard let output = output else { return }
+		guard let slider1 = slider1, let slider2 = slider2, let slider3 = slider3 else { return }
+
+		output.filterImage(customParametr: CustomParameters(parameters: [slider1.value, slider2.value, slider3.value]))
 	}
 
 	func isHiddenSliders(count: Int, _ isHidden: Bool) {
+		guard let sliders = sliders else { return }
+
 		for index in 0..<count {
 			sliders[index].isHidden = isHidden
 		}
@@ -107,10 +125,13 @@ extension ImageViewController: ImageViewInput {
 	// MARK: - ImageView
 	func setUpImageView() {
 		imageView = UIImageView()
+		guard let imageView = imageView else { return }
 		view.addSubview(imageView)
 	}
 
 	func configureImageView() {
+		guard let imageView = imageView else { return }
+
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 		imageView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
 		imageView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
@@ -120,14 +141,20 @@ extension ImageViewController: ImageViewInput {
 	}
 
 	func setImage(with image: Image) {
+		guard let imageView = imageView else { return }
+
 		imageView.image = image.image
 	}
 	// MARK: - CollectionView
 	func setUpCollection() {
+		guard let collectionView = collectionView else { return }
+
 		view.addSubview(collectionView)
 	}
 
 	func constraintCollection() {
+		guard let collectionView = collectionView else { return }
+
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
 		collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
 		collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
@@ -136,6 +163,8 @@ extension ImageViewController: ImageViewInput {
 	}
 
 	func ishiddenCollection(_ isHidden: Bool) {
+		guard let collectionView = collectionView else { return }
+
 		collectionView.isHidden = isHidden
 	}
 	// MARK: - SaveButton
@@ -145,8 +174,11 @@ extension ImageViewController: ImageViewInput {
 	}
 
 	@objc func saveImage(_ sender: UIBarButtonItem) {
-		outputView.saveImageToLibrary()
+		guard let output = output else { return }
+
+		output.saveImageToLibrary()
 		alertVC = UIAlertController(title: "Успешно", message: "Картинка добавлена", preferredStyle: .alert)
+		guard let alertVC = alertVC else { return }
 		self.present(alertVC, animated: true) { [weak alertVC] in
 			sleep(1)
 			alertVC?.dismiss(animated: true, completion: nil)

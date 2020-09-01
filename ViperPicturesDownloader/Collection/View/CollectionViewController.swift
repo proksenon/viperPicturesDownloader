@@ -10,13 +10,13 @@ import UIKit
 // View экрана с колекцией
 final class CollectionViewController: UIViewController {
 
-	var output: CollectionViewOutput!
-	var moduleInput: CollectionModuleInput!
-//	let configurator: CollectionConfiguratorProtocol = CollectionConfigurator()
+	var output: CollectionViewOutput?
+	var moduleInput: CollectionModuleInput?
 	var collectionView: UICollectionView!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		guard let output = output else { return }
 		output.configureView()
 	}
 

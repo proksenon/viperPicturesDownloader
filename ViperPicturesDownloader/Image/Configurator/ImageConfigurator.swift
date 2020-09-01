@@ -19,7 +19,7 @@ class ImageConfigurator: ImageConfiguratorProtocol {
 		let filterCollectionDelegate = FilterCollectionViewDelegate(output: presenter)
 		let filterCollectionDataSorce = FilterCollectionViewDataSource(output: presenter)
 
-		viewController.outputView = presenter
+		viewController.output = presenter
 		viewController.moduleInput = presenter
 		presenter.interactor = interactor
 		presenter.router = router

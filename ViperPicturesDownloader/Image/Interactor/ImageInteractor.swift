@@ -10,15 +10,16 @@ import UIKit
 /// Интерактор экрана с картиной
 class ImageInteractor: ImageInteractorInput {
 
-	weak var presenter: ImageInteractorOuput!
-	var imageFilterManager: ImageFilterManagerProtocol!
-	var originImage: Image! {
+	weak var presenter: ImageInteractorOuput?
+	var imageFilterManager: ImageFilterManagerProtocol?
+	var originImage: Image? {
 		didSet {
+			guard let originImage = originImage else { return }
 			let image = originImage.image?.resizeImage(targetSize: ImageSize().size!)
 			resizedImage = Image(image: image)
 		}
 	}
-	var resizedImage: Image!
+	var resizedImage: Image?
 	var lastIndex: IndexPath?
 	var lastCustomParametrs: CustomParameters?
 
@@ -28,6 +29,7 @@ class ImageInteractor: ImageInteractorInput {
 	}
 
 	func getParamsAt(indexPath: IndexPath)->[DefaultParameters]? {
+		guard let imageFilterManager = imageFilterManager else { return nil}
 		return imageFilterManager.getParametrs(indexPath: indexPath)
 	}
 
@@ -36,6 +38,8 @@ class ImageInteractor: ImageInteractorInput {
 	}
 
 	func saveImageToLibrary() {
+		guard let originImage = originImage else { return }
+		guard let imageFilterManager = imageFilterManager else { return }
 		guard let index = lastIndex else {
 			guard let image = originImage.image else {return}
 			UIImageWriteToSavedPhotosAlbum(image, nil, nil,nil)
@@ -50,10 +54,13 @@ class ImageInteractor: ImageInteractorInput {
 	}
 
 	func originImageGet()-> Image {
+		guard let originImage = originImage else { return Image(image: nil)}
 		return originImage
 	}
 
 	func filterToImage(indexPath: IndexPath, customParametrs: CustomParameters? = nil, completion: @escaping (Image)->Void){
+		guard let imageFilterManager = imageFilterManager else { return }
+		guard let resizedImage = resizedImage else { return }
 		lastIndex = indexPath
 		lastCustomParametrs = customParametrs
 
@@ -63,10 +70,12 @@ class ImageInteractor: ImageInteractorInput {
 	}
 
 	func numberOfRows()-> Int {
+		guard let imageFilterManager = imageFilterManager else { return 0 }
 		return imageFilterManager.countFilters
 	}
 	
 	func getFilterIcon(indexPath: IndexPath)-> Image {
+		guard let imageFilterManager = imageFilterManager else { return Image(image: nil) }
 		if let imageIconModel = imageFilterManager.getFiltersIcon(indexPath: indexPath) {
 			return imageIconModel
 		} else {

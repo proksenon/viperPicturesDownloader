@@ -10,7 +10,7 @@ import UIKit
 
 final class CustomCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 
-	weak var output: CollectionViewDataSourceOutput!
+	weak var output: CollectionViewDataSourceOutput?
 
 	init(output: CollectionViewDataSourceOutput){
 		super.init()
@@ -19,11 +19,13 @@ final class CustomCollectionViewDataSource: NSObject, UICollectionViewDataSource
 
 
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		guard let output = output else { return 0 }
 		return output.numberOfRows()
 	}
 
 	func collectionView(_ collectionView: UICollectionView,
 						cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		guard let output = output else { return UICollectionViewCell() }
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell",
 													  for: indexPath) as! CustomCollectionViewCell
 		let size = CGSize(width: cell.contentView.frame.size.width,

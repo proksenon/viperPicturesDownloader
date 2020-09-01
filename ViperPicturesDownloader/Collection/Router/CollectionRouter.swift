@@ -10,7 +10,7 @@ import Foundation
 /// Роутер экрана с колекцией
 final class CollectionRouter: CollectionRouterInput {
 
-	weak var viewController: CollectionViewController!
+	weak var viewController: CollectionViewController?
 
 	init(viewController: CollectionViewController) {
 		self.viewController = viewController
@@ -20,7 +20,8 @@ final class CollectionRouter: CollectionRouterInput {
 		let nextVC = ImageViewController()
 		let configurator = ImageConfigurator()
 		configurator.configure(with: nextVC)
-		nextVC.moduleInput.configure(with: image)
-		viewController.navigationController?.pushViewController(nextVC, animated: true)
+		guard let nextVCModuleInput = nextVC.moduleInput else { return }
+		nextVCModuleInput.configure(with: image)
+		viewController?.navigationController?.pushViewController(nextVC, animated: true)
 	}
 }

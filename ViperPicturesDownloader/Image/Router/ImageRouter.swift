@@ -10,13 +10,13 @@ import Foundation
 /// Роутер экрана с картинкой
 class ImageRouter: ImageRouterInput {
 
-	weak var viewController: ImageViewController!
+	weak var viewController: ImageViewController?
 
 	init(viewController: ImageViewController) {
 		self.viewController = viewController
 	}
 
 	func pop() {
-		viewController.navigationController?.popViewController(animated: true)
+		viewController?.navigationController?.popViewController(animated: true)
 	}
 }
