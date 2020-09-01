@@ -679,7 +679,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "127"
             endingLineNumber = "127"
-            landmarkName = "getImage(indexPath:size:completion:)"
+            landmarkName = "getImage(index:size:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

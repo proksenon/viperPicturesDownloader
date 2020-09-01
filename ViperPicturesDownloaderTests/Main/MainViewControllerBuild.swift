@@ -14,7 +14,7 @@ class MainViewControllerBuild: XCTestCase {
 	func testMainViewControllerBuild() {
 		let viewController = MainViewController()
 		viewController.viewDidLoad()
-		
+		guard let viewContrrollerTable = viewController.tableView else { XCTFail(); return}
 		XCTAssertNotNil(viewController.configurator,
 						"MainViewController is nil after configuration")
 		XCTAssertNotNil(viewController.output,
@@ -31,8 +31,7 @@ class MainViewControllerBuild: XCTestCase {
 		XCTAssertTrue(presenter?.router is MainRouter,
 					  "router is not MainRouter")
 		XCTAssertNotNil(viewController.tableView, "table didnt set")
-		XCTAssertNotNil(viewController.view.subviews.contains(viewController.tableView), "table didnt add to view")
-		XCTAssertNotNil(viewController.segueToCollection, "button for collection didnt configure")
+		XCTAssertNotNil(viewController.view.subviews.contains(viewContrrollerTable), "table didnt add to view")
 		XCTAssertNotNil(viewController.navigationItem.rightBarButtonItem, "button for add urls didnt set")
 		XCTAssertNotNil(viewController.navigationItem.leftBarButtonItem, "button for collection didnt set")
 	}

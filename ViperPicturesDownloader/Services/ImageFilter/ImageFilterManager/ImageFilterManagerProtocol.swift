@@ -12,9 +12,9 @@ protocol ImageFilterManagerProtocol {
 	/// Количество фильтров
 	var countFilters: Int! { get }
 	///  Применяет фильтр к картинке
-	func apllyFilter(image: UIImage?, indexPath: IndexPath, customParametrs: CustomParameters?, completion: @escaping (UIImage?)-> Void)
+	func apllyFilter(image: UIImage?, index: Int, customParametrs: CustomParameters?, completion: @escaping (UIImage?)-> Void)
 	///  Получает стандартные параметры фильтра
-	func getParametrs(indexPath: IndexPath)-> [DefaultParameters]?
+	func getParametrs(index: Int)-> [DefaultParameters]?
 	///  Получает иконки фильтров
-	func getFiltersIcon(indexPath: IndexPath)-> Image?
+	func getFiltersIcon(index: Int)-> Image?
 }

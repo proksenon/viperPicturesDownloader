@@ -40,19 +40,19 @@ final class MainInteractor : MainInteractorInput {
 		return imageUrls
 	}
 
-	func deleteImage(indexPath: IndexPath) {
+	func deleteImage(index: Int) {
 		guard var imageUrls = imageUrls else { return }
 		guard let userDefaultsWork = userDefaultsWork else { return }
 		guard let fileProvider = fileProvider else { return }
 
-		let urlDelete = imageUrls.urls[indexPath.row]
+		let urlDelete = imageUrls.urls[index]
 		if let imagesSize = userDefaultsWork.getObject(for: urlDelete) as? [String: String] {
 			for (_, nameFile) in imagesSize {
 				fileProvider.removeFile(nameFile: nameFile, before: nil)
 			}
 		}
 		userDefaultsWork.removeObjects(urls: [urlDelete])
-		imageUrls.urls.remove(at: indexPath.row)
+		imageUrls.urls.remove(at: index)
 		self.imageUrls = imageUrls
 		saveImageUrls()
 	}
@@ -124,12 +124,12 @@ final class MainInteractor : MainInteractorInput {
 		}
 	}
 
-	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
+	func getImage(index: Int, size: ImageSize, completion: @escaping (Image)->Void) {
 		guard let imageUrls = imageUrls else { return }
 		guard let imageNameManager = imageNameManager else { return }
-		guard imageUrls.urls.count >= indexPath.row else {return}
+		guard imageUrls.urls.count >= index else {return}
 		guard let fileProvider = fileProvider else { return }
-		let url = imageUrls.urls[indexPath.row]
+		let url = imageUrls.urls[index]
 		let nameFileOrigin = imageNameManager.getNameFileImage(url: url, size: nil)
 		if fileProvider.checkDirectory(nameFile: nameFileOrigin) {
 			imageFromCache(url: url, size: size) { (image) in

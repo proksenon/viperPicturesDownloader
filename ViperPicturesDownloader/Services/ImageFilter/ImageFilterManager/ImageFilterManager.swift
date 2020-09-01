@@ -71,21 +71,21 @@ class ImageFilterManager: ImageFilterManagerProtocol {
 		countFilters = filters.count
 	}
 
-	func apllyFilter(image: UIImage?, indexPath: IndexPath, customParametrs: CustomParameters? = nil, completion: @escaping (UIImage?)-> Void) {
+	func apllyFilter(image: UIImage?, index: Int, customParametrs: CustomParameters? = nil, completion: @escaping (UIImage?)-> Void) {
 		DispatchQueue.global().async {
-			let filteredImage = self.filters[indexPath.row].filter(image, customParametrs)
+			let filteredImage = self.filters[index].filter(image, customParametrs)
 			DispatchQueue.main.async {
 				completion(filteredImage)
 			}
 		}
 	}
 
-	func getParametrs(indexPath: IndexPath)-> [DefaultParameters]?{
-		return filters[indexPath.row].parametrs
+	func getParametrs(index: Int)-> [DefaultParameters]?{
+		return filters[index].parametrs
 	}
 
-	func getFiltersIcon(indexPath: IndexPath)-> Image? {
-		return filters[indexPath.row].imageModel
+	func getFiltersIcon(index: Int)-> Image? {
+		return filters[index].imageModel
 	}
 
 }

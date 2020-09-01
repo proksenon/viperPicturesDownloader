@@ -61,7 +61,7 @@ extension ImagePresenter: ImageViewOutput{
 		guard let view = view else { return }
 		guard let indexPath = indexPath else { return }
 
-		interactor.filterToImage(indexPath: indexPath, customParametrs: customParametr) { (imageModel) in
+		interactor.filterToImage(index: indexPath.row, customParametrs: customParametr) { (imageModel) in
 			view.setImage(with: imageModel)
 		}
 	}
@@ -89,7 +89,7 @@ extension ImagePresenter: FilterCollectionViewDataSourceOutput {
 	}
 	func getFilterIcon(indexPath: IndexPath)-> Image {
 		guard let interactor = interactor else { return Image(image: nil) }
-		return interactor.getFilterIcon(indexPath: indexPath)
+		return interactor.getFilterIcon(index: indexPath.row)
 	}
 }
 // MARK: - FilterCollectionViewDelegateOutput
@@ -98,7 +98,7 @@ extension ImagePresenter: FilterCollectionViewDelegateOutput {
 	func didSelect(indexPath: IndexPath) {
 		guard let interactor = interactor else { return }
 		self.indexPath = indexPath
-		if let filterParametrs = interactor.getParamsAt(indexPath: indexPath) {
+		if let filterParametrs = interactor.getParamsAt(index: indexPath.row) {
 			let parametrs = setDefaultValue(filterParametrs: filterParametrs)
 			filterImage(customParametr: CustomParameters(parameters: parametrs))
 			showCollection(countSliders: filterParametrs.count, false)

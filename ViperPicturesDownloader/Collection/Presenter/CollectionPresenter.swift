@@ -43,7 +43,7 @@ extension CollectionPresenter: CollectionViewDataSourceOutput {
 
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
 		guard let interactor = interactor else { return }
-		interactor.getImage(indexPath: indexPath, size: size) { (image) in
+		interactor.getImage(index: indexPath.row, size: size) { (image) in
 			completion(image)
 		}
 	}

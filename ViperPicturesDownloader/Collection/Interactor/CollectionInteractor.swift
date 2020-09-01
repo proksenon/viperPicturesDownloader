@@ -42,12 +42,12 @@ final class CollectionInteractor: CollectionInteractorInput {
 		return imageUrls.urls.count
 	}
 
-	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
+	func getImage(index: Int, size: ImageSize, completion: @escaping (Image)->Void) {
 		guard let imageUrls = imageUrls else { return }
 		guard let imageNameManager = imageNameManager else { return }
 		guard let fileProvider = fileProvider else { return }
 
-		let url = imageUrls.urls[indexPath.row]
+		let url = imageUrls.urls[index]
 		let nameFileOrigin = imageNameManager.getNameFileImage(url: url, size: nil)
 		if fileProvider.checkDirectory(nameFile: nameFileOrigin) {
 			imageFromCache(url: url, size: size) { (image) in

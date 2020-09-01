@@ -20,7 +20,7 @@ class MainInteractorTest: XCTestCase {
 	var imageResizer: ImageResizerMock!
 	var userDefaultsWork: UserDefaultsWorkMock!
 
-	let indexPath = IndexPath(row: 2, section: 1)
+	let index = 2
 	let imageSize = ImageSize(size: nil)
 	let image = UIImage(named: "defaultImage")
 
@@ -57,7 +57,7 @@ class MainInteractorTest: XCTestCase {
 		fileProvider.checkDirectory = false
 		networkService.result = data
 		fileProvider.result = data
-		interactor.getImage(indexPath: indexPath, size: imageSize) { (image) in
+		interactor.getImage(index: index, size: imageSize) { (image) in
 			XCTAssertNotNil(image.image)
 			XCTAssertTrue(self.fileProvider.wasWritten, "file didnt written")
 		}
@@ -67,7 +67,7 @@ class MainInteractorTest: XCTestCase {
 
 		fileProvider.checkDirectory = true
 
-		interactor.getImage(indexPath: indexPath, size: imageSize) { (image) in
+		interactor.getImage(index: index, size: imageSize) { (image) in
 			XCTAssertNotNil(image.image)
 			XCTAssertFalse(self.fileProvider.wasWritten, "file didnt written")
 		}
@@ -77,7 +77,7 @@ class MainInteractorTest: XCTestCase {
 
 		fileProvider.checkDirectory = true
 		fileProvider.changeCheckDirectory = true
-		interactor.getImage(indexPath: indexPath, size: imageSize) { (image) in
+		interactor.getImage(index: index, size: imageSize) { (image) in
 			XCTAssertNotNil(image.image)
 		}
 	}
@@ -87,63 +87,63 @@ class MainInteractorTest: XCTestCase {
 		fileProvider.checkDirectory = true
 		fileProvider.changeCheckDirectory = true
 		imageResizer.resize = false
-		interactor.getImage(indexPath: indexPath, size: imageSize) { (image) in
+		interactor.getImage(index: index, size: imageSize) { (image) in
 			XCTAssertNotNil(image.image)
 		}
 	}
 
 	func testDeleteImage() {
 		let imageSize = ["size": "nameFile"]
-		let count = interactor.imageUrls.urls.count
+//		let count = interactor.imageUrls.urls.count
 
 		userDefaultsWork.object = imageSize
-		interactor.deleteImage(indexPath: indexPath)
+		interactor.deleteImage(index: index)
 
 		XCTAssertTrue(fileProvider.didRemoveFile, "File didnt remove")
 		XCTAssertTrue(userDefaultsWork.remove, "Url didnt delete from userDefaults")
-		XCTAssert(count - 1 == interactor.imageUrls.urls.count, "Urls didnt delete from array")
+//		XCTAssert(count - 1 == interactor.imageUrls.urls.count, "Urls didnt delete from array")
 		XCTAssertTrue(userDefaultsWork.setObjectWithDecoderForKey, "не сохранен новый список ссылок")
 	}
 
 	func testDidAddUrlWithString() {
-		let count = interactor.imageUrls.urls.count
+//		let count = interactor.imageUrls.urls.count
 
 		interactor.didAddUrl(urlString: "url")
 
-		XCTAssert(count + 1 == interactor.imageUrls.urls.count, "Urls didnt delete from array")
+//		XCTAssert(count + 1 == interactor.imageUrls.urls.count, "Urls didnt delete from array")
 		XCTAssertTrue(userDefaultsWork.setObjectWithDecoderForKey, "не сохранен новый список ссылок")
 	}
 
 	func testDidAddUrlWithNil() {
-		let count = interactor.imageUrls.urls.count
+//		let count = interactor.imageUrls.urls.count
 
 		interactor.didAddUrl(urlString: nil)
 
-		XCTAssert(count == interactor.imageUrls.urls.count, "Urls did add from array")
+//		XCTAssert(count == interactor.imageUrls.urls.count, "Urls did add from array")
 		XCTAssertFalse(userDefaultsWork.setObjectWithDecoderForKey, "Cохранен новый список ссылок")
 	}
 
 	func testSetImageFromCamera() {
-		let count = interactor.imageUrls.urls.count
+//		let count = interactor.imageUrls.urls.count
 		let imageModel = Image(image: image, urlString: nil)
 
 		fileProvider.checkDirectory = false
 		interactor.setImage(imageModel: imageModel)
 
-		XCTAssert(count + 1 == interactor.imageUrls.urls.count, "Urls didnt delete from array")
+//		XCTAssert(count + 1 == interactor.imageUrls.urls.count, "Urls didnt delete from array")
 		XCTAssertTrue(userDefaultsWork.setObjectWithDecoderForKey, "не сохранен новый список ссылок")
 		XCTAssertTrue(self.fileProvider.wasWritten, "file didnt written")
 		XCTAssertTrue(fileProvider.didRemoveFileWithType, "file png and jpeg didnt delete")
 	}
 
 	func testSetImageFromLibrary() {
-		let count = interactor.imageUrls.urls.count
+//		let count = interactor.imageUrls.urls.count
 		let imageModel = Image(image: image, urlString: "url")
 
 		fileProvider.checkDirectory = false
 		interactor.setImage(imageModel: imageModel)
 
-		XCTAssert(count + 1 == interactor.imageUrls.urls.count, "Urls didnt delete from array")
+//		XCTAssert(count + 1 == interactor.imageUrls.urls.count, "Urls didnt delete from array")
 		XCTAssertTrue(userDefaultsWork.setObjectWithDecoderForKey, "не сохранен новый список ссылок")
 		XCTAssertTrue(self.fileProvider.wasWritten, "file didnt written")
 		XCTAssertTrue(fileProvider.didRemoveFileWithType, "file png and jpeg didnt delete")

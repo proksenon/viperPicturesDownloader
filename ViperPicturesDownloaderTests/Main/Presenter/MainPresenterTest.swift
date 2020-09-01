@@ -74,9 +74,10 @@ class MainPresenterTest: XCTestCase {
 	}
 
 	func testReloadTable() {
-		presenter.view.reloadTable()
+		guard let view = presenter.view else {XCTFail(); return}
+		view.reloadTable()
 
-		XCTAssertTrue(view.didReloadTable, "Table didnt reload")
+		XCTAssertTrue(self.view.didReloadTable, "Table didnt reload")
 	}
 
 	func testGetImage() {

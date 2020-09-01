@@ -103,14 +103,14 @@ extension MainPresenter: TableViewDelegateOutput {
 		guard let interactor = interactor else { return }
 		guard let router = router else { return }
 
-		interactor.getImage(indexPath: indexPath, size: ImageSize(size: nil)) { [weak router] (image) in
+		interactor.getImage(index: indexPath.row, size: ImageSize(size: nil)) { [weak router] (image) in
 			router?.push(image: image)
 		}
 	}
 	func didDeleteImage(indexPath: IndexPath) {
 		guard let interactor = interactor else { return }
 
-		interactor.deleteImage(indexPath: indexPath)
+		interactor.deleteImage(index: indexPath.row)
 	}
 
 }
@@ -120,7 +120,7 @@ extension MainPresenter: TableViewDataSourceOutPut {
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
 		guard let interactor = interactor else { return }
 
-		interactor.getImage(indexPath: indexPath, size: size) { (image) in
+		interactor.getImage(index: indexPath.row, size: size) { (image) in
 			completion(image)
 		}
 	}

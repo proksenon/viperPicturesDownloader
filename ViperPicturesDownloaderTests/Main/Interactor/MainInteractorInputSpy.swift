@@ -15,20 +15,20 @@ class MainInteractorInputSpy: MainInteractorInput {
 	var getNumberOfRows: Bool = false
 	var didFreeStorage: Bool = false
 	var didCleanAll: Bool = false
-	var number: Int!
+	var number: Int?
 	var addUrl: Bool = false
 	var didSetImageUrls: Bool = false
 	var didsaveImageUrls: Bool = false
 	var didDeleteImage: Bool = false
 	var didSetImage: Bool = false
-	var imageUrls: ImageUrls!
+	var imageUrls: ImageUrls?
 
-	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image) -> Void) {
+	func getImage(index: Int, size: ImageSize, completion: @escaping (Image) -> Void) {
 		didGetImage = true
 		completion(Image(image: nil))
 	}
 
-	func numberOfRows() -> Int {
+	func numberOfRows() -> Int? {
 		getNumberOfRows = true
 		return number
 	}
@@ -53,7 +53,7 @@ class MainInteractorInputSpy: MainInteractorInput {
 		didsaveImageUrls = true
 	}
 
-	func deleteImage(indexPath: IndexPath) {
+	func deleteImage(index: Int) {
 		didDeleteImage = true
 	}
 
@@ -61,7 +61,7 @@ class MainInteractorInputSpy: MainInteractorInput {
 		didSetImage = true
 	}
 
-	func getImageUrls() -> ImageUrls {
+	func getImageUrls() -> ImageUrls? {
 		return imageUrls
 	}
 

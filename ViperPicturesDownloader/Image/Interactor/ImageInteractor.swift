@@ -20,7 +20,7 @@ class ImageInteractor: ImageInteractorInput {
 		}
 	}
 	private var resizedImage: Image?
-	private var lastIndex: IndexPath?
+	private var lastIndex: Int?
 	private var lastCustomParametrs: CustomParameters?
 
 	init(presenter: ImageInteractorOuput, imageFilterManager: ImageFilterManagerProtocol = ImageFilterManager()) {
@@ -28,9 +28,9 @@ class ImageInteractor: ImageInteractorInput {
 		self.imageFilterManager = imageFilterManager
 	}
 
-	func getParamsAt(indexPath: IndexPath)->[DefaultParameters]? {
+	func getParamsAt(index: Int)->[DefaultParameters]? {
 		guard let imageFilterManager = imageFilterManager else { return nil}
-		return imageFilterManager.getParametrs(indexPath: indexPath)
+		return imageFilterManager.getParametrs(index: index)
 	}
 
 	func originImageSet(image: Image) {
@@ -46,7 +46,7 @@ class ImageInteractor: ImageInteractorInput {
 			return
 		}
 
-		imageFilterManager.apllyFilter(image: originImage.image, indexPath: index, customParametrs: lastCustomParametrs) { (image) in
+		imageFilterManager.apllyFilter(image: originImage.image, index: index, customParametrs: lastCustomParametrs) { (image) in
 			if let image = image {
 				UIImageWriteToSavedPhotosAlbum(image, nil, nil,nil)
 			}
@@ -58,13 +58,13 @@ class ImageInteractor: ImageInteractorInput {
 		return originImage
 	}
 
-	func filterToImage(indexPath: IndexPath, customParametrs: CustomParameters? = nil, completion: @escaping (Image)->Void){
+	func filterToImage(index: Int, customParametrs: CustomParameters? = nil, completion: @escaping (Image)->Void){
 		guard let imageFilterManager = imageFilterManager else { return }
 		guard let resizedImage = resizedImage else { return }
-		lastIndex = indexPath
+		lastIndex = index
 		lastCustomParametrs = customParametrs
 
-		imageFilterManager.apllyFilter(image: resizedImage.image, indexPath: indexPath, customParametrs: customParametrs) { (image) in
+		imageFilterManager.apllyFilter(image: resizedImage.image, index: index, customParametrs: customParametrs) { (image) in
 			completion(Image(image: image))
 		}
 	}
@@ -74,9 +74,9 @@ class ImageInteractor: ImageInteractorInput {
 		return imageFilterManager.countFilters
 	}
 	
-	func getFilterIcon(indexPath: IndexPath)-> Image {
+	func getFilterIcon(index: Int)-> Image {
 		guard let imageFilterManager = imageFilterManager else { return Image(image: nil) }
-		if let imageIconModel = imageFilterManager.getFiltersIcon(indexPath: indexPath) {
+		if let imageIconModel = imageFilterManager.getFiltersIcon(index: index) {
 			return imageIconModel
 		} else {
 			return Image(image: nil)
