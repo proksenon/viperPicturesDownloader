@@ -9,8 +9,8 @@
 import Foundation
 import KeychainSwift
 final class KeyForEncrypte {
-	let encryption = EncryptionWork()
-	let keychain = KeychainSwift()
+	private let encryption = EncryptionWork()
+	private let keychain = KeychainSwift()
 	/// Получает ключ из хранилища
 	func getKey()-> String? {
 		if let keyForEncrypte = keychain.get("KeyForEncrypte") {

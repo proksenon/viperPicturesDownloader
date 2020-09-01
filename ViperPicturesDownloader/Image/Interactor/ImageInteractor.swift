@@ -11,17 +11,17 @@ import UIKit
 class ImageInteractor: ImageInteractorInput {
 
 	weak var presenter: ImageInteractorOuput?
-	var imageFilterManager: ImageFilterManagerProtocol?
-	var originImage: Image? {
+	private var imageFilterManager: ImageFilterManagerProtocol?
+	private var originImage: Image? {
 		didSet {
 			guard let originImage = originImage else { return }
 			let image = originImage.image?.resizeImage(targetSize: ImageSize().size!)
 			resizedImage = Image(image: image)
 		}
 	}
-	var resizedImage: Image?
-	var lastIndex: IndexPath?
-	var lastCustomParametrs: CustomParameters?
+	private var resizedImage: Image?
+	private var lastIndex: IndexPath?
+	private var lastCustomParametrs: CustomParameters?
 
 	init(presenter: ImageInteractorOuput, imageFilterManager: ImageFilterManagerProtocol = ImageFilterManager()) {
 		self.presenter = presenter

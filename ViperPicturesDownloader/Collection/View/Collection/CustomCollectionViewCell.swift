@@ -10,7 +10,7 @@ import UIKit
 
 final class CustomCollectionViewCell: UICollectionViewCell {
 	
-	var imageView = UIImageView()
+	let imageView = UIImageView()
 	let activityIndicator = UIActivityIndicatorView()
 
 	override init(frame: CGRect) {

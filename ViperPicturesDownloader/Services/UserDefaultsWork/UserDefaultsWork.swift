@@ -10,7 +10,7 @@ import Foundation
 //Данные картинок хранятся в виде [url : [size : namefile]]
 
 final class UserDefaultsWork: UserDefaultsWorkProtocol {
-	let defaults: UserDefaults
+	private let defaults: UserDefaults
 
 	init(defaults: UserDefaults = UserDefaults.standard) {
 		self.defaults = defaults

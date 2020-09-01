@@ -10,7 +10,7 @@ import UIKit
 
 final class CustomCollectionView: UICollectionView {
 
-	let flowLayout = ZoomAndSnapFlowLayout()
+	private let flowLayout = ZoomAndSnapFlowLayout()
 
 	init() {
 //		let layout = UICollectionViewFlowLayout()

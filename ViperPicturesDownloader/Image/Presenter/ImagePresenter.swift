@@ -15,7 +15,7 @@ class ImagePresenter {
 	var router: ImageRouterInput?
 	var filterCollectionDataSource: FilterCollectionViewDataSource?
 	var filterCollectionDelegate: FilterCollectionViewDelegate?
-	var indexPath: IndexPath?
+	private var indexPath: IndexPath?
 
 	init(view: ImageViewInput) {
 		self.view = view

@@ -2,9 +2,9 @@ import Foundation
 
 final class FileProvider: FileProviderProtocol {
 
-	var fileManager: FileManager
-	var tempDirectory: String
-	let limitedSizeFile = 10000000000
+	private var fileManager: FileManager
+	private var tempDirectory: String
+	let limitedSizeFile = 10000000000 //вынести в протокол, чтобы устанавливать из вне
 
 	init(fileManager: FileManager = FileManager(),
 		 tempDirectory: String = NSTemporaryDirectory()) {

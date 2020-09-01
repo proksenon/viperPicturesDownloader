@@ -1,7 +1,7 @@
 import UIKit
 
 final class ImageNameManager: ImageNameManagerProtocol {
-	var userDefaultsWork: UserDefaultsWorkProtocol
+	private var userDefaultsWork: UserDefaultsWorkProtocol
 
 	init(userDefaultsWork: UserDefaultsWorkProtocol = UserDefaultsWork()) {
 		self.userDefaultsWork = userDefaultsWork

@@ -11,13 +11,13 @@ import UIKit
 final class MainInteractor : MainInteractorInput {
 
 	weak var presenter: MainInteractorOutput?
-	var imageUrls: ImageUrls?
-	var imageNameManager: ImageNameManagerProtocol?
-	var fileProvider: FileProviderProtocol?
-	var encryptionManager: EncryptionManagerProtocol?
-	var networkService: NetworkServiceProtocol?
-	var imageResizer: ImageResizerProtocol?
-	var userDefaultsWork: UserDefaultsWorkProtocol?
+	private var imageUrls: ImageUrls?
+	private var imageNameManager: ImageNameManagerProtocol?
+	private var fileProvider: FileProviderProtocol?
+	private var encryptionManager: EncryptionManagerProtocol?
+	private var networkService: NetworkServiceProtocol?
+	private var imageResizer: ImageResizerProtocol?
+	private var userDefaultsWork: UserDefaultsWorkProtocol?
 
 	init(presenter: MainInteractorOutput,
 		 imageNameManager: ImageNameManagerProtocol = ImageNameManager(),

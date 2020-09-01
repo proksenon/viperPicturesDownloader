@@ -13,14 +13,14 @@ class ImageViewController: UIViewController {
 	var output: ImageViewOutput?
 	var moduleInput: ImageModuleInput?
 	var collectionView: UICollectionView?
-	var imageView: UIImageView?
-	var saveImageButton: UIBarButtonItem?
-	var cancelButton: UIButton?
-	var alertVC: UIAlertController?
-	var slider1: UISlider?
-	var slider2: UISlider?
-	var slider3: UISlider?
-	var sliders: [UISlider]?
+	private var imageView: UIImageView?
+	private var saveImageButton: UIBarButtonItem?
+	private var cancelButton: UIButton?
+	private var alertVC: UIAlertController?
+	private var slider1: UISlider?
+	private var slider2: UISlider?
+	private var slider3: UISlider?
+	private var sliders: [UISlider]?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()

@@ -12,11 +12,11 @@ final class CollectionInteractor: CollectionInteractorInput {
 	
 	weak var presenter: CollectionInteractorOutput?
 	var imageUrls: ImageUrls?
-	var imageNameManager: ImageNameManagerProtocol?
-	var fileProvider: FileProviderProtocol?
-	var encryptionManager: EncryptionManagerProtocol?
-	var networkService: NetworkServiceProtocol?
-	var imageResizer: ImageResizerProtocol?
+	private var imageNameManager: ImageNameManagerProtocol?
+	private var fileProvider: FileProviderProtocol?
+	private var encryptionManager: EncryptionManagerProtocol?
+	private var networkService: NetworkServiceProtocol?
+	private var imageResizer: ImageResizerProtocol?
 
 	init(presenter: CollectionInteractorOutput,
 		 imageNameManager: ImageNameManagerProtocol = ImageNameManager(),

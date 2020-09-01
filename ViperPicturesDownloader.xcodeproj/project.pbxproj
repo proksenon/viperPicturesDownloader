@@ -15,14 +15,12 @@
 		D50F508D24D851FE0042BAD2 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F508C24D851FE0042BAD2 /* NetworkService.swift */; };
 		D50F509624D8523B0042BAD2 /* ImageNameManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F508F24D8523A0042BAD2 /* ImageNameManagerProtocol.swift */; };
 		D50F509724D8523B0042BAD2 /* FileProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F509024D8523A0042BAD2 /* FileProviderProtocol.swift */; };
-		D50F509824D8523B0042BAD2 /* ImageProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F509124D8523A0042BAD2 /* ImageProviderProtocol.swift */; };
 		D50F509924D8523B0042BAD2 /* ImageResizerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F509224D8523A0042BAD2 /* ImageResizerProtocol.swift */; };
 		D50F509C24D8523B0042BAD2 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F509524D8523B0042BAD2 /* NetworkServiceProtocol.swift */; };
 		D50F50A524D852A30042BAD2 /* UserDefaultsWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F509E24D852A20042BAD2 /* UserDefaultsWork.swift */; };
 		D50F50A724D852A30042BAD2 /* FileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50A024D852A20042BAD2 /* FileProvider.swift */; };
 		D50F50A824D852A30042BAD2 /* ImageNameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50A124D852A30042BAD2 /* ImageNameManager.swift */; };
 		D50F50A924D852A30042BAD2 /* ZoomAndSnapFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50A224D852A30042BAD2 /* ZoomAndSnapFlowLayout.swift */; };
-		D50F50AA24D852A30042BAD2 /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50A324D852A30042BAD2 /* ImageProvider.swift */; };
 		D50F50AB24D852A30042BAD2 /* ImageResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50A424D852A30042BAD2 /* ImageResizer.swift */; };
 		D50F50AF24D8530A0042BAD2 /* UIImageResizeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50AE24D8530A0042BAD2 /* UIImageResizeExtension.swift */; };
 		D50F50B124D853880042BAD2 /* CGSizeStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F50B024D853880042BAD2 /* CGSizeStringExtension.swift */; };
@@ -156,14 +154,12 @@
 		D50F508C24D851FE0042BAD2 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D50F508F24D8523A0042BAD2 /* ImageNameManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageNameManagerProtocol.swift; sourceTree = "<group>"; };
 		D50F509024D8523A0042BAD2 /* FileProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileProviderProtocol.swift; sourceTree = "<group>"; };
-		D50F509124D8523A0042BAD2 /* ImageProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProviderProtocol.swift; sourceTree = "<group>"; };
 		D50F509224D8523A0042BAD2 /* ImageResizerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageResizerProtocol.swift; sourceTree = "<group>"; };
 		D50F509524D8523B0042BAD2 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		D50F509E24D852A20042BAD2 /* UserDefaultsWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsWork.swift; sourceTree = "<group>"; };
 		D50F50A024D852A20042BAD2 /* FileProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileProvider.swift; sourceTree = "<group>"; };
 		D50F50A124D852A30042BAD2 /* ImageNameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageNameManager.swift; sourceTree = "<group>"; };
 		D50F50A224D852A30042BAD2 /* ZoomAndSnapFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomAndSnapFlowLayout.swift; sourceTree = "<group>"; };
-		D50F50A324D852A30042BAD2 /* ImageProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
 		D50F50A424D852A30042BAD2 /* ImageResizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageResizer.swift; sourceTree = "<group>"; };
 		D50F50AE24D8530A0042BAD2 /* UIImageResizeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageResizeExtension.swift; sourceTree = "<group>"; };
 		D50F50B024D853880042BAD2 /* CGSizeStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSizeStringExtension.swift; sourceTree = "<group>"; };
@@ -332,7 +328,6 @@
 				D50F50B224D853920042BAD2 /* Encryption */,
 				D50F516524E15A040042BAD2 /* FileProvider */,
 				D50F516624E15A140042BAD2 /* ImageNameManager */,
-				D50F516724E15A230042BAD2 /* ImageProvide */,
 				D50F516824E15A300042BAD2 /* ImageResizer */,
 				D50F516B24E15A630042BAD2 /* UserDefaultsWork */,
 				D5581A8724E7170B00958537 /* ImageFilter */,
@@ -560,15 +555,6 @@
 				D50F508F24D8523A0042BAD2 /* ImageNameManagerProtocol.swift */,
 			);
 			path = ImageNameManager;
-			sourceTree = "<group>";
-		};
-		D50F516724E15A230042BAD2 /* ImageProvide */ = {
-			isa = PBXGroup;
-			children = (
-				D50F50A324D852A30042BAD2 /* ImageProvider.swift */,
-				D50F509124D8523A0042BAD2 /* ImageProviderProtocol.swift */,
-			);
-			path = ImageProvide;
 			sourceTree = "<group>";
 		};
 		D50F516824E15A300042BAD2 /* ImageResizer */ = {
@@ -1136,7 +1122,6 @@
 				D58BAC6124EFBE70006A3DB4 /* AlertHelperProtocol.swift in Sources */,
 				D50F518B24E181360042BAD2 /* CollectionInteractorInput.swift in Sources */,
 				D56A290524D42DEB00178564 /* AppDelegate.swift in Sources */,
-				D50F509824D8523B0042BAD2 /* ImageProviderProtocol.swift in Sources */,
 				D50F50DB24DAE5150042BAD2 /* CollectionConfigurator.swift in Sources */,
 				D56A290724D42DEB00178564 /* SceneDelegate.swift in Sources */,
 				D56A291C24D431FF00178564 /* MainInteractor.swift in Sources */,
@@ -1183,7 +1168,6 @@
 				D50F50B824D853C20042BAD2 /* EncryptionWork.swift in Sources */,
 				D50F50C524DAB57A0042BAD2 /* ImagePresenter.swift in Sources */,
 				D50F518324E17DC00042BAD2 /* CollectionViewInput.swift in Sources */,
-				D50F50AA24D852A30042BAD2 /* ImageProvider.swift in Sources */,
 				D55FB18724EAA62800BF0249 /* FilterCollectionView.swift in Sources */,
 				D55FB19024EAA9DB00BF0249 /* FilterCollectionDataSourceOutput.swift in Sources */,
 				D5C765D724F3F6BB00495553 /* CollectionModuleOutput.swift in Sources */,

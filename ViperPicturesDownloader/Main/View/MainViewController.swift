@@ -13,11 +13,11 @@ final class MainViewController: UIViewController {
 	var output: MainViewOutput?
 	var configurator: MainConfiguratorProtocol?
 	var tableView: UITableView?
-	var alertVC: UIAlertController?
-	var alertHelper: AlertHelperProtocol?
-	var addUrlButton: UIBarButtonItem?
+	private var alertVC: UIAlertController?
+	private var alertHelper: AlertHelperProtocol?
+	private var addUrlButton: UIBarButtonItem?
 	/// кнопка segueToCollection переход на колекшн вью
-	var segueToCollection: UIBarButtonItem?
+	private var segueToCollection: UIBarButtonItem?
 
 	init(configurator: MainConfiguratorProtocol = MainConfigurator()) {
 		super.init(nibName: nil, bundle: nil)

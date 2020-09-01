@@ -1,8 +1,8 @@
 import Foundation
 
 final class NetworkService: NetworkServiceProtocol {
-	var session: URLSession
-	var dispatchQueue: DispatchQueue
+	private var session: URLSession
+	private var dispatchQueue: DispatchQueue
 
 	init(session: URLSession = URLSession.shared, dispatchQueue: DispatchQueue = DispatchQueue.main) {
 		self.session = session
