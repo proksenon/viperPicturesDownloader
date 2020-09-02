@@ -17,6 +17,6 @@ class GaussianBlurFilter: ImageFilterProtocol {
 
 	var parametrsForSliders: [ParametersForSlider]? = [ParametersForSlider(key: kCIInputRadiusKey, startValue: 0, endValue: 100, defaultValue: 2.5)]
 
-	var defaultParametrs: [DefParameter]? = [DefParameter(key: kCIInputRadiusKey, value: 2.5)]
+	var defaultParametrs: [FilterParameter]? = [FilterParameter(key: kCIInputRadiusKey, value: 2.5)]
 
 }

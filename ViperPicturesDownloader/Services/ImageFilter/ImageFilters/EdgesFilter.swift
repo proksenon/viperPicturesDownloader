@@ -17,7 +17,7 @@ class EdgesFilter: ImageFilterProtocol {
 
 	var parametrsForSliders: [ParametersForSlider]? = [ParametersForSlider(key: kCIInputIntensityKey, startValue: 0, endValue: 100, defaultValue: 20)]
 
-	var defaultParametrs: [DefParameter]? = [DefParameter(key: kCIInputIntensityKey, value: 20)]
+	var defaultParametrs: [FilterParameter]? = [FilterParameter(key: kCIInputIntensityKey, value: 20)]
 
 	
 }

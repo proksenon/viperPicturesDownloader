@@ -15,10 +15,8 @@ class ImagePresenter {
 	var router: ImageRouterInput?
 	var filterCollectionDataSource: FilterCollectionViewDataSource?
 	var filterCollectionDelegate: FilterCollectionViewDelegate?
-	private var indexPath: IndexPath?
-	var currentFilterName: String?
-	var customParameters: NewFilterParameters?
-	var valuesFromSliders: [String: Any]?
+	private var valuesFromSliders: [String: Any]?
+	private var filters: [ImageFilterProtocol]
 	private var originImage: Image? {
 		didSet {
 			guard let originImage = originImage else { return }
@@ -27,9 +25,19 @@ class ImagePresenter {
 		}
 	}
 	private var resizedImage: Image?
+	private var lastFilterSettings: FilterSettings?
 
 	init(view: ImageViewInput) {
 		self.view = view
+		filters = [SepiaToneFilter(), ColorControlsFilter(), WithoutFilter(), NoirFilter(), EdgesFilter(), GaussianBlurFilter(), PinkCrossPolynomial(), SpotColorFilter()]
+	}
+	///		Значения фильтра для слайдеров
+	private func getParamsForSlider(index: Int) -> [ParametersForSlider]?  {
+		return filters[index].getParametrsForSliders()
+	}
+	///		Настройки фильтра
+	private func getFilterSettings(index: Int)-> FilterSettings? {
+		return filters[index].getFilterSettings()
 	}
 }
 
@@ -38,13 +46,13 @@ extension ImagePresenter: ImageViewOutput{
 
 	func configureView() {
 		guard let view = view else { return }
-		guard let interactor = interactor else { return }
+		guard let originImage = originImage else { return }
 
 		view.setUpImageView()
 		view.configureImageView()
 		view.setUpCollection()
 		view.constraintCollection()
-		view.setImage(with: interactor.originImageGet())
+		view.setImage(with: originImage)
 		view.backgroundColor()
 		view.setUpSaveButton()
 		view.setupSliders()
@@ -64,28 +72,30 @@ extension ImagePresenter: ImageViewOutput{
 	func saveImageToLibrary() {
 		guard let interactor = interactor else { return }
 
-		interactor.saveImageToLibrary()
+		interactor.saveImageToLibrary(imageModel: originImage, filterSettings: lastFilterSettings)
 	}
 
-	func newFilterImage(customParametr: NewFilterParameters?) {
-		guard let interactor = interactor else { return }
+	func newFilterImage(filterSettings: FilterSettings?) {
+		guard let interactor = interactor, let resizedImage = resizedImage else { return }
 		guard let view = view else { return }
-		guard let indexPath = indexPath else { return }
 
-		interactor.newFilterToImage(index: indexPath.row, parameters: customParametr) { (imageModel) in
+		interactor.newFilterToImage(imageModel: resizedImage, filterSettings: filterSettings) { (imageModel) in
 			view.setImage(with: imageModel)
 		}
 	}
 	func didChangeFiltersParameters(key: String, value: Any) {
 		guard var valuesFromSliders = valuesFromSliders else { return }
+		guard let lastFilterParameters = lastFilterSettings else { return }
 
 		valuesFromSliders[key] = value
 		self.valuesFromSliders = valuesFromSliders
-		var defParams: [DefParameter] = []
+		var filterParameters: [FilterParameter] = []
 		for (key, value) in valuesFromSliders {
-			defParams.append(DefParameter(key: key, value: value))
+			filterParameters.append(FilterParameter(key: key, value: value))
 		}
-		newFilterImage(customParametr: NewFilterParameters(name: currentFilterName!, parameters: defParams))
+		let fillterSettings = FilterSettings(name: lastFilterParameters.name, parameters: filterParameters)
+		self.lastFilterSettings = fillterSettings
+		newFilterImage(filterSettings: fillterSettings)
 	}
 
 	func hidenSlidersAndShowCollection() {
@@ -106,40 +116,33 @@ extension ImagePresenter: ImageInteractorOuput {}
 extension ImagePresenter: FilterCollectionViewDataSourceOutput {
 
 	func numberOfRows() -> Int {
-		guard let interactor = interactor else { return 0 }
-		return interactor.newNumberOfRows()
+		return filters.count
 	}
 
 	func getFilterIcon(indexPath: IndexPath)-> Image {
-		guard let interactor = interactor else { return Image(image: nil) }
-		return interactor.newGetFilterIcon(index: indexPath.row)
+		let filter = filters[indexPath.row]
+		return Image(image: filter.iconFilter, description: filter.displayName)
 	}
+
 }
 // MARK: - FilterCollectionViewDelegateOutput
 extension ImagePresenter: FilterCollectionViewDelegateOutput {
 
 	func newDidSelect(indexPath: IndexPath) {
-		guard let interactor = interactor else { return }
-		self.indexPath = indexPath
-		if let filterParameters = interactor.getParamsForSlider(index: indexPath.row) {
+		if let filterParametersForSlider = getParamsForSlider(index: indexPath.row) {
 			valuesFromSliders = [:]
-			newSetDefaultValue(filterParametrs: filterParameters)
-			let defaultParameters = interactor.getDefaultParameters(index: indexPath.row)
-			currentFilterName = defaultParameters?.name
-			customParameters = defaultParameters
-			newFilterImage(customParametr: defaultParameters)
-			showCollection(countSliders: filterParameters.count, false)
-		} else {
-			let defaultParameters = interactor.getDefaultParameters(index: indexPath.row)
-			currentFilterName = defaultParameters?.name
-			newFilterImage(customParametr: defaultParameters)
+			newSetDefaultValue(filterParametersForSlider: filterParametersForSlider)
+			showCollection(countSliders: filterParametersForSlider.count, false)
 		}
+		let defaultFilterSettings = getFilterSettings(index: indexPath.row)
+		lastFilterSettings = defaultFilterSettings
+		newFilterImage(filterSettings: defaultFilterSettings)
 	}
 
-	private func newSetDefaultValue(filterParametrs: [ParametersForSlider]) {
+	private func newSetDefaultValue(filterParametersForSlider: [ParametersForSlider]) {
 		guard let view = view else { return }
 		guard var valuesFromSliders = valuesFromSliders else { return }
-		for (index, parameter) in filterParametrs.enumerated() {
+		for (index, parameter) in filterParametersForSlider.enumerated() {
 			print("defValue \(parameter.defaultValue)")
 			view.newSetDefaultValueToSlider(sliderNubmer: index,
 											minValue: parameter.startValue,

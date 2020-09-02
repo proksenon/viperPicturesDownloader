@@ -18,6 +18,6 @@ class SepiaToneFilter: ImageFilterProtocol {
 
 	let parametrsForSliders: [ParametersForSlider]? = [ParametersForSlider(key: kCIInputIntensityKey, startValue: 0.0, endValue: 1.0, defaultValue: 0.3)]
 
-	var defaultParametrs: [DefParameter]? = [DefParameter(key: kCIInputIntensityKey, value: 0.3)]
+	var defaultParametrs: [FilterParameter]? = [FilterParameter(key: kCIInputIntensityKey, value: 0.3)]
 
 }

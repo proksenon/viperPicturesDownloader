@@ -21,8 +21,8 @@ class ColorControlsFilter: ImageFilterProtocol {
 													   ParametersForSlider(key: kCIInputSaturationKey, startValue: 0.0, endValue: 100.0, defaultValue: 5.0),
 													   ParametersForSlider(key: kCIInputContrastKey, startValue: 0.0, endValue: 1.0, defaultValue: 1.0)]
 
-	var defaultParametrs: [DefParameter]? = [DefParameter(key: kCIInputBrightnessKey, value: 0.0),
-											 DefParameter(key: kCIInputSaturationKey, value: 5.0),
-											 DefParameter(key: kCIInputContrastKey, value: 1.0)]
+	var defaultParametrs: [FilterParameter]? = [FilterParameter(key: kCIInputBrightnessKey, value: 0.0),
+											 FilterParameter(key: kCIInputSaturationKey, value: 5.0),
+											 FilterParameter(key: kCIInputContrastKey, value: 1.0)]
 	
 }

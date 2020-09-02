@@ -17,6 +17,6 @@ class WithoutFilter: ImageFilterProtocol {
 
 	var parametrsForSliders: [ParametersForSlider]?
 
-	var defaultParametrs: [DefParameter]?
+	var defaultParametrs: [FilterParameter]?
 
 }

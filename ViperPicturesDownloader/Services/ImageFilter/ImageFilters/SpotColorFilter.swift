@@ -19,21 +19,21 @@ class SpotColorFilter: ImageFilterProtocol {
 													   ParametersForSlider(key: "inputCloseness2", startValue: 0.0, endValue: 1.0, defaultValue: 1),
 													   ParametersForSlider(key: "inputCloseness3", startValue: 0.0, endValue: 1.0, defaultValue: 1)]
 
-	var defaultParametrs: [DefParameter]? = [
-		DefParameter(key: "inputCenterColor1", value: CIColor.green),
-		DefParameter(key: "inputReplacementColor1", value: CIColor.red),
-		DefParameter(key: "inputCloseness1", value: 1),
-		DefParameter(key: "inputContrast1", value: 1),
+	var defaultParametrs: [FilterParameter]? = [
+		FilterParameter(key: "inputCenterColor1", value: CIColor.green),
+		FilterParameter(key: "inputReplacementColor1", value: CIColor.red),
+		FilterParameter(key: "inputCloseness1", value: 1),
+		FilterParameter(key: "inputContrast1", value: 1),
 
-		DefParameter(key: "inputCenterColor2", value: CIColor.red),
-		DefParameter(key: "inputReplacementColor2", value: CIColor.blue),
-		DefParameter(key: "inputCloseness2", value: 1),
-		DefParameter(key: "inputContrast2", value: 1),
+		FilterParameter(key: "inputCenterColor2", value: CIColor.red),
+		FilterParameter(key: "inputReplacementColor2", value: CIColor.blue),
+		FilterParameter(key: "inputCloseness2", value: 1),
+		FilterParameter(key: "inputContrast2", value: 1),
 
-		DefParameter(key: "inputCenterColor3", value: CIColor.blue),
-		DefParameter(key: "inputReplacementColor3", value: CIColor.green),
-		DefParameter(key: "inputCloseness3", value: 1),
-		DefParameter(key: "inputContrast3", value: 1),
+		FilterParameter(key: "inputCenterColor3", value: CIColor.blue),
+		FilterParameter(key: "inputReplacementColor3", value: CIColor.green),
+		FilterParameter(key: "inputCloseness3", value: 1),
+		FilterParameter(key: "inputContrast3", value: 1),
 
 	]
 

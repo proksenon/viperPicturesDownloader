@@ -17,10 +17,10 @@ class PinkCrossPolynomial: ImageFilterProtocol {
 
 	var parametrsForSliders: [ParametersForSlider]?
 
-	var defaultParametrs: [DefParameter]? = [
-		DefParameter(key: "inputRedCoefficients", value: CIVector(values: [1, 1, 0, 0, 0, 0, 0, 0, 0, 0], count: 10)),
-		DefParameter(key: "inputGreenCoefficients", value: CIVector(values: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0], count: 10)),
-		DefParameter(key: "inputBlueCoefficients", value: CIVector(values: [1, 0, 1, 0, 0, 0, 0, 0, 0, 0], count: 10))]
+	var defaultParametrs: [FilterParameter]? = [
+		FilterParameter(key: "inputRedCoefficients", value: CIVector(values: [1, 1, 0, 0, 0, 0, 0, 0, 0, 0], count: 10)),
+		FilterParameter(key: "inputGreenCoefficients", value: CIVector(values: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0], count: 10)),
+		FilterParameter(key: "inputBlueCoefficients", value: CIVector(values: [1, 0, 1, 0, 0, 0, 0, 0, 0, 0], count: 10))]
 
 	
 }

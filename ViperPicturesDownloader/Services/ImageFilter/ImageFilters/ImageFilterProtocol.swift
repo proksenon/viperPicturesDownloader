@@ -13,17 +13,15 @@ protocol ImageFilterProtocol {
 	var iconFilter: UIImage? { get set }
 	var displayName: String? { get }
 	var parametrsForSliders: [ParametersForSlider]? { get }
-	var defaultParametrs: [DefParameter]? { get }
-
-	func getParametrsForSliders() -> [ParametersForSlider]?
-	func getParametersForFilter()-> NewFilterParameters
+	var defaultParametrs: [FilterParameter]? { get }
 }
+
 extension ImageFilterProtocol {
 	func getParametrsForSliders() -> [ParametersForSlider]? {
 		return parametrsForSliders
 	}
 
-	func getParametersForFilter() -> NewFilterParameters {
-		return NewFilterParameters(name: name, parameters: defaultParametrs)
+	func getFilterSettings() -> FilterSettings {
+		return FilterSettings(name: name, parameters: defaultParametrs)
 	}
 }

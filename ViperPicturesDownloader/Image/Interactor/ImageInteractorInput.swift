@@ -10,19 +10,7 @@ import UIKit
 
 protocol ImageInteractorInput: class {
 	///  Обращается к менеджеру фильтров, и применяет фильтр
-	func newFilterToImage(index: Int, parameters: NewFilterParameters?, completion: @escaping (Image)->Void)
-	///  Устанавливает оригинальную картинку
-	func originImageSet(image: Image)
+	func newFilterToImage(imageModel: Image, filterSettings: FilterSettings?, completion: @escaping (Image)->Void)
 	///  Сохраняет картинку в библиотеку
-	func saveImageToLibrary()
-	///  Возвращает оригинальную картинку
-	func originImageGet()-> Image
-	///  Количество фильтров
-	func newNumberOfRows() -> Int
-	///  Возвращает иконки фильтров
-	func newGetFilterIcon(index: Int)-> Image
-	///  Возвращает значения для слайдеров
-	func getParamsForSlider(index: Int) -> [ParametersForSlider]?
-	///  Возвращает настройки Фильтра
-	func getDefaultParameters(index: Int)-> NewFilterParameters?
+	func saveImageToLibrary(imageModel: Image?, filterSettings: FilterSettings?)
 }
