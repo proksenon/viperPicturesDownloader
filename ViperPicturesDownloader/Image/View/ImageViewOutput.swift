@@ -16,7 +16,9 @@ protocol ImageViewOutput: class {
 	///  Сохраняет картинку в библиотеку
 	func saveImageToLibrary()
 	///  Вызывает фильтр с пользовательскими параметрами
-	func filterImage(customParametr: CustomParameters?)
+	func newFilterImage(customParametr: NewFilterParameters?)
 	///  Скрывает слайдеры и показывает колекшнвью с фильтрами
-	func hidenSlidersAndShowCollection() 
+	func hidenSlidersAndShowCollection()
+	///  Изменяет параметры фильтра
+	func didChangeFiltersParameters(key: String, value: Any)
 }

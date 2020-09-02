@@ -440,8 +440,8 @@
             filePath = "ViperPicturesDownloader/Image/Presenter/ImagePresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "configureView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -456,8 +456,10 @@
             filePath = "ViperPicturesDownloader/Image/Presenter/ImagePresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135">
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "ImagePresenter"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -474,69 +476,6 @@
             endingLineNumber = "35"
             landmarkName = "backgroundColor()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "76AFF321-6EF8-4275-BC53-6551C2ABB1E0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViperPicturesDownloader/Image/Interactor/ImageInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "ImageInteractor"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "76AFF321-6EF8-4275-BC53-6551C2ABB1E0 - f93175893c74beb0"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "default argument 1 of ViperPicturesDownloader.ImageInteractor.init(presenter: ViperPicturesDownloader.ImageInteractorOuput, filter: ViperPicturesDownloader.ImageFilter) -&gt; ViperPicturesDownloader.ImageInteractor"
-                  moduleName = "ViperPicturesDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a18579132/Documents/descriptionViperDonloader/ViperPicturesDownloader/Image/Interactor/ImageInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  uuid = "76AFF321-6EF8-4275-BC53-6551C2ABB1E0 - e403ca239ebfa0d"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ViperPicturesDownloader.ImageInteractor.__allocating_init(presenter: ViperPicturesDownloader.ImageInteractorOuput, filter: ViperPicturesDownloader.ImageFilter) -&gt; ViperPicturesDownloader.ImageInteractor"
-                  moduleName = "ViperPicturesDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a18579132/Documents/descriptionViperDonloader/ViperPicturesDownloader/Image/Interactor/ImageInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  uuid = "76AFF321-6EF8-4275-BC53-6551C2ABB1E0 - 1c72da914949ec9c"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ViperPicturesDownloader.ImageInteractor.init(presenter: ViperPicturesDownloader.ImageInteractorOuput, filter: ViperPicturesDownloader.ImageFilter) -&gt; ViperPicturesDownloader.ImageInteractor"
-                  moduleName = "ViperPicturesDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a18579132/Documents/descriptionViperDonloader/ViperPicturesDownloader/Image/Interactor/ImageInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "156">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -696,54 +635,6 @@
             startingLineNumber = "16"
             endingLineNumber = "16"
             landmarkName = "inputToOutputImage(currentFilter:imageOrientetion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1F577E48-E69F-4F92-990C-9D2AA6C466E8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViperPicturesDownloader/Image/View/ImageViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "sliderAction(sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "04874D88-7E36-4A4C-B829-E136D5ADEB3C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViperPicturesDownloader/Image/Presenter/ImagePresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "didSelect(indexPath:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3DC01D63-52B4-4B8E-B7F0-D51B28BBE055"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViperPicturesDownloader/Image/Presenter/ImagePresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "didSelect(indexPath:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -910,54 +801,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7E44F3E8-875D-48B0-92AC-EAC2F6FA2311"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViperPicturesDownloader/Image/Presenter/ImagePresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "filterImage(customParametr:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7E44F3E8-875D-48B0-92AC-EAC2F6FA2311 - 95bc1f3a8cd42f8f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ViperPicturesDownloader.ImagePresenter.filterImage(customParametr: Swift.Optional&lt;ViperPicturesDownloader.CustomParametrs&gt;) -&gt; ()"
-                  moduleName = "ViperPicturesDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a18579132/Documents/descriptionViperDonloader/ViperPicturesDownloader/Image/Presenter/ImagePresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "138">
-               </Location>
-               <Location
-                  uuid = "7E44F3E8-875D-48B0-92AC-EAC2F6FA2311 - 29f194bdee449236"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (ViperPicturesDownloader.Image) -&gt; () in ViperPicturesDownloader.ImagePresenter.filterImage(customParametr: Swift.Optional&lt;ViperPicturesDownloader.CustomParametrs&gt;) -&gt; ()"
-                  moduleName = "ViperPicturesDownloader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a18579132/Documents/descriptionViperDonloader/ViperPicturesDownloader/Image/Presenter/ImagePresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "87">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "F05E48EB-440E-4A2A-BF12-3D4E2F9A3FF3"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1080,6 +923,102 @@
             startingLineNumber = "32"
             endingLineNumber = "32"
             landmarkName = "tableView(_:editActionsForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "067E4EEA-B92F-4300-8633-DD0934DE47F7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloader/Services/ImageFilter/ImageFilterManager/NewImageFilterManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "applyFilter(image:parameters:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9BA20883-AB56-48FF-A585-4F215BCA88AB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloader/Image/View/ImageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "sliderAction(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5B43742C-5A49-4C2F-864F-3B6BC3F33421"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloader/Image/Presenter/ImagePresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "didChangeFiltersParameters(key:value:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7401C02A-04E3-4465-9CBE-4925A19E6875"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloader/Image/Presenter/ImagePresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "saveImageToLibrary()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9B948C1-B48C-480A-9E4C-52E848E83052"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloader/Image/Presenter/ImagePresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "ImagePresenter"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F83B7BD0-30F9-49B6-9652-DF0551809E40"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloader/Image/Presenter/ImagePresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "newFilterImage(customParametr:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

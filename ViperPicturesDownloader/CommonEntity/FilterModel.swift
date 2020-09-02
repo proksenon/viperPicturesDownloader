@@ -12,6 +12,11 @@ import UIKit
 struct Filter {
 	var filter: (UIImage?, CustomParameters?)->UIImage?
 	var imageModel: Image?
-	var parametrs: [DefaultParameters]?
+	var parametrs: [ParametersForSlider]?
 
+}
+
+struct NewFilterParameters {
+	let name: String
+	let parameters: [DefParameter]?
 }

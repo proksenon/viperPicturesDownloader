@@ -100,9 +100,9 @@ extension ImageViewController: ImageViewInput {
 		slider.topAnchor.constraint(equalTo: topConstrantTo.bottomAnchor, constant: constant).isActive = true
 	}
 
-	func setDefaultValueToSlider(sliderNubmer: Int, minValue: Float, maxValue: Float, defaultValue: Float) {
+	func newSetDefaultValueToSlider(sliderNubmer: Int, minValue: Float, maxValue: Float, defaultValue: Float, identifier: String) {
 		guard let sliders = sliders else { return }
-
+		sliders[sliderNubmer].accessibilityIdentifier = identifier
 		sliders[sliderNubmer].maximumValue = maxValue
 		sliders[sliderNubmer].minimumValue = minValue
 		sliders[sliderNubmer].setValue(defaultValue, animated: true)
@@ -110,9 +110,8 @@ extension ImageViewController: ImageViewInput {
 
 	@IBAction func sliderAction(sender: UISlider) {
 		guard let output = output else { return }
-		guard let slider1 = slider1, let slider2 = slider2, let slider3 = slider3 else { return }
-
-		output.filterImage(customParametr: CustomParameters(parameters: [slider1.value, slider2.value, slider3.value]))
+		guard let identifier = sender.accessibilityIdentifier else {return}
+		output.didChangeFiltersParameters(key: identifier, value: sender.value)
 	}
 
 	func isHiddenSliders(count: Int, _ isHidden: Bool) {
@@ -145,6 +144,7 @@ extension ImageViewController: ImageViewInput {
 
 		imageView.image = image.image
 	}
+
 	// MARK: - CollectionView
 	func setUpCollection() {
 		guard let collectionView = collectionView else { return }

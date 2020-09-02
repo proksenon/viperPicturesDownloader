@@ -12,3 +12,11 @@ import Foundation
 struct CustomParameters {
 	var parameters: [Float]
 }
+
+struct FilterParameters {
+	var parameters: [String: Any]
+}
+struct DefParameter {
+	var key: String
+	var value: Any
+}

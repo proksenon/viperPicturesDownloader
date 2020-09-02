@@ -9,7 +9,8 @@
 import Foundation
 
 ///		Модель параметров фильтра картинки
-struct DefaultParameters {
+struct ParametersForSlider {
+	var key: String
 	var startValue: Float
 	var	endValue: Float
 	var defaultValue: Float

@@ -21,36 +21,43 @@ class ImageInteractor: ImageInteractorInput {
 	}
 	private var resizedImage: Image?
 	private var lastIndex: Int?
-	private var lastCustomParametrs: CustomParameters?
+	private var lastCustomParametrs: NewFilterParameters?
+	let colorFilter: ImageFilterProtocol = ColorControlsFilter()
+	let sepiaToneFilter: ImageFilterProtocol = SepiaToneFilter()
+	var filters: [ImageFilterProtocol]!
+	let newImageFilter = NewImageFilterManager()
 
-	init(presenter: ImageInteractorOuput, imageFilterManager: ImageFilterManagerProtocol = ImageFilterManager()) {
+	init(presenter: ImageInteractorOuput) {
 		self.presenter = presenter
-		self.imageFilterManager = imageFilterManager
+		filters = [SepiaToneFilter(), ColorControlsFilter(), WithoutFilter(), NoirFilter(), EdgesFilter(), GaussianBlurFilter(), PinkCrossPolynomial(), SpotColorFilter()]
 	}
 
-	func getParamsAt(index: Int)->[DefaultParameters]? {
-		guard let imageFilterManager = imageFilterManager else { return nil}
-		return imageFilterManager.getParametrs(index: index)
+	func getParamsForSlider(index: Int) -> [ParametersForSlider]?  {
+		return filters[index].getParametrsForSliders()
 	}
 
+	func getDefaultParameters(index: Int)-> NewFilterParameters? {
+		return filters[index].getParametersForFilter()
+	}
+//
 	func originImageSet(image: Image) {
 		originImage = image
 	}
 
 	func saveImageToLibrary() {
-		guard let originImage = originImage else { return }
-		guard let imageFilterManager = imageFilterManager else { return }
-		guard let index = lastIndex else {
-			guard let image = originImage.image else {return}
-			UIImageWriteToSavedPhotosAlbum(image, nil, nil,nil)
-			return
-		}
-
-		imageFilterManager.apllyFilter(image: originImage.image, index: index, customParametrs: lastCustomParametrs) { (image) in
-			if let image = image {
-				UIImageWriteToSavedPhotosAlbum(image, nil, nil,nil)
-			}
-		}
+//		guard let originImage = originImage else { return }
+//		guard let imageFilterManager = imageFilterManager else { return }
+//		guard let index = lastIndex else {
+//			guard let image = originImage.image else {return}
+//			UIImageWriteToSavedPhotosAlbum(image, nil, nil,nil)
+//			return
+//		}
+//
+//		imageFilterManager.apllyFilter(image: originImage.image, index: index, customParametrs: lastCustomParametrs) { (image) in
+//			if let image = image {
+//				UIImageWriteToSavedPhotosAlbum(image, nil, nil,nil)
+//			}
+//		}
 	}
 
 	func originImageGet()-> Image {
@@ -58,28 +65,23 @@ class ImageInteractor: ImageInteractorInput {
 		return originImage
 	}
 
-	func filterToImage(index: Int, customParametrs: CustomParameters? = nil, completion: @escaping (Image)->Void){
-		guard let imageFilterManager = imageFilterManager else { return }
-		guard let resizedImage = resizedImage else { return }
-		lastIndex = index
-		lastCustomParametrs = customParametrs
-
-		imageFilterManager.apllyFilter(image: resizedImage.image, index: index, customParametrs: customParametrs) { (image) in
-			completion(Image(image: image))
+	func newFilterToImage(index: Int, parameters: NewFilterParameters?, completion: @escaping (Image)->Void) {
+//		lastIndex = index
+//		lastCustomParametrs = parameters
+		DispatchQueue.global().async {
+			let filteredImage = self.newImageFilter.applyFilter(image: self.resizedImage?.image, parameters: parameters)
+			DispatchQueue.main.async {
+				completion(Image(image: filteredImage))
+			}
 		}
+
 	}
 
-	func numberOfRows()-> Int {
-		guard let imageFilterManager = imageFilterManager else { return 0 }
-		return imageFilterManager.countFilters
+	func newNumberOfRows() -> Int {
+		return filters.count
 	}
-	
-	func getFilterIcon(index: Int)-> Image {
-		guard let imageFilterManager = imageFilterManager else { return Image(image: nil) }
-		if let imageIconModel = imageFilterManager.getFiltersIcon(index: index) {
-			return imageIconModel
-		} else {
-			return Image(image: nil)
-		}
+
+	func newGetFilterIcon(index: Int)-> Image {
+		Image(image: filters[index].iconFilter, description: filters[index].displayName)
 	}
 }

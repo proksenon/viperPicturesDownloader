@@ -14,7 +14,7 @@ protocol ImageFilterManagerProtocol {
 	///  Применяет фильтр к картинке
 	func apllyFilter(image: UIImage?, index: Int, customParametrs: CustomParameters?, completion: @escaping (UIImage?)-> Void)
 	///  Получает стандартные параметры фильтра
-	func getParametrs(index: Int)-> [DefaultParameters]?
+	func getParametrs(index: Int)-> [ParametersForSlider]?
 	///  Получает иконки фильтров
 	func getFiltersIcon(index: Int)-> Image?
 }
