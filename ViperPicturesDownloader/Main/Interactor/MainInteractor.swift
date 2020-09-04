@@ -141,7 +141,7 @@ final class MainInteractor : MainInteractorInput {
 		guard let encryptionManager = encryptionManager else { return nil}
 		if let data = fileProvider.readFile(nameFile: nameFile) {
 			if let decryptData = encryptionManager.decryptionData(data: data) {
-				return decryptData//decryptData
+				return decryptData
 			}
 		}
 		return nil
