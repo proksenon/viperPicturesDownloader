@@ -7,7 +7,7 @@
 //
 
 import UIKit
-// View главного экрана 
+
 final class MainViewController: UIViewController {
 
 	var output: MainViewOutput?

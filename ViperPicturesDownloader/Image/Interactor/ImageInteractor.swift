@@ -21,7 +21,7 @@ class ImageInteractor: ImageInteractorInput {
 	func saveImageToLibrary(imageModel: Image?, filterSettings: FilterSettings?) {
 		guard let imageModel = imageModel else { return }
 		if filterSettings != nil {
-			newFilterToImage(imageModel: imageModel, filterSettings: filterSettings) { (imageModel) in
+			filterToImage(imageModel: imageModel, filterSettings: filterSettings) { (imageModel) in
 				if let image = imageModel.image {
 					UIImageWriteToSavedPhotosAlbum(image, nil, nil,nil)
 				}
@@ -32,7 +32,7 @@ class ImageInteractor: ImageInteractorInput {
 		}
 	}
 
-	func newFilterToImage(imageModel: Image, filterSettings: FilterSettings?, completion: @escaping (Image)->Void) {
+	func filterToImage(imageModel: Image, filterSettings: FilterSettings?, completion: @escaping (Image)->Void) {
 		DispatchQueue.global().async {
 			let filteredImage = self.imageFilter.applyFilter(image: imageModel.image, parameters: filterSettings)
 			DispatchQueue.main.async {

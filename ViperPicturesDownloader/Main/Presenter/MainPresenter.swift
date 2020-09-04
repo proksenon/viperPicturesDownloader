@@ -17,6 +17,7 @@ final class MainPresenter {
 	var router: MainRouterInput?
 	var customTableViewDataSource: CustomTableViewDataSource?
 	var customTableViewDelegate: CustomTableViewDelegate?
+	private var imageUrls: ImageUrls?
 
 	init(view: MainViewInput) {
 		self.view = view
@@ -32,25 +33,33 @@ final class MainPresenter {
 	/// Полностью очищает хранилище
 	private func freeALL(){
 		guard let interactor = interactor else { return }
+		guard let imageUrls = imageUrls else { return }
 
-		interactor.freeALL()
+		interactor.freeALL(imageUrls: imageUrls)
 	}
+	///		Обновляет ссылки картинок
+	private func updateImageUrls(imageUrls: ImageUrls) {
+		guard let interactor = interactor else { return }
 
+		self.imageUrls = imageUrls
+		interactor.saveImageUrls(imageUrls: imageUrls)
+	}
 }
 // MARK: - MainViewOutput
 extension MainPresenter: MainViewOutput {
 
 	func pushCollection() {
 		guard let router = router else { return }
+		guard let imageUrls = imageUrls else { return }
 
-		router.pushCollection(with: interactor?.getImageUrls())
+		router.pushCollection(with: imageUrls)
 	}
 
 	func configureView() {
 		guard let interactor = interactor else { return }
 		guard let view = view else { return }
 
-		interactor.setImageUrls()
+		imageUrls = interactor.setImageUrls()
 		view.setViewBackgroud()
 		view.setTableView()
 		view.setTableConstraints()
@@ -64,10 +73,12 @@ extension MainPresenter: MainViewOutput {
 	}
 
 	func didAddUrl(urlString: String?) {
-		guard let interactor = interactor else { return }
 		guard let view = view else { return }
+		guard var imageUrls = imageUrls else { return }
+		guard let url = urlString else { return }
 
-		interactor.didAddUrl(urlString: urlString)
+		imageUrls.urls.append(url)
+		updateImageUrls(imageUrls: imageUrls)
 		view.reloadTable()
 		scrollTableToLast()
 	}
@@ -80,17 +91,20 @@ extension MainPresenter: MainViewOutput {
 	func imageFromLibrary(image: Image) {
 		guard let interactor = interactor else { return }
 		guard let view = view else { return }
+		guard var imageUrls = imageUrls else { return }
 
-		interactor.setImage(imageModel: image)
-		view.reloadTable()
-		scrollTableToLast()
+		if let newImageUrl = interactor.setImage(imageModel: image) {
+			imageUrls.urls.append(newImageUrl)
+			updateImageUrls(imageUrls: imageUrls)
+			view.reloadTable()
+			scrollTableToLast()
+		}
 	}
 
 	private func scrollTableToLast() {
 		guard let view = view else { return }
 
-		let index = numberOfRows() - 1
-		guard index > 0 else { return }
+		let index = max(numberOfRows() - 1, 0)
 		let lastIndexPath = IndexPath(row: index, section: 0)
 		view.scrollTableTo(indexPath: lastIndexPath)
 	}
@@ -102,15 +116,21 @@ extension MainPresenter: TableViewDelegateOutput {
 	func didSelect(indexPath: IndexPath) {
 		guard let interactor = interactor else { return }
 		guard let router = router else { return }
+		guard let imageUrls = imageUrls else { return }
 
-		interactor.getImage(index: indexPath.row, size: ImageSize(size: nil)) { [weak router] (image) in
+		interactor.getImage(imageUrl: imageUrls.urls[indexPath.row], size: ImageSize(size: nil)) { [weak router] (image) in
 			router?.push(image: image)
 		}
 	}
+
 	func didDeleteImage(indexPath: IndexPath) {
 		guard let interactor = interactor else { return }
+		guard var imageUrls = imageUrls else { return }
 
-		interactor.deleteImage(index: indexPath.row)
+		let urlDelete = imageUrls.urls[indexPath.row]
+		interactor.deleteImage(urlDelete: urlDelete)
+		imageUrls.urls.remove(at: indexPath.row)
+		updateImageUrls(imageUrls: imageUrls)
 	}
 
 }
@@ -119,14 +139,17 @@ extension MainPresenter: TableViewDataSourceOutPut {
 
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
 		guard let interactor = interactor else { return }
+		guard let imageUrls = imageUrls else { return }
 
-		interactor.getImage(index: indexPath.row, size: size) { (image) in
+		interactor.getImage(imageUrl: imageUrls.urls[indexPath.row], size: size) { (image) in
 			completion(image)
 		}
 	}
 
 	func numberOfRows() ->Int {
-		return interactor?.numberOfRows() ?? 0
+		guard let imageUrls = imageUrls else { return 0}
+
+		return imageUrls.urls.count
 	}
 }
 // MARK: - MainInteractorOutput

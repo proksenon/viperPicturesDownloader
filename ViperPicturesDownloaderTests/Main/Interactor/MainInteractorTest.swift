@@ -97,7 +97,7 @@ class MainInteractorTest: XCTestCase {
 //		let count = interactor.imageUrls.urls.count
 
 		userDefaultsWork.object = imageSize
-		interactor.deleteImage(index: index)
+		interactor.deleteImage(urlDelete: index)
 
 		XCTAssertTrue(fileProvider.didRemoveFile, "File didnt remove")
 		XCTAssertTrue(userDefaultsWork.remove, "Url didnt delete from userDefaults")

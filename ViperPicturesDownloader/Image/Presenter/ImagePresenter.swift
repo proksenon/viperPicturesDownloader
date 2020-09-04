@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 /// Презентер экрана с картинкой
 class ImagePresenter {
 
@@ -75,11 +76,11 @@ extension ImagePresenter: ImageViewOutput{
 		interactor.saveImageToLibrary(imageModel: originImage, filterSettings: lastFilterSettings)
 	}
 
-	func newFilterImage(filterSettings: FilterSettings?) {
+	func filterImage(filterSettings: FilterSettings?) {
 		guard let interactor = interactor, let resizedImage = resizedImage else { return }
 		guard let view = view else { return }
 
-		interactor.newFilterToImage(imageModel: resizedImage, filterSettings: filterSettings) { (imageModel) in
+		interactor.filterToImage(imageModel: resizedImage, filterSettings: filterSettings) { (imageModel) in
 			view.setImage(with: imageModel)
 		}
 	}
@@ -95,7 +96,7 @@ extension ImagePresenter: ImageViewOutput{
 		}
 		let fillterSettings = FilterSettings(name: lastFilterParameters.name, parameters: filterParameters)
 		self.lastFilterSettings = fillterSettings
-		newFilterImage(filterSettings: fillterSettings)
+		filterImage(filterSettings: fillterSettings)
 	}
 
 	func hidenSlidersAndShowCollection() {
@@ -136,7 +137,7 @@ extension ImagePresenter: FilterCollectionViewDelegateOutput {
 		}
 		let defaultFilterSettings = getFilterSettings(index: indexPath.row)
 		lastFilterSettings = defaultFilterSettings
-		newFilterImage(filterSettings: defaultFilterSettings)
+		filterImage(filterSettings: defaultFilterSettings)
 	}
 
 	private func newSetDefaultValue(filterParametersForSlider: [ParametersForSlider]) {
@@ -144,7 +145,7 @@ extension ImagePresenter: FilterCollectionViewDelegateOutput {
 		guard var valuesFromSliders = valuesFromSliders else { return }
 		for (index, parameter) in filterParametersForSlider.enumerated() {
 			print("defValue \(parameter.defaultValue)")
-			view.newSetDefaultValueToSlider(sliderNubmer: index,
+			view.setDefaultValueToSlider(sliderNubmer: index,
 											minValue: parameter.startValue,
 											maxValue: parameter.endValue,
 											defaultValue: parameter.defaultValue,

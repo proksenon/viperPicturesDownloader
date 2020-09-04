@@ -53,7 +53,7 @@ class MainInteractorInputSpy: MainInteractorInput {
 		didsaveImageUrls = true
 	}
 
-	func deleteImage(index: Int) {
+	func deleteImage(urlDelete: Int) {
 		didDeleteImage = true
 	}
 

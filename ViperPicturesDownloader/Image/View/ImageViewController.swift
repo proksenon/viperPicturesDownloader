@@ -100,7 +100,7 @@ extension ImageViewController: ImageViewInput {
 		slider.topAnchor.constraint(equalTo: topConstrantTo.bottomAnchor, constant: constant).isActive = true
 	}
 
-	func newSetDefaultValueToSlider(sliderNubmer: Int, minValue: Float, maxValue: Float, defaultValue: Float, identifier: String) {
+	func setDefaultValueToSlider(sliderNubmer: Int, minValue: Float, maxValue: Float, defaultValue: Float, identifier: String) {
 		guard let sliders = sliders else { return }
 		sliders[sliderNubmer].accessibilityIdentifier = identifier
 		sliders[sliderNubmer].maximumValue = maxValue

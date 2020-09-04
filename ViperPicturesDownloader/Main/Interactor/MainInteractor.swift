@@ -11,7 +11,6 @@ import UIKit
 final class MainInteractor : MainInteractorInput {
 
 	weak var presenter: MainInteractorOutput?
-	private var imageUrls: ImageUrls?
 	private var imageNameManager: ImageNameManagerProtocol?
 	private var fileProvider: FileProviderProtocol?
 	private var encryptionManager: EncryptionManagerProtocol?
@@ -36,83 +35,58 @@ final class MainInteractor : MainInteractorInput {
 		self.userDefaultsWork = userDefaultsWork
 	}
 
-	func getImageUrls() -> ImageUrls? {
-		return imageUrls
-	}
-
-	func deleteImage(index: Int) {
-		guard var imageUrls = imageUrls else { return }
+	func deleteImage(urlDelete: String) {
 		guard let userDefaultsWork = userDefaultsWork else { return }
 		guard let fileProvider = fileProvider else { return }
 
-		let urlDelete = imageUrls.urls[index]
 		if let imagesSize = userDefaultsWork.getObject(for: urlDelete) as? [String: String] {
 			for (_, nameFile) in imagesSize {
 				fileProvider.removeFile(nameFile: nameFile, before: nil)
 			}
 		}
 		userDefaultsWork.removeObjects(urls: [urlDelete])
-		imageUrls.urls.remove(at: index)
-		self.imageUrls = imageUrls
-		saveImageUrls()
 	}
 
-	func didAddUrl(urlString: String?) {
-		guard var imageUrls = imageUrls else { return }
-		if let url = urlString {
-			imageUrls.urls.append(url)
-			self.imageUrls = imageUrls
-			saveImageUrls()
-		}
-	}
-
-	func setImageUrls() {
-		guard let userDefaultsWork = userDefaultsWork else { return }
+	func setImageUrls()-> ImageUrls? {
+		guard let userDefaultsWork = userDefaultsWork else { return nil }
 		if let imageUrlsFromStorage: ImageUrls = userDefaultsWork.getObjectWithDecoder(for: "imageUrls") {
-			imageUrls = imageUrlsFromStorage
+			 return imageUrlsFromStorage
 		} else {
-			imageUrls = ImageUrls()
+			return ImageUrls()
 		}
 	}
 
-	func saveImageUrls() {
+	func saveImageUrls(imageUrls: ImageUrls?) {
 		guard let userDefaultsWork = userDefaultsWork else { return }
 		userDefaultsWork.setObjectWithDecoder(for: "imageUrls", object: imageUrls)
 	}
-	
-	func numberOfRows() -> Int? {
-		guard let imageUrls = imageUrls else { return 0}
-		return imageUrls.urls.count
-	}
 
-	func setImage(imageModel: Image) {
+	func setImage(imageModel: Image)-> String? {
 
-		guard let imageNameManager = imageNameManager else { return }
-		guard var imageUrls = imageUrls else { return }
-		guard let fileProvider = fileProvider else { return }
+		guard let imageNameManager = imageNameManager else { return nil }
+		guard let fileProvider = fileProvider else { return nil }
 
-		var imageUrlString: String!
+		var imageUrlString: String?
 		var imageFormat: ImageFormat = .png
-		guard let image = imageModel.image else { return }
+		guard let image = imageModel.image else { return nil }
 		if imageModel.urlString == nil {
 			imageUrlString = UUID().uuidString
 			imageFormat = .jpeg
 		} else {
-			guard let urlString = imageModel.urlString else { return }
+			guard let urlString = imageModel.urlString else { return nil }
 			imageUrlString = urlString
-			if imageUrlString.hasSuffix(".jpeg") {
+			if urlString.hasSuffix(".jpeg") {
 				imageFormat = .jpeg
 			}
 		}
-		guard let data = imageToDataWith(format: imageFormat, image: image) else { return }
-		let nameFile = imageNameManager.getNameFileImage(url: imageUrlString, size: nil)
+		guard let data = imageToDataWith(format: imageFormat, image: image), let imageUrl = imageUrlString else { return nil }
+		fileProvider.removeFilesWithType()
+		let nameFile = imageNameManager.getNameFileImage(url: imageUrl, size: nil)
 		if !fileProvider.checkDirectory(nameFile: nameFile) {
 			dataToFile(nameFile: nameFile, data: data)
-			imageUrls.urls.append(imageUrlString)
-			self.imageUrls = imageUrls
-			saveImageUrls()
+			return imageUrl
 		}
-		fileProvider.removeFilesWithType()
+		return nil
 	}
 	
 	private func imageToDataWith(format: ImageFormat, image: UIImage)-> Data? {
@@ -124,20 +98,17 @@ final class MainInteractor : MainInteractorInput {
 		}
 	}
 
-	func getImage(index: Int, size: ImageSize, completion: @escaping (Image)->Void) {
-		guard let imageUrls = imageUrls else { return }
+	func getImage(imageUrl: String, size: ImageSize, completion: @escaping (Image)->Void) {
 		guard let imageNameManager = imageNameManager else { return }
-		guard imageUrls.urls.count >= index else {return}
 		guard let fileProvider = fileProvider else { return }
-		let url = imageUrls.urls[index]
-		let nameFileOrigin = imageNameManager.getNameFileImage(url: url, size: nil)
+		let nameFileOrigin = imageNameManager.getNameFileImage(url: imageUrl, size: nil)
 		if fileProvider.checkDirectory(nameFile: nameFileOrigin) {
-			imageFromCache(url: url, size: size) { (image) in
+			imageFromCache(url: imageUrl, size: size) { (image) in
 				completion(image)
 			}
 		} else {
-			if let currentUrl = URL(string: url) {
-				downloadImage(currentUrl: currentUrl, url: url, nameFileOrigin: nameFileOrigin, size: size) { (image) in
+			if let currentUrl = URL(string: imageUrl) {
+				downloadImage(currentUrl: currentUrl, url: imageUrl, nameFileOrigin: nameFileOrigin, size: size) { (image) in
 					if image.image == nil {
 						completion(Image(image: UIImage(named: "defaultImage")))
 					} else {
@@ -221,9 +192,8 @@ final class MainInteractor : MainInteractorInput {
 		fileProvider.removeAllFiles(before: date)
 	}
 	
-	func freeALL() {
+	func freeALL(imageUrls: ImageUrls) {
 		guard let userDefaultsWork = userDefaultsWork else { return }
-		guard let imageUrls = imageUrls else { return }
 		freeStorage(befora: nil)
 		userDefaultsWork.removeObjects(urls: imageUrls.urls)
 	}
