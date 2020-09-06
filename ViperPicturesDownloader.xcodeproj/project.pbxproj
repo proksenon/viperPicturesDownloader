@@ -87,6 +87,7 @@
 		D51C7F2B24E6F7B8001541F7 /* TableViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F2A24E6F7B8001541F7 /* TableViewMock.swift */; };
 		D51C7F2D24E6F80D001541F7 /* CustomTableViewDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F2C24E6F80D001541F7 /* CustomTableViewDataSourceTest.swift */; };
 		D51C7F2F24E7043D001541F7 /* CustomTableViewDelegateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C7F2E24E7043D001541F7 /* CustomTableViewDelegateTest.swift */; };
+		D520450425023CE1007B746A /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520450325023CE1007B746A /* PopAnimator.swift */; };
 		D5581A8B24E718F400958537 /* UIimageViewBlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5581A8A24E718F400958537 /* UIimageViewBlurEffect.swift */; };
 		D55FB18724EAA62800BF0249 /* FilterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB18624EAA62800BF0249 /* FilterCollectionView.swift */; };
 		D55FB18A24EAA77A00BF0249 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB18924EAA77A00BF0249 /* FilterCollectionViewCell.swift */; };
@@ -234,6 +235,7 @@
 		D51C7F2A24E6F7B8001541F7 /* TableViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewMock.swift; sourceTree = "<group>"; };
 		D51C7F2C24E6F80D001541F7 /* CustomTableViewDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewDataSourceTest.swift; sourceTree = "<group>"; };
 		D51C7F2E24E7043D001541F7 /* CustomTableViewDelegateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewDelegateTest.swift; sourceTree = "<group>"; };
+		D520450325023CE1007B746A /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 		D5581A8A24E718F400958537 /* UIimageViewBlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIimageViewBlurEffect.swift; sourceTree = "<group>"; };
 		D55FB18624EAA62800BF0249 /* FilterCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionView.swift; sourceTree = "<group>"; };
 		D55FB18924EAA77A00BF0249 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -876,6 +878,7 @@
 			children = (
 				D56A290424D42DEB00178564 /* AppDelegate.swift */,
 				D56A290624D42DEB00178564 /* SceneDelegate.swift */,
+				D520450325023CE1007B746A /* PopAnimator.swift */,
 				D50F50AD24D852D60042BAD2 /* Extensions */,
 				D58BAC6324EFC5A2006A3DB4 /* Helpers */,
 				D535F7ED24F7E9C8001AEDA4 /* CommonEntity */,
@@ -1189,6 +1192,7 @@
 				D5B0401E24FE88E80023E5DE /* ColorControlsFilter.swift in Sources */,
 				D50F50B824D853C20042BAD2 /* EncryptionWork.swift in Sources */,
 				D50F50C524DAB57A0042BAD2 /* ImagePresenter.swift in Sources */,
+				D520450425023CE1007B746A /* PopAnimator.swift in Sources */,
 				D50F518324E17DC00042BAD2 /* CollectionViewInput.swift in Sources */,
 				D55FB18724EAA62800BF0249 /* FilterCollectionView.swift in Sources */,
 				D55FB19024EAA9DB00BF0249 /* FilterCollectionDataSourceOutput.swift in Sources */,

@@ -18,6 +18,7 @@ final class MainViewController: UIViewController {
 	private var addUrlButton: UIBarButtonItem?
 	/// кнопка segueToCollection переход на колекшн вью
 	private var segueToCollection: UIBarButtonItem?
+	private let transition = PopAnimator()
 
 	init(configurator: MainConfiguratorProtocol = MainConfigurator()) {
 		super.init(nibName: nil, bundle: nil)
@@ -45,9 +46,9 @@ extension MainViewController: MainViewInput {
 	}
 
 	func setTableView() {
-		if let tableView = tableView {
-			view.addSubview(tableView)
-		}
+		guard let tableView = tableView else { return }
+
+		view.addSubview(tableView)
 	}
 
 	func setTableConstraints() {
@@ -141,7 +142,7 @@ extension MainViewController: MainViewInput {
 	}
 }
 
-extension MainViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension MainViewController: UIImagePickerControllerDelegate {
 
 	func showImagePickerController(source: UIImagePickerController.SourceType) {
 		let imagePickerController = UIImagePickerController()
@@ -158,4 +159,28 @@ extension MainViewController: UIImagePickerControllerDelegate, UINavigationContr
 		output.imageFromLibrary(image: Image(image: image, urlString: imageUrl?.absoluteString))
 		dismiss(animated: true, completion: nil)
 	}
+}
+
+extension MainViewController: UINavigationControllerDelegate {
+
+	func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		guard let tableView = tableView else { return nil }
+		guard
+		  let selectedIndexPathCell = tableView.indexPathForSelectedRow,
+		  let selectedCell = tableView.cellForRow(at: selectedIndexPathCell) as? CustomTableViewCell,
+		  let selectedCellSuperview = selectedCell.superview
+		  else {
+			return nil
+		}
+		transition.originFrame = selectedCellSuperview.convert(selectedCell.frame, to: tableView.superview)
+
+        switch operation {
+        case .push:
+			transition.presenting = true
+            return transition
+        default:
+			transition.presenting = false
+            return transition
+        }
+    }
 }

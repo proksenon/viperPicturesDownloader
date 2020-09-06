@@ -28,6 +28,14 @@ class ImageViewController: UIViewController {
 		output.configureView()
 	}
 
+	override func viewWillDisappear(_ animated: Bool) {
+		self.imageView?.contentMode = .scaleToFill
+		output?.hidenSlidersAndShowCollection()
+		UIView.animate(withDuration: 0.4, delay: 0, options: .allowUserInteraction, animations: {
+			self.collectionView?.alpha = 0
+		})
+	}
+
 }
 // MARK: - ImageViewInput
 extension ImageViewController: ImageViewInput {

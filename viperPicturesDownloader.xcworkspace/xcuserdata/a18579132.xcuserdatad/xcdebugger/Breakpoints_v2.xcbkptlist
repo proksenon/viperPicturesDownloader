@@ -443,7 +443,7 @@
             startingLineNumber = "43"
             endingLineNumber = "43"
             landmarkName = "ImagePresenter"
-            landmarkType = "21">
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -457,7 +457,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "158"
-            endingLineNumber = "158">
+            endingLineNumber = "158"
+            landmarkName = "ImagePresenter"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -470,10 +472,10 @@
             filePath = "ViperPicturesDownloader/Image/View/ImageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "backgroundColor()"
-            landmarkType = "7">
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "ImageViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -502,8 +504,8 @@
             filePath = "ViperPicturesDownloader/Main/View/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "setTableConstraints()"
             landmarkType = "7">
          </BreakpointContent>
@@ -518,9 +520,9 @@
             filePath = "ViperPicturesDownloader/Main/Presenter/MainPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "pushCollection()"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "configureView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -534,8 +536,8 @@
             filePath = "ViperPicturesDownloader/Main/Interactor/MainInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "setImage(imageModel:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -550,8 +552,8 @@
             filePath = "ViperPicturesDownloader/Main/View/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "setupAlert()"
             landmarkType = "7">
          </BreakpointContent>
@@ -566,8 +568,8 @@
             filePath = "ViperPicturesDownloader/Main/View/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "MainViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -582,8 +584,8 @@
             filePath = "ViperPicturesDownloader/Main/Presenter/MainPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "imageFromLibrary(image:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -614,8 +616,8 @@
             filePath = "ViperPicturesDownloader/Main/View/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -678,8 +680,8 @@
             filePath = "ViperPicturesDownloader/Main/View/TableDataSource/CustomTableViewDataSource.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
             <Locations>
@@ -918,10 +920,10 @@
             filePath = "ViperPicturesDownloader/Image/View/ImageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "sliderAction(sender:)"
-            landmarkType = "7">
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "ImageViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -936,7 +938,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
             endingLineNumber = "69"
-            landmarkName = "didChangeFiltersParameters(key:value:)"
+            landmarkName = "popViewController()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -952,7 +954,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "123"
             endingLineNumber = "123"
-            landmarkName = "newSetDefaultValue(filterParametersForSlider:)"
+            landmarkName = "getFilterIcon(indexPath:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -968,7 +970,39 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
             endingLineNumber = "76"
-            landmarkName = "didChangeFiltersParameters(key:value:)"
+            landmarkName = "saveImageToLibrary()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "79FFEDC4-7A89-4B7C-A358-4287B1F50F2E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloader/PopAnimator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "animateTransition(using:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A1E13A8-741D-43DA-BEFD-5B8C673DB7D3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloader/Main/View/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

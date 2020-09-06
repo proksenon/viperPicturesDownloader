@@ -32,7 +32,7 @@ final class CustomTableViewCell: UITableViewCell {
 		addSubview(activityIndicator)
 		activityIndicator.style = .large
 		activityIndicator.center = contentView.center
-		startActivity()
+//		startActivity()
 	}
 	///  Остонавливает индикатор загрузки
 	func stopActivity() {
