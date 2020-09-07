@@ -44,7 +44,7 @@ extension MainViewController: MainViewInput {
 	func setViewBackgroud() {
 		view.backgroundColor = .gray
 	}
-
+	// MARK: - TableView
 	func setTableView() {
 		guard let tableView = tableView else { return }
 
@@ -71,7 +71,7 @@ extension MainViewController: MainViewInput {
 		guard let tableView = tableView else {return}
 		tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
 	}
-
+	// MARK: - ButtonToCollection
 	func setSegueToCollectionButton() {
 		segueToCollection = UIBarButtonItem(title: "Collection",
 								 style: UIBarButtonItem.Style.done,
@@ -85,7 +85,7 @@ extension MainViewController: MainViewInput {
 		guard let output = output else { return }
 		output.pushCollection()
 	}
-
+	// MARK: - AddButton
 	func setAddUrlButton() {
 		addUrlButton = UIBarButtonItem(image: UIImage(systemName: "plus"),
 								 style: UIBarButtonItem.Style.done,
@@ -99,7 +99,7 @@ extension MainViewController: MainViewInput {
 		guard let output = output else { return }
 		output.presentAlert()
 	}
-
+	// MARK: - NavigationBar
 	func setUpNavigationBar() {
 		navigationController?.hidesBarsOnSwipe = true
 		navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
@@ -107,11 +107,11 @@ extension MainViewController: MainViewInput {
 		navigationController?.navigationBar.isTranslucent = true
 		navigationController?.view.backgroundColor = UIColor.clear
 	}
-
+	// MARK: - StatusBar
 	func setStatusBarStyleLight() {
 		UIApplication.shared.statusBarStyle = .lightContent
 	}
-
+	// MARK: - Alert
 	func setupAlert() {
 		alertVC = UIAlertController(title: "Введите ссылку на картинку", message: nil, preferredStyle: .alert)
 		alertHelper = AlertHelper()
@@ -141,7 +141,7 @@ extension MainViewController: MainViewInput {
 		self.present(alertVC, animated: true)
 	}
 }
-
+// MARK: - UIImagePickerControllerDelegate
 extension MainViewController: UIImagePickerControllerDelegate {
 
 	func showImagePickerController(source: UIImagePickerController.SourceType) {
@@ -160,7 +160,7 @@ extension MainViewController: UIImagePickerControllerDelegate {
 		dismiss(animated: true, completion: nil)
 	}
 }
-
+// MARK: - UINavigationControllerDelegate
 extension MainViewController: UINavigationControllerDelegate {
 
 	func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {

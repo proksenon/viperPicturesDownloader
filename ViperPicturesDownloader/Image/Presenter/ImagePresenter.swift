@@ -9,7 +9,7 @@
 import Foundation
 
 /// Презентер экрана с картинкой
-class ImagePresenter {
+final class ImagePresenter {
 
 	weak var view: ImageViewInput?
 	var interactor: ImageInteractorInput?

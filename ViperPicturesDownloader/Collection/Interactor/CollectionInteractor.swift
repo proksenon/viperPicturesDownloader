@@ -11,7 +11,6 @@ import UIKit
 final class CollectionInteractor: CollectionInteractorInput {
 	
 	weak var presenter: CollectionInteractorOutput?
-	var imageUrls: ImageUrls?
 	private var imageNameManager: ImageNameManagerProtocol?
 	private var fileProvider: FileProviderProtocol?
 	private var encryptionManager: EncryptionManagerProtocol?
@@ -32,22 +31,11 @@ final class CollectionInteractor: CollectionInteractorInput {
 		self.networkService = networkService
 		self.imageResizer = imageResizer
 	}
-	
-	func setImageUrls(with urls: ImageUrls) {
-		imageUrls = urls
-	}
-	
-	func numberOfRows() -> Int {
-		guard let imageUrls = imageUrls else { return 0 }
-		return imageUrls.urls.count
-	}
 
-	func getImage(index: Int, size: ImageSize, completion: @escaping (Image)->Void) {
-		guard let imageUrls = imageUrls else { return }
+	func getImage(url: String, size: ImageSize, completion: @escaping (Image)->Void) {
 		guard let imageNameManager = imageNameManager else { return }
 		guard let fileProvider = fileProvider else { return }
 
-		let url = imageUrls.urls[index]
 		let nameFileOrigin = imageNameManager.getNameFileImage(url: url, size: nil)
 		if fileProvider.checkDirectory(nameFile: nameFileOrigin) {
 			imageFromCache(url: url, size: size) { (image) in

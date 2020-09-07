@@ -8,7 +8,7 @@
 
 import Foundation
 /// Роутер экрана с картинкой
-class ImageRouter: ImageRouterInput {
+final class ImageRouter: ImageRouterInput {
 
 	weak var viewController: ImageViewController?
 

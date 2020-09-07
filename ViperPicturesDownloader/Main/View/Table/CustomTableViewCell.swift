@@ -10,8 +10,8 @@ import UIKit
 
 final class CustomTableViewCell: UITableViewCell {
 
-	let customImageView = UIImageView()
-	let activityIndicator = UIActivityIndicatorView()
+	private let customImageView = UIImageView()
+	private let activityIndicator = UIActivityIndicatorView()
 	var currentIndexPath: IndexPath? {
 		didSet {
 			customImageView.image = nil
@@ -32,7 +32,7 @@ final class CustomTableViewCell: UITableViewCell {
 		addSubview(activityIndicator)
 		activityIndicator.style = .large
 		activityIndicator.center = contentView.center
-//		startActivity()
+		startActivity()
 	}
 	///  Остонавливает индикатор загрузки
 	func stopActivity() {

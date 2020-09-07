@@ -8,13 +8,13 @@
 
 import UIKit
 /// Интерактор экрана с картиной
-class ImageInteractor: ImageInteractorInput {
+final class ImageInteractor: ImageInteractorInput {
 
-	weak var presenter: ImageInteractorOuput?
-	var imageFilter: ImageFilterManagerProtocol
+	weak var output: ImageInteractorOuput?
+	private var imageFilter: ImageFilterManagerProtocol
 
 	init(presenter: ImageInteractorOuput, imageFilter: ImageFilterManagerProtocol = ImageFilterManager()) {
-		self.presenter = presenter
+		self.output = presenter
 		self.imageFilter = imageFilter
 	}
 

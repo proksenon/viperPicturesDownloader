@@ -7,8 +7,8 @@
 //
 
 import Foundation
-/// Конфигуратор
-class ImageConfigurator: ImageConfiguratorProtocol {
+/// Конфигуратор Image Module
+final class ImageConfigurator: ImageConfiguratorProtocol {
 
 	func configure(with viewController: ImageViewController) {
 		let presenter = ImagePresenter(view: viewController)

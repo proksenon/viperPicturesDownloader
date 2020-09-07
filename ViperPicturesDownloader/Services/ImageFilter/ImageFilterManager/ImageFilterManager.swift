@@ -12,8 +12,8 @@ protocol ImageFilterManagerProtocol {
 	func applyFilter(image: UIImage?, parameters: FilterSettings?)-> UIImage?
 }
 
-class ImageFilterManager: ImageFilterManagerProtocol {
-	let context = CIContext(options: nil)
+final class ImageFilterManager: ImageFilterManagerProtocol {
+	private let context = CIContext(options: nil)
 
 	func applyFilter(image: UIImage?, parameters: FilterSettings?)-> UIImage? {
 		guard let inputImage = image else { return nil }

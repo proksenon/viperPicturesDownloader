@@ -12,7 +12,7 @@ final class CollectionViewController: UIViewController {
 
 	var output: CollectionViewOutput?
 	var moduleInput: CollectionModuleInput?
-	var collectionView: UICollectionView!
+	var collectionView: UICollectionView?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -23,11 +23,16 @@ final class CollectionViewController: UIViewController {
 }
 // MARK: - CollectionViewInput
 extension CollectionViewController: CollectionViewInput {
+
 	func setCollection() {
+		guard let collectionView = collectionView else { return }
+
 		view.addSubview(collectionView)
 	}
 
 	func setCollectionConstraint() {
+		guard let collectionView = collectionView else { return }
+		
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([
 			collectionView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0),

@@ -15,6 +15,7 @@ final class CollectionPresenter {
 	var router: CollectionRouterInput?
 	var customCollectionDataSource: CustomCollectionViewDataSource?
 	var customCollectionDelegate: CustomCollectionViewDelegate?
+	private var imageUrls: ImageUrls?
 
 	init(view: CollectionViewInput) {
 		self.view = view
@@ -31,6 +32,7 @@ extension CollectionPresenter: CollectionViewOutput {
 }
 // MARK: - CollectionViewDelegateOutput
 extension CollectionPresenter: CollectionViewDelegateOutput {
+	
 	func didSelect(indexPath: IndexPath) {
 		guard let router = router else { return }
 		getImage(indexPath: indexPath, size: ImageSize(size: nil)) { (image) in
@@ -43,14 +45,17 @@ extension CollectionPresenter: CollectionViewDataSourceOutput {
 
 	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
 		guard let interactor = interactor else { return }
-		interactor.getImage(index: indexPath.row, size: size) { (image) in
+		guard let imageUrls = imageUrls else { return }
+		
+		interactor.getImage(url: imageUrls.urls[indexPath.row], size: size) { (image) in
 			completion(image)
 		}
 	}
 
 	func numberOfRows() ->Int {
-		guard let interactor = interactor else { return 0 }
-		return interactor.numberOfRows()
+		guard let imageUrls = imageUrls else { return 0 }
+
+		return imageUrls.urls.count
 	}
 }
 // MARK: - CollectionInteractorOutput
@@ -60,9 +65,11 @@ extension CollectionPresenter: CollectionInteractorOutput {
 // MARK: - CollectionModuleInput
 extension CollectionPresenter: CollectionModuleInput {
 	func configure(with imagesUrl: ImageUrls?) {
-		guard let imagesUrl = imagesUrl else { return }
-		guard let interactor = interactor else { return }
-		interactor.setImageUrls(with: imagesUrl)
+		self.imageUrls = imagesUrl
+//		guard let imagesUrl = imagesUrl else { return }
+//		guard let interactor = interactor else { return }
+//
+//		interactor.setImageUrls(with: imagesUrl)
 	}
 
 

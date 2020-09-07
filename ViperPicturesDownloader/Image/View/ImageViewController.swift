@@ -8,7 +8,7 @@
 
 import UIKit
 /// Экран с картинкой
-class ImageViewController: UIViewController {
+final class ImageViewController: UIViewController {
 
 	var output: ImageViewOutput?
 	var moduleInput: ImageModuleInput?
@@ -29,8 +29,10 @@ class ImageViewController: UIViewController {
 	}
 
 	override func viewWillDisappear(_ animated: Bool) {
+		guard let output = output else { return }
+		
 		self.imageView?.contentMode = .scaleToFill
-		output?.hidenSlidersAndShowCollection()
+		output.hidenSlidersAndShowCollection()
 		UIView.animate(withDuration: 0.4, delay: 0, options: .allowUserInteraction, animations: {
 			self.collectionView?.alpha = 0
 		})

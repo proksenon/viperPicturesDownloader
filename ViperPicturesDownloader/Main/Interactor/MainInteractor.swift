@@ -10,7 +10,7 @@ import UIKit
 /// Интерактор главного экрана
 final class MainInteractor : MainInteractorInput {
 
-	weak var presenter: MainInteractorOutput?
+	weak var output: MainInteractorOutput?
 	private var imageNameManager: ImageNameManagerProtocol?
 	private var fileProvider: FileProviderProtocol?
 	private var encryptionManager: EncryptionManagerProtocol?
@@ -26,7 +26,7 @@ final class MainInteractor : MainInteractorInput {
 		 imageResizer: ImageResizerProtocol = ImageResizer(),
 		 userDefaultsWork: UserDefaultsWorkProtocol = UserDefaultsWork()) {
 
-		self.presenter = presenter
+		self.output = presenter
 		self.imageNameManager = imageNameManager
 		self.fileProvider = fileProvider
 		self.encryptionManager = encryptionManager
@@ -34,7 +34,7 @@ final class MainInteractor : MainInteractorInput {
 		self.imageResizer = imageResizer
 		self.userDefaultsWork = userDefaultsWork
 	}
-
+	// MARK: - WorkWithImage
 	func deleteImage(urlDelete: String) {
 		guard let userDefaultsWork = userDefaultsWork else { return }
 		guard let fileProvider = fileProvider else { return }
@@ -186,7 +186,7 @@ final class MainInteractor : MainInteractorInput {
 			}
 		}
 	}
-
+	// MARK: - CleanFileBase
 	func freeStorage(befora date: Date? = Calendar.current.date(byAdding: .day, value: -2, to: Date())){
 		guard let fileProvider = fileProvider else { return }
 		fileProvider.removeAllFiles(before: date)

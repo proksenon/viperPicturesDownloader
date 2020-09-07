@@ -26,6 +26,5 @@ final class CustomCollectionViewDelegate: NSObject, UICollectionViewDelegate, UI
 						layout collectionViewLayout: UICollectionViewLayout,
 						sizeForItemAt indexPath: IndexPath) -> CGSize {
 		return CGSize(width: UIScreen.main.bounds.width/1.5, height: UIScreen.main.bounds.height/1.5)
-		//CGSize(width: 300, height: 600)
 	}
 }

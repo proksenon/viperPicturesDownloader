@@ -10,8 +10,14 @@ import UIKit
 
 final class CustomCollectionViewCell: UICollectionViewCell {
 	
-	let imageView = UIImageView()
-	let activityIndicator = UIActivityIndicatorView()
+	private let imageView = UIImageView()
+	private let activityIndicator = UIActivityIndicatorView()
+	var currentIndexPath: IndexPath? {
+		didSet {
+			imageView.image = nil
+			startActivity()
+		}
+	}
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -35,12 +41,20 @@ final class CustomCollectionViewCell: UICollectionViewCell {
 	}
 
 	private func setImageView() {
+		imageView.contentMode = .scaleAspectFit
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 		imageView.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
 		imageView.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
 		imageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
 		imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
 	}
+	func configureCell(with image: UIImage?, indexPath: IndexPath) {
+		if currentIndexPath == indexPath {
+			imageView.image = image
+			stopActivity()
+		}
+	}
+
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}

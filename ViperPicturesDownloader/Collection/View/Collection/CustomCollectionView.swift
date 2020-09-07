@@ -13,8 +13,6 @@ final class CustomCollectionView: UICollectionView {
 	private let flowLayout = ZoomAndSnapFlowLayout()
 
 	init() {
-//		let layout = UICollectionViewFlowLayout()
-//		layout.scrollDirection = .horizontal
 		super.init(frame: .zero, collectionViewLayout: flowLayout)
 		backgroundColor = .gray
 		contentInsetAdjustmentBehavior = .always

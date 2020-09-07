@@ -25,6 +25,7 @@ final class MainPresenter {
 	/// Очищает хранилище, удаляя файлы, которые лежат больше 2 дней
 	private func freeStorage() {
 		guard let interactor = interactor else { return }
+		
 		let date = Calendar.current.date(byAdding: .day, value: -2, to: Date())
 		DispatchQueue.global(qos: .background).async {
 			interactor.freeStorage(befora: date)
