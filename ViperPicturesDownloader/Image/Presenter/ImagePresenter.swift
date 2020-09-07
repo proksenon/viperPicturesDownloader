@@ -30,7 +30,7 @@ final class ImagePresenter {
 
 	init(view: ImageViewInput) {
 		self.view = view
-		filters = [SepiaToneFilter(), ColorControlsFilter(), WithoutFilter(), NoirFilter(), EdgesFilter(), GaussianBlurFilter(), PinkCrossPolynomial(), SpotColorFilter()]
+		filters = [ WithoutFilter(), SepiaToneFilter(), ColorControlsFilter(), NoirFilter(), EdgesFilter(), GaussianBlurFilter(), PinkCrossPolynomial(), SpotColorFilter()]
 	}
 	///		Значения фильтра для слайдеров
 	private func getParamsForSlider(index: Int) -> [ParametersForSlider]?  {
