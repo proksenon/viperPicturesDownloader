@@ -18,5 +18,5 @@ protocol MainViewOutput: class {
 	///  Показывает Alert
 	func presentAlert()
 	///  Обрабатывает картинку с камеры или с библиотеки
-	func imageFromLibrary(image: Image)
+	func imageFromLibrary(imageModel: ImageWithUrl)
 }

@@ -18,14 +18,14 @@ final class ImagePresenter {
 	var filterCollectionDelegate: FilterCollectionViewDelegate?
 	private var valuesFromSliders: [String: Any]?
 	private var filters: [ImageFilterProtocol]
-	private var originImage: Image? {
+	private var originImage: ImageModel? {
 		didSet {
 			guard let originImage = originImage else { return }
 			let image = originImage.image?.resizeImage(targetSize: ImageSize().size!)
-			resizedImage = Image(image: image)
+			resizedImage = ImageModel(image: image)
 		}
 	}
-	private var resizedImage: Image?
+	private var resizedImage: ImageModel?
 	private var lastFilterSettings: FilterSettings?
 
 	init(view: ImageViewInput) {
@@ -120,9 +120,9 @@ extension ImagePresenter: FilterCollectionViewDataSourceOutput {
 		return filters.count
 	}
 
-	func getFilterIcon(indexPath: IndexPath)-> Image {
+	func getFilterIcon(indexPath: IndexPath)-> ImageWithDesc {
 		let filter = filters[indexPath.row]
-		return Image(image: filter.iconFilter, description: filter.displayName)
+		return ImageWithDesc(image: filter.iconFilter, description: filter.displayName)
 	}
 
 }
@@ -160,7 +160,7 @@ extension ImagePresenter: FilterCollectionViewDelegateOutput {
 
 // MARK: - ImageModuleInput
 extension ImagePresenter: ImageModuleInput {
-	func configure(with image: Image?) {
+	func configure(with image: ImageModel?) {
 		originImage = image
 	}
 }

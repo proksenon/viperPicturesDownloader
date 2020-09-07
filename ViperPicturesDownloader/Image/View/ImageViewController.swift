@@ -13,6 +13,7 @@ final class ImageViewController: UIViewController {
 	var output: ImageViewOutput?
 	var moduleInput: ImageModuleInput?
 	var collectionView: UICollectionView?
+	weak var previousController: UIViewController?
 	private var imageView: UIImageView?
 	private var saveImageButton: UIBarButtonItem?
 	private var cancelButton: UIButton?
@@ -30,11 +31,15 @@ final class ImageViewController: UIViewController {
 
 	override func viewWillDisappear(_ animated: Bool) {
 		guard let output = output else { return }
-		
-		self.imageView?.contentMode = .scaleToFill
+
+		if previousController is MainViewController {
+			self.imageView?.contentMode = .scaleToFill
+		}
 		output.hidenSlidersAndShowCollection()
-		UIView.animate(withDuration: 0.4, delay: 0, options: .allowUserInteraction, animations: {
+		UIView.animate(withDuration: 1, delay: 0, options: .allowUserInteraction, animations: {
+			self.view.backgroundColor = .clear
 			self.collectionView?.alpha = 0
+			self.imageView?.alpha = 0
 		})
 	}
 
@@ -141,6 +146,7 @@ extension ImageViewController: ImageViewInput {
 	func configureImageView() {
 		guard let imageView = imageView else { return }
 
+		imageView.backgroundColor = .clear
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 		imageView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
 		imageView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
@@ -149,7 +155,7 @@ extension ImageViewController: ImageViewInput {
 		imageView.contentMode = .scaleAspectFit
 	}
 
-	func setImage(with image: Image) {
+	func setImage(with image: ImageModel) {
 		guard let imageView = imageView else { return }
 
 		imageView.image = image.image

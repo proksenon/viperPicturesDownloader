@@ -13,6 +13,7 @@ final class CollectionViewController: UIViewController {
 	var output: CollectionViewOutput?
 	var moduleInput: CollectionModuleInput?
 	var collectionView: UICollectionView?
+	private let transition = PopAnimator()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -41,4 +42,28 @@ extension CollectionViewController: CollectionViewInput {
 			collectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0)
 		])
 	}
+}
+// MARK: - UINavigationControllerDelegate
+extension CollectionViewController: UINavigationControllerDelegate {
+
+	func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		guard let collectionView = collectionView else { return nil }
+		guard
+			let selectedIndexPathItem = collectionView.indexPathsForSelectedItems?.first,
+			let selectedItem = collectionView.cellForItem(at: selectedIndexPathItem) as? CustomCollectionViewCell,
+			let selectedCellSuperview = selectedItem.superview
+		  else {
+			return nil
+		}
+		transition.originFrame = selectedCellSuperview.convert(selectedItem.frame, to: collectionView.superview)
+
+        switch operation {
+        case .push:
+			transition.presenting = true
+            return transition
+        default:
+			transition.presenting = false
+            return transition
+        }
+    }
 }

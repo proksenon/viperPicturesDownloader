@@ -156,7 +156,7 @@ extension MainViewController: UIImagePickerControllerDelegate {
 		guard let output = output else { return }
 		let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
 		let imageUrl = info[UIImagePickerController.InfoKey.imageURL] as? URL
-		output.imageFromLibrary(image: Image(image: image, urlString: imageUrl?.absoluteString))
+		output.imageFromLibrary(imageModel: ImageWithUrl(image: image, urlString: imageUrl?.absoluteString))
 		dismiss(animated: true, completion: nil)
 	}
 }

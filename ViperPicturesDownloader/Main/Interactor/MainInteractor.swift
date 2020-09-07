@@ -61,7 +61,7 @@ final class MainInteractor : MainInteractorInput {
 		userDefaultsWork.setObjectWithDecoder(for: "imageUrls", object: imageUrls)
 	}
 
-	func setImage(imageModel: Image)-> String? {
+	func setImage(imageModel: ImageWithUrl)-> String? {
 
 		guard let imageNameManager = imageNameManager else { return nil }
 		guard let fileProvider = fileProvider else { return nil }
@@ -98,40 +98,40 @@ final class MainInteractor : MainInteractorInput {
 		}
 	}
 
-	func getImage(imageUrl: String, size: ImageSize, completion: @escaping (Image)->Void) {
+	func getImage(imageUrl: String, size: ImageSize, completion: @escaping (ImageModel)->Void) {
 		guard let imageNameManager = imageNameManager else { return }
 		guard let fileProvider = fileProvider else { return }
 		let nameFileOrigin = imageNameManager.getNameFileImage(url: imageUrl, size: nil)
 		if fileProvider.checkDirectory(nameFile: nameFileOrigin) {
-			imageFromCache(url: imageUrl, size: size) { (image) in
-				completion(image)
+			imageFromCache(url: imageUrl, size: size) { (imageModel) in
+				completion(imageModel)
 			}
 		} else {
 			if let currentUrl = URL(string: imageUrl) {
-				downloadImage(currentUrl: currentUrl, url: imageUrl, nameFileOrigin: nameFileOrigin, size: size) { (image) in
-					if image.image == nil {
-						completion(Image(image: UIImage(named: "defaultImage")))
+				downloadImage(currentUrl: currentUrl, url: imageUrl, nameFileOrigin: nameFileOrigin, size: size) { (imageModel) in
+					if imageModel.image == nil {
+						completion(ImageModel(image: UIImage(named: "defaultImage")))
 					} else {
-						completion(image)
+						completion(imageModel)
 					}
 				}
 			}
 		}
 	}
 	/// 	Получает картинку с файлов
-	private func imageFromCache(url: String, size: ImageSize, completion: @escaping (Image)->Void) {
+	private func imageFromCache(url: String, size: ImageSize, completion: @escaping (ImageModel)->Void) {
 		guard let imageNameManager = imageNameManager else { return }
 		guard let fileProvider = fileProvider else { return }
 
 		let nameFile = imageNameManager.getNameFileImage(url: url, size: size.size)
 		if fileProvider.checkDirectory(nameFile: nameFile) {
 			if let decryptData = decryptionDataFromFile(url: url, nameFile: nameFile) {
-				let image = Image(image: UIImage(data: decryptData))
+				let image = ImageModel(image: UIImage(data: decryptData))
 				completion(image)
 			}
 		} else {
 			originalToSize(url: url, nameFile: nameFile, size: size.size) { (image) in
-				completion(Image(image: image))
+				completion(ImageModel(image: image))
 				}
 			}
 	}
@@ -173,16 +173,16 @@ final class MainInteractor : MainInteractorInput {
 	}
 	/// 	Скачивает картинку
 	private func downloadImage(currentUrl: URL, url: String,
-							   nameFileOrigin: String, size: ImageSize, completion: @escaping (Image)->Void) {
+							   nameFileOrigin: String, size: ImageSize, completion: @escaping (ImageModel)->Void) {
 		guard let networkService = networkService else { return }
 		guard let imageNameManager = imageNameManager else { return }
 
 		networkService.getData(url: currentUrl) { (data) in
-			guard let data = data else {completion(Image(image: nil)); return}
+			guard let data = data else {completion(ImageModel(image: nil)); return}
 			self.dataToFile(nameFile: nameFileOrigin, data: data)
 			let nameFile = imageNameManager.getNameFileImage(url: url, size: size.size)
 			self.originalToSize(url: url, nameFile: nameFile, size: size.size) { (image) in
-				completion(Image(image: image))
+				completion(ImageModel(image: image))
 			}
 		}
 	}

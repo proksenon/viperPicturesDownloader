@@ -18,7 +18,7 @@ final class ImageInteractor: ImageInteractorInput {
 		self.imageFilter = imageFilter
 	}
 
-	func saveImageToLibrary(imageModel: Image?, filterSettings: FilterSettings?) {
+	func saveImageToLibrary(imageModel: ImageModel?, filterSettings: FilterSettings?) {
 		guard let imageModel = imageModel else { return }
 		if filterSettings != nil {
 			filterToImage(imageModel: imageModel, filterSettings: filterSettings) { (imageModel) in
@@ -32,11 +32,11 @@ final class ImageInteractor: ImageInteractorInput {
 		}
 	}
 
-	func filterToImage(imageModel: Image, filterSettings: FilterSettings?, completion: @escaping (Image)->Void) {
+	func filterToImage(imageModel: ImageModel, filterSettings: FilterSettings?, completion: @escaping (ImageModel)->Void) {
 		DispatchQueue.global().async {
 			let filteredImage = self.imageFilter.applyFilter(image: imageModel.image, parameters: filterSettings)
 			DispatchQueue.main.async {
-				completion(Image(image: filteredImage))
+				completion(ImageModel(image: filteredImage))
 			}
 		}
 

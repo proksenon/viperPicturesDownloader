@@ -10,7 +10,7 @@ import UIKit
 
 protocol ImageInteractorInput: class {
 	///  Обращается к менеджеру фильтров, и применяет фильтр
-	func filterToImage(imageModel: Image, filterSettings: FilterSettings?, completion: @escaping (Image)->Void)
+	func filterToImage(imageModel: ImageModel, filterSettings: FilterSettings?, completion: @escaping (ImageModel)->Void)
 	///  Сохраняет картинку в библиотеку
-	func saveImageToLibrary(imageModel: Image?, filterSettings: FilterSettings?)
+	func saveImageToLibrary(imageModel: ImageModel?, filterSettings: FilterSettings?)
 }

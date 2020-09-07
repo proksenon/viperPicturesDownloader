@@ -30,7 +30,7 @@ protocol ImageViewInput: class {
 	///  Конфигурирует ImageView
 	func configureImageView()
 	///  Устанавливает картинку в ImageView
-	func setImage(with image: Image)
+	func setImage(with image: ImageModel)
 	///  Устанавливает CollectionView
 	func setUpCollection()
 	///  Устанавливает констреунты для CollectionView

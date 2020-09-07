@@ -119,7 +119,7 @@
 		D5B0400D24FD45A90023E5DE /* FilterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400C24FD45A90023E5DE /* FilterSettings.swift */; };
 		D5B0400F24FD45C20023E5DE /* ParametersForSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0400E24FD45C20023E5DE /* ParametersForSlider.swift */; };
 		D5B0401124FD45D00023E5DE /* FilterParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0401024FD45D00023E5DE /* FilterParameter.swift */; };
-		D5B0401324FD45E10023E5DE /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0401224FD45E10023E5DE /* ImageModel.swift */; };
+		D5B0401324FD45E10023E5DE /* ImageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0401224FD45E10023E5DE /* ImageModels.swift */; };
 		D5B0401624FD45F40023E5DE /* ImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0401524FD45F40023E5DE /* ImageSize.swift */; };
 		D5B0401824FD46120023E5DE /* ImageFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0401724FD46120023E5DE /* ImageFormat.swift */; };
 		D5B0401A24FE887F0023E5DE /* WithoutFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0401924FE887F0023E5DE /* WithoutFilter.swift */; };
@@ -269,7 +269,7 @@
 		D5B0400C24FD45A90023E5DE /* FilterSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettings.swift; sourceTree = "<group>"; };
 		D5B0400E24FD45C20023E5DE /* ParametersForSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersForSlider.swift; sourceTree = "<group>"; };
 		D5B0401024FD45D00023E5DE /* FilterParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterParameter.swift; sourceTree = "<group>"; };
-		D5B0401224FD45E10023E5DE /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		D5B0401224FD45E10023E5DE /* ImageModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModels.swift; sourceTree = "<group>"; };
 		D5B0401524FD45F40023E5DE /* ImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSize.swift; sourceTree = "<group>"; };
 		D5B0401724FD46120023E5DE /* ImageFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFormat.swift; sourceTree = "<group>"; };
 		D5B0401924FE887F0023E5DE /* WithoutFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithoutFilter.swift; sourceTree = "<group>"; };
@@ -769,7 +769,7 @@
 				D5B0400C24FD45A90023E5DE /* FilterSettings.swift */,
 				D5B0400E24FD45C20023E5DE /* ParametersForSlider.swift */,
 				D5B0401024FD45D00023E5DE /* FilterParameter.swift */,
-				D5B0401224FD45E10023E5DE /* ImageModel.swift */,
+				D5B0401224FD45E10023E5DE /* ImageModels.swift */,
 				D5B0401524FD45F40023E5DE /* ImageSize.swift */,
 				D5B0401724FD46120023E5DE /* ImageFormat.swift */,
 			);
@@ -1171,7 +1171,7 @@
 				D50F514724E155100042BAD2 /* MainConfiguratorProtocol.swift in Sources */,
 				D50F50A524D852A30042BAD2 /* UserDefaultsWork.swift in Sources */,
 				D56A292024D4321F00178564 /* MainConfigurator.swift in Sources */,
-				D5B0401324FD45E10023E5DE /* ImageModel.swift in Sources */,
+				D5B0401324FD45E10023E5DE /* ImageModels.swift in Sources */,
 				D50F50B624D853C20042BAD2 /* KeyForEncrypte.swift in Sources */,
 				D56A291A24D431E500178564 /* MainPresenter.swift in Sources */,
 				D5B0402624FE892E0023E5DE /* PinkCrossPolynomial.swift in Sources */,

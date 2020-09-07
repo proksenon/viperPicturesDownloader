@@ -43,7 +43,7 @@ extension CollectionPresenter: CollectionViewDelegateOutput {
 // MARK: - CollectionViewDataSourceOutput
 extension CollectionPresenter: CollectionViewDataSourceOutput {
 
-	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
+	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (ImageModel)->Void) {
 		guard let interactor = interactor else { return }
 		guard let imageUrls = imageUrls else { return }
 		

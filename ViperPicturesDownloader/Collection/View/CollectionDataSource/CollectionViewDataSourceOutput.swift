@@ -10,7 +10,7 @@ import Foundation
 
 protocol CollectionViewDataSourceOutput: class {
 	///  Получает картинку
-	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void)
+	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (ImageModel)->Void)
 	///  Колличество ячеек
 	func numberOfRows() ->Int
 }

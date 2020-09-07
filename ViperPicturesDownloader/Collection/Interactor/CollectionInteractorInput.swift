@@ -10,5 +10,5 @@ import Foundation
 
 protocol CollectionInteractorInput: class {
 	///  Получает картинку
-	func getImage(url: String, size: ImageSize, completion: @escaping (Image)->Void)
+	func getImage(url: String, size: ImageSize, completion: @escaping (ImageModel)->Void)
 }

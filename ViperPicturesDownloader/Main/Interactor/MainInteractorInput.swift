@@ -10,7 +10,7 @@ import Foundation
 
 protocol MainInteractorInput: class {
 	///  Получает картинку
-	func getImage(imageUrl: String, size: ImageSize, completion: @escaping (Image)->Void)
+	func getImage(imageUrl: String, size: ImageSize, completion: @escaping (ImageModel)->Void)
 	///  Требуемое колличество ячеек
 //	func numberOfRows() -> Int?
 	///  Очищает хранилище, удаляя файлы, которые лежат больше 2 дней
@@ -24,5 +24,5 @@ protocol MainInteractorInput: class {
 	///  Удаляет картинку
 	func deleteImage(urlDelete: String)
 	///  Обрабатывает картинку с камеры или библиотеки и сохраняет
-	func setImage(imageModel: Image)-> String?
+	func setImage(imageModel: ImageWithUrl)-> String?
 }

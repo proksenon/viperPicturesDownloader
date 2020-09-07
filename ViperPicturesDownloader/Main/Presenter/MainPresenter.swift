@@ -89,12 +89,12 @@ extension MainPresenter: MainViewOutput {
 		view.presentAlert()
 	}
 
-	func imageFromLibrary(image: Image) {
+	func imageFromLibrary(imageModel: ImageWithUrl) {
 		guard let interactor = interactor else { return }
 		guard let view = view else { return }
 		guard var imageUrls = imageUrls else { return }
 
-		if let newImageUrl = interactor.setImage(imageModel: image) {
+		if let newImageUrl = interactor.setImage(imageModel: imageModel) {
 			imageUrls.urls.append(newImageUrl)
 			updateImageUrls(imageUrls: imageUrls)
 			view.reloadTable()
@@ -138,12 +138,12 @@ extension MainPresenter: TableViewDelegateOutput {
 // MARK: - TableViewDataSourceOutPut
 extension MainPresenter: TableViewDataSourceOutPut {
 
-	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image)->Void) {
+	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (ImageModel)->Void) {
 		guard let interactor = interactor else { return }
 		guard let imageUrls = imageUrls else { return }
 
-		interactor.getImage(imageUrl: imageUrls.urls[indexPath.row], size: size) { (image) in
-			completion(image)
+		interactor.getImage(imageUrl: imageUrls.urls[indexPath.row], size: size) { (imageModel) in
+			completion(imageModel)
 		}
 	}
 
