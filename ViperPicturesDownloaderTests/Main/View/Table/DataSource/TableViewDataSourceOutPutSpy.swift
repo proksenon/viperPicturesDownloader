@@ -16,7 +16,7 @@ class TableViewDataSourceOutPutSpy: TableViewDataSourceOutPut {
 	var didGetImage: Bool = false
 	var rows: Bool = false
 
-	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (Image) -> Void) {
+	func getImage(indexPath: IndexPath, size: ImageSize, completion: @escaping (ImageModel) -> Void) {
 		didGetImage = true
 	}
 

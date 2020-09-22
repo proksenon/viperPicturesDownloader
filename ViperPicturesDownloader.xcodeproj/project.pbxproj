@@ -111,7 +111,6 @@
 		D56A291C24D431FF00178564 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A291B24D431FF00178564 /* MainInteractor.swift */; };
 		D56A291E24D4320D00178564 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A291D24D4320D00178564 /* MainRouter.swift */; };
 		D56A292024D4321F00178564 /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A291F24D4321F00178564 /* MainConfigurator.swift */; };
-		D5845CF524E3D7F200E2A695 /* MainTableCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5845CF424E3D7F200E2A695 /* MainTableCellTest.swift */; };
 		D5845CF724E3DB5A00E2A695 /* MainViewControllerBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5845CF624E3DB5A00E2A695 /* MainViewControllerBuild.swift */; };
 		D58BAC5F24EFBBB7006A3DB4 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58BAC5E24EFBBB7006A3DB4 /* AlertHelper.swift */; };
 		D58BAC6124EFBE70006A3DB4 /* AlertHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58BAC6024EFBE70006A3DB4 /* AlertHelperProtocol.swift */; };
@@ -261,7 +260,6 @@
 		D56A291B24D431FF00178564 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		D56A291D24D4320D00178564 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		D56A291F24D4321F00178564 /* MainConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfigurator.swift; sourceTree = "<group>"; };
-		D5845CF424E3D7F200E2A695 /* MainTableCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCellTest.swift; sourceTree = "<group>"; };
 		D5845CF624E3DB5A00E2A695 /* MainViewControllerBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerBuild.swift; sourceTree = "<group>"; };
 		D58BAC5E24EFBBB7006A3DB4 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		D58BAC6024EFBE70006A3DB4 /* AlertHelperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelperProtocol.swift; sourceTree = "<group>"; };
@@ -680,7 +678,6 @@
 			children = (
 				D51C7F3724E70BB4001541F7 /* DataSource */,
 				D51C7F3824E70BC0001541F7 /* Delegate */,
-				D5845CF424E3D7F200E2A695 /* MainTableCellTest.swift */,
 				D51C7F2A24E6F7B8001541F7 /* TableViewMock.swift */,
 			);
 			path = Table;
@@ -1077,7 +1074,6 @@
 				D51C7F0124E5817D001541F7 /* MainViewInputSpy.swift in Sources */,
 				D51C7F0924E58E3F001541F7 /* TableViewDelegateOutputSpy.swift in Sources */,
 				D5E96DBE24E4257D00C49255 /* FileProviderMock.swift in Sources */,
-				D5845CF524E3D7F200E2A695 /* MainTableCellTest.swift in Sources */,
 				D565EA4F24E56198008897A6 /* ImageResizerMock.swift in Sources */,
 				D5E96DB824E3F71E00C49255 /* NetwokServceMock.swift in Sources */,
 				D51C7F2924E6F33C001541F7 /* UserDefaultsWorkTest.swift in Sources */,

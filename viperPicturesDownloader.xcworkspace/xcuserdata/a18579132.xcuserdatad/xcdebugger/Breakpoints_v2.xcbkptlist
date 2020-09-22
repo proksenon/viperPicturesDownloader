@@ -78,7 +78,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "662D4B02-07DC-4B55-835B-7BEFB427EE6A - 826da509938c02af"
+                  uuid = "662D4B02-07DC-4B55-835B-7BEFB427EE6A - 6ced2ea2a9d6b2de"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -93,7 +93,7 @@
                   offsetFromSymbolStart = "318">
                </Location>
                <Location
-                  uuid = "662D4B02-07DC-4B55-835B-7BEFB427EE6A - d6c8c6c934168126"
+                  uuid = "662D4B02-07DC-4B55-835B-7BEFB427EE6A - 38484d620e4c313a"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -190,7 +190,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "665A44C4-6F62-4A9B-AFB0-26E2EB1892E5 - b90c2767677cb43f"
+                  uuid = "665A44C4-6F62-4A9B-AFB0-26E2EB1892E5 - 578caccc5d26065e"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -205,7 +205,7 @@
                   offsetFromSymbolStart = "975">
                </Location>
                <Location
-                  uuid = "665A44C4-6F62-4A9B-AFB0-26E2EB1892E5 - fdbbe8f1613d74b6"
+                  uuid = "665A44C4-6F62-4A9B-AFB0-26E2EB1892E5 - 133b635a5b67c53e"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -302,7 +302,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "5B7DC4C9-EDE2-4AB3-81D5-079792A0D607 - 8fb5888712570d5f"
+                  uuid = "5B7DC4C9-EDE2-4AB3-81D5-079792A0D607 - 715fca5e21ee68dc"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -317,7 +317,7 @@
                   offsetFromSymbolStart = "847">
                </Location>
                <Location
-                  uuid = "5B7DC4C9-EDE2-4AB3-81D5-079792A0D607 - a1fc6db517f358f4"
+                  uuid = "5B7DC4C9-EDE2-4AB3-81D5-079792A0D607 - 5f162f6c244a3c0b"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -686,7 +686,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "27E1EC97-19E2-417F-96D9-DE731DCD0001 - bb249a7d2c22a216"
+                  uuid = "27E1EC97-19E2-417F-96D9-DE731DCD0001 - 46407420da21e0d7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -701,7 +701,7 @@
                   offsetFromSymbolStart = "1100">
                </Location>
                <Location
-                  uuid = "27E1EC97-19E2-417F-96D9-DE731DCD0001 - 649229d838d250e2"
+                  uuid = "27E1EC97-19E2-417F-96D9-DE731DCD0001 - 99f6c785ced113e5"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -734,7 +734,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "EB4D9B96-CD18-44F5-8712-12206F6DED3A - 72e4114a6f48d17d"
+                  uuid = "EB4D9B96-CD18-44F5-8712-12206F6DED3A - 9c03b5d76f4d29ce"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -749,7 +749,7 @@
                   offsetFromSymbolStart = "192">
                </Location>
                <Location
-                  uuid = "EB4D9B96-CD18-44F5-8712-12206F6DED3A - 8e604721956bfa64"
+                  uuid = "EB4D9B96-CD18-44F5-8712-12206F6DED3A - 6087e3bc956e02d7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -814,7 +814,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "2CEF4AAE-596E-4D10-B7CA-5E1FA36AE81D - 5b3e8d9c356658f4"
+                  uuid = "2CEF4AAE-596E-4D10-B7CA-5E1FA36AE81D - 1a9bbdaf02246170"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -829,7 +829,7 @@
                   offsetFromSymbolStart = "1230">
                </Location>
                <Location
-                  uuid = "2CEF4AAE-596E-4D10-B7CA-5E1FA36AE81D - a92fd9e9f7438fc9"
+                  uuid = "2CEF4AAE-596E-4D10-B7CA-5E1FA36AE81D - e88ae9dac001b64d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1022,7 +1022,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "11EBEA31-0336-43CA-ABAE-A381A88A5DF5 - 82e44e1e6690e970"
+                  uuid = "11EBEA31-0336-43CA-ABAE-A381A88A5DF5 - 50227b7fbc302c1"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1037,7 +1037,7 @@
                   offsetFromSymbolStart = "610">
                </Location>
                <Location
-                  uuid = "11EBEA31-0336-43CA-ABAE-A381A88A5DF5 - 8ce7bdf1b9e72440"
+                  uuid = "11EBEA31-0336-43CA-ABAE-A381A88A5DF5 - b01d45824b4cff1"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1067,6 +1067,54 @@
             startingLineNumber = "139"
             endingLineNumber = "139"
             landmarkName = "decryptionDataFromFile(url:nameFile:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7556CE0B-B4D0-474E-98C6-8E4810996BDC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloaderTests/Main/Presenter/MainPresenterTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "testPushCollection()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C1AF88F-524E-499C-9DE5-56A39DE7C560"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloaderTests/Main/Presenter/MainPresenterTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "testImageFromLibrary()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BB2E1ACE-E81D-442C-A84C-A5958AF54739"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperPicturesDownloaderTests/Main/Presenter/MainPresenterTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "testImageFromLibrary()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

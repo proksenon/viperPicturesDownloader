@@ -39,6 +39,8 @@ class MainPresenterTest: XCTestCase {
     }
 
 	func testPushCollection() {
+		presenter.configureView()
+
 		presenter.pushCollection()
 
 		XCTAssertTrue(router.didPushCollection, "didnt jump")
@@ -61,6 +63,9 @@ class MainPresenterTest: XCTestCase {
 	}
 
 	func testDidSelect() {
+
+		presenter.configureView()
+
 		presenter.didSelect(indexPath: indexPath)
 
 		XCTAssertTrue(interactor.didGetImage, "Didnt push after select row")
@@ -81,6 +86,8 @@ class MainPresenterTest: XCTestCase {
 	}
 
 	func testGetImage() {
+		presenter.configureView()
+
 		presenter.getImage(indexPath: indexPath, size: ImageSize(size: nil)) { (image) in
 			XCTAssertNil(image.image, "Shcould be nil")
 		}
@@ -88,24 +95,18 @@ class MainPresenterTest: XCTestCase {
 		XCTAssertTrue(interactor.didGetImage, "Interactor didnt get response on Image")
 	}
 
-	func testNumberOfRows() {
-
-		let number = presenter.numberOfRows()
-
-		XCTAssertTrue(interactor.getNumberOfRows, "Didnt get numberOfROws")
-		XCTAssert(number == interactor.number, "Wrong numberOfRows")
-	}
-
 	func testDidAddUrl() {
+		presenter.configureView()
 		presenter.didAddUrl(urlString: "sss")
 
-		XCTAssertTrue(interactor.addUrl, "Url didnt add")
 		XCTAssertTrue(view.didReloadTable, "Table didnt reload")
 		XCTAssertTrue(view.didScrollTableTo, "Table didnt scroll to")
 	}
 
 	func testImageFromLibrary() {
-		presenter.imageFromLibrary(image: Image(image: nil))
+		presenter.configureView()
+		interactor.url = "url"
+		presenter.imageFromLibrary(imageModel: ImageWithUrl(image: nil))
 
 		XCTAssertTrue(interactor.didSetImage, "Urls didnt set")
 		XCTAssertTrue(view.didReloadTable, "Table didnt reload")
@@ -113,6 +114,7 @@ class MainPresenterTest: XCTestCase {
 	}
 
 	func testDidDeleteImage() {
+		presenter.configureView()
 		presenter.didDeleteImage(indexPath: indexPath)
 
 		XCTAssertTrue(interactor.didDeleteImage, "Image didnt delete")

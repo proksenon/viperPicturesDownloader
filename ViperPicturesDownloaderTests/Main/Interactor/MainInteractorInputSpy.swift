@@ -22,10 +22,11 @@ class MainInteractorInputSpy: MainInteractorInput {
 	var didDeleteImage: Bool = false
 	var didSetImage: Bool = false
 	var imageUrls: ImageUrls?
+	var url: String?
 
-	func getImage(index: Int, size: ImageSize, completion: @escaping (Image) -> Void) {
+	func getImage(imageUrl: String, size: ImageSize, completion: @escaping (ImageModel) -> Void) {
 		didGetImage = true
-		completion(Image(image: nil))
+		completion(ImageModel(image: nil))
 	}
 
 	func numberOfRows() -> Int? {
@@ -37,7 +38,7 @@ class MainInteractorInputSpy: MainInteractorInput {
 		didFreeStorage = true
 	}
 
-	func freeALL() {
+	func freeALL(imageUrls: ImageUrls) {
 		didFreeStorage = true
 	}
 
@@ -45,20 +46,22 @@ class MainInteractorInputSpy: MainInteractorInput {
 		addUrl = true
 	}
 
-	func setImageUrls() {
+	func setImageUrls() -> ImageUrls? {
 		didSetImageUrls = true
+		return imageUrls
 	}
 
-	func saveImageUrls() {
+	func saveImageUrls(imageUrls: ImageUrls?) {
 		didsaveImageUrls = true
 	}
 
-	func deleteImage(urlDelete: Int) {
+	func deleteImage(urlDelete: String) {
 		didDeleteImage = true
 	}
 
-	func setImage(imageModel: Image) {
+	func setImage(imageModel: ImageWithUrl) -> String? {
 		didSetImage = true
+		return url
 	}
 
 	func getImageUrls() -> ImageUrls? {

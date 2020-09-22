@@ -17,7 +17,7 @@ class MainRouterInputSpy: MainRouterInput {
 		didPushCollection = true
 	}
 
-	func push(image: Image) {
+	func push(image: ImageModel) {
 		didPush = true
 	}
 

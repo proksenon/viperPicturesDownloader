@@ -16,7 +16,6 @@ final class CustomTableView: UITableView {
 		separatorStyle = .none
 		contentInsetAdjustmentBehavior = .never
 		backgroundColor = .gray
-
 	}
 
 	required init?(coder: NSCoder) {

@@ -22,7 +22,7 @@ class MainViewOutputSpy: MainViewOutput {
 
 	}
 
-	func imageFromLibrary(image: Image) {
+	func imageFromLibrary(imageModel: ImageWithUrl) {
 
 	}
 
